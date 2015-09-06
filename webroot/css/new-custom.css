@@ -1,0 +1,150 @@
+body {
+    background: #2d5f8b !important;
+}
+
+.content {
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 20px 30px 15px;
+}
+
+.header_approved .logo {
+    text-align: right;
+}
+
+.main-logo {
+    float: right;
+    margin-bottom: 10px;
+    width: 30% !important;
+}
+
+.main-logo img {
+    width: 100%;
+}
+
+.header_approved div h2 {
+    margin-bottom: 0;
+    margin-top: 60px;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.required::after {
+    color: #e32;
+    content: " *";
+}
+
+.padding-right {
+    padding-right: 0 !important;
+}
+
+.padding-left {
+    padding-left: 0 !important;
+}
+
+.driving_exp label .checkbox {
+    display: inline-block !important;
+    margin-left: 11px !important; 
+    margin-right: 10px !important;
+    margin-top: 0 !important;
+    position: relative !important;
+    }
+
+.signature_date label {
+    text-align: center;
+}
+
+
+/** Transport-applicaton **/
+
+.header_address {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.header_address h2 {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 5px !important;
+}
+
+.header_address .address span {
+    display: block;
+}
+
+.header_address .address {
+    color: red;
+    font-size: 17px;
+    font-style: italic;
+    border-bottom: 5px solid #000;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+.main-title {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.transport-app-form .texts {
+    font-style: italic;
+}
+
+.current-policy .table-striped > tbody > tr:nth-child(2n+1) {
+    background-color: #ffffff !important;
+}
+
+.current-policy table {
+    border: 1px solid #dfdfdf;
+}
+
+.current-policy .table > thead > tr > th {
+    border-bottom: medium none !important;
+    vertical-align: bottom;
+}
+
+.current-policy .table > caption + thead > tr:first-child > th, .current-policy  .table > colgroup + thead > tr:first-child > th, .current-policy  .table > thead:first-child > tr:first-child > th, .current-policy .table > caption + thead > tr:first-child > td, .current-policy .table > colgroup + thead > tr:first-child > td, .current-policy .table > thead:first-child > tr:first-child > td {
+    border: 1px solid #dfdfdf !important;
+}
+
+.current-policy .table > thead > tr > th, .table > tbody > tr > th, .current-policy .table > tfoot > tr > th, .current-policy .table > thead > tr > td, .current-policy .table > tbody > tr > td, .current-policy .table > tfoot > tr > td {
+    border: 1px solid #dfdfdf !important;
+}
+
+.current-policy .table thead {
+    background: #f9f9f9 none repeat scroll 0 0;
+}
+
+.upload_btns a {
+    display: block;
+    margin-top: 10px;
+}
+
+.loss-experience .radio, .cargo .radio , .commercial-general .radio {
+    display: inline-block !important;
+    margin-right: 5px !important;
+   
+}
+
+.loss-experience .radio-inline, .cargo .radio-inline, .commercial-general .radio-inline {
+    padding-left: 7px !important;
+}
+
+.detail-textarea {
+    margin-top: 10px;
+}
+
+.driver-lists .table.table-bordered th {
+    background: #f7f7f7 none repeat scroll 0 0;
+    text-align: center;
+    vertical-align: top !important;
+}
+
+
