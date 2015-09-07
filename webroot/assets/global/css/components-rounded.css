@@ -1090,7 +1090,7 @@ Customized Bootstrap Buttons
 /* Default buttons */
 .btn {
   border-width: 0;
-  padding: 7px 14px;
+  padding: 7px 7px;
   font-size: 14px;
   outline: none !important;
   background-image: none !important;

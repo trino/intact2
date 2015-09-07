@@ -78,7 +78,7 @@
                                                 <div class="checker disabled" id="uniform-888">
                                                     <span class="checked"><input type="checkbox" checked="" disabled="disabled" class="checkhiredriver" id="888" value="1" name="stat"></span></div> Intact Policy or Quote# <span class="hired_msg"></span>
                                                 </label><br>
-                                                <a style="margin-top:2px;width:75%;" class="blue-stripe btn floatleft grey-cascade" href="/veritas3-0/orders/productSelection?driver=888&amp;ordertype=CAR">Order Products A La Carte <i class="m-icon-swapright m-icon-white"></i></a>                        </div>
+                                                <a style="margin-top:2px;width:75%;" class="btn floatleft grey-cascade" href="/veritas3-0/orders/productSelection?driver=888&amp;ordertype=CAR">Order Products A La Carte <i class="m-icon-swapright m-icon-white"></i></a>                        </div>
 
 
                     </div>
