@@ -33,27 +33,24 @@
 
 <script>var reasons = false; //Action is: view</script><!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 
-
+<!-- BEGIN PAGE HEAD -->
+	<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+			<div class="page-title">
+				<h1>Profiles Scorecard<small>Intact View</small></h1>
+			</div>
+			
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
+	<!-- BEGIN PAGE CONTENT -->
+	<div class="page-content">
+    
+    
+            <div class="container">
+            <div class="row">  
 <div class="clearfix"></div>
-<h3 class="page-title">
-    View Profile</h3>
-
-<div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="fa fa-home"></i>
-            <a href="/veritas3-0/">Dashboard</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <a href="">View Profile</a>
-        </li>
-    </ul>
-
-<a class="floatright btn btn-info" href="javascript:window.print();">Print</a>                    <a class="floatright btn btn-danger btnspc" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_888&quot;?');" href="/veritas3-0/profiles/delete/888">Delete</a>
-                    
-                <a class="floatright btn btn-primary btnspc" href="/veritas3-0/profiles/edit/888">Edit</a><a class="floatright btn btnspc btn-danger" onclick="return confirm('Are you sure you want to possess Beverly Hills (Owner_Operator_888)?');" href="/veritas3-0/profiles/possess/888">Possess</a>            <a class=" floatright btn default btnspc" href="/veritas3-0/documents/index?type=&amp;submitted_by_id=888">View My Documents</a>
-        </div>
 
 
 <!-- END PAGE HEADER-->
@@ -7164,6 +7161,9 @@ $(function(){
                 </div>
             </div>
             <!-- END PROFILE CONTENT -->
+        </div>
+    </div>
+</div>
         </div>
     </div>
 </div>

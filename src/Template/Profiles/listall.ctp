@@ -118,7 +118,7 @@
                             
                                     <tr role="row" class="even">
                                         <td>888</td>
-                                        <td>                                                    <a href="/intact/profiles/view/888">
+                                        <td><a href="/intact/profiles/view/888">
                                                         <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
@@ -131,7 +131,7 @@
                                         <td><a target="_blank" href="/intact/clients/edit/41?view">Huron Services Group</a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
                                             <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/profiles/intact_view">View Scorecard</a>
                                             <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
                                             
                                         </td>
