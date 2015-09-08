@@ -8,18 +8,18 @@
 </a></th>
                                 <th><a href="/orders/orderslist?sort=user_id&amp;direction=asc">Driver Name
 </a></th>
-                                <th><a href="/orders/orderslist?sort=uploaded_for&amp;direction=asc">Results (Red or Green)
+                               <th><a href="/orders/orderslist?sort=complete&amp;direction=asc">Broker who placed order
 </a></th>
+                                
                                 <th><a href="/orders/orderslist?sort=client_id&amp;direction=asc">Date Ordered
 </a></th>
                                 <th>Date Completed
 </th>
                                 <th><a href="/orders/orderslist?sort=created&amp;direction=asc">Created (YYYY-MM-DD)</a></th>
-                                <th class="actions">Actions - Scorecard, Add Other Products, Save Documents
-</th>
+                                <th class="actions">Actions</th>
                                 <!--th><a href="/orders/orderslist?sort=bright_planet_html_binary&amp;direction=asc">Status</a></th-->
-                                <th><a href="/orders/orderslist?sort=complete&amp;direction=asc">Broker who placed order
-</a></th>
+
+                            <th><a href="/orders/orderslist?sort=uploaded_for&amp;direction=asc">Results </a></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -28,15 +28,7 @@
                                         <td style="min-width: 145px;">
 
                                             <div class="dashboard-stat grey" style="">
-                                                    <!--div class="whiteCorner"></div-->
-                                                    <!--div class="visual" style="height: 40px;">
-                                                        <i class="fa fa-copy"></i>
-                                                    </div-->
-                                                    <!--div class="details"> //WARNING: This won't work while in a table...
-                                                        <div class="number"></div>
-                                                        <div class="desc"></div>
-                                                    </div-->
-                                                                                                            <span class="more">
+                                                               <span class="more">
                                                                                                                 ORDER PRODUCTS A  LA CARTE                                                       <i class="fa fa-copy"></i>
 
                                                                                                                                                                         </span>
@@ -45,19 +37,20 @@
                                         </td>
                                         <td>Scott Gates (Scott.gates@gfs.com)</td>
                                         <td><a target="_blank" href="/profiles/view/888">Farhan Kadir</a></td>
-                                        <td><a target="_blank" href="/clients/edit/41?view">Huron Services Group</a></td>
-                                        <td>HQ-2999 James Snow Park way North Milton </td>
+                                        <td><a target="_blank" href="/clients/edit/41?view">2015-05-01</a></td>
+                                        <td>2015-09-01 </td>
 
                                         <td><font color="green">2015-09-02 11:51:40</font></td>
                                         <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/profiles/view/888?getprofilescore=1">View</a> <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
-                                            <a onclick="return confirm('Are you sure you want to delete &quot;823&quot;?');" class="btn default btn-xs red-stripe" href="/orders/deleteorder/823">
-                                                        Delete</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
+                                            <a class="btn default btn-xs yellow-stripe" href="/orders/deleteorder/823">
+                                                        Add Products</a>
+                                            <a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
                                                                                         </td>
 
 
                                         <td valign="middle">
-                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-success">complete</span>
+                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-success">Pass</span>
                                                                                         </td>
 
                                     </tr>
@@ -66,15 +59,7 @@
                                         <td style="min-width: 145px;">
 
                                             <div class="dashboard-stat grey" style="">
-                                                    <!--div class="whiteCorner"></div-->
-                                                    <!--div class="visual" style="height: 40px;">
-                                                        <i class="fa fa-copy"></i>
-                                                    </div-->
-                                                    <!--div class="details"> //WARNING: This won't work while in a table...
-                                                        <div class="number"></div>
-                                                        <div class="desc"></div>
-                                                    </div-->
-                                                                                                            <span class="more">
+                                                                                                <span class="more">
                                                                                                                 ORDER PRODUCTS A  LA CARTE                                                       <i class="fa fa-copy"></i>
 
                                                                                                                                                                         </span>
@@ -83,19 +68,19 @@
                                         </td>
                                         <td>Scott Gates (Scott.gates@gfs.com)</td>
                                         <td><a target="_blank" href="/profiles/view/887">Testtt Testtt</a></td>
-                                        <td><a target="_blank" href="/clients/edit/41?view">Huron Services Group</a></td>
+                                        <td><a target="_blank" href="/clients/edit/41?view">2015-05-01</a></td>
                                         <td>Challenger</td>
 
                                         <td><font color="green">2015-09-02 11:51:40</font></td>
-                                        <td class="actions  util-btn-margin-bottom-5">
-                                           <a class="btn default btn-xs blue-soft-stripe" href="/profiles/view/888?getprofilescore=1">View</a> <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
-                                            <a onclick="return confirm('Are you sure you want to delete &quot;822&quot;?');" class="btn default btn-xs red-stripe" href="/orders/deleteorder/822">
-                                                        Delete</a>
+                                         <td class="actions  util-btn-margin-bottom-5">
+                                            <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
+                                            <a class="btn default btn-xs yellow-stripe" href="/orders/deleteorder/823">
+                                                        Add Products</a>
+                                            <a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
                                                                                         </td>
 
-
                                         <td valign="middle">
-                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-primary">pending</span>
+                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-success">Pass</span>
                                                                                         </td>
 
                                     </tr>
@@ -104,15 +89,7 @@
                                         <td style="min-width: 145px;">
 
                                             <div class="dashboard-stat grey" style="">
-                                                    <!--div class="whiteCorner"></div-->
-                                                    <!--div class="visual" style="height: 40px;">
-                                                        <i class="fa fa-copy"></i>
-                                                    </div-->
-                                                    <!--div class="details"> //WARNING: This won't work while in a table...
-                                                        <div class="number"></div>
-                                                        <div class="desc"></div>
-                                                    </div-->
-                                                                                                            <span class="more">
+                                                        <span class="more">
                                                                                                                 ORDER PRODUCTS A  LA CARTE                                                       <i class="fa fa-copy"></i>
 
                                                                                                                                                                         </span>
@@ -121,21 +98,20 @@
                                         </td>
                                         <td>Scott Gates (Scott.gates@gfs.com)</td>
                                         <td><a target="_blank" href="/profiles/view/888">Farhan Kadir</a></td>
-                                        <td><a target="_blank" href="/clients/edit/41?view">Huron Services Group</a></td>
-                                        <td>HQ-2999</td>
+                                        <td><a target="_blank" href="/clients/edit/41?view">2015-05-01</a></td>
+                                        <td>2015-09-01</td>
 
                                         <td><font color="green">2015-09-02 11:45:34</font></td>
-                                        <td class="actions  util-btn-margin-bottom-5">
-
-                                            
-                                                                                            <a class="btn default btn-xs blue-soft-stripe" href="/profiles/view/888?getprofilescore=1">View</a> <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
-                                            <a onclick="return confirm('Are you sure you want to delete &quot;821&quot;?');" class="btn default btn-xs red-stripe" href="/orders/deleteorder/821">
-                                                        Delete</a>
+                                         <td class="actions  util-btn-margin-bottom-5">
+                                            <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
+                                            <a class="btn default btn-xs yellow-stripe" href="/orders/deleteorder/823">
+                                                        Add Products</a>
+                                            <a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
                                                                                         </td>
 
 
                                         <td valign="middle">
-                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-primary">pending</span>
+                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-success">Pass</span>
                                                                                         </td>
 
                                     </tr>
@@ -144,15 +120,7 @@
                                         <td style="min-width: 145px;">
 
                                             <div class="dashboard-stat grey" style="">
-                                                    <!--div class="whiteCorner"></div-->
-                                                    <!--div class="visual" style="height: 40px;">
-                                                        <i class="fa fa-copy"></i>
-                                                    </div-->
-                                                    <!--div class="details"> //WARNING: This won't work while in a table...
-                                                        <div class="number"></div>
-                                                        <div class="desc"></div>
-                                                    </div-->
-                                                                                                            <span class="more">
+                                                                                      <span class="more">
                                                                                                                 ORDER PRODUCTS A  LA CARTE                                                       <i class="fa fa-copy"></i>
 
                                                                                                                                                                         </span>
@@ -161,21 +129,20 @@
                                         </td>
                                         <td>Scott Gates (Scott.gates@gfs.com)</td>
                                         <td><a target="_blank" href="/profiles/view/887">Testtt Testtt</a></td>
-                                        <td><a target="_blank" href="/clients/edit/41?view">Huron Services Group</a></td>
-                                        <td>HQ-2999</td>
+                                        <td><a target="_blank" href="/clients/edit/41?view">2015-05-01</a></td>
+                                        <td>2015-09-01</td>
 
                                         <td><font color="green">2015-09-02 11:45:34</font></td>
-                                        <td class="actions  util-btn-margin-bottom-5">
-
-                                            
-                                                                                            <a class="btn default btn-xs blue-soft-stripe" href="/profiles/view/888?getprofilescore=1">View</a> <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
-                                            <a onclick="return confirm('Are you sure you want to delete &quot;820&quot;?');" class="btn default btn-xs red-stripe" href="/orders/deleteorder/820">
-                                                        Delete</a>
+                                         <td class="actions  util-btn-margin-bottom-5">
+                                            <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
+                                            <a class="btn default btn-xs yellow-stripe" href="/orders/deleteorder/823">
+                                                        Add Products</a>
+                                            <a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
                                                                                         </td>
 
 
                                         <td valign="middle">
-                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-primary">pending</span>
+                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-success">Pass</span>
                                                                                         </td>
 
                                     </tr>
@@ -184,15 +151,7 @@
                                         <td style="min-width: 145px;">
 
                                             <div class="dashboard-stat grey" style="">
-                                                    <!--div class="whiteCorner"></div-->
-                                                    <!--div class="visual" style="height: 40px;">
-                                                        <i class="fa fa-copy"></i>
-                                                    </div-->
-                                                    <!--div class="details"> //WARNING: This won't work while in a table...
-                                                        <div class="number"></div>
-                                                        <div class="desc"></div>
-                                                    </div-->
-                                                                                                            <span class="more">
+                                                                                             <span class="more">
                                                                                                                 ORDER PRODUCTS A  LA CARTE                                                       <i class="fa fa-copy"></i>
 
                                                                                                                                                                         </span>
@@ -201,21 +160,20 @@
                                         </td>
                                         <td>Scott Gates (Scott.gates@gfs.com)</td>
                                         <td><a target="_blank" href="/profiles/view/888">Farhan Kadir</a></td>
-                                        <td><a target="_blank" href="/clients/edit/41?view">Huron Services Group</a></td>
-                                        <td>HQ-29999</td>
+                                        <td><a target="_blank" href="/clients/edit/41?view">2015-05-01</a></td>
+                                        <td>2015-09-019</td>
 
                                         <td><font color="green">2015-09-02 11:42:10</font></td>
-                                        <td class="actions  util-btn-margin-bottom-5">
-
-                                            
-                                                                                            <a class="btn default btn-xs blue-soft-stripe" href="/profiles/view/888?getprofilescore=1">View</a> <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
-                                            <a onclick="return confirm('Are you sure you want to delete &quot;819&quot;?');" class="btn default btn-xs red-stripe" href="/orders/deleteorder/819">
-                                                        Delete</a>
+                                     <td class="actions  util-btn-margin-bottom-5">
+                                            <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
+                                            <a class="btn default btn-xs yellow-stripe" href="/orders/deleteorder/823">
+                                                        Add Products</a>
+                                            <a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
                                                                                         </td>
 
 
                                         <td valign="middle">
-                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-primary">pending</span>
+                                                                                               <span style="float:right;padding:4px;" class="label label-sm label-danger">Fail</span>
                                                                                         </td>
 
                                     </tr>
@@ -224,15 +182,7 @@
                                         <td style="min-width: 145px;">
 
                                             <div class="dashboard-stat grey" style="">
-                                                    <!--div class="whiteCorner"></div-->
-                                                    <!--div class="visual" style="height: 40px;">
-                                                        <i class="fa fa-copy"></i>
-                                                    </div-->
-                                                    <!--div class="details"> //WARNING: This won't work while in a table...
-                                                        <div class="number"></div>
-                                                        <div class="desc"></div>
-                                                    </div-->
-                                                                                                            <span class="more">
+                                                                                             <span class="more">
                                                                                                                 ORDER PRODUCTS A  LA CARTE                                                       <i class="fa fa-copy"></i>
 
                                                                                                                                                                         </span>
@@ -241,21 +191,20 @@
                                         </td>
                                         <td>Scott Gates (Scott.gates@gfs.com)</td>
                                         <td><a target="_blank" href="/profiles/view/887">Testtt Testtt</a></td>
-                                        <td><a target="_blank" href="/clients/edit/41?view">Huron Services Group</a></td>
-                                        <td>HQ-29999</td>
+                                        <td><a target="_blank" href="/clients/edit/41?view">2015-05-01</a></td>
+                                        <td>2015-09-019</td>
 
                                         <td><font color="green">2015-09-02 11:42:10</font></td>
-                                        <td class="actions  util-btn-margin-bottom-5">
-
-                                            
-                                                                                            <a class="btn default btn-xs blue-soft-stripe" href="/profiles/view/888?getprofilescore=1">View</a> <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
-                                            <a onclick="return confirm('Are you sure you want to delete &quot;818&quot;?');" class="btn default btn-xs red-stripe" href="/orders/deleteorder/818">
-                                                        Delete</a>
+                                         <td class="actions  util-btn-margin-bottom-5">
+                                            <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
+                                            <a class="btn default btn-xs yellow-stripe" href="/orders/deleteorder/823">
+                                                        Add Products</a>
+                                            <a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
                                                                                         </td>
 
 
                                         <td valign="middle">
-                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-primary">pending</span>
+                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-success">Pass</span>
                                                                                         </td>
 
                                     </tr>
@@ -264,14 +213,7 @@
                                         <td style="min-width: 145px;">
 
                                             <div class="dashboard-stat grey" style="">
-                                                    <!--div class="whiteCorner"></div-->
-                                                    <!--div class="visual" style="height: 40px;">
-                                                        <i class="fa fa-copy"></i>
-                                                    </div-->
-                                                    <!--div class="details"> //WARNING: This won't work while in a table...
-                                                        <div class="number"></div>
-                                                        <div class="desc"></div>
-                                                    </div-->
+                                                   
                                                                                                             <span class="more">
                                                                                                                 ORDER PRODUCTS A  LA CARTE                                                       <i class="fa fa-copy"></i>
 
@@ -281,21 +223,20 @@
                                         </td>
                                         <td>Scott Gates (Scott.gates@gfs.com)</td>
                                         <td><a target="_blank" href="/profiles/view/888">Farhan Kadir</a></td>
-                                        <td><a target="_blank" href="/clients/edit/41?view">Huron Services Group</a></td>
-                                        <td>HQ-29999</td>
+                                        <td><a target="_blank" href="/clients/edit/41?view">2015-05-01</a></td>
+                                        <td>2015-09-019</td>
 
                                         <td><font color="green">2015-09-02 11:41:07</font></td>
-                                        <td class="actions  util-btn-margin-bottom-5">
-
-                                            
-                                                                                            <a class="btn default btn-xs blue-soft-stripe" href="/profiles/view/888?getprofilescore=1">View</a> <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
-                                            <a onclick="return confirm('Are you sure you want to delete &quot;817&quot;?');" class="btn default btn-xs red-stripe" href="/orders/deleteorder/817">
-                                                        Delete</a>
+                                         <td class="actions  util-btn-margin-bottom-5">
+                                            <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
+                                            <a class="btn default btn-xs yellow-stripe" href="/orders/deleteorder/823">
+                                                        Add Products</a>
+                                            <a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
                                                                                         </td>
 
 
                                         <td valign="middle">
-                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-primary">pending</span>
+                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-danger">Fail</span>
                                                                                         </td>
 
                                     </tr>
@@ -304,15 +245,7 @@
                                         <td style="min-width: 145px;">
 
                                             <div class="dashboard-stat grey" style="">
-                                                    <!--div class="whiteCorner"></div-->
-                                                    <!--div class="visual" style="height: 40px;">
-                                                        <i class="fa fa-copy"></i>
-                                                    </div-->
-                                                    <!--div class="details"> //WARNING: This won't work while in a table...
-                                                        <div class="number"></div>
-                                                        <div class="desc"></div>
-                                                    </div-->
-                                                                                                            <span class="more">
+                                                                                       <span class="more">
                                                                                                                 ORDER PRODUCTS A  LA CARTE                                                       <i class="fa fa-copy"></i>
 
                                                                                                                                                                         </span>
@@ -321,21 +254,20 @@
                                         </td>
                                         <td>Scott Gates (Scott.gates@gfs.com)</td>
                                         <td><a target="_blank" href="/profiles/view/887">Testtt Testtt</a></td>
-                                        <td><a target="_blank" href="/clients/edit/41?view">Huron Services Group</a></td>
-                                        <td>HQ-29999</td>
+                                        <td><a target="_blank" href="/clients/edit/41?view">2015-05-01</a></td>
+                                        <td>2015-09-019</td>
 
                                         <td><font color="green">2015-09-02 11:41:07</font></td>
-                                        <td class="actions  util-btn-margin-bottom-5">
-
-                                            
-                                                                                            <a class="btn default btn-xs blue-soft-stripe" href="/profiles/view/888?getprofilescore=1">View</a> <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
-                                            <a onclick="return confirm('Are you sure you want to delete &quot;816&quot;?');" class="btn default btn-xs red-stripe" href="/orders/deleteorder/816">
-                                                        Delete</a>
+                                         <td class="actions  util-btn-margin-bottom-5">
+                                            <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
+                                            <a class="btn default btn-xs yellow-stripe" href="/orders/deleteorder/823">
+                                                        Add Products</a>
+                                            <a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
                                                                                         </td>
 
 
                                         <td valign="middle">
-                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-primary">pending</span>
+                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-danger">Fail</span>
                                                                                         </td>
 
                                     </tr>
@@ -344,15 +276,7 @@
                                         <td style="min-width: 145px;">
 
                                             <div class="dashboard-stat grey" style="">
-                                                    <!--div class="whiteCorner"></div-->
-                                                    <!--div class="visual" style="height: 40px;">
-                                                        <i class="fa fa-copy"></i>
-                                                    </div-->
-                                                    <!--div class="details"> //WARNING: This won't work while in a table...
-                                                        <div class="number"></div>
-                                                        <div class="desc"></div>
-                                                    </div-->
-                                                                                                            <span class="more">
+                                                                                           <span class="more">
                                                                                                                 ORDER PRODUCTS A  LA CARTE                                                       <i class="fa fa-copy"></i>
 
                                                                                                                                                                         </span>
@@ -361,21 +285,20 @@
                                         </td>
                                         <td>Scott Gates (Scott.gates@gfs.com)</td>
                                         <td><a target="_blank" href="/profiles/view/888">Farhan Kadir</a></td>
-                                        <td><a target="_blank" href="/clients/edit/41?view">Huron Services Group</a></td>
-                                        <td>HQ-2999</td>
+                                        <td><a target="_blank" href="/clients/edit/41?view">2015-05-01</a></td>
+                                        <td>2015-09-01</td>
 
                                         <td><font color="green">2015-09-02 10:14:44</font></td>
-                                        <td class="actions  util-btn-margin-bottom-5">
-
-                                            
-                                                                                            <a class="btn default btn-xs blue-soft-stripe" href="/profiles/view/888?getprofilescore=1">View</a> <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
-                                            <a onclick="return confirm('Are you sure you want to delete &quot;815&quot;?');" class="btn default btn-xs red-stripe" href="/orders/deleteorder/815">
-                                                        Delete</a>
+                                         <td class="actions  util-btn-margin-bottom-5">
+                                            <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
+                                            <a class="btn default btn-xs yellow-stripe" href="/orders/deleteorder/823">
+                                                        Add Products</a>
+                                            <a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
                                                                                         </td>
 
 
                                         <td valign="middle">
-                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-primary">pending</span>
+                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-success">Pass</span>
                                                                                         </td>
 
                                     </tr>
@@ -384,15 +307,7 @@
                                         <td style="min-width: 145px;">
 
                                             <div class="dashboard-stat grey" style="">
-                                                    <!--div class="whiteCorner"></div-->
-                                                    <!--div class="visual" style="height: 40px;">
-                                                        <i class="fa fa-copy"></i>
-                                                    </div-->
-                                                    <!--div class="details"> //WARNING: This won't work while in a table...
-                                                        <div class="number"></div>
-                                                        <div class="desc"></div>
-                                                    </div-->
-                                                                                                            <span class="more">
+                                                                                                <span class="more">
                                                                                                                 ORDER PRODUCTS A  LA CARTE                                                       <i class="fa fa-copy"></i>
 
                                                                                                                                                                         </span>
@@ -401,21 +316,20 @@
                                         </td>
                                         <td>Scott Gates (Scott.gates@gfs.com)</td>
                                         <td><a target="_blank" href="/profiles/view/888">Farhan Kadir</a></td>
-                                        <td><a target="_blank" href="/clients/edit/41?view">Huron Services Group</a></td>
-                                        <td>HQ-2999</td>
+                                        <td><a target="_blank" href="/clients/edit/41?view">2015-05-01</a></td>
+                                        <td>2015-09-01</td>
 
                                         <td><font color="green">2015-09-02 10:13:53</font></td>
-                                        <td class="actions  util-btn-margin-bottom-5">
-
-                                            
-                                                                                            <a class="btn default btn-xs blue-soft-stripe" href="/profiles/view/888?getprofilescore=1">View</a> <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
-                                            <a onclick="return confirm('Are you sure you want to delete &quot;814&quot;?');" class="btn default btn-xs red-stripe" href="/orders/deleteorder/814">
-                                                        Delete</a>
+                                         <td class="actions  util-btn-margin-bottom-5">
+                                            <a class="btn default btn-xs blue-soft-stripe" href="profiles/intact_view">Score Card</a>
+                                            <a class="btn default btn-xs yellow-stripe" href="/orders/deleteorder/823">
+                                                        Add Products</a>
+                                            <a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
                                                                                         </td>
 
 
                                         <td valign="middle">
-                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-primary">pending</span>
+                                                                                                <span style="float:right;padding:4px;" class="label label-sm label-danger">Fail</span>
                                                                                         </td>
 
                                     </tr>

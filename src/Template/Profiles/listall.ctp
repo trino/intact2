@@ -72,7 +72,7 @@
 
                     </div>
                     <div class="btn-set pull-right">
-                        <form method="get" action="/intact/profiles/index">
+                        <form method="get" action="<?php echo $this->request->webroot;?>profiles/index">
                             
 
                             
@@ -101,14 +101,14 @@
                         <table class="table table-condensed  table-striped table-bordered table-hover dataTable no-footer">
                             <thead>
                             <tr class="sorting">
-                                <th><a href="/intact/profiles?sort=id&amp;direction=asc" class="desc">ID</a></th>
-                                <th style="width:7px;"><a href="/intact/profiles?sort=image&amp;direction=asc">Image</a></th>
+                                <th><a href="<?php echo $this->request->webroot;?>profiles?sort=id&amp;direction=asc" class="desc">ID</a></th>
+                                <th style="width:7px;"><a href="<?php echo $this->request->webroot;?>profiles?sort=image&amp;direction=asc">Image</a></th>
                                 
-                                <!--th><a href="/intact/profiles?sort=email&amp;direction=asc">Email</a></th-->
-                                <th><a href="/intact/profiles?sort=fname&amp;direction=asc">Name</a></th>
+                                <!--th><a href="<?php echo $this->request->webroot;?>profiles?sort=email&amp;direction=asc">Email</a></th-->
+                                <th><a href="<?php echo $this->request->webroot;?>profiles?sort=fname&amp;direction=asc">Name</a></th>
                                 
 
-                                <!--th><a href="/intact/profiles?sort=lname&amp;direction=asc">Last Name</a></th-->
+                                <!--th><a href="<?php echo $this->request->webroot;?>profiles?sort=lname&amp;direction=asc">Last Name</a></th-->
                                 <th>Assigned to </th>
                                 <th>Actions</th>
 
@@ -118,8 +118,8 @@
                             
                                     <tr role="row" class="even">
                                         <td>888</td>
-                                        <td><a href="/intact/profiles/view/888">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td><a href="<?php echo $this->request->webroot;?>profiles/view/888">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -128,11 +128,11 @@
                                         <td>Beverly Hills</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/41?view">Huron Services Group</a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/41?view">Huron Services Group</a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/profiles/intact_view">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -140,8 +140,8 @@
                                 
                                     <tr role="row" class="odd">
                                         <td>887</td>
-                                        <td>                                                    <a href="/intact/profiles/view/887">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/887">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -150,11 +150,11 @@
                                         <td>Beverly Hills</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/41?view">Huron Services Group</a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/41?view">Huron Services Group</a></td>
                                         <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -162,8 +162,8 @@
                                 
                                     <tr role="row" class="even">
                                         <td>886</td>
-                                        <td>                                                    <a href="/intact/profiles/view/886">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/886">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -172,11 +172,11 @@
                                         <td>Beverly Hills</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/41?view">Huron Services Group</a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/41?view">Huron Services Group</a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -184,8 +184,8 @@
                                 
                                     <tr role="row" class="odd">
                                         <td>885</td>
-                                        <td>                                                    <a href="/intact/profiles/view/885">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/885">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -194,11 +194,11 @@
                                         <td>Beverly Hills</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/41?view">Huron Services Group</a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/41?view">Huron Services Group</a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -206,8 +206,8 @@
                                 
                                     <tr role="row" class="even">
                                         <td>884</td>
-                                        <td>                                                    <a href="/intact/profiles/view/884">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/884">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -216,11 +216,11 @@
                                         <td>Beverly Hills</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/41?view">Huron Services Group</a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/41?view">Huron Services Group</a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -228,8 +228,8 @@
                                 
                                     <tr role="row" class="odd">
                                         <td>883</td>
-                                        <td>                                                    <a href="/intact/profiles/view/883">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/883">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -238,11 +238,11 @@
                                         <td>3 3</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/26?view">Gordon Food Service</a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/26?view">Gordon Food Service</a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -250,8 +250,8 @@
                                 
                                     <tr role="row" class="even">
                                         <td>882</td>
-                                        <td>                                                    <a href="/intact/profiles/view/882">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/882">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -260,11 +260,11 @@
                                         <td>Beverly Hills</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/26?view">Gordon Food Service</a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/26?view">Gordon Food Service</a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -272,8 +272,8 @@
                                 
                                     <tr role="row" class="odd">
                                         <td>881</td>
-                                        <td>                                                    <a href="/intact/profiles/view/881">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/881">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -282,11 +282,11 @@
                                         <td>Beverly Hills</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/26?view">Gordon Food Service</a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/26?view">Gordon Food Service</a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -294,8 +294,8 @@
                                 
                                     <tr role="row" class="even">
                                         <td>880</td>
-                                        <td>                                                    <a href="/intact/profiles/view/880">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/880">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -304,11 +304,11 @@
                                         <td>Beverly Hills</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/26?view">Gordon Food Service</a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/26?view">Gordon Food Service</a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -316,8 +316,8 @@
                                 
                                     <tr role="row" class="odd">
                                         <td>879</td>
-                                        <td>                                                    <a href="/intact/profiles/view/879">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/879">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -326,11 +326,11 @@
                                         <td>enums_porofile_types@!sdf.com enums_porofile_types@!sdf.com</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/17?view">Challenger Motor Freight </a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/17?view">Challenger Motor Freight </a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -338,8 +338,8 @@
                                 
                                     <tr role="row" class="even">
                                         <td>878</td>
-                                        <td>                                                    <a href="/intact/profiles/view/878">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/878">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -348,11 +348,11 @@
                                         <td>enum_porofile_types enum_porofile_types</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/17?view">Challenger Motor Freight </a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/17?view">Challenger Motor Freight </a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -360,8 +360,8 @@
                                 
                                     <tr role="row" class="odd">
                                         <td>877</td>
-                                        <td>                                                    <a href="/intact/profiles/view/877">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/877">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -370,11 +370,11 @@
                                         <td>enum_porofile_types enum_porofile_types</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/17?view">Challenger Motor Freight </a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/17?view">Challenger Motor Freight </a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -382,8 +382,8 @@
                                 
                                     <tr role="row" class="even">
                                         <td>876</td>
-                                        <td>                                                    <a href="/intact/profiles/view/876">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/876">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -394,9 +394,9 @@
 
                                         <td></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -404,8 +404,8 @@
                                 
                                     <tr role="row" class="odd">
                                         <td>875</td>
-                                        <td>                                                    <a href="/intact/profiles/view/875">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/875">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -416,9 +416,9 @@
 
                                         <td></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -426,8 +426,8 @@
                                 
                                     <tr role="row" class="even">
                                         <td>874</td>
-                                        <td>                                                    <a href="/intact/profiles/view/874">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/874">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -436,11 +436,11 @@
                                         <td>Xavier Clifford</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/17?view">Challenger Motor Freight </a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/17?view">Challenger Motor Freight </a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -448,8 +448,8 @@
                                 
                                     <tr role="row" class="odd">
                                         <td>873</td>
-                                        <td>                                                    <a href="/intact/profiles/view/873">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/873">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -458,11 +458,11 @@
                                         <td>Dale Evans</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/17?view">Challenger Motor Freight </a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/17?view">Challenger Motor Freight </a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -470,8 +470,8 @@
                                 
                                     <tr role="row" class="even">
                                         <td>870</td>
-                                        <td>                                                    <a href="/intact/profiles/view/870">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/870">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -480,11 +480,11 @@
                                         <td>Shawn  Whilby</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/17?view">Challenger Motor Freight </a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/17?view">Challenger Motor Freight </a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -492,8 +492,8 @@
                                 
                                     <tr role="row" class="odd">
                                         <td>869</td>
-                                        <td>                                                    <a href="/intact/profiles/view/869">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/869">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -502,11 +502,11 @@
                                         <td>Parminder Sidhu</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/17?view">Challenger Motor Freight </a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/17?view">Challenger Motor Freight </a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -514,8 +514,8 @@
                                 
                                     <tr role="row" class="even">
                                         <td>868</td>
-                                        <td>                                                    <a href="/intact/profiles/view/868">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/868">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -524,11 +524,11 @@
                                         <td>David Uzbalis</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/17?view">Challenger Motor Freight </a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/17?view">Challenger Motor Freight </a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -536,8 +536,8 @@
                                 
                                     <tr role="row" class="odd">
                                         <td>867</td>
-                                        <td>                                                    <a href="/intact/profiles/view/867">
-                                                        <img alt="" class="img-responsive" src="/intact/img/profile/default.png" style="width:40px;">
+                                        <td>                                                    <a href="<?php echo $this->request->webroot;?>profiles/view/867">
+                                                        <img alt="" class="img-responsive" src="<?php echo $this->request->webroot;?>img/profile/default.png" style="width:40px;">
                                                     </a>
                                                 
                                         </td>
@@ -546,11 +546,11 @@
                                         <td>Mitchell Benoit</td>
 
 
-                                        <td><a target="_blank" href="/intact/clients/edit/26?view">Gordon Food Service</a></td>
+                                        <td><a target="_blank" href="<?php echo $this->request->webroot;?>clients/edit/26?view">Gordon Food Service</a></td>
                                            <td class="actions  util-btn-margin-bottom-5">
-                                            <a class="btn default btn-xs blue-stripe" href="/intact/profiles/edit/887">Edit</a>
-                                            <a class="btn default btn-xs blue-soft-stripe" href="/intact/documents/index?type=&amp;submitted_for_id=887">View Scorecard</a>
-                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="/intact/profiles/delete/887">Delete</a>
+                                            <a class="btn default btn-xs blue-stripe" href="<?php echo $this->request->webroot;?>profiles/edit/887">Edit</a>
+                                            <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/broker_view">View Scorecard</a>
+                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Owner_Operator_887&quot;?');" href="<?php echo $this->request->webroot;?>profiles/delete/887">Delete</a>
                                             
                                         </td>
                                     </tr>
@@ -568,7 +568,7 @@
                         <div align="right" class="col-md-6">
                                                         <div align="right" style="margin-top:-10px;" class="dataTables_paginate paging_simple_numbers" id="sample_2_paginate">
                                 <ul class="pagination sorting">
-                                    <li class="prev disabled"><a href="">&lt; Previous</a></li>                                    <li class="active"><a href="">1</a></li><li><a href="/intact/profiles?page=2&amp;sort=Profiles.id&amp;direction=DESC">2</a></li><li><a href="/intact/profiles?page=3&amp;sort=Profiles.id&amp;direction=DESC">3</a></li><li><a href="/intact/profiles?page=4&amp;sort=Profiles.id&amp;direction=DESC">4</a></li><li><a href="/intact/profiles?page=5&amp;sort=Profiles.id&amp;direction=DESC">5</a></li><li><a href="/intact/profiles?page=6&amp;sort=Profiles.id&amp;direction=DESC">6</a></li><li><a href="/intact/profiles?page=7&amp;sort=Profiles.id&amp;direction=DESC">7</a></li><li><a href="/intact/profiles?page=8&amp;sort=Profiles.id&amp;direction=DESC">8</a></li><li><a href="/intact/profiles?page=9&amp;sort=Profiles.id&amp;direction=DESC">9</a></li>                                    <li class="next"><a href="/intact/profiles?page=2&amp;sort=Profiles.id&amp;direction=DESC" rel="next">Next &gt;</a></li>                                </ul>
+                                    <li class="prev disabled"><a href="">&lt; Previous</a></li>                                    <li class="active"><a href="">1</a></li><li><a href="<?php echo $this->request->webroot;?>profiles?page=2&amp;sort=Profiles.id&amp;direction=DESC">2</a></li><li><a href="<?php echo $this->request->webroot;?>profiles?page=3&amp;sort=Profiles.id&amp;direction=DESC">3</a></li><li><a href="<?php echo $this->request->webroot;?>profiles?page=4&amp;sort=Profiles.id&amp;direction=DESC">4</a></li><li><a href="<?php echo $this->request->webroot;?>profiles?page=5&amp;sort=Profiles.id&amp;direction=DESC">5</a></li><li><a href="<?php echo $this->request->webroot;?>profiles?page=6&amp;sort=Profiles.id&amp;direction=DESC">6</a></li><li><a href="<?php echo $this->request->webroot;?>profiles?page=7&amp;sort=Profiles.id&amp;direction=DESC">7</a></li><li><a href="<?php echo $this->request->webroot;?>profiles?page=8&amp;sort=Profiles.id&amp;direction=DESC">8</a></li><li><a href="<?php echo $this->request->webroot;?>profiles?page=9&amp;sort=Profiles.id&amp;direction=DESC">9</a></li>                                    <li class="next"><a href="<?php echo $this->request->webroot;?>profiles?page=2&amp;sort=Profiles.id&amp;direction=DESC" rel="next">Next &gt;</a></li>                                </ul>
                             </div>
                                                     </div>
                         </div>
@@ -606,7 +606,7 @@
 
 
            });
-           window.location = '/intact/orders/productSelection?driver=0&amp;ordertype=BUL&amp;profiles='+tempstr;
+           window.location = '<?php echo $this->request->webroot;?>orders/productSelection?driver=0&amp;ordertype=BUL&amp;profiles='+tempstr;
         });
         
         $('.showprodivision').change(function () {
@@ -615,7 +615,7 @@
                 $.ajax({
                     type: "post",
                     data: "client_id=" + client_id,
-                    url: "/intact/clients/getdivisions",
+                    url: "<?php echo $this->request->webroot;?>clients/getdivisions",
                     success: function (msg) {
                         $('.prodivisions').html(msg);
                     }
@@ -627,7 +627,7 @@
             $.ajax({
                 type: "post",
                 data: "client_id=" + client_id,
-                url: "/intact/clients/getdivisions",
+                url: "<?php echo $this->request->webroot;?>clients/getdivisions",
                 success: function (msg) {
                     $('.prodivisions').html(msg);
                 }

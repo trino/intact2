@@ -515,7 +515,9 @@
                 <div class="col-md-6">
                 <div class="row">
                 <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="driversign">
+                <?php 
+                    include('/canvas/adddriver.php');
+                ?>
                 </div>
                 <label class="control-label col-md-12">Driver's Signature</label>
                 
@@ -535,7 +537,11 @@
                 
                 </div>
                 
-                
+                    <div class="col-md-12 subz">
+              <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right" >
+                    Submit <i class="m-icon-swapright m-icon-white"></i>
+              </a>
+        </div>
                 
                 </div>
                 

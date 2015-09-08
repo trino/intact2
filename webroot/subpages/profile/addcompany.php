@@ -811,7 +811,9 @@
                         <div class="row">
                         <label class="control-label col-md-3">SIGNATURE OF APPLICANT :	</label>
                         <div class="col-md-9">
-                        <input class="form-control" value="" required="" placeholder="" name="signapp">
+                             <?php 
+                                include('/canvas/adddriver.php');
+                            ?>
                         </div>
                         </div>
                         </div>   
@@ -825,6 +827,11 @@
                         </div>
                         </div>   
                         
+                           <div class="col-md-12 subz">
+              <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right" >
+                    Submit <i class="m-icon-swapright m-icon-white"></i>
+              </a>
+        </div>
                         
                         </div>
                         
