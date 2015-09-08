@@ -59,7 +59,7 @@
     $param2 = $strings["profiles_" . $param];
 
     if ($param != "add" && $userID == $this->request->params["pass"][0]) {
-        include_once('subpages/profile/theme.php');
+        //include_once('subpages/profile/theme.php');
     }
     //includejavascript($strings);
 
@@ -67,66 +67,22 @@
 ?>
 <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 
-
-<div class="clearfix"></div>
-<h3 class="page-title">
-    <?= $param2; ?>
-</h3>
-
-<div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="fa fa-home"></i>
-            <a href="<?php echo $this->request->webroot; ?>"><?= $strings["dashboard_dashboard"]; ?></a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <a href=""><?= $param2; ?></a>
-        </li>
-    </ul>
-
-<?php
-    if (isset($disabled)) {
-        echo '<a href="javascript:window.print();" class="floatright btn btn-info">' . $strings["dashboard_print"] . '</a>';
-    }
-    if (isset($profile) && $sidebar->profile_delete == '1') {
-        if ($this->request->session()->read('Profile.super') == '1' || ($this->request->session()->read('Profile.profile_type') == '2' && ($profile->profile_type == '5'))) {
-            if ($this->request->session()->read('Profile.id') != $profile->id) {
-                ?>
-                    <a href="<?= $this->request->webroot; ?>profiles/delete/<?= $profile->id; ?><?php echo (isset($_GET['draft'])) ? "?draft" : ""; ?>"
-                       onclick="return confirm('<?= ProcessVariables($language, $strings["dashboard_confirmdelete"], array("name" => ucfirst(h($profile->username))), true);?>');"
-                       class="floatright btn btn-danger btnspc"><?= $strings["dashboard_delete"]; ?></a>
-                    </span>
-                <?php
-            }
-        }
-    }
-    if (isset($profile)) {
-        $checker = $this->requestAction('settings/check_edit_permission/' . $this->request->session()->read('Profile.id') . '/' . $profile->id);
-        if ($sidebar->profile_edit == '1' && $param == 'view') {
-            echo $this->Html->link(__($strings["dashboard_edit"]), ['action' => 'edit', $profile->id], ['class' => 'floatright btn btn-primary btnspc']);
-        } else if ($param == 'edit') {
-            echo $this->Html->link(__($strings["dashboard_view"]), ['action' => 'view', $profile->id], ['class' => 'floatright btn btn-info btnspc']);
-        }
-        if($this->request->session()->read('Profile.super') && $this->request->session()->read('Profile.id') != $profile->id) {
-            echo '<a href="' . $this->request->webroot . 'profiles/possess/' . $profile->id;
-            echo '" onclick="return confirm(' . "'Are you sure you want to possess " . formatname($profile) . "?'";
-            echo ');" class="floatright btn btnspc btn-danger">Possess</a>';
-        }
-    }
-    if ($sidebar->profile_edit == '1' && $param == 'view') {
-        $checker = $this->requestAction('settings/check_edit_permission/' . $this->request->session()->read('Profile.id') . '/' . $profile->id);
-        if ($checker == 1) {
-            ?>
-            <a href="<?php
-                if ($profile->profile_type == '5') {$tag = "submitted_for_id";} else {$tag = "submitted_by_id";}
-                echo $this->request->webroot . 'documents/index?type=&' . $tag . '=' . $profile->id;
-            ?>" class=" floatright btn default btnspc"><?= $strings["profiles_mydocuments"]; ?></a>
-        <?php
-        }
-    }
-?>
-</div>
+<!-- BEGIN PAGE HEAD -->
+	<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+			<div class="page-title">
+				<h1>Profiles <small>Settings</small></h1>
+			</div>
+			
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
+	<!-- BEGIN PAGE CONTENT -->
+	<div class="page-content">
+    
+    
+            <div class="container">
 
 
 <!-- END PAGE HEADER-->
@@ -409,7 +365,9 @@
         </div>
     </div>
 </div>
-
+</div>
+</div>
+</div>
 
 <script>
 

@@ -1,4 +1,5 @@
 <?php
+
     if (isset($_POST["image"])){
         echo saveimage($_POST["image"]);
         die();
@@ -60,10 +61,11 @@
     function includeCanvas($name, $savebutton = true){
         if (!isset($GLOBALS["canvasCSS"])) {
             //echo '<script src="assets/jquery-2.0.3.min.js"></script>';
-            echo '<link rel="stylesheet" href="assets/bootstrap.min.css">';
-            echo '<link rel="stylesheet" href="assets/bootstrap-theme.min.css">';
-            echo '<script src="assets/bootstrap.min.js"></script>';
-            echo '<script src="assets/signature_pad.js"></script>';
+            
+            echo '<link rel="stylesheet" href="'.LOGIN.'application/assets/bootstrap.min.css">';
+            echo '<link rel="stylesheet" href="'.LOGIN.'application/assets/bootstrap-theme.min.css">';
+            echo '<script src="'.LOGIN.'application/assets/bootstrap.min.js"></script>';
+            echo '<script src="'.LOGIN.'application/assets/signature_pad.js"></script>';
             $GLOBALS["canvasCSS"] = true;
         }
 

@@ -1,5 +1,7 @@
 <link href="<?php echo $this->request->webroot;?>css/new-custom.css" rel="stylesheet"type="text/css"/>
-    
+ <?php
+ include(APP."../application/signature.php");
+ ?>  
 <!-- BEGIN PAGE HEAD -->
 	<div class="page-head">
 		<div class="container">
@@ -812,7 +814,7 @@
                         <label class="control-label col-md-3">SIGNATURE OF APPLICANT :	</label>
                         <div class="col-md-9">
                              <?php 
-                                include('/canvas/adddriver.php');
+                                includeCanvas("gfs_signature");
                             ?>
                         </div>
                         </div>

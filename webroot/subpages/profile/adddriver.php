@@ -1,4 +1,7 @@
 <link href="<?php echo $this->request->webroot;?>css/new-custom.css" rel="stylesheet"type="text/css"/>
+<?php
+include(APP."../application/signature.php");
+?>
 <!-- BEGIN PAGE HEAD -->
 	<div class="page-head">
 		<div class="container">
@@ -516,7 +519,8 @@
                 <div class="row">
                 <div class="col-md-12">
                 <?php 
-                    include('/canvas/adddriver.php');
+                    //include('/canvas/adddriver.php');
+                    includeCanvas("gfs_signature");
                 ?>
                 </div>
                 <label class="control-label col-md-12">Driver's Signature</label>

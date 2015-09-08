@@ -302,15 +302,15 @@
 						</a>
 						<ul class="dropdown-menu dropdown-menu-default">
 							<li>
-								<a href="extra_profile.html">
+								<a href="<?php echo $this->request->webroot;?>profiles/edit/4">
 								<i class="icon-user"></i> My Profile </a>
 							</li>
 							<li>
-								<a href="page_calendar.html">
+								<a href="#">
 								<i class="icon-calendar"></i> My Calendar </a>
 							</li>
 							<li>
-								<a href="inbox.html">
+								<a href="#">
 								<i class="icon-envelope-open"></i> My Inbox <span class="badge badge-danger">
 								3 </span>
 								</a>

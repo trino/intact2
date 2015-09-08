@@ -1,5 +1,5 @@
 <script type="text/javascript" src="<?= $this->request->webroot;?>js/datetime.js"></script>
-<body onLoad="ajaxpage('timezone');">
+<body >
 <?php
 if ($this->request->session()->read('timediff')) {
     handletimezone($events,$this->request->session()->read('timediff'));
@@ -12,26 +12,21 @@ $strings = CacheTranslations($language, $this->request->params['controller'] . "
 echo "<SCRIPT LANGUAGE='JavaScript'>var Language = '" . $language . "';</SCRIPT>";
 ?>
 
-
-<h3 class="page-title">
-    <?= $strings["index_calendar"];?>
-			</h3>
-			<div class="page-bar">
-				<ul class="page-breadcrumb">
-					<li>
-						<i class="fa fa-home"></i>
-						<a href="index.html"><?= $strings["dashboard_dashboard"];?></a>
-						<i class="fa fa-angle-right"></i>
-					</li>
-				
-					<li>
-						<a href="#"><?= $strings["index_calendar"];?></a>
-					</li>
-				</ul>
-                <a href="javascript:window.print();" class="floatright btn btn-info"><?= $strings["dashboard_print"];?></a>
+	<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+			<div class="page-title">
+				<h1>Profiles <small>Settings</small></h1>
 			</div>
-			<!-- END PAGE HEADER-->
-			<!-- BEGIN PAGE CONTENT-->
+			
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
+	<!-- BEGIN PAGE CONTENT -->
+	<div class="page-content">
+    
+    
+            <div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="portlet box green-meadow calendar">
@@ -93,6 +88,9 @@ if ($this->request->session()->read('Profile.super')) {
 							<!-- END CALENDAR PORTLET-->
 						</div>
 					</div>
+				</div>
+			</div>
+   		</div>
 				</div>
 			</div>
 <script src="<?= $this->request->webroot;?>assets/global/plugins/moment.min.js"></script>
