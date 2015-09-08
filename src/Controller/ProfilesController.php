@@ -50,6 +50,10 @@ class ProfilesController extends AppController{
     {
         
     }
+     public function allorders()
+    {
+       
+    }
 
     function upload_img($id){
         if (isset($_FILES['myfile']['name']) && $_FILES['myfile']['name']) {

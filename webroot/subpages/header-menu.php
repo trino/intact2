@@ -22,7 +22,7 @@
 						<a href="<?php echo $this->request->webroot;?>profiles/listall">My MEE profile</a>
 					</li>
                     <li class="">
-						<a href="<?php echo $this->request->webroot;?>">My MEE orders</a>
+						<a href="<?php echo $this->request->webroot;?>profiles/allorders">My MEE orders</a>
 					</li>
 					
 					
