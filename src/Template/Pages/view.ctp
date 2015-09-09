@@ -31,7 +31,7 @@ $desc=getFieldname("desc", $language);
 <div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN EXTRAS PORTLET-->
-					<div class="portlet profile-content-bg">
+					<div class="portlet light">
 						
                         
 						<div class="portlet-body form">
