@@ -78,6 +78,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo $this->request->webroot;?>assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
 <script src="<?php echo $this->request->webroot;?>assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
 <script src="<?php echo $this->request->webroot;?>assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<script src="<?php echo $this->request->webroot;?>js/ajaxupload.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="<?php echo $this->request->webroot;?>assets/global/scripts/metronic.js" type="text/javascript"></script>
@@ -110,7 +111,8 @@ jQuery(document).ready(function() {
 		<div class="container">
 			<!-- BEGIN LOGO -->
 			<div class="page-logo">
-				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logo-default.png" alt="logo" class="logo-default" style="width: 100px;" /></a>
+            <?php $logo = $this->requestAction('Logos/getlogo/0', ['return']); ?>
+				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" style="width: 100px;" /></a>
 			</div>
 			<!-- END LOGO -->
 			<!-- BEGIN RESPONSIVE MENU TOGGLER -->
