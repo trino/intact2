@@ -258,3 +258,20 @@
 .tabbable-custom .nav.nav-tabs {
     background: #f1f1f1 none repeat scroll 0 0;
 }
+
+.footer-block address a {
+    color: #a2abb7;
+          -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.footer-block address a:hover {
+    text-decoration: none;
+    color: #4db3a4 !important;
+      -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}

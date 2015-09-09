@@ -24,7 +24,7 @@ include(APP."../application/signature.php");
                 </div>
                 <div class="col-md-6 logo">
                 <div class="main-logo">
-                <img src="<?php echo $this->request->webroot;?>img/intact_logo.jpg">
+                <img src="<?php echo $this->request->webroot;?>img/intact_logo.png" />
                 </div>
                 <div class="clearfix"></div>
                 <span>Intact Insurance Company</span>

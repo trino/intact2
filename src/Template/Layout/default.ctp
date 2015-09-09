@@ -198,13 +198,13 @@ jQuery(document).ready(function() {
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
             <div class="container">
-            <div class="page-footer-inner">
-            &copy; MEE 2015 <!--a style="color:white;" href="https://isbc.ca">ISB Canada</a-->
+            <div class="page-footer-inner col-md-7">
+            2015 &copy; Powered by MEE  <!--a style="color:white;" href="https://isbc.ca">ISB Canada</a-->
         </div>
 
-        <div style="float:right;" class="page-footer-inner">
+        <div style="float:right;text-align: right;" class="page-footer-inner col-md-5">
 
-            <a href="<?php echo $this->request->webroot;?>pages/view/help" style="color:white;">Help</a> / <a href="<?php echo $this->request->webroot;?>pages/view/faq" style="color:white;">FAQ</a> / <a href="<?php echo $this->request->webroot;?>pages/view/privacy_code" style="color:white;">Privacy Code</a> / <a href="<?php echo $this->request->webroot;?>pages/view/terms" style="color:white;">Terms</a> / <a href="<?php echo $this->request->webroot;?>pages/view/version_log" style="color:white;">Version Log</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings?toggledebug" style="color:white;">Debug Mode (Off)</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings" style="color:white;">Settings</a>        </div>
+            <a href="<?php echo $this->request->webroot;?>pages/view/help" style="color:#a2abb7;">Help</a> / <a href="<?php echo $this->request->webroot;?>pages/view/faq" style="color:#a2abb7;">FAQ</a> / <a href="<?php echo $this->request->webroot;?>pages/view/privacy_code" style="color:#a2abb7;">Privacy Code</a> / <a href="<?php echo $this->request->webroot;?>pages/view/terms" style="color:#a2abb7;">Terms</a> / <a href="<?php echo $this->request->webroot;?>pages/view/version_log" style="color:#a2abb7;">Version Log</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings?toggledebug" style="color:#a2abb7;">Debug Mode (Off)</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings" style="color:#a2abb7;">Settings</a>        </div>
 </div>
         <div class="scroll-to-top">
             <i class="icon-arrow-up"></i>
