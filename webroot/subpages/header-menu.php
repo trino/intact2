@@ -80,7 +80,7 @@
 								
 							</li>
                             <li class="">
-								<a href=javascript:;><i class="fab fa-bell"></i> Help (Email to ISB)</a>
+								<a href=javascript:;><i class="fa fa-bell"></i> Help (Email to ISB)</a>
 								
 							</li>
                             <li class="">
