@@ -87,7 +87,14 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo $this->request->webroot;?>assets/admin/pages/scripts/index3.js" type="text/javascript"></script>
 <script src="<?php echo $this->request->webroot;?>assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
-<script>
+
+
+	<?php
+		JSinclude($this, "assets/admin/pages/scripts/form-validate-roy.js");
+	?>
+
+
+	<script>
 jQuery(document).ready(function() {    
    Metronic.init(); // init metronic core componets
    Layout.init(); // init layout
