@@ -328,7 +328,7 @@
 								<i class="icon-lock"></i> Lock Screen </a>
 							</li>
 							<li>
-								<a href="login.html">
+								<a href="<?php echo $this->request->webroot;?>profiles/logout">
 								<i class="icon-key"></i> Log Out </a>
 							</li>
 						</ul>
