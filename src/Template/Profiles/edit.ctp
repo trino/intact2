@@ -566,7 +566,7 @@
                     $('.req_msg').html(msg);
                 }
             })
-        })
+        })/*
         <?php echo $this->request->webroot;?>clients/assignProfile/' + $(this).val() + '/
         <?php if(isset($id) && $id)echo $id;else echo '0'?>/yes';
          }

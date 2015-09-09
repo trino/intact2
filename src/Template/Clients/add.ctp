@@ -38,21 +38,28 @@
     loadreasons($action, $strings, true);
 ?>
 
-<h3 class="page-title">
-    <?= $title; ?>
-</h3>
+<!-- BEGIN PAGE HEAD -->
+	<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+			<div class="page-title">
+				<h1>Clients <small>Edit</small></h1>
+			</div>
+			
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
+	<!-- BEGIN PAGE CONTENT -->
+	<div class="page-content">
+    
+    
+            <div class="container">
+
+
+
 
 <div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="fa fa-home"></i>
-            <a href="<?= $this->request->webroot . '">' . $strings["dashboard_dashboard"]; ?></a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <a href=""><?= $title; ?></a>
-        </li>
-    </ul>
+ 
     <!--a href="javascript:window.print();" class="floatright btn btn-info">Print</a-->
     <?php
         if (isset($disabled) || isset($_GET['view'])) { ?>
@@ -74,10 +81,11 @@
 
         }
 
-        echo "</div>";
+       
     ?>
-
-    <div class="row ">
+</div>
+<div class="row">
+  
         <div class="col-md-12">
             <!-- BEGIN SAMPLE FORM PORTLET-->
 
@@ -142,7 +150,7 @@
                                 } ?>
 
 
-                            </UL>
+                            </ul>
                         </div>
 
                         <div class="portlet-body form">
@@ -734,7 +742,11 @@
                     </div>
                 </div>
             </div>
-
+       </div>
+                </div>
+            </div>
+            </div>
+            </div>
             <script>
                 $(function () {
                     var tosend = '';

@@ -54,22 +54,22 @@ $super = $this->request->session()->read('Profile.super');
         return false;
     }
 ?>
-
-<h3 class="page-title">
-    <?php echo ucfirst($strings["profiles_profiles"]); ?>
-</h3>
-
+<!-- BEGIN PAGE HEAD -->
+	<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+			<div class="page-title">
+				<h1>Profiles <small>List</small></h1>
+			</div>
+			
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
+	<!-- BEGIN PAGE CONTENT -->
+	<div class="page-content">
+    <div class="container">
 <div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="fa fa-home"></i>
-            <a href="<?php echo $this->request->webroot; ?>"><?= $strings["dashboard_dashboard"]; ?></a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <a href=""><?php echo ucfirst($strings["profiles_profiles"]); ?></a>
-        </li>
-    </ul>
+
     <a href="javascript:window.print();" class="floatright btn btn-info"><?= $strings["dashboard_print"] ?></a>
 
     <?php if ($sidebar->profile_create == 1) { ?>
@@ -117,34 +117,6 @@ $super = $this->request->session()->read('Profile.super');
                             <?php if (isset($_GET['draft'])) { ?><input type="hidden" name="draft"/><?php } ?>
 
 
-                            <select class="form-control input-inline" style="" name="filter_profile_type">
-                                <option value=""><?= $strings["profiles_profiletype"]?></option>
-
-                                <?php
-                                    $isISB = (isset($sidebar) && $sidebar->client_option == 0);
-                                    $fieldname = getFieldname("title", $language);
-                                    $doApplicant = true;
-                                    foreach($ptypes as $ProfileType){
-                                        if($ProfileType->enable) {//id title enable ISB
-                                            $doit = $ProfileType->ISB == 0;
-                                            if ($isISB) {$doit = $ProfileType->ISB == 1;}
-                                            if($doit) {
-                                                if ($ProfileType->id == 0){$doApplicant = false;}
-                                                echo '<option value="' . $ProfileType->id . '"';
-                                                if (isset($return_profile_type) && $return_profile_type == $ProfileType->id) {
-                                                    echo ' selected="selected"';
-                                                }
-                                                echo ">" . ucfirst($ProfileType->$fieldname) . $Trans . "</option>";
-                                            }
-                                        }
-                                    }
-                                    if($doApplicant) {
-                                        echo '<option value="NULL"';
-                                        if (isset($return_profile_type) && $return_profile_type == "NULL") {echo ' selected="selected"';}
-                                        echo '>' . $strings["profiles_null"] . '</option>';
-                                    }
-                                ?>
-                            </select>
 
                             <?php
                                 if ($super) {
@@ -281,7 +253,7 @@ $super = $this->request->session()->read('Profile.super');
                                                     echo "'" . ');" class="' . btnclass("DELETE") . '">' . $strings["dashboard_delete"] . '</a>';
                                                 }
 
-                                                if($super){
+                                                /*if($super){
                                                     echo '<a href="' . $this->request->webroot . 'profiles/possess/' . $profile->id;
                                                     echo '" onclick="return confirm(' . "'Are you sure you want to possess " . ucfirst(h($profile->username)) . "?'";
                                                     echo ');" class="' . btnclass("DELETE") . '">Possess</a>';
@@ -290,7 +262,7 @@ $super = $this->request->session()->read('Profile.super');
                                                 if(strtolower($clinet_name) == 'gordon food service'){
                                                     echo "<button onclick=\"$('.consent_linkz_".$profile->id."').toggle();\" class='btn default btn-xs blue-soft-stripe'>Consent Link</button>";
                                                     echo "<div class='consent_linkz_".$profile->id."' style='display:none;'><strong>Please send the following link to the applicant to re-submit the consent form:</strong><br>http://".getenv('HTTP_HOST').$this->request->webroot."application/index.php?form=4&user_id=".$profile->id."&customlink</div><div class='clearfix'></div>";
-                                                }
+                                                }*/
 
                                             }
                                             ?>
@@ -411,3 +383,6 @@ $super = $this->request->session()->read('Profile.super');
         }
     });
 </script>
+</div>
+</div>
+</div>

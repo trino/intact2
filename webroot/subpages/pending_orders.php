@@ -1,4 +1,4 @@
-<h2>My Pending Orders</h2>
+
 <table class="table table-condensed table-striped table-bordered table-hover dataTable no-footer">
                             <thead>
                             <tr class="sorting">
