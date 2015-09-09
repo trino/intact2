@@ -12,5 +12,5 @@
 	<div class="page-content">
     
     
-            <div class="container profile-content-bg">
+            <div class="container page-content-bg">
                 <?php include("subpages/pending_orders.php");?>

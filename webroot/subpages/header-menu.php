@@ -37,7 +37,7 @@
 								
 							</li>
                             <li class="">
-								<a href=javascript:;><i class="icon-plus"></i> Add Client</a>
+								<a href="<?php echo $this->request->webroot;?>clients/add"><i class="icon-plus"></i> Add Client</a>
 								
 							</li>
                             <li class="">
@@ -49,6 +49,26 @@
 							
 						</ul>
 					</li>
+                    
+                    <li class="menu-dropdown classic-menu-dropdown ">
+						<a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
+						My MEE documents <i class="fa fa-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu pull-left">
+							<li class="">
+                            
+								<a href="<?php echo $this->request->webroot;?>documents/index"><i class="icon-list"></i> Document List</a>
+								
+							</li>
+                            <li class="">
+								<a href="<?php echo $this->request->webroot;?>documents/add"><i class="icon-plus"></i> Add Document</a>
+								
+							</li>
+    						
+							
+						</ul>
+					</li>
+                    
 					<li class="menu-dropdown classic-menu-dropdown ">
 						<a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
 						Others <i class="fa fa-angle-down"></i>

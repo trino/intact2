@@ -2,6 +2,11 @@
   margin: 7px 0 0 !important;
 }
 
+.page-content-bg {
+    background: #fff none repeat scroll 0 0;
+    margin-bottom: 20px;
+}
+
 .profile-content-bg {
     background: rgba(255, 255, 255, 0.25) none repeat scroll 0 0;
     box-shadow: 4px 4px 4px 0 #aaa;
@@ -24,6 +29,7 @@
 
 .main-logo {
     float: right;
+    margin-top: 20px;
     margin-bottom: 10px;
     width: 30% !important;
 }
@@ -35,6 +41,11 @@
 .header_approved div h2 {
     margin-bottom: 0;
     margin-top: 60px;
+    font-weight: 400;
+}
+
+.send-application div h2 {
+    font-weight: 400;
 }
 
 .no-padding {
@@ -52,6 +63,10 @@
 
 .padding-right {
     padding-right: 0 !important;
+}
+
+.approved-form .subz {
+    margin-bottom: 20px;
 }
 
 .padding-left {
@@ -82,6 +97,7 @@
     font-size: 24px;
     font-style: italic;
     margin-bottom: 5px !important;
+    font-weight: 400;    
 }
 
 .header_address .address span {
@@ -89,10 +105,10 @@
 }
 
 .header_address .address {
-    color: red;
+    color: #fff;
     font-size: 17px;
     font-style: italic;
-    border-bottom: 5px solid #000;
+    border-bottom: 5px solid #aaa;
     margin-bottom: 20px;
     padding-bottom: 5px;
 }
@@ -101,6 +117,15 @@
     font-size: 22px;
     text-align: center;
     margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.header_approved .logo > span {
+    font-weight: 600;
+}
+
+.current-policy .col-md-12 > h4, .loss-experience div > h4, .cargo h4, .commercial-general h4, .driver_info h4, .driving_exp h4, .trucking_company  h4, .claims_history h4 {
+    font-weight: 600;
 }
 
 .transport-app-form .texts {
@@ -126,6 +151,7 @@
 
 .current-policy .table > thead > tr > th, .table > tbody > tr > th, .current-policy .table > tfoot > tr > th, .current-policy .table > thead > tr > td, .current-policy .table > tbody > tr > td, .current-policy .table > tfoot > tr > td {
     border: 1px solid #dfdfdf !important;
+    color: #000;
 }
 
 .current-policy .table thead {
@@ -155,6 +181,7 @@
     background: #f7f7f7 none repeat scroll 0 0;
     text-align: center;
     vertical-align: top !important;
+    color: #000;    
 }
 
 /*** new css ***/
@@ -171,9 +198,36 @@
     width: 70px;
 }
 
-.profile-content .profile-sidebar-portlet {
+.profile-sidebar-portlet {
   border-radius: 5px;
   box-shadow: 0 0 3px #dfdfdf;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 10px !important;
+}
+
+.page-bar {
+    float: right;
+    margin-top: 12px;
+}
+
+.profile-usertitle .btn {
+    font-size: 12px;
+}
+
+.profile-account .profile-sidebar-portlet {
+    margin-left: 0;
+}
+
+.form.profile-content-bg {
+    padding: 20px !important;
+}
+
+.chat-form .form-control.input-inline {
+    float: left;
+    margin-right: 5px;
+    width: 20%;
+}
+
+.send-application, .header_address, .transport-app-form, .header_approved, .header_approved .logo, .approved-form {
+    color: #fff;
 }

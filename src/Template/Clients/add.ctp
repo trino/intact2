@@ -45,20 +45,8 @@
 			<div class="page-title">
 				<h1>Clients <small>Edit</small></h1>
 			</div>
-			
-		</div>
-	</div>
-	<!-- END PAGE HEAD -->
-	<!-- BEGIN PAGE CONTENT -->
-	<div class="page-content">
-    
-    
-            <div class="container">
-
-
-
-
-<div class="page-bar">
+            
+            <div class="page-bar">
  
     <!--a href="javascript:window.print();" class="floatright btn btn-info">Print</a-->
     <?php
@@ -84,13 +72,28 @@
        
     ?>
 </div>
+			
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
+	<!-- BEGIN PAGE CONTENT -->
+	<div class="page-content">
+    
+    
+            <div class="container">
+
+
+
+
+
 <div class="row">
   
         <div class="col-md-12">
             <!-- BEGIN SAMPLE FORM PORTLET-->
 
-            <div class="row profile-account">
+            <div class="row profile-account  profile-content-bg">
                 <div class="col-md-3" align="center">
+                <div class="portlet light profile-sidebar-portlet">
                     <img class="img-responsive" id="clientpic" alt="" src="<?= clientimage($this->request->webroot, $settings, $client); ?>" />
 
                     <div class="form-group">
@@ -107,6 +110,7 @@
 
                     <!--php  if (isset($client_docs)) { listfiles($client_docs, "img/jobs/",'client_doc',$delete,  2); } ?-->
 
+                </div>
                 </div>
 
                 <div class="col-md-9">

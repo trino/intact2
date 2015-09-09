@@ -90,7 +90,7 @@
 <div class="row margin-top-20">
     <div class="col-md-12">
 
-        <div class="profile-content">
+        <div class="profile-content profile-content-bg">
             <div class="row">
                 <div class="col-md-3">
                     <!-- PORTLET MAIN -->

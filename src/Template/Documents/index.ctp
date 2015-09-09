@@ -9,24 +9,20 @@
     if($debug && $language == "Debug"){ $Trans = " [Translated]"; } else {$Trans = "";}
 ?>
 
-<h3 class="page-title">
-    <?php
+<!-- BEGIN PAGE HEAD -->
+	<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+<div class="page-title">
+   <h1> <?php
         $string = "index_documents";
         if (isset($_GET['draft'])) { $string = "index_documentdrafts"; }
         echo $strings[$string];
     ?>
-</h3>
+    <small>List</small></h1>
+</div>
+
 <div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="fa fa-home"></i>
-            <a href="<?php echo $this->request->webroot; ?>"><?=$strings["dashboard_dashboard"];?></a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <a href=""><?= $strings["index_documents"];?></a>
-        </li>
-    </ul>
 
     <a href="javascript:window.print();" class="floatright btn btn-info"><?=$strings["dashboard_print"];?></a>
     <?php if ($sidebar->document_create == 1) { ?>
@@ -42,25 +38,24 @@
         <?php } ?>
 
 </div>
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
 
 
+
+<div class="page-content">
+    
+ <div class="container">
 <div class="row">
     <div class="col-md-12">
         <div class="portlet box yellow-casablanca ">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-copy"></i>
-                    <?=$strings["index_listdocuments"];?>
-                </div>
-            </div>
+            
             <div class="portlet-body form">
 
                 <div class="form-actions top chat-form" style="margin-top:0;margin-bottom:0;" align="right">
 
-                    <div class="btn-set pull-left">
-
-                    </div>
-                    <div class="btn-set pull-right">
+                    <div class="btn-set">
 
 
                         <form action="<?php echo $this->request->webroot; ?>documents/index" method="get">
@@ -454,6 +449,8 @@
 
         </div>
     </div>
+</div>
+</div>
 </div>
 </div>
 <style>

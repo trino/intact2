@@ -61,14 +61,8 @@ $super = $this->request->session()->read('Profile.super');
 			<div class="page-title">
 				<h1>Profiles <small>List</small></h1>
 			</div>
-			
-		</div>
-	</div>
-	<!-- END PAGE HEAD -->
-	<!-- BEGIN PAGE CONTENT -->
-	<div class="page-content">
-    <div class="container">
-<div class="page-bar">
+            
+            <div class="page-bar">
 
     <a href="javascript:window.print();" class="floatright btn btn-info"><?= $strings["dashboard_print"] ?></a>
 
@@ -78,6 +72,14 @@ $super = $this->request->session()->read('Profile.super');
     <?php } ?>
 
 </div>
+			
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
+	<!-- BEGIN PAGE CONTENT -->
+	<div class="page-content">
+    <div class="container">
+
 
 
 <?php

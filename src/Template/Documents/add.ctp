@@ -38,22 +38,18 @@
 
     loadreasons($action, $strings, true);
 ?>
-<h3 class="page-title">
-    <?= $title; ?>
-</h3>
-<div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="fa fa-home"></i>
-            <a href="<?= $this->request->webroot; ?>"><?= $strings["dashboard_dashboard"]; ?></a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <a href=""><?= $title; ?>
-            </a>
-        </li>
-    </ul>
 
+<!-- BEGIN PAGE HEAD -->
+	<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+
+<div class="page-title">
+   <h1> <?= $title; ?>
+   <small>Options</small></h1>
+   </h1>
+</div>
+<div class="page-bar">
     <?php
         if (isset($disabled)) {
             echo ' <a href="javascript:window.print();" class="floatright btn btn-primary">' . $strings["dashboard_print"] . '</a>';
@@ -99,14 +95,21 @@
     <a href="" class="floatright btn btn-info">Add to Task List</a-->
 
 </div>
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
 
 
+
+<div class="page-content">
+    
+ <div class="container">
 <div class="row">
     <div class="col-md-12">
         <?php
             $tab = 'nodisplay';
         ?>
-        <div class="form">
+        <div class="form  profile-content-bg">
             <div class="form-horizontal">
                 <div class="">
                     <?php
@@ -130,9 +133,7 @@
                     <div class="col-md-4" style="padding-right: 0;
   padding-left: 0;">
                         <div class="portlet box blue no-print" style="border:0;">
-                            <div class="portlet-title">
-                                <div class="caption"> <?= $strings["documents_docoptions"]; ?> </div>
-                            </div>
+                           
                             <div class="portlet-body form" >
 
                                 <div class="col-md-12 clients_select no-print" style="margin: 10px 0;padding:0">
@@ -534,7 +535,8 @@
         </div>
     </div>
 </div>
-
+    </div>
+</div>
 
 <script>
     var readTOS = '<?= addslashes($strings["forms_pleaseconfirm"]); ?>';
