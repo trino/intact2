@@ -105,7 +105,7 @@
 }
 
 .header_address .address {
-    color: #fff;
+   /* color: #fff;*/
     font-size: 17px;
     font-style: italic;
     border-bottom: 5px solid #aaa;
@@ -225,9 +225,9 @@
 .chat-form .form-control.input-inline {
     float: left;
     margin-right: 5px;
-    width: 20%;
+    
 }
-
+/*
 .send-application, .header_address, .transport-app-form, .header_approved, .header_approved .logo, .approved-form {
     color: #fff;
 }
@@ -235,7 +235,7 @@
 .form-group.last, .form-group.last p span {
     color: #fff !important;
 }
-
+*/
 .form-group.last > h2 {
     border-top: 1px dotted #fff;
     padding-top: 20px;
@@ -256,7 +256,7 @@
 }
 
 .tabbable-custom .nav.nav-tabs {
-    background: #f1f1f1 none repeat scroll 0 0;
+    background: #FFF none repeat scroll 0 0;
 }
 
 .footer-block address a {
