@@ -1,4 +1,4 @@
-                                <link type="text/css" rel="stylesheet" href="/veritas3-0/assets/admin/pages/css/profile.css"> <!--REQUIRED-->
+                                <link type="text/css" rel="stylesheet" href="<?php echo $this ->request->webroot; ?>assets/admin/pages/css/profile.css"> <!--REQUIRED-->
 <style>
     @media print {
         .page-header {
@@ -55,17 +55,17 @@
 
 <!-- END PAGE HEADER-->
 <!-- BEGIN PAGE CONTENT-->
-<div class="row margin-top-20">
+<div class="row margin-top-5">
     <div class="col-md-12">
 
-        <div class="profile-content">
+        <div class="profile-content profile-content-bg" >
             <div class="row">
                 <div class="col-md-3">
                     <!-- PORTLET MAIN -->
                     <div class="portlet light profile-sidebar-portlet">
                         <!-- SIDEBAR USERPIC -->
                         <div style="max-width:250px;margin:0 auto;" class="profile-userpic">
-                            <img src="/veritas3-0/img/profile/default.png" style="height: auto;" alt="" id="clientpic" class="img-responsive">
+                            <img src="<?php echo $this ->request->webroot; ?>img/profile/default.png" style="height: auto;" alt="" id="clientpic" class="img-responsive">
                             
                         </div>
                         <!-- END SIDEBAR USERPIC -->
@@ -78,7 +78,7 @@
                                                 <div class="checker disabled" id="uniform-888">
                                                     <span class="checked"><input type="checkbox" checked="" disabled="disabled" class="checkhiredriver" id="888" value="1" name="stat"></span></div> Intact Policy or Quote# <span class="hired_msg"></span>
                                                 </label><br>
-                                                <a style="margin-top:2px;width:75%;" class="btn floatleft grey-cascade" href="/veritas3-0/orders/productSelection?driver=888&amp;ordertype=CAR">Order Products A La Carte <i class="m-icon-swapright m-icon-white"></i></a>                        </div>
+                                                <a style="margin-top:2px;width:80%;" class="btn floatleft grey-cascade" href="<?php echo $this ->request->webroot; ?>orders/productSelection?driver=888&amp;ordertype=CAR">Order Products A La Carte <i class="m-icon-swapright m-icon-white"></i></a>                        </div>
 
 
                     </div>
@@ -581,7 +581,7 @@
       
 
             $.ajax({
-                url: '/veritas3-0/profiles/check_user/888',
+                url: '<?php echo $this ->request->webroot; ?>profiles/check_user/888',
                 data: 'username=' + $('.uname').val(),
                 type: 'post',
                 success: function (res) {
@@ -602,7 +602,7 @@
                         if ($('.email').val() != '') {
                             var un = $('.email').val();
                             $.ajax({
-                                url: '/veritas3-0/profiles/check_email/888',
+                                url: '<?php echo $this ->request->webroot; ?>profiles/check_email/888',
                                 data: 'email=' + $('.email').val(),
                                 type: 'post',
                                 success: function (res) {
@@ -682,7 +682,7 @@
                 $.ajax({
                     type: "post",
                     data: 'id=' + id,
-                    url: "/veritas3-0/profiles/removefiles/" + file,
+                    url: "<?php echo $this ->request->webroot; ?>profiles/removefiles/" + file,
                     success: function (msg) {
 
                     }
@@ -708,7 +708,7 @@
             });
             var adds = "888";
             $.ajax({
-                url: '/veritas3-0/profiles/saveprofile/' + adds,
+                url: '<?php echo $this ->request->webroot; ?>profiles/saveprofile/' + adds,
                 data: strs,
                 type: 'post',
                 success: function (res) {
@@ -717,7 +717,7 @@
                         $('#savepro').text("Save Changes");
                         $('.flash').show();
                         $('.flash').fadeOut(3500);
-                        window.location.href = '/veritas3-0/profiles/edit/' + res;
+                        window.location.href = '<?php echo $this ->request->webroot; ?>profiles/edit/' + res;
                     }
                 }
 
@@ -1012,9 +1012,9 @@
         function initiate_ajax_upload1(button_id, doc) {
             var button = $('#' + button_id), interval;
             if (doc == 'doc') {
-                var act = "/veritas3-0/profiles/upload_all/888";
+                var act = "<?php echo $this ->request->webroot; ?>profiles/upload_all/888";
             } else {
-                var act = "/veritas3-0/profiles/upload_img/888";
+                var act = "<?php echo $this ->request->webroot; ?>profiles/upload_img/888";
             }
             new AjaxUpload(button, {
                 action: act,
@@ -1047,7 +1047,7 @@
                             $('#delete_' + button_id).show();
                         }
                     } else {
-                        $("#clientpic").attr("src", '/veritas3-0/img/jobs/' + response);
+                        $("#clientpic").attr("src", '<?php echo $this ->request->webroot; ?>img/jobs/' + response);
                         $('#client_img').val(response);
                     }
 //$('.flashimg').show();
@@ -1086,7 +1086,7 @@
     function deletenote(ID, Message){
         if (confirm(Message)){
             $.ajax({
-                url: '/veritas3-0/profiles/deleteNote/'+ID,
+                url: '<?php echo $this ->request->webroot; ?>profiles/deleteNote/'+ID,
                 success: function (response) {
                     $('#dnote_'+ID).parent().parent().remove();
                     alert('Note deleted successfully!');
@@ -1114,7 +1114,7 @@
             }
             else {
                 $.ajax({
-                    url: '/veritas3-0/profiles/saveNote/888/'+$('#rid').val() + '/English',
+                    url: '<?php echo $this ->request->webroot; ?>profiles/saveNote/888/'+$('#rid').val() + '/English',
                     data: 'description=' + $('#recruiter_notes').val(),
                     type: 'post',
                     success: function (response) {
@@ -1157,7 +1157,7 @@
     }
 </style>
 
-<span style="color:red;">subpages/documents/forview.php #INC144</span><br><span style="color:red;">filelist.php #INC158</span><!-- BEGIN PROFILE CONTENT --><div class="row"><div class="clearfix"></div><div class="col-md-12"><!-- BEGIN PORTLET --><div class="portlet"><div class="portlet box yellow"><div class="portlet-title"><div class="caption">Documents</div></div><div style="min-height: 100px !important;" class="portlet-body"><div style="margin-bottom: 8px;" class="col-md-12"><h4 style="margin-left: -7px;"><i class="icon-doc font-blue-hoki"></i><span class="caption-subject bold font-blue-hoki uppercase"> Documents Submitted</span></h4></div><table style="margin-bottom: 0px;" class="table"><tbody><tr role="row" class="even"><td><span class="icon-notebook"></span></td><td><a href="/veritas3-0/documents/view/41/2024/?type=18">Application for Employment</a></td><td class="actions"><span class="label label-sm label-success" style="">Submitted</span></td><td></td></tr></tbody></table><div class="clearfix"></div><!-- END PORTLET --></div></div></div></div></div>
+<span style="color:red;">subpages/documents/forview.php #INC144</span><br><span style="color:red;">filelist.php #INC158</span><!-- BEGIN PROFILE CONTENT --><div class="row"><div class="clearfix"></div><div class="col-md-12"><!-- BEGIN PORTLET --><div class="portlet"><div class="portlet box blue"><div class="portlet-title"><div class="caption">Documents</div></div><div style="min-height: 100px !important;" class="portlet-body"><div style="margin-bottom: 8px;" class="col-md-12"><h4 style="margin-left: -7px;"><i class="icon-doc font-blue-hoki"></i><span class="caption-subject bold font-blue-hoki uppercase"> Documents Submitted</span></h4></div><table style="margin-bottom: 0px;" class="table"><tbody><tr role="row" class="even"><td><span class="icon-notebook"></span></td><td><a href="<?php echo $this ->request->webroot; ?>documents/view/41/2024/?type=18">Application for Employment</a></td><td class="actions"><span class="label label-sm label-success" style="">Submitted</span></td><td></td></tr></tbody></table><div class="clearfix"></div><!-- END PORTLET --></div></div></div></div></div>
                 <!-- BEGIN PROFILE CONTENT -->
                 <div class="">
                     <div class="row">
@@ -1167,27 +1167,27 @@
                             <!-- BEGIN PORTLET -->
                             <div class="portlet">
 
-                                <div class="portlet box yellow">
+                                <div class="portlet box blue">
                                     <div class="portlet-title">
                                         <div class="caption">
                                             <a name="2015-09-02 11:51:40"></a>
                                             <i class="fa fa-folder-open-o"></i>Order Score Sheet                                            - 2015-09-02 11:51:40                                        </div>
 
-                                            <a class="btn  small" href="/veritas3-0/orders/vieworder/41/823?order_type=REQ?forms=1,14,72" style="float:right; display:none;">View Order</a>
+                                            <a class="btn  small" href="<?php echo $this ->request->webroot; ?>orders/vieworder/41/823?order_type=REQ?forms=1,14,72" style="float:right; display:none;">View Order</a>
                                     </div>
                                     <div class="portlet-body">
                                         <div oldclass="table-scrollable">
 
-                                            <div class="col-sm-12">
+                                            <div class="col-sm-12 no-padding" style="padding-left: 0;padding-right: 0;">
                                             <table class="table-condensed table-striped table-bordered table-hover dataTable no-footer">
                                                 <tbody><tr><th colspan="3">Order Information (ID: 823)</th>
                                                 </tr><tr><th width="25%">Created on</th><td colspan="2">2015-09-02 11:51:40</td></tr>
-                                                <tr><th>Completed Date</th><td colspan="2">2015-11-02 11:51:40</td></tr><tr><th>Submitted by</th><td colspan="2">Deleted or Missing Data</td></tr><tr><th>Submitted for</th><td width="1%" align="center">888</td><td><a href="/veritas3-0/profiles/view/888" class="nohide">Beverly Hills (Beverly)</a></td></tr><tr><th>Client</th><td align="center">41</td><td>Huron Services Group</td></tr></tbody></table>                
+                                                <tr><th>Completed Date</th><td colspan="2">2015-11-02 11:51:40</td></tr><tr><th>Submitted by</th><td colspan="2">Deleted or Missing Data</td></tr><tr><th>Submitted for</th><td width="1%" align="center">888</td><td><a href="<?php echo $this ->request->webroot; ?>profiles/view/888" class="nohide">Beverly Hills (Beverly)</a></td></tr><tr><th>Client</th><td align="center">41</td><td>Huron Services Group</td></tr></tbody></table>                
                                        </div>
                         <div class="clearfix"></div>
-                        <div class="col-md-12 margin-top-10">
-                            <div class="col-md-4">
-                            <label class="control-label col-md-4 required">Rating</label>
+                        <div class="col-md-12 margin-top-10 row" style="padding-left: 0;padding-right: 0;">
+                            <div class="col-md-5 row">
+                            <label class="control-label col-md-4 required" style="margin-top: 5px;"><strong>Rating</strong></label>
                             <div class="col-md-8">
                             <select required="" name="title" class="form-control required">
                                  <option>1</option>
@@ -1200,13 +1200,13 @@
                             </div>
                             </div>                  
                                          
-                            <div class="col-md-4">
-                                 <label class="control-label col-md-4">Annual Premium</label>
-                            <div class="col-md-8">
+                            <div class="col-md-5">
+                                 <label class="control-label col-md-6" style="margin-top: 5px;"><strong>Annual Premium</strong></label>
+                            <div class="col-md-6">
                               <input type="text" class="form-control" placeholder="$" />
                             </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                             <button class="btn btn-success"> Pass</button>
                             <button class="btn btn-danger"> Fail</button>
                             </div>
@@ -1215,14 +1215,14 @@
 
             
                     <div class="clearfix"></div>
-                    <div style="margin-bottom: 8px;" class="col-md-12">
-                    <h4 style=""><i class="icon-doc font-blue-hoki"></i>
+                    <div class="col-md-12" style="padding-left: 0;padding-right: 0;margin-bottom: 8px;">
+                    <h4 style=""><i class="icon-doc font-blue-hoki"></i> 
                     <span class="caption-subject bold font-blue-hoki uppercase">
                     Products Ordered </span></h4>
                     </div>
 
                     <div class="clearfix"></div>
-                    <div style="" class="col-md-12">
+                    <div style="padding-left: 0;padding-right: 0;" class="col-md-12 width-equal">
                     <table style="margin-bottom: 0px;" class="table">
                     <tbody>
 
@@ -2140,49 +2140,49 @@
                         
                                     <tbody><tr>
                                         <td width="1" style="border-top:none;"><div class="checker disabled" id="uniform-c_0"><span><input type="checkbox" class="addclientz" value="17" id="c_0" disabled="disabled"></span></div>
-                                        </td><td width="50" style="border-top:none;"><img style="max-width: 50px;" src="/veritas3-0/img/logos/MEELogo.png"></td><td style="border-top:none;">
+                                        </td><td width="50" style="border-top:none;"><img style="max-width: 50px;" src="<?php echo $this ->request->webroot; ?>img/logos/MEELogo.png"></td><td style="border-top:none;">
                                             <label for="c_0">Challenger Motor Freight </label><span class="msg_17"></span></td>
                                     </tr>
 
                                     
                                     <tr>
                                         <td width="1"><div class="checker disabled" id="uniform-c_1"><span><input type="checkbox" class="addclientz" value="25" id="c_1" disabled="disabled"></span></div>
-                                        </td><td width="50"><img style="max-width: 50px;" src="/veritas3-0/img/logos/MEELogo.png"></td><td>
+                                        </td><td width="50"><img style="max-width: 50px;" src="<?php echo $this ->request->webroot; ?>img/logos/MEELogo.png"></td><td>
                                             <label for="c_1">Test Dummy</label><span class="msg_25"></span></td>
                                     </tr>
 
                                     
                                     <tr>
                                         <td width="1"><div class="checker disabled" id="uniform-c_2"><span><input type="checkbox" class="addclientz" value="26" id="c_2" disabled="disabled"></span></div>
-                                        </td><td width="50"><img style="max-width: 50px;" src="/veritas3-0/img/logos/MEELogo.png"></td><td>
+                                        </td><td width="50"><img style="max-width: 50px;" src="<?php echo $this ->request->webroot; ?>img/logos/MEELogo.png"></td><td>
                                             <label for="c_2">Gordon Food Service</label><span class="msg_26"></span></td>
                                     </tr>
 
                                     
                                     <tr>
                                         <td width="1"><div class="checker disabled" id="uniform-c_3"><span><input type="checkbox" class="addclientz" value="30" id="c_3" disabled="disabled"></span></div>
-                                        </td><td width="50"><img style="max-width: 50px;" src="/veritas3-0/img/logos/MEELogo.png"></td><td>
+                                        </td><td width="50"><img style="max-width: 50px;" src="<?php echo $this ->request->webroot; ?>img/logos/MEELogo.png"></td><td>
                                             <label for="c_3">Erb Transport </label><span class="msg_30"></span></td>
                                     </tr>
 
                                     
                                     <tr>
                                         <td width="1"><div class="checker disabled" id="uniform-c_4"><span><input type="checkbox" class="addclientz" value="37" id="c_4" disabled="disabled"></span></div>
-                                        </td><td width="50"><img style="max-width: 50px;" src="/veritas3-0/img/logos/MEELogo.png"></td><td>
+                                        </td><td width="50"><img style="max-width: 50px;" src="<?php echo $this ->request->webroot; ?>img/logos/MEELogo.png"></td><td>
                                             <label for="c_4">Patriot Source 1</label><span class="msg_37"></span></td>
                                     </tr>
 
                                     
                                     <tr>
                                         <td width="1"><div class="checker disabled" id="uniform-c_5"><span><input type="checkbox" class="addclientz" value="38" id="c_5" disabled="disabled"></span></div>
-                                        </td><td width="50"><img style="max-width: 50px;" src="/veritas3-0/img/logos/MEELogo.png"></td><td>
+                                        </td><td width="50"><img style="max-width: 50px;" src="<?php echo $this ->request->webroot; ?>img/logos/MEELogo.png"></td><td>
                                             <label for="c_5">Revolution Staffing</label><span class="msg_38"></span></td>
                                     </tr>
 
                                     
                                     <tr>
                                         <td width="1"><div class="checker disabled" id="uniform-c_6"><span class="checked"><input type="checkbox" class="addclientz" value="41" checked="" id="c_6" disabled="disabled"></span></div>
-                                        </td><td width="50"><img style="max-width: 50px;" src="/veritas3-0/img/logos/MEELogo.png"></td><td>
+                                        </td><td width="50"><img style="max-width: 50px;" src="<?php echo $this ->request->webroot; ?>img/logos/MEELogo.png"></td><td>
                                             <label for="c_6">Huron Services Group</label><span class="msg_41"></span></td>
                                     </tr>
 
@@ -2301,7 +2301,7 @@ $(function(){
         var cids =$('.ptypeform input[type="checkbox"]').serialize();
         var id = 888;
         $.ajax({
-            url:"/veritas3-0/profiles/ptypesenb/"+id,
+            url:"<?php echo $this ->request->webroot; ?>profiles/ptypesenb/"+id,
             type:"post",
             dataType:"HTML",
             data: cids,
@@ -3650,7 +3650,7 @@ $notes = object(Cake\ORM\Query) {
 	&#039;repository&#039; =&gt; object(Cake\ORM\Table) {}
 
 }
-$webroot = &#039;/veritas3-0/&#039;
+$webroot = &#039;<?php echo $this ->request->webroot; ?>&#039;
 $includeabove = true
 $strings2 = [
 	&#039;Date&#039; =&gt; &#039;1441201411&#039;,
@@ -5917,7 +5917,7 @@ $notes = object(Cake\ORM\Query) {
 	&#039;repository&#039; =&gt; object(Cake\ORM\Table) {}
 
 }
-$webroot = &#039;/veritas3-0/&#039;
+$webroot = &#039;<?php echo $this ->request->webroot; ?>&#039;
 $includeabove = true
 $strings2 = [
 	&#039;Date&#039; =&gt; &#039;1441201411&#039;,
@@ -6901,7 +6901,7 @@ $(function(){
         var cids =$('.ctypeform input[type="checkbox"]').serialize();
         var id = 888;
         $.ajax({
-            url:"/veritas3-0/profiles/ctypesenb/"+id,
+            url:"<?php echo $this ->request->webroot; ?>profiles/ctypesenb/"+id,
             type:"post",
             dataType:"HTML",
             data: cids,
@@ -7044,7 +7044,7 @@ $(function(){
             var cids = $('.ptypeform input[type="checkbox"]').serialize();
             var id = 888;
             $.ajax({
-                url: "/veritas3-0/profiles/ptypesenb/" + id,
+                url: "<?php echo $this ->request->webroot; ?>profiles/ptypesenb/" + id,
                 type: "post",
                 dataType: "HTML",
                 data: cids,
@@ -7063,7 +7063,7 @@ $(function(){
             var cids = $('.ctypeform input[type="checkbox"]').serialize();
             var id = 888;
             $.ajax({
-                url: "/veritas3-0/profiles/ctypesenb/" + id,
+                url: "<?php echo $this ->request->webroot; ?>profiles/ctypesenb/" + id,
                 type: "post",
                 dataType: "HTML",
                 data: cids,
@@ -7080,7 +7080,7 @@ $(function(){
             var str = $('#blockform input').serialize();
 
             $.ajax({
-                url: '/veritas3-0/profiles/blocks',
+                url: '<?php echo $this ->request->webroot; ?>profiles/blocks',
                 data: str,
                 type: 'post',
                 success: function (res) {
@@ -7108,7 +7108,7 @@ $(function(){
             $('#save_home').text('Saving..');
             var str = $('#homeform input').serialize();
             $.ajax({
-                url: '/veritas3-0/profiles/homeblocks',
+                url: '<?php echo $this ->request->webroot; ?>profiles/homeblocks',
                 data: str,
                 type: 'post',
                 success: function (res) {
@@ -7126,7 +7126,7 @@ $(function(){
             $('#save_display').text('Saving..');
             var str = $('.doc_more input').serialize();
             $.ajax({
-                url: '/veritas3-0/profiles/displaySubdocs/888',
+                url: '<?php echo $this ->request->webroot; ?>profiles/displaySubdocs/888',
                 data: str,
                 type: 'post',
                 success: function (res) {
@@ -7175,7 +7175,7 @@ $(function(){
     function initiate_ajax_upload(button_id) {
         var button = $('#' + button_id), interval;
         new AjaxUpload(button, {
-            action: "/veritas3-0/profiles/upload_img/888",
+            action: "<?php echo $this ->request->webroot; ?>profiles/upload_img/888",
             name: 'myfile',
             onSubmit: function (file, ext) {
                 button.text('Uploading...');
@@ -7193,7 +7193,7 @@ $(function(){
                 button.html('&lt;i class="fa fa-image"&gt;&lt;/i&gt; Add/Edit Image');
                 window.clearInterval(interval);
                 this.enable();
-                $("#clientpic").attr("src", '/veritas3-0/img/profile/' + response);
+                $("#clientpic").attr("src", '<?php echo $this ->request->webroot; ?>img/profile/' + response);
                 $('#client_img').val(response);
                 alert('Data saved successfully');
             }
@@ -7230,7 +7230,7 @@ $(function(){
             $.ajax({
                 type: "post",
                 data: "client_id=" + client_id + "&amp;add=" + addclient + "&amp;user_id=" +888,
-                url: "/veritas3-0/clients/addprofile",
+                url: "<?php echo $this ->request->webroot; ?>clients/addprofile",
                 success: function () {
                     $('.' + nameId).html(msg);
                 }
@@ -7298,7 +7298,7 @@ $(function(){
             }
 
             $.ajax({
-                url: "/veritas3-0/orders/savedriver/" + oid,
+                url: "<?php echo $this ->request->webroot; ?>orders/savedriver/" + oid,
                 type: 'post',
                 data: 'is_hired=' + hired+'&amp;hired_date='+hired_date,
                 success: function () {
@@ -7320,7 +7320,7 @@ $(function(){
             }
 
             $.ajax({
-                url: "/veritas3-0/orders/requalify/" + oid,
+                url: "<?php echo $this ->request->webroot; ?>orders/requalify/" + oid,
                 type: 'post',
                 data: 'requalify=' + hired,
                 success: function () {
@@ -7335,13 +7335,13 @@ $(function(){
          msg = '&lt;span class="msg" style="color:#45B6AF"&gt; Added&lt;/span&gt;';
 
          var url = '
-        /veritas3-0/clients/assignProfile/' + $(this).val() + '/
+        <?php echo $this ->request->webroot; ?>clients/assignProfile/' + $(this).val() + '/
         888/yes';
          }
          else {
          msg = '&lt;span class="msg" style="color:red"&gt;Removed&lt;/span&gt;';
          var url = '
-        /veritas3-0/clients/assignProfile/' + $(this).val() + '/
+        <?php echo $this ->request->webroot; ?>clients/assignProfile/' + $(this).val() + '/
         888/no';
          }
 
@@ -7352,9 +7352,9 @@ $(function(){
 <script>
         function searchClient() {
         var key = $('#searchClient').val();
-        $('#clientTable').html('&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="/veritas3-0/assets/admin/layout/img/ajax-loading.gif"/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;');
+        $('#clientTable').html('&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="<?php echo $this ->request->webroot; ?>assets/admin/layout/img/ajax-loading.gif"/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;');
         $.ajax({
-            url: '/veritas3-0/clients/getAjaxClient',
+            url: '<?php echo $this ->request->webroot; ?>clients/getAjaxClient',
             data: 'key=' + key,
             type: 'get',
             success: function (res) {
@@ -7379,7 +7379,7 @@ $(function(){
     // $this-&gt;request-&gt;webroot . 'clients/quickcontact?Type=emailout&amp;user_id=' . $profile-&gt;id
     function sendemails() {
         $.ajax({
-            url: '/veritas3-0/clients/quickcontact',
+            url: '<?php echo $this ->request->webroot; ?>clients/quickcontact',
             data: 'Type=emailout&amp;user_id=' + '888',
             type: 'get',
             success: function (res) {

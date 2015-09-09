@@ -19,7 +19,7 @@ include(APP."../application/signature.php");
     
             <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 profile-content-bg">
                 <div class="header_approved row">
                 <div class="col-md-6">
                 <h2>Approved Driver History Form</h2>

@@ -37,6 +37,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN PAGE STYLES -->
 <link href="<?php echo $this->request->webroot;?>assets/admin/pages/css/tasks.css" rel="stylesheet" type="text/css"/>
 <!-- END PAGE STYLES -->
+<link href="<?php echo $this->request->webroot;?>css/new-custom.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN THEME STYLES -->
 <!-- DOC: To use 'rounded corners' style just load 'components-rounded.css' stylesheet instead of 'components.css' in the below style tag -->
 <link href="<?php echo $this->request->webroot;?>assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
@@ -109,7 +110,7 @@ jQuery(document).ready(function() {
 		<div class="container">
 			<!-- BEGIN LOGO -->
 			<div class="page-logo">
-				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/MEELogo.png" alt="logo" class="logo-default" style="width: 130px;"></a>
+				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logo-default.png" alt="logo" class="logo-default" style="width: 100px;" /></a>
 			</div>
 			<!-- END LOGO -->
 			<!-- BEGIN RESPONSIVE MENU TOGGLER -->
