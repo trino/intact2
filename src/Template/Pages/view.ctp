@@ -7,32 +7,31 @@ $strings = CacheTranslations($language, "pages_%",$settings);//,$registry);//$re
 $title=getFieldname("title", $language);
 $desc=getFieldname("desc", $language);
 ?>
-
-<h3 class="page-title">
-			<?php echo ucfirst($content->$title);?>
-			</h3>
+<!-- BEGIN PAGE HEAD -->
+	<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+			<div class="page-title">
+			<h1><?php echo ucfirst($content->$title);?></h1>
+			</div>
 			<div class="page-bar">
-				<ul class="page-breadcrumb">
-					<li>
-						<i class="fa fa-home"></i>
-						<a href="<?php echo $this->request->webroot;?>">Home</a>
-						<i class="fa fa-angle-right"></i>
-					</li>
-					<li>
-						<a href="#">Pages</a>
-					    <i class="fa fa-angle-right"></i>
-					</li>
-                    	<li>
-						<a href="#"><?php echo ucfirst($content->$title);?></a>
-                        
-					</li>
-				</ul>
+			
 			
 			</div>
+            			
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
+	<!-- BEGIN PAGE CONTENT -->
+            
+	<!-- BEGIN PAGE CONTENT -->
+	<div class="page-content">
+    <div class="container">
+            
 <div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN EXTRAS PORTLET-->
-					<div class="portlet">
+					<div class="portlet profile-content-bg">
 						
                         
 						<div class="portlet-body form">
@@ -51,4 +50,6 @@ $desc=getFieldname("desc", $language);
 					</div>
 					<!-- END EXTRAS PORTLET-->
 				</div>
+			</div>
+            		</div>
 			</div>

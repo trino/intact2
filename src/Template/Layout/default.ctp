@@ -197,6 +197,7 @@ jQuery(document).ready(function() {
 <!-- END PRE-FOOTER -->
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
+            <div class="container">
             <div class="page-footer-inner">
             &copy; MEE 2015 <!--a style="color:white;" href="https://isbc.ca">ISB Canada</a-->
         </div>
@@ -204,7 +205,7 @@ jQuery(document).ready(function() {
         <div style="float:right;" class="page-footer-inner">
 
             <a href="<?php echo $this->request->webroot;?>pages/view/help" style="color:white;">Help</a> / <a href="<?php echo $this->request->webroot;?>pages/view/faq" style="color:white;">FAQ</a> / <a href="<?php echo $this->request->webroot;?>pages/view/privacy_code" style="color:white;">Privacy Code</a> / <a href="<?php echo $this->request->webroot;?>pages/view/terms" style="color:white;">Terms</a> / <a href="<?php echo $this->request->webroot;?>pages/view/version_log" style="color:white;">Version Log</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings?toggledebug" style="color:white;">Debug Mode (Off)</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings" style="color:white;">Settings</a>        </div>
-
+</div>
         <div class="scroll-to-top">
             <i class="icon-arrow-up"></i>
         </div>

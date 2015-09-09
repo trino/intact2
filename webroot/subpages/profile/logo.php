@@ -52,10 +52,10 @@ $strings = CacheTranslations($language, array("forms_%"), $settings);
 
                                         </ul>
 
-                                <div class="portlet-body solid blue"> <!-- blue is needed to make the white logos stand out -->
+                                <div class="portlet-body solid"> <!-- blue is needed to make the white logos stand out -->
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="subtab_1_1">
-                                            <div class="portlet solid blue" -->
+                                            <div class="portlet solid">
 
                                                 <div class="portlet-body" align="right">
 
@@ -82,7 +82,7 @@ $strings = CacheTranslations($language, array("forms_%"), $settings);
 
                                         </div>
                                         <div class="tab-pane" id="subtab_1_2">
-                                            <div class="portlet solid blue" -->
+                                            <div class="portlet solid" >
 
                                                 <div class="portlet-body" align="right">
 
@@ -110,7 +110,7 @@ $strings = CacheTranslations($language, array("forms_%"), $settings);
                                             </div>
                                         </div>
                                         <div class="tab-pane" id="subtab_1_3">
-                                            <div class="portlet solid blue" -->
+                                            <div class="portlet solid">
 
                                                 <div class="portlet-body" align="right">
 

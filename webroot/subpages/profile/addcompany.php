@@ -229,12 +229,12 @@
                         <div class="col-md-12 margin-bottom-10 loss-experience">
                         <div class="row">
                         <div class="col-md-12">
-                        <div class="row">
-                        <div class="col-md-7">
+                        <div class="row margin-bottom-10">
+                        <div class="col-md-10">
                         <h4>Loss Experience:  Please upload Loss Experience </h4>
                         </div>
-                        <div class="col-md-5 upload_btns">
-                        <a href="">Upload Button </a>
+                        <div class="col-md-2 upload_btns">
+                        <a href="" class="btn btn-primary">Upload Button </a>
                         </div>
                         </div>
                         <div class="row margin-bottom-10">
@@ -512,8 +512,8 @@
                         <div class="row margin-bottom-10">
                         <div class="col-md-12">
                         <div class="row">
-                        <div class="col-md-6">FUEL TAX CALCULATOR 	</div>
-                        <div class="col-md-6"><a href="">Upload Fuel Tax Calculator </a> 	</div>
+                        <div class="col-md-8">FUEL TAX CALCULATOR 	</div>
+                        <div class="col-md-4"><a href="" class="btn btn-primary">Upload Fuel Tax Calculator </a> 	</div>
                         </div>
                         </div>
                         </div>

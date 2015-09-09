@@ -1,16 +1,10 @@
 <?php //var_dump($new_req); die();?>
-<H3 class="page-title">Settings</H3>
+<!-- BEGIN PAGE HEAD -->
+	<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+			<div class="page-title"><h1>Settings</h1>
 <div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="fa fa-home"></i>
-            <a href="<?= $this->request->webroot ?>">Dashboard</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <a href="">Settings</a>
-        </li>
-    </ul>
 </div>
 
 
@@ -82,12 +76,18 @@ function makedropdownoption($Key, $Value, $TheValue){
 ?>
 
 <div class="clearfix"></div>
-<!-- END PAGE HEADER-->
-<!-- BEGIN PAGE CONTENT-->
+		
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
+	<!-- BEGIN PAGE CONTENT -->
+	<div class="page-content">
+    <div class="container">
 
 
 
-<div class="portlet paddingless">
+
+<div class="portlet paddingless profile-content-bg">
     <div class="portlet-title line" style="display:none;">
         <div class="caption caption-md">
             <i class="icon-globe theme-font hide"></i>
@@ -137,25 +137,25 @@ function makedropdownoption($Key, $Value, $TheValue){
                             <li <?php if(isset($_GET['activedisplay'])){ ?> class="active" <?php } ?> >
                                     <a href="#tab_1_13" data-toggle="tab">Add/Edit Documents</a>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="<?= $this->request->webroot; ?>profiles/producteditor">Product Types</a>
-                            </li>
+                            </li>-->
                             <li>
                                 <a href="#tab_1_30" data-toggle="tab">All Crons</a>
                             </li>
                             <li>
                                 <a href="#tab_1_16" data-toggle="tab">Profile Importer</a>
                             </li>
-                            <LI>
+                            <li>
                                 <a href="#tab_1_17" data-toggle="tab">Email Editor</a>
-                            </LI>
-                            <LI>
+                            </li>
+                            <li>
                                 <a href="#tab_1_18" data-toggle="tab">Translation</a>
-                            </LI>
+                            </li>
 
-                                    <li>
+                                  <!--  <li>
                                         <a href="<?= $this->request->webroot; ?>profiles/jsonschema">JSON Schema</a>
-                                    </li>
+                                    </li>-->
                             <?php
                             }
                         }
@@ -282,7 +282,8 @@ function makedropdownoption($Key, $Value, $TheValue){
         </div>
     </div>
 </div>
-
+    </div>
+</div>
 
 
 

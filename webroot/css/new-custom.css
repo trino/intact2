@@ -231,3 +231,30 @@
 .send-application, .header_address, .transport-app-form, .header_approved, .header_approved .logo, .approved-form {
     color: #fff;
 }
+
+.form-group.last, .form-group.last p span {
+    color: #fff !important;
+}
+
+.form-group.last > h2 {
+    border-top: 1px dotted #fff;
+    padding-top: 20px;
+}
+
+.form-group.last > h2:first-child {
+    border-top: none;
+    padding-top: 0px;
+}
+
+.page-footer-inner > a:hover {
+    text-decoration: none;
+    color: #4db3a4 !important;
+      -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.tabbable-custom .nav.nav-tabs {
+    background: #f1f1f1 none repeat scroll 0 0;
+}
