@@ -36,11 +36,11 @@
 
         					<div class="details">
         						<div class="number">
-        							 Driver
+        							 Add A Driver
         						</div>
-        						<div class="desc">
+        						<!--<div class="desc">
         							 Add
-        						</div>
+        						</div>-->
         					</div>
         					</a>
         				</div>
@@ -52,11 +52,11 @@
         					</div>
         					<div class="details">
         						<div class="number">
-        							 Application
+        							 Send Application
         						</div>
-        						<div class="desc">
+        						<!--<div class="desc">
         							 Send
-        						</div>
+        						</div>-->
         					</div>
         					</a>
         				</div>
@@ -68,11 +68,11 @@
         					</div>
         					<div class="details">
         						<div class="number">
-        							 Company
+        							 Add A Company
         						</div>
-        						<div class="desc">
+        						<!--<div class="desc">
         							 Add
-        						</div>
+        						</div>-->
         					</div>
         					</a>
         				</div>
@@ -84,11 +84,11 @@
         					</div>
         					<div class="details">
         						<div class="number">
-        							 Product
+        							 Buy Product
         						</div>
-        						<div class="desc">
+        						<!--<div class="desc">
         							 Buy
-        						</div>
+        						</div>-->
         					</div>
         					</a>
         				</div>
