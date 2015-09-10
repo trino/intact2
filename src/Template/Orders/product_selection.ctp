@@ -18,9 +18,14 @@
 
 <div class="row">
     <div class="col-md-12"></div>
+    <div class="page-content">
+    <div class="container">
+    <div class="col-md-12  profile-content-bg">
     <?php
         
         $settings = $this->requestAction("settings/all_settings/" . $this->request->session()->read('Profile.id') . "/sidebar");
-    include('subpages/profile/info_order2.php'); ?>
-</div>
+    include('subpages/profile/info_order2.php'); ?></div>
+    </div>
+    </div>
+
 </div>

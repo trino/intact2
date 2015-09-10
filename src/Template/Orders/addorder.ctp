@@ -60,23 +60,16 @@ printCSS($this);
 
 <input type="hidden" id="tablename" value="<?php echo $table; ?>"/>
 
-<h3 class="page-title">
+	<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+			<div class="page-title">
+<h1>
     <?= $title;?>
-</h3>
+</h1>
+</div>
 <input type="hidden" id="dr" value="<?php if (isset($dr)) echo $dr; ?>"/>
 <div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="fa fa-home"></i>
-            <a href="<?php echo $this->request->webroot; ?>"><?= $strings["dashboard_dashboard"]; ?></a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <a href="">
-                <?= $title; ?>
-            </a>
-        </li>
-    </ul>
     <?php
 
     $forms=array();
@@ -174,9 +167,15 @@ printCSS($this);
     <?php } ?>
 
 </div>
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
+	<!-- BEGIN PAGE CONTENT -->
 
 
-
+	<!-- BEGIN PAGE CONTENT -->
+	<div class="page-content">
+    <div class="container"> 
 <div class="row">
     <div class="col-md-12">
         <div class="portlet box blue" id="form_wizard_1">
@@ -526,6 +525,10 @@ printCSS($this);
         </div>
     </div>
 </div>
+    </div>
+</div>
+
+
 <script>
     client_id = '<?=$cid?>';
     doc_id = '<?=$did?>';

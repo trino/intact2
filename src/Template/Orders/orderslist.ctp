@@ -16,26 +16,22 @@
 
 ?>
 
-<h3 class="page-title">
-    <?php
+<!-- BEGIN PAGE HEAD -->
+	<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+			<div class="page-title">
+   <h1> <?php
         if (isset($_GET['draft'])) {
             echo $strings["index_orderdrafts"];
         } else {
             echo $strings["index_orders"];
         }
     ?>
-</h3>
+    <small>List</small>
+</h1>
+</div>
 <div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="fa fa-home"></i>
-            <a href="<?php echo $this->request->webroot; ?>"><?= $strings["dashboard_dashboard"];?></a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <a href=""><?= $strings["index_orders"];?></a>
-        </li>
-    </ul>
     <div class="page-toolbar">
 
     </div>
@@ -68,15 +64,26 @@
     }
     ?>
 </div>
+
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
+	<!-- BEGIN PAGE CONTENT -->
+    
+    
+	<!-- BEGIN PAGE CONTENT -->
+	<div class="page-content">
+    <div class="container">    
+
 <div class="row">
     <div class="col-md-12">
-        <div class="portlet box yellow">
-            <div class="portlet-title">
+        <div class="portlet box blue">
+            <!--<div class="portlet-title">
                 <div class="caption">
                     <i class="fa fa-clipboard"></i>
                     <?= $strings["index_listorders"]; ?>
                 </div>
-            </div>
+            </div>-->
             <div class="portlet-body form">
 
 
@@ -415,6 +422,9 @@
         </div>
     </div>
 </div>
+    </div>
+</div>
+
 <script>
     $(function () {
         <?php if(isset($_GET['division'])&& $_GET['division']!=""){

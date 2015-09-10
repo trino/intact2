@@ -108,7 +108,7 @@
     color: #fff;
     font-size: 17px;
     font-style: italic;
-    border-bottom: 5px solid #aaa;
+    border-bottom: 5px solid #bbb;
     margin-bottom: 20px;
     padding-bottom: 5px;
 }
@@ -181,7 +181,7 @@
     background: #f7f7f7 none repeat scroll 0 0;
     text-align: center;
     vertical-align: top !important;
-    color: #000;    
+    color: #888;    
 }
 
 /*** new css ***/
@@ -274,4 +274,20 @@
   -moz-transition: all 0.7s ease-in-out;
   -o-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
+}
+
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td {
+  background: #f7f7f7 none repeat scroll 0 0;
+  border-bottom-width: 2px;
+  color: #888;
+  font-weight: 700;
+  text-align: center;
+}
+
+.pricing.hover-effect {
+  background: #fff none repeat scroll 0 0;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #555555;
+  margin: 20px;
+  padding: 10px 20px;
 }
