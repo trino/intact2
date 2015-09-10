@@ -1,36 +1,8 @@
-<link href="<?php echo $this->request->webroot;?>css/new-custom.css" rel="stylesheet"type="text/css"/>
+   
  <?php
  include(APP."../application/signature.php");
- ?>  
-<!-- BEGIN PAGE HEAD -->
-	<div class="page-head">
-		<div class="container">
-			<!-- BEGIN PAGE TITLE -->
-			<div class="page-title">
-				<h1>Send Application</h1>
-			</div>
-			
-		</div>
-	</div>
-	<!-- END PAGE HEAD -->
-	<!-- BEGIN PAGE CONTENT -->
-	<div class="page-content">
-    
-    
-            <div class="container">
-            <div class="row">   
-                        <div class="col-md-12 portlet light">
-                        <!--div class="header_address row">
-                        <div class="col-md-12">
-                        <h2>BROKER ADDRESS </h2>
-                        <div class="address">
-                        (1330 Mid-Way Blvd., Unit 1, Mississauga, Ontario   L5T 2K3)
-                        <span>(Tel:  Broker Phone #     Email: Broker Email)   </span>
-                        </div>
-                        </div>
-                        </div--><!-- .header_approved  -->
-                        
-                        <form id="transportappform" class="transport-app-form" method="post" action="">
+ ?>                    
+ <form id="transportappform" class="transport-app-form" method="post" action="">
                         <div class="row">
                         
                         <div class="col-md-12 main-title">
@@ -838,11 +810,3 @@
                         </div>
                         
                         </form>
-                        
-                        
-                        
-                        </div>
-                        <div class="clearfix"></div>
-                        </div>
-                        </div>
-                        </div>

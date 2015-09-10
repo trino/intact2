@@ -1,21 +1,9 @@
-<link href="<?php echo $this->request->webroot;?>css/new-custom.css" rel="stylesheet"type="text/css"/>
+
 <?php
 include(APP."../application/signature.php");
 ?>
-<!-- BEGIN PAGE HEAD -->
-	<div class="page-head">
-		<div class="container">
-			<!-- BEGIN PAGE TITLE -->
-			<div class="page-title">
-				<h1>Driver <small>Add</small></h1>
-			</div>
-			
-		</div>
-	</div>
-	<!-- END PAGE HEAD -->
-	<!-- BEGIN PAGE CONTENT -->
-	<div class="page-content">
-            <div class="container">
+
+    <div class="container">
             <div class="row">
                 <div class="col-md-12 portlet light ">
                 <div class="header_approved row">
@@ -24,7 +12,7 @@ include(APP."../application/signature.php");
                 </div>
                 <div class="col-md-6 logo">
                 <div class="main-logo">
-                <img src="<?php echo $this->request->webroot;?>img/intact_logo.png" />
+                <img src="<?php echo WEB_ROOT;?>img/intact_logo.png" />
                 </div>
                 <div class="clearfix"></div>
                 <span>Intact Insurance Company</span>
@@ -551,5 +539,4 @@ include(APP."../application/signature.php");
                 </div>
                 <div class="clearfix"></div>
         </div>  
-    </div>
     </div>
