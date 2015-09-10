@@ -148,7 +148,7 @@ jQuery(document).ready(function() {
 </div>
 <!-- END PAGE CONTAINER -->
 <!-- BEGIN PRE-FOOTER -->
-<!--div class="page-prefooter">
+<div class="page-prefooter">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-6 col-xs-12 footer-block">
@@ -205,7 +205,7 @@ jQuery(document).ready(function() {
 			</div>
 		</div>
 	</div>
-</div-->
+</div>
 <!-- END PRE-FOOTER -->
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
