@@ -205,8 +205,21 @@
                         <div class="col-md-10">
                         <h4>Loss Experience:  Please upload Loss Experience </h4>
                         </div>
-                        <div class="col-md-2 upload_btns">
-                        <a href="" class="btn btn-primary">Upload Button </a>
+                        <div class="col-md-12 upload_btns">
+                            <DIV ID="exceltest" style="width: 100%; height: 400px; border: 1px solid black; overflow: auto; resize: both;">
+                                <HEADER>
+                                    Header Test
+                                </HEADER>
+                                <?php
+                                $Table = "test";
+                                $EmbeddedMode="exceltest";
+                                $DIR = str_replace('\webroot/', '/', getcwd() . "/src/Template/Excel/index.ctp");
+                                include($DIR);
+                                ?>
+                                <FOOTER>
+                                    Footer Test
+                                </FOOTER>
+                            </DIV>
                         </div>
                         </div>
                         <div class="row margin-bottom-10">

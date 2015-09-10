@@ -1,5 +1,4 @@
- 
-<!-- BEGIN PAGE HEAD -->
+ <!-- BEGIN PAGE HEAD -->
 	<div class="page-head">
 		<div class="container">
 			<!-- BEGIN PAGE TITLE -->
@@ -9,14 +8,12 @@
 			
 		</div>
 	</div>
-	<!-- END PAGE HEAD -->
-	<!-- BEGIN PAGE CONTENT -->
+<!-- END PAGE HEAD -->
+<!-- BEGIN PAGE CONTENT -->
 	<div class="page-content">
-    
-    
-            <div class="container">
+        <div class="container">
             <div class="row">   
-                        <div class="col-md-12 portlet light">
+                <div class="col-md-12 portlet light">
                         <!--div class="header_address row">
                         <div class="col-md-12">
                         <h2>BROKER ADDRESS </h2>
@@ -26,15 +23,11 @@
                         </div>
                         </div>
                         </div--><!-- .header_approved  -->
+                    <?php include('subpages/profile/addcompany.php');?>
                         
-                        
-                        
-                       
-<?php include('subpages/profile/addcompany.php');?> 
-                        
-                        </div>
-                        <div class="clearfix"></div>
-                        </div>
-                        </div>
-                        </div>
-
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+ <!-- END PAGE CONTENT -->
