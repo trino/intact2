@@ -20,7 +20,7 @@
             <div class="container">
             <div class="row">   
                         <div class="col-md-12 portlet light">
-                        <div class="header_address row">
+                        <!--div class="header_address row">
                         <div class="col-md-12">
                         <h2>BROKER ADDRESS </h2>
                         <div class="address">
@@ -28,7 +28,7 @@
                         <span>(Tel:  Broker Phone #     Email: Broker Email)   </span>
                         </div>
                         </div>
-                        </div><!-- .header_approved  -->
+                        </div--><!-- .header_approved  -->
                         
                         <form id="transportappform" class="transport-app-form" method="post" action="">
                         <div class="row">
