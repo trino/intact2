@@ -120,7 +120,8 @@ jQuery(document).ready(function() {
 			<!-- BEGIN LOGO -->
 			<div class="page-logo">
             <?php $logo = $this->requestAction('Logos/getlogo/0', ['return']); ?>
-				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" style="width: 100px;" /></a>
+				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" style="width: 180px;" /><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo-default" style="width: 120px;padding-left:20px;" /></a>
+
 			</div>
 			<!-- END LOGO -->
 			<!-- BEGIN RESPONSIVE MENU TOGGLER -->

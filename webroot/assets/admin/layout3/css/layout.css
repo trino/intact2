@@ -720,8 +720,10 @@ Page Header
 .page-header .page-header-top .page-logo {
   float: left;
   display: block;
+  /*
   width: 255px;
   height: 65px;
+  */
 }
 .page-header .page-header-top .page-logo .logo-default {
   margin: 15px 0 0 0;
