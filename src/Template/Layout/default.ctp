@@ -90,7 +90,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 	<?php
-		JSinclude($this, "assets/admin/pages/scripts/form-validate-roy.js");
+		//JSinclude($this, "assets/admin/pages/scripts/form-validate-roy.js");
 	?>
 
 
