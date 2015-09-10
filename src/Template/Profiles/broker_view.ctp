@@ -1158,7 +1158,7 @@
     }
 </style>
 
-<span style="color:red;">subpages/documents/forview.php #INC144</span><br><span style="color:red;">filelist.php #INC158</span><!-- BEGIN PROFILE CONTENT --><div class="row"><div class="clearfix"></div><div class="col-md-12"><!-- BEGIN PORTLET --><div class="portlet"><div class="portlet box yellow"><div class="portlet-title"><div class="caption">Documents</div></div><div style="min-height: 100px !important;" class="portlet-body"><div style="margin-bottom: 8px;" class="col-md-12"><h4 style="margin-left: -7px;"><i class="icon-doc font-blue-hoki"></i><span class="caption-subject bold font-blue-hoki uppercase"> Documents Submitted</span></h4></div><table style="margin-bottom: 0px;" class="table"><tbody><tr role="row" class="even"><td><span class="icon-notebook"></span></td><td><a href="<?php echo $this ->request->webroot; ?>documents/view/41/2024/?type=18">Application for Employment</a></td><td class="actions"><span class="label label-sm label-success" style="">Submitted</span></td><td></td></tr></tbody></table><div class="clearfix"></div><!-- END PORTLET --></div></div></div></div></div>
+<span style="color:red;">subpages/documents/forview.php #INC144</span><br><span style="color:red;">filelist.php #INC158</span><!-- BEGIN PROFILE CONTENT --><div class="row"><div class="clearfix"></div><div class="col-md-12"><!-- BEGIN PORTLET --><div class="portlet"><div class="portlet box yellow"><div class="portlet-title"><div class="caption">Documents</div></div><div style="min-height: 100px !important;" class="portlet-body"><div style="margin-bottom: 8px;" class="col-md-12"><h4 style="margin-left: -7px;"><i class="icon-doc font-blue-hoki"></i><span class="caption-subject bold font-blue-hoki uppercase"> Documents Submitted</span></h4></div><table style="margin-bottom: 0px;" class="table"><tbody><tr role="row" class="even"><td><span class="icon-notebook"></span></td><td><a href="<?php echo $this ->request->webroot; ?>documents/view/41/2024/?type=18">Application for Insurance</a></td><td class="actions"><span class="label label-sm label-success" style="">Submitted</span></td><td></td></tr></tbody></table><div class="clearfix"></div><!-- END PORTLET --></div></div></div></div></div>
                 <!-- BEGIN PROFILE CONTENT -->
                 <div class="">
                     <div class="row">
@@ -1179,10 +1179,33 @@
                                     <div class="portlet-body">
                                         <div oldclass="table-scrollable">
 
-                                            <div class="col-sm-12"><table class="table-condensed table-striped table-bordered table-hover dataTable no-footer"><tbody><tr><th colspan="3">Order Information (ID: 823)</th></tr><tr><th width="25%">Created on</th><td colspan="2">2015-09-02 11:51:40</td></tr><tr><th>Completed Date</th><td colspan="2">2015-12-02 11:51:40</td></tr><tr><th>Submitted by</th><td colspan="2">Deleted or Missing Data</td></tr><tr><th>Submitted for</th><td width="1%" align="center">888</td><td><a href="<?php echo $this ->request->webroot; ?>profiles/view/888" class="nohide">Beverly Hills (Beverly)</a></td></tr><tr><th>Client</th><td align="center">41</td><td>Huron Services Group</td></tr></tbody></table>                <div style="float:right; margin-top: 10px;">
-                    <a class="btn btn-lg default green-stripe" href="#">
-                        Pass </a><a class="btn btn-lg green" href="#">
-                        <i class="fa fa-bar-chart-o"></i>                     </a></div></div>
+                    <div class="col-sm-12">
+                        <table class="table-condensed table-striped table-bordered table-hover dataTable no-footer"><tbody><tr><th colspan="3">Order Information (ID: 823)</th></tr><tr><th width="25%">Created on</th><td colspan="2">2015-09-02 11:51:40</td></tr><tr><th>Completed Date</th><td colspan="2">2015-12-02 11:51:40</td></tr><tr><th>Submitted by</th><td colspan="2">Deleted or Missing Data</td></tr><tr><th>Submitted for</th><td width="1%" align="center">888</td><td><a href="<?php echo $this ->request->webroot; ?>profiles/view/888" class="nohide">Beverly Hills (Beverly)</a></td></tr><tr><th>Client</th><td align="center">41</td><td>Huron Services Group</td></tr></tbody></table>
+                        <div style="margin-top: 10px;">
+                            <div class="col-md-3">
+                                <label class="control-label col-md-8" style="margin-top: 5px;">
+                                    <strong>Rating</strong>
+                                </label>
+                                <div class="col-md-4" style="padding-top: 5px">4</div>
+                            </div>
+                            <div class="col-md-4">
+                                 <label class="control-label col-md-8" style="margin-top: 5px;">
+                                    <strong>Annual Premium</strong>
+                                </label>
+                                <div class="col-md-4" style="padding-top: 5px">$250</div>
+                            </div>
+                            <div class="col-md-5">
+                            <span style="float: right;">
+                            <a class="btn btn-lg default green-stripe" href="#">
+                                Pass </a>
+                            <a class="btn btn-lg green" href="#">
+                                <i class="fa fa-bar-chart-o"></i>                     
+                            </a>
+                            </span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
 
             
                     <div class="clearfix"></div>

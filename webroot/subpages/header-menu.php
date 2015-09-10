@@ -19,7 +19,7 @@
 						<a href="<?php echo $this->request->webroot;?>">Dashboard</a>
 					</li>
                     <li class="">
-						<a href="<?php echo $this->request->webroot;?>profiles/listall">My MEE profile</a>
+						<a href="<?php echo $this->request->webroot;?>profiles/listall">My Applicants</a>
 					</li>
                     <li class="">
 						<a href="<?php echo $this->request->webroot;?>profiles/allorders">My MEE orders</a>
