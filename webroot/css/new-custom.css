@@ -537,3 +537,80 @@
 .page-container .page-content .dashboard-stat.red-intense.dashboard-stat-light .details .number{
   text-align: left;
 }
+
+
+
+@media print { 
+    .col-md-6 {
+    width: 50%;
+    float: left;
+}
+
+.col-md-12 {
+    width: 100%;
+}
+
+.col-md-5 {
+    width: 41.6667%;
+}
+
+.col-md-7 {
+    width: 58.3333%;
+}
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  float: left;
+}
+
+.col-md-10 {
+    width: 83.3333%;
+}
+
+.col-md-2 {
+    width: 16.6667%;
+}
+
+
+}
+
+.page-container .page-content .dashboard-stat .visual-hover {
+    display: none;
+   -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out; 
+}
+
+.page-container .page-content .dashboard-stat .visual-hover > i {
+    color: white;
+    opacity: 0.8;
+    transition: all 0.7s ease-in-out 0s;
+}
+.dashboard-stat.blue-madison .visual-hover > i {
+    color: white;
+    opacity: 0.1;
+}
+.page-content .dashboard-stat .visual-hover > i {
+    display: block;
+    font-size: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.dashboard-stat.dashboard-stat-light.blue-madison:hover .visual {
+    display: none;
+                        -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out; 
+}
+
+
+.dashboard-stat.dashboard-stat-light.blue-madison:hover .visual-hover {
+    display: block !important;
+                        -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out; 
+}

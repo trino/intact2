@@ -328,162 +328,38 @@ include(APP."../application/signature.php");
                 <h4>CLAIMS HISTORY -List all accidents you were involved in for last four years regardless of fault  </h4>
                 <div class="row">
                 <div class="col-md-12">
-                <div class="row">
-                <div class="col-md-2">
-                <div class="row">
-                <label class="control-label col-md-12 required">Date of Loss</label>
-                </div>
-                </div>
-                
-                <div class="col-md-5">
-                <div class="row">
-                <label class="control-label col-md-12 required">Description and locaton of accident </label>
-                </div>
-                </div>
-                
-                <div class="col-md-2">
-                <div class="row">
-                <label class="control-label col-md-12 required">% of fault</label>
-                </div>
-                </div>
-                
-                <div class="col-md-3">
-                <div class="row">
-                <label class="control-label col-md-12 required">Total amount paid</label>
-                </div>
-                </div>
-                
-                
-                <div class="col-md-2">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="dol">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-5">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="dla">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-2">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="pof">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-3">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="tap">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-2">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="dol">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-5">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="dla">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-2">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="pof">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-3">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="tap">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-2">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="dol">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-5">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="dla">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-2">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="pof">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-3">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="tap">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-2">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="dol">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-5">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="dla">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-2">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="pof">
-                </div>
-                </div>
-                </div>
-                
-                <div class="col-md-3">
-                <div class="row">
-                <div class="col-md-12">
-                <input class="form-control" value="" required="" placeholder="" name="tap">
-                </div>
-                </div>
-                </div>
-                
-                </div>
-                </div>
+                         <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>Date of Loss</th>
+                                <th>Description and locaton of accident </th>
+                                <th>% of fault</th>
+                                <th>Total amount paid
+                        </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><input class="form-control" value="" required="" placeholder="" name="dol"></td>
+                                <td><input class="form-control" value="" required="" placeholder="" name="dloa"></td>
+                                <td><input class="form-control" value="" required="" placeholder="" name="pof"></td>
+                                <td><input class="form-control" value="" required="" placeholder="" name="tap"></td>
+                              </tr>
+                              <tr>
+                                <td><input class="form-control" value="" required="" placeholder="" name="dol"></td>
+                                <td><input class="form-control" value="" required="" placeholder="" name="dloa"></td>
+                                <td><input class="form-control" value="" required="" placeholder="" name="pof"></td>
+                                <td><input class="form-control" value="" required="" placeholder="" name="tap"></td>
+                              </tr>
+                              <tr>
+                                <td><input class="form-control" value="" required="" placeholder="" name="dol"></td>
+                                <td><input class="form-control" value="" required="" placeholder="" name="dloa"></td>
+                                <td><input class="form-control" value="" required="" placeholder="" name="pof"></td>
+                                <td><input class="form-control" value="" required="" placeholder="" name="tap"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                 </div>
                 </div><!-- .claims_history -->
                 
