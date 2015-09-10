@@ -5,7 +5,7 @@
                 <div class="portlet light">
                     <DIV ID="exceltest" style="width: 400px; height: 400px; border: 1px solid black; overflow: auto; resize: both;">
                         <HEADER>
-                            Header Test
+                            Cargo Details chart
                         </HEADER>
                         <?php
                             $Table = "test";
@@ -14,7 +14,8 @@
                             include($DIR);
                         ?>
                         <FOOTER>
-                            Footer Test
+                            Completion of this form does not bind coverage.<BR>
+                            Applicant's acceptance of the Insurer's quotation is required before insurance may be bound and policy issued.
                         </FOOTER>
                     </DIV>
                 </div>
