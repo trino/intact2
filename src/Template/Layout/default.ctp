@@ -47,6 +47,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <link href="<?php echo $this->request->webroot;?>assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <!-- END FOOTER -->
 <!-- BEGIN JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) -->
@@ -90,7 +91,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 	<?php
-		//JSinclude($this, "assets/admin/pages/scripts/form-validate-roy.js");
+		JSinclude($this, "assets/admin/pages/scripts/form-validate-roy.js");
 	?>
 
 
