@@ -121,7 +121,7 @@ jQuery(document).ready(function() {
 			<!-- BEGIN LOGO -->
 			<div class="page-logo">
             <?php $logo = $this->requestAction('Logos/getlogo/0', ['return']); ?>
-				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" style="width: 180px;" /><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo-default" style="width: 120px;padding-left:20px;" /></a>
+				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" style="width: 180px;" /></a>
 
 			</div>
 			<!-- END LOGO -->
@@ -136,6 +136,8 @@ jQuery(document).ready(function() {
 	<!-- END HEADER TOP -->
 	<!-- BEGIN HEADER MENU -->
 	<?php include('subpages/header-menu.php')?>
+
+
 	<!-- END HEADER MENU -->
 </div>
 <!-- END HEADER -->
