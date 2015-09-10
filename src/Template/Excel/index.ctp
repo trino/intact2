@@ -159,6 +159,19 @@
         return false;
     }
 
+    function writevisible(){
+        ?><SCRIPT>
+            function visible(ID, Status){
+                var element = document.getElementById(ID);
+                if(Status){
+                    element.setAttribute("style", "display: block;");
+                } else {
+                    element.setAttribute("style", "display: none;");
+                }
+            }
+        </SCRIPT><?php
+    }
+
     function ismultireference($Manager, $Value, $Ret=0, $Me = ""){
         $SemiColon = strpos($Value, ":");
         $Reference1 = strtoupper(substr($Value, 0, $SemiColon));
@@ -191,6 +204,7 @@
             $Tag = $ColumnNames[$Column]["comment"];
         }
         echo '<P><LABEL>Tags:</LABEL><INPUT TYPE="text" ID="tag" NAME="tag" VALUE="' . $Tag . '" readonly style="width: 100%;" placeholder="Tags"></P>';
+        writevisible();
         ?>
             <SCRIPT>
             var Values = new Array();
@@ -251,10 +265,12 @@
                 var tempstr = new Array();
                 for (var key in Values) {
                     var value = Values[key];
-                    if(value){
-                        tempstr.push(key + "=" + value);
-                    } else {
-                        tempstr.push(key);
+                    if(key){
+                        if(value){
+                            tempstr.push(key + "=" + value);
+                        } else {
+                            tempstr.push(key);
+                        }
                     }
                 }
                 tempstr = "[" + tempstr.join(",") + "]";
@@ -303,14 +319,7 @@
                 Values[SelectedKey] = color;
                 generatevalues();
             }
-            function visible(ID, Status){
-                var element = document.getElementById(ID);
-                if(Status){
-                    element.setAttribute("style", "display: block;");
-                } else {
-                    element.setAttribute("style", "display: none;");
-                }
-            }
+
         <?php
         if($Tag){
             $Tag = assocsplit(substr($Tag,1, strlen($Tag)-2), ",","=");
@@ -323,7 +332,9 @@
         echo '<P><LABEL>Used tags: </LABEL><BR><SELECT ID="tags" SIZE=10 onclick="tagclick();" style="width: 200px;">';
         if($Tag){
             foreach($Tag as $Key => $ValuePair){
-                echo "<OPTION>" . $Key . "</OPTION>";
+                if($Key){
+                    echo "<OPTION>" . $Key . "</OPTION>";
+                }
             }
         }
         echo '</SELECT></P>';
@@ -420,12 +431,16 @@
                 $Manager->delete_column($_POST["table"], $_POST["name"]);
                 echo $_POST["name"] . " deleted from " . $_POST["table"];
                 break;
+            case "insertrows":
+                echo $Manager->insert_rows($_POST["table"], $_POST["number"], $_POST["where"]);
+                break;
             default:
                 debug($_POST);
         }
         die();
     }
 
+    writevisible();
     $settings = $this->requestAction('settings/get_settings');
     include_once('subpages/api.php');
     $language = $this->request->session()->read('Profile.language');
@@ -529,9 +544,10 @@
             }
         }
         $Data = $Manager->enum_all($Table,$Conditions);
-        if($HTMLMode){$Data = $Manager->paginate($Data);}
+        $Count = $Data->count();
+        if(!$HTMLMode){$Data = $Manager->paginate($Data);}
         if(!$EmbeddedMode){ ?>
-            <div class="form-actions" style="height:75px;">
+            <div class="form-actions">
                 <div class="row">
                     <div class="col-md-6" align="left">
                         <div id="sample_2_paginate" class="dataTables_paginate paging_simple_numbers" style="margin-top:-10px;">
@@ -566,52 +582,86 @@
             </div>
         <?php }
         if(!$HTMLMode){?>
-            <table class="table table-hover  table-striped table-bordered table-hover dataTable no-footer">
-                <TR ID="action_search"><TD>
-                    <FORM method="get" action="<?= $this->request->webroot . $Controller; ?>">
-                        <LABEL>Search: </LABEL>
-                        <INPUT TYPE="hidden" name="table" value="<?= $Table; ?>">
-                        <INPUT TYPE="text" name="search" placeholder="Search" value="<?php if(isset($_GET["search"])){echo $_GET["search"];} ?>">
-                        <SELECT NAME="column" style="height:24px;">
-                            <?php
-                            foreach($Columns as $ColumnName => $ColumnData){
-                                echo '<OPTION value="' . $ColumnName . '"';
-                                if(isset($_GET["column"]) && $_GET["column"] == $ColumnName){echo ' SELECTED';}
-                                echo '>' . getletter($Letters, $ColumnName) . ucfirst2($ColumnName, true) . '</OPTION>';
+            <SCRIPT>
+                var lastsection;
+                function showsection(Name){
+                    if(Name != lastsection){
+                        visible(Name,true);
+                        if(lastsection){visible(lastsection, false);}
+                        lastsection = Name;
+                    }
+                }
+            </SCRIPT>
+            <table class="table table-hover table-striped table-bordered table-hover dataTable no-footer">
+                <TR>
+                    <TD>
+                        <?php
+                            $Buttons = array("action_search" => "Search", "action_newcol" => "New Column", "action_insert" => "Insert Rows");
+                            foreach($Buttons as $Event => $Value){
+                                echo '<INPUT TYPE="button" onclick="showsection(' . "'" . $Event . "'" . ')" value="' . $Value . '"> ';
                             }
-                            ?>
-                        </SELECT>
-                        <input type="submit" value="Search">
-                    </FORM>
-                </TD></TR>
-                <TR ID="action_newcol"><TD>
-                    <FORM method="post" action="<?= $this->request->webroot . $Controller; ?>">
-                        <LABEL>New Column: </LABEL>
-                        <INPUT TYPE="hidden" name="action" value="newcolumn">
-                        <INPUT TYPE="hidden" name="table" value="<?= $Table; ?>">
-                        <INPUT TYPE="text" name="name" placeholder="Name" id="newcol_name">
-                        <SELECT name="type" id="newcol_type" style="height:24px;">
-                            <OPTION value="INT">Number</OPTION>
-                            <OPTION value="DECIMAL">Decimal</OPTION>
-                            <OPTION value="TINYINT">Boolean</OPTION>
-                            <OPTION value="VARCHAR" SELECTED>Text</OPTION>
-                        </SELECT>
-                        <LABEL>Length:</LABEL>
-                        <INPUT TYPE="text" name="length" value="255" maxlength="4" size="4" id="newcol_length" title="I recommend a VARCHAR with a length of at least 255, to allow for equations">
-                        <LABEL>Position:</LABEL>
-                        <SELECT name="position" id="newcol_pos" style="height:24px;">
-                            <OPTION value="FIRST">At the beginning</OPTION>
-                            <?php
+                        ?>
+                    </TD>
+                </TR>
+                <TR ID="action_search" style="display: none">
+                    <TD>
+                        <FORM method="get" action="<?= $this->request->webroot . $Controller; ?>">
+                            <INPUT TYPE="hidden" name="table" value="<?= $Table; ?>">
+                            <INPUT TYPE="text" name="search" placeholder="Search" value="<?php if(isset($_GET["search"])){echo $_GET["search"];} ?>">
+                            <SELECT NAME="column" style="height:24px;">
+                                <?php
                                 foreach($Columns as $ColumnName => $ColumnData){
-                                    echo '<OPTION VALUE="' . $ColumnName . '">After: ' . getletter($Letters, $ColumnName) . ucfirst2($ColumnName, true) . '</OPTION>';
+                                    echo '<OPTION value="' . $ColumnName . '"';
+                                    if(isset($_GET["column"]) && $_GET["column"] == $ColumnName){echo ' SELECTED';}
+                                    echo '>' . getletter($Letters, $ColumnName) . ucfirst2($ColumnName, true) . '</OPTION>';
                                 }
-                            ?>
-                            <OPTION SELECTED value="">At the end</OPTION>
-                        </SELECT>
-                        <input type="button" value="New Column" onclick="newcol();">
-                    </FORM>
-                </TD>
-            </TR>
+                                ?>
+                            </SELECT>
+                            <input type="submit" value="Search">
+                        </FORM>
+                    </TD>
+                </TR>
+                <TR ID="action_newcol" style="display: none">
+                    <TD>
+                        <FORM method="post" action="<?= $this->request->webroot . $Controller; ?>">
+                            <INPUT TYPE="hidden" name="action" value="newcolumn">
+                            <INPUT TYPE="hidden" name="table" value="<?= $Table; ?>">
+                            <INPUT TYPE="text" name="name" placeholder="Name" id="newcol_name">
+                            <SELECT name="type" id="newcol_type" style="height:24px;">
+                                <OPTION value="INT">Number</OPTION>
+                                <OPTION value="DECIMAL">Decimal</OPTION>
+                                <OPTION value="TINYINT">Boolean</OPTION>
+                                <OPTION value="VARCHAR" SELECTED>Text</OPTION>
+                            </SELECT>
+                            <LABEL>Length:</LABEL>
+                            <INPUT TYPE="text" name="length" value="255" maxlength="4" size="4" id="newcol_length" title="I recommend a VARCHAR with a length of at least 255, to allow for equations">
+                            <LABEL>Position:</LABEL>
+                            <SELECT name="position" id="newcol_pos" style="height:24px;">
+                                <OPTION value="FIRST">At the beginning</OPTION>
+                                <?php
+                                    foreach($Columns as $ColumnName => $ColumnData){
+                                        echo '<OPTION VALUE="' . $ColumnName . '">After: ' . getletter($Letters, $ColumnName) . ucfirst2($ColumnName, true) . '</OPTION>';
+                                    }
+                                ?>
+                                <OPTION SELECTED value="">At the end</OPTION>
+                            </SELECT>
+                            <input type="button" value="New Column" onclick="newcol();">
+                        </FORM>
+                    </TD>
+                </TR>
+                <TR ID="action_insert" style="display: none">
+                    <TD>
+                        <FORM method="post" action="<?= $this->request->webroot . $Controller; ?>">
+                            <LABEL>Rows:</LABEL>
+                            <INPUT TYPE="hidden" name="action" value="insertcolumns">
+                            <INPUT TYPE="hidden" name="table" value="<?= $Table; ?>">
+                            <INPUT TYPE="number" name="number" value="1" min="1" max="1000"  id="insert_num">
+                            <LABEL>Before:</LABEL>
+                            <INPUT TYPE="number" name="where" value="1" min="1" max="<?= $Count; ?>"  id="insert_where">
+                            <INPUT TYPE="button" value="Insert Rows" onclick="insertrows();">
+                        </FORM>
+                    </TD>
+                </TR>
         </TABLE>
     <?php } ?>
 
@@ -718,7 +768,7 @@
                 }
             })
         } else {
-            window.open(MyURL + URL,"_self");
+            window.open(MyURL + "?table=<?= $Table; ?>" + URL,"_self");
         }
     }
 
@@ -774,6 +824,19 @@
             })
         }
         return false;
+    }
+
+    function insertrows(){
+         $.ajax({
+            url: MyURL,
+            type: "post",
+            dataType: "HTML",
+            data: "action=insertrows&table=<?= $Table;?>&number=" + getinputvalue("insert_num") + "&where=" + getinputvalue("insert_where"),
+            success: function (msg) {
+                if(msg){alert(msg);}
+                reload("");
+            }
+        })
     }
 
     function newcol(){
@@ -984,7 +1047,7 @@
                                     echo '<A ONCLICK="return deleterow(' . "'" . $ID . "'" . ');"<i class="fa fa-times"></i>' . $Row->$PrimaryKey . '</A>';
                                 } else {
                                     echo '<INPUT NAME="' . $Me . '" ID="' . $Me . '" VALUE="' . $Row->$ColumnName . '" CLASS="textinput" onchange="mychangeevent(' . "'" . $Me . "'" . ', true);"';
-                                    echo ' PLACEHOLDER="' . $ColumnName . "." . $Row->$PrimaryKey . '"';
+                                    echo ' PLACEHOLDER="' . $ColumnName . "." . $Row->$PrimaryKey . '" STYLE="width:100%;" ';
                                     switch ($ColumnData["type"]) {
                                         case "string":
                                             break;
@@ -1027,7 +1090,7 @@
                                 $Me = $ID . '[' . $ColumnName . ']';
                                 $Type = "text";
                                 echo '<INPUT NAME="' . $Me . '" ID="' . $Me . '" " CLASS="textinput" onchange="mychangeevent(' . "'" . $Me . "'" . ', true);"';
-                                echo ' PLACEHOLDER="' . $ColumnName . '.new"';
+                                echo ' PLACEHOLDER="' . $ColumnName . '.new" STYLE="width:100%;" ';
                                 switch ($ColumnData["type"]) {
                                     case "boolean":
                                         $Type = "checkbox";
