@@ -130,13 +130,12 @@
                         else
                             $driver=0;
                     ?>
-                    <div class="col-md-4" style="padding-right: 0;
-  padding-left: 0;">
-                        <div class="portlet box blue no-print" style="border:0;">
+                    <div class="col-md-12" style="padding:0;">
+                        <div class="portlet light no-print" style="border:0;">
                            
                             <div class="portlet-body form" >
 
-                                <div class="col-md-12 clients_select no-print" style="margin: 10px 0;padding:0">
+                                <div class="col-md-4 clients_select no-print" style="margin: 10px 0;">
 
                                     <select name="clients" class="form-control select2me no-print" data-placeholder="<?=$settings->client?>" id="changeclient" <?php if($this->request->params['action']=='view'){?>disabled="disabled"<?php }?> onchange="changeclient_onchange();">
                                         <option value="0"><?= $strings["infoorder_selectclient"]; ?></option>
@@ -159,8 +158,8 @@
                                     if($cid)
                                     {
                                         ?>
-
-                                        <div class="col-md-12 doc_select" style="margin: 10px 0;padding:0">
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-4 doc_select" style="margin: 10px 0;">
 
                                             <select name="doctype" class="form-control select2me no-print" data-placeholder="<?= $strings["documents_selectdocument"]; ?>" onchange="window.location='<?php echo $this->request->webroot;?>documents/add/<?php echo $cid;?>?type='+$(this).val()" <?php if($this->request->params['action']=='view' || $this->request->params['pass']['1']!=''){?>disabled="disabled"<?php }?>>
                                                 <option value="0"><?= $strings["documents_selectdocument"]; ?></option>
@@ -188,8 +187,8 @@
 
                                         </div>
 
-
-                                        <div class="col-md-12" style="margin: 10px 0;padding:0 ;">
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-4" style="">
 
                                             <?php $dr_cl = $doc_comp->getDriverClient(0, $cid);?>
                                             <select class="form-control select2me no-print" data-placeholder="No Driver"

@@ -19,7 +19,7 @@
     
             <div class="container">
             <div class="row">   
-                        <div class="col-md-12 profile-content-bg">
+                        <div class="col-md-12 portlet light">
                         <div class="header_address row">
                         <div class="col-md-12">
                         <h2>BROKER ADDRESS </h2>

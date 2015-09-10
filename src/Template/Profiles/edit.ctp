@@ -252,7 +252,7 @@
                             ?>
                             <!--BEGIN TABS-->
                             <div class="tabbable tabbable-custom">
-                                <ul class="nav nav-tabs">
+                                <ul class="nav nav-tabs" style="padding: 10px 20px 0">
 
                                     <li  <?php activetab($activetab, "profile"); ?> >
                                         <a href="#tab_1_1" data-toggle="tab"><?= $strings["profiles_profile"]; ?></a>

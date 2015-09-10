@@ -18,16 +18,12 @@
             <div class="row"> 
     <span style="color:red;">clients/listing.php #INC113</span>
     <div class="col-md-12">
-        <div class="portlet box grey-salsa">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-globe"></i>
-                    List Clients                </div>
-            </div>
+        <div class="portlet light">
+            
             <div class="portlet-body form">
 
 
-                <form align="right" class="form-actions" method="get" action="<?php echo $this->request->webroot;?>clients/search">
+                <form align="right" class="form-actions" method="get" action="<?php echo $this->request->webroot;?>clients/search" style="border-top: 0;">
 
 
                     

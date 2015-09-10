@@ -17,7 +17,7 @@
             <div class="row">
 
 
-                <div class="send-application col-md-8 profile-content-bg">
+                <div class="send-application col-md-12 portlet light">
                 <div class="row">
                 <div class="col-md-12">
                 <h2>Send Application Process</h2>

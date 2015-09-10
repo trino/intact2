@@ -78,6 +78,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo $this->request->webroot;?>assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
 <script src="<?php echo $this->request->webroot;?>assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
 <script src="<?php echo $this->request->webroot;?>assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<script src="<?php echo $this->request->webroot;?>js/ajaxupload.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="<?php echo $this->request->webroot;?>assets/global/scripts/metronic.js" type="text/javascript"></script>
@@ -86,7 +87,14 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo $this->request->webroot;?>assets/admin/pages/scripts/index3.js" type="text/javascript"></script>
 <script src="<?php echo $this->request->webroot;?>assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
-<script>
+
+
+	<?php
+		JSinclude($this, "assets/admin/pages/scripts/form-validate-roy.js");
+	?>
+
+
+	<script>
 jQuery(document).ready(function() {    
    Metronic.init(); // init metronic core componets
    Layout.init(); // init layout
@@ -110,7 +118,8 @@ jQuery(document).ready(function() {
 		<div class="container">
 			<!-- BEGIN LOGO -->
 			<div class="page-logo">
-				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logo-default.png" alt="logo" class="logo-default" style="width: 100px;" /></a>
+            <?php $logo = $this->requestAction('Logos/getlogo/0', ['return']); ?>
+				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" style="width: 100px;" /></a>
 			</div>
 			<!-- END LOGO -->
 			<!-- BEGIN RESPONSIVE MENU TOGGLER -->
@@ -136,7 +145,7 @@ jQuery(document).ready(function() {
 </div>
 <!-- END PAGE CONTAINER -->
 <!-- BEGIN PRE-FOOTER -->
-<div class="page-prefooter">
+<!--div class="page-prefooter">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-6 col-xs-12 footer-block">
@@ -193,7 +202,7 @@ jQuery(document).ready(function() {
 			</div>
 		</div>
 	</div>
-</div>
+</div-->
 <!-- END PRE-FOOTER -->
 <!-- BEGIN FOOTER -->
 <div class="page-footer">

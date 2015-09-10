@@ -17,7 +17,7 @@ include(APP."../application/signature.php");
 	<div class="page-content">
             <div class="container">
             <div class="row">
-                <div class="col-md-12 profile-content-bg">
+                <div class="col-md-12 portlet light ">
                 <div class="header_approved row">
                 <div class="col-md-6">
                 <h2>Approved Driver History Form</h2>

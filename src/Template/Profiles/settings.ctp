@@ -101,7 +101,7 @@ function makedropdownoption($Key, $Value, $TheValue){
 
         <!--BEGIN TABS-->
         <div class="tabbable tabbable-custom">
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs tinynav" style="padding: 10px 0 0 6px">
                 <?php
                 if ($this->request['action'] != 'add') {
                     if ($this->request->session()->read('Profile.admin') && $this->request->session()->read('Profile.super')) {

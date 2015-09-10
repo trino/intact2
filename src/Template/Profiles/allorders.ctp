@@ -12,5 +12,25 @@
 	<div class="page-content">
     
     
-            <div class="container page-content-bg">
+            <div class="container">
+            <div class="row">  
+
+
+
+    <div class="col-md-12">
+
+
+        <div class="portlet light">
+            
+
+
+            <div class="portlet-body form">
                 <?php include("subpages/pending_orders.php");?>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+            

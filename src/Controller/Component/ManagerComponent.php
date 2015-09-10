@@ -19,7 +19,7 @@ class ManagerComponent extends Component {
     }
 
     public function get_profile($UserID){
-        return $this->get_entry("profiles", $UserID, "id");;
+        return $this->get_entry("profiles", $UserID, "id");
     }
 
     function profile_to_array($ID, $JSON = false, $Pretty = false){
@@ -74,6 +74,7 @@ class ManagerComponent extends Component {
 
     public function find_client($UserID="", $LimitToOne = true){
         if(!$UserID){$UserID = $this->read("id");}
+        if(!$UserID){return 0;}
         $clients = TableRegistry::get("clients")->find()->select('id')->where(['profile_id LIKE "'.$UserID.',%" OR profile_id LIKE "%,'.$UserID.',%" OR profile_id LIKE "%,'.$UserID.'" OR profile_id ="'.$UserID.'"']);
         if (iterator_count($clients) == 1 || $LimitToOne) {
             return $clients->first()->id;
@@ -194,7 +195,7 @@ class ManagerComponent extends Component {
         $result = array();
         foreach ($array as $key => $value) {
             if($ch && ($key == 'client_id' || $key == 'Client_Id'))
-            continue;
+                continue;
             if($FormatKeys){$key = $this->underscore2Camelcase($key);}
             $DOIT=true;
             if($RemoveIfContains){$DOIT = strpos($value, $RemoveIfContains) === false;}
@@ -204,13 +205,14 @@ class ManagerComponent extends Component {
     }
     function order_to_email($OrderID,$order_info = false,$product= false){
         /*Rob's Code*/
-        
+
         if($order_info)
         {
             $selected = $order_info->forms;
+            $link = LOGIN.'profiles/view/'.$order_info->uploaded_for.'?getprofilescore=1';
             $arr1 = explode(',',$selected);
         }
-        
+
         if($product)
         {
             foreach($product as $pro)
@@ -219,7 +221,7 @@ class ManagerComponent extends Component {
             }
         }
         /*Rob's Code ends*/
-        
+
         $Order = $this->load_order($OrderID, true, true);
         $Details = array();
         $Details["Created by"] =  $Order->Header["user_id"]["Profile"]["fname"] . " " . $Order->Header["user_id"]["Profile"]["mname"] . " " . $Order->Header["user_id"]["Profile"]["lname"];
@@ -234,37 +236,51 @@ class ManagerComponent extends Component {
             unset($Form->Data["user_id"]);
             if(count($Form->Data)) {
                 if($Form->Header["document_type"]=='MEE Attachments')
-                $last = true;
+                    $last = true;
                 else
-                $last = false;
+                    $last = false;
                 $Details["Product Details (" . $Form->Header["document_type"] . ")"] = $this->key_implode($Form->Data, "<BR>\r\n", ": ", true, "data:image",$last);
             }
         }
         $HTML = "<br/><br/><TABLE><TR><TD>" . $this->base64_to_html($this->key_implode($Details, '</TD></TR><TR><TD>', '</TD><TD>'), '<') . '</TD></TR></TABLE>';
         $pro_text = '';
-        
-        
+
+
+        /*
         
         $arr_return_no['1'] = 'ins_1';
         $arr_return_no['14'] = 'ins_14';
+        $arr_return_no['32'] = 'ins_32';
         $arr_return_no['72'] = 'ins_72';
         $arr_return_no['77'] = 'ins_77';
         $arr_return_no['78'] = 'ins_78';
         $arr_return_no['1603'] = 'ebs_1603';
         $arr_return_no['1627'] = 'ebs_1627';
         $arr_return_no['1650'] = 'ebs_1650';
+        */
         if(isset($arr1) && $arr1 && isset($arr2) && $arr2)
         {
             foreach($arr1 as $a1)
-            {
-                if($order_info->$arr_return_no[$a1])
-                $pro_text = $pro_text.$arr2[$a1]." (".$order_info->$arr_return_no[$a1].")<br/>";
-                else
-                $pro_text = $pro_text.$arr2[$a1]."<br/>";
+            {                    $pro_text = $pro_text . $arr2[$a1] . "<br/>";
+
+                /*
+                if($order_info->$arr_return_no[$a1]) {
+                    $pro_text = $pro_text . $arr2[$a1] . " (" . $a1 . ' - ' . $order_info->$arr_return_no[$a1] . ")<br/>";
+                }
+                else {
+                    $pro_text = $pro_text . $arr2[$a1] . "<br/>";
+                }
+                */
             }
             $HTML = $HTML.'<p>&nbsp;</p><strong>PRODUCTS SELECTED</strong><br/><br/>'.$pro_text;
         }
-        
+
+
+
+        if(isset($link))
+        {
+            $HTML = $HTML.'<p>&nbsp;</p>CLICK <a href='.$link.'>HERE</a> TO VIEW THE SCORECARD';;
+        }
         //$JSON = $this->json_to_html(json_encode($Order, JSON_PRETTY_PRINT));
         return $HTML;// . $JSON;
     }
@@ -332,6 +348,10 @@ class ManagerComponent extends Component {
             }
         }
         return $Order;
+    }
+
+    function webroot(){
+        return $this->Controller->request->webroot;
     }
 
     function json_to_order($Data, $ReturnAll=false){
@@ -872,6 +892,8 @@ class ManagerComponent extends Component {
                 $Code = $this->validate_data($Data, "zipcode");
                 if($Code){return $Code;}
                 break;
+            default:
+                return $DataType . ' not supported';
         }
         return "";
     }
@@ -913,8 +935,8 @@ class ManagerComponent extends Component {
         if(!$Comment){$Comment = "clear";}
         $this->create_column($Table, $Column, "", "", "", false, "", $Comment, $Column);
     }
-    function create_column($Table, $Column, $Type, $Length="", $Default ="", $AutoIncrement=false, $Null = false, $Comment = "", $OldColumn = ""){
-        $Column= str_replace(" ", "_", $Column);
+    function create_column($Table, $Column, $Type, $Length="", $Default ="", $AutoIncrement=false, $Null = false, $Comment = "", $OldColumn = "", $Position = ""){
+        $Column= str_replace(" ", "_", $Column);//AFTER `commodity`     FIRST
         $Type=strtoupper($Type);//types can be varchar with a length, INT
         //ALTER TABLE `test` CHANGE `commodity` `commodity` VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL COMMENT 'test';
         //ALTER TABLE test CHANGE commodity commodity string(255) NOT NULL COMMENT 'test comment'
@@ -950,7 +972,16 @@ class ManagerComponent extends Component {
             }
         }
         if($Comment){$query.= " COMMENT '" . $Comment . "'";}
-        return $this->query($query);
+        if($Position){
+            if(strtoupper(trim($Position)) == "FIRST"){
+                $query .= " FIRST";
+            } else {
+                $query .= " AFTER " . $Position;
+            }
+        }
+        $Value =  $this->query($query);
+        if($OldColumn){$this->clear_cache();}
+        return $Value;
     }
 
     function query($Query, $CleanCache = false){
@@ -989,12 +1020,7 @@ class ManagerComponent extends Component {
     }
     function delete_file($Filename){
         if (is_file($Filename)) {
-            try {
-                unlink($Filename);
-                return true;
-            } catch (Exception $e) {
-                return false;
-            }
+            @unlink($Filename);
         }
     }
 }

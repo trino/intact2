@@ -56,22 +56,16 @@
     <div class="col-md-12">
 
 
-        <div class="portlet box green-haze">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-user"></i>
-                     List Profiles                </div>
-            </div>
+        <div class="portlet light">
+            
 
 
             <div class="portlet-body form">
 
 
                 <div style="margin-top:0;margin-bottom:0;" class="form-actions top chat-form">
-                    <div class="btn-set pull-left">
-
-                    </div>
-                    <div class="btn-set pull-right">
+                    
+                    <div class="btn-set">
                         <form method="get" action="<?php echo $this->request->webroot;?>profiles/index">
                             
 
