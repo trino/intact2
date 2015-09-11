@@ -119,17 +119,29 @@ jQuery(document).ready(function() {
 	<div class="page-header-top">
 		<div class="container">
 			<!-- BEGIN LOGO -->
-			<div class="page-logo">
+			<div class="page-logo col-md-3 col-sm-3 col-xs-12">
             <?php $logo = $this->requestAction('Logos/getlogo/0', ['return']); ?>
 				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" style="width: 180px;" /></a>
-
+                
 			</div>
 			<!-- END LOGO -->
+            <!-- BEGIN LOGO_TEXT -->
+            <div class="logo-text col-md-6 col-sm-6 col-xs-12">
+				<div class="logo-mid">
+                <a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intact_logo.png" alt="logo" class="logo" /></a>
+                </div>
+                <div class="mid-text">
+                Trunking Limited
+                </div>
+			</div>
+            <!-- END LOGO -->
 			<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 			<a href="javascript:;" class="menu-toggler"></a>
 			<!-- END RESPONSIVE MENU TOGGLER -->
 			<!-- BEGIN TOP NAVIGATION MENU -->
+            <div class="col-md-3 col-sm-12 col-xs-12">
 			<?php include('subpages/top-menu.php');?>
+            </div>
 			<!-- END TOP NAVIGATION MENU -->
 		</div>
 	</div>
@@ -212,6 +224,7 @@ jQuery(document).ready(function() {
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
             <div class="container">
+            <div class="row">
             <div class="page-footer-inner col-md-7">
             2015 &copy; Powered by MEE  <!--a style="color:white;" href="https://isbc.ca">ISB Canada</a-->
         </div>
@@ -222,6 +235,7 @@ jQuery(document).ready(function() {
 </div>
         <div class="scroll-to-top">
             <i class="icon-arrow-up"></i>
+        </div>
         </div>
         </div>
 <div class="scroll-to-top">

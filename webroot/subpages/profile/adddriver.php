@@ -5,7 +5,8 @@ include(APP."../application/signature.php");
 
     <div class="container">
             <div class="row">
-                <div class="col-md-12 portlet light ">
+                <div class="col-md-12">
+                <div class="portlet light ">
                 <div class="header_approved row">
                 <div class="col-md-6">
                 <h2>Approved Driver History Form</h2>
@@ -379,23 +380,25 @@ include(APP."../application/signature.php");
                 <div class="signature_date clearfix">
                 <div class="col-md-6">
                 <div class="row">
+                <label class="control-label col-md-12">Driver's Signature</label>
                 <div class="col-md-12">
                 <?php 
                     //include('/canvas/adddriver.php');
                     includeCanvas("gfs_signature");
                 ?>
                 </div>
-                <label class="control-label col-md-12">Driver's Signature</label>
+                
                 
                 </div>
                 
                 </div>
                 <div class="col-md-6">
                 <div class="row">
+                <label class="control-label col-md-12">Date</label>
                 <div class="col-md-12">
                 <input class="form-control" value="" required="" placeholder="" name="driversigndate">
                 </div>
-                <label class="control-label col-md-12">Date</label>
+                
                 
                 </div>
                 
@@ -415,4 +418,5 @@ include(APP."../application/signature.php");
                 </div>
                 <div class="clearfix"></div>
         </div>  
+        </div>
     </div>
