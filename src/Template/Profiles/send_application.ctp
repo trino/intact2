@@ -17,7 +17,8 @@
             <div class="row">
 
 
-                <div class="send-application col-md-12 col-sm-12 col-xs-12 portlet light">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="send-application portlet light">
                 <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                 <h2>Send Application Process</h2>
@@ -26,7 +27,7 @@
                 <form id="sendappForm" class="sendapplication-form" method="post" action="">
                 <div class="row">
                 
-                <div class="send-application-form col-md-12 col-sm-12 col-xs-12">
+                <div class="send-application-form col-md-8 col-sm-12 col-xs-12">
                 <h4>Please input the following information to send application</h4>
                 <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
@@ -129,6 +130,7 @@
                 </div>
                 
                 
+                </div>
                 </div>
                 </div>
                 </div>

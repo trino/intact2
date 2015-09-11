@@ -129,7 +129,7 @@ jQuery(document).ready(function() {
             <!-- BEGIN LOGO_TEXT -->
             <div class="logo-text col-md-6 col-sm-6 col-xs-12">
 				<div class="logo-mid">
-                <a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intact_logo.png" alt="logo" class="logo" /></a>
+                <a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo" style="width: 100px;" /></a>
                 </div>
                 <div class="mid-text">
                 Trunking Limited

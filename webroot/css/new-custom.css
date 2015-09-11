@@ -254,7 +254,7 @@
 }
 
 .tabbable-custom .nav.nav-tabs {
-    background: #FFF none repeat scroll 0 0;
+    background: #F7F7F7 none repeat scroll 0 0;
 }
 
 .footer-block address a {
@@ -553,10 +553,16 @@ label {
     font-weight: 600;
 }
 
+.form-actions .forget-password #forget-password {
+  color: #00fa72 !important;
+  font-weight: 600;
+  text-transform: uppercase !important;
+}
+
 /*** CSS FOR LOGO_MID HEADER ***/
 .logo-text {
     text-align: center;
-    margin: 7px 0 0;
+    margin: 10px 0 0;
 }
 
 .mid-text {
@@ -571,6 +577,9 @@ label {
     margin-right: 10px;
 }
 
+.page-header .page-header-menu .search-form {
+  margin-right: 15px;
+}
 
 
 /*** RESPONSIVE CSS ***/
