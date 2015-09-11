@@ -5,31 +5,30 @@ $settings = $this->requestAction('settings/get_settings');
 $strings = CacheTranslations($language, "aggregate_%",$settings);//,$registry);
 ?>
 
-<h3 class="page-title">
+<!-- BEGIN PAGE HEAD -->
+	<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+			<div class="page-title">
+<h1>
     Aggregate <small>Aggregate Audits</small>
-</h3>
+</h1>
 
-<div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="fa fa-home"></i>
-            <a href="<?php echo $this->request->webroot;?>">Dashboard</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <a href="<?php echo $this->request->webroot;?>documents/index">Documents</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <a href="" onclick="return false;">Aggregate</a>
-
-        </li>
-
-    </ul>
-    <a href="javascript:window.print();" class="floatright btn btn-info"><?= $strings["dashboard_print"]; ?></a>
 </div>
 
-<div class="portlet box blue">
+<div class="page-bar">
+
+    <a href="javascript:window.print();" class="floatright btn btn-info"><?= $strings["dashboard_print"]; ?></a>
+</div>
+</div>
+</div>
+
+<div class="page-content">
+         
+
+    <div class="container">   
+
+<div class="portlet box">
 
                                     <div class="portlet-title">
                                         <div class="caption">
@@ -390,4 +389,4 @@ Shouldn't there be a place to add attachements?
 </div>-->
 </form>
 <!-- END FORM-->
-</div></div></div></div></div>
+</div></div></div></div></div></div></div>

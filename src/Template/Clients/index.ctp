@@ -5,20 +5,14 @@ include_once('subpages/api.php');
 $language = $this->request->session()->read('Profile.language');
 $strings = CacheTranslations($language, $this->request->params['controller'] . "_%",$settings);
 ?>
-<h3 class="page-title">
-			<?php echo ucfirst($strings["settings_client"]);?>s
-			</h3>
+<!-- BEGIN PAGE HEAD -->
+	<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+			<div class="page-title">
+			<h1><?php echo ucfirst($strings["settings_client"]);?></h1>
+			</div>
     <div class="page-bar">
-				<ul class="page-breadcrumb">
-					<li>
-						<i class="fa fa-home"></i>
-						<a href="<?php echo $this->request->webroot . '">' . $strings["dashboard_dashboard"] ?></a>
-						<i class="fa fa-angle-right"></i>
-					</li>
-					<li>
-						<a href=""><?php echo ucfirst($strings["settings_client"]);?>s</a>
-					</li>
-				</ul>
 
 			<a href="javascript:window.print();" class="floatright btn btn-info"><?= $strings["dashboard_print"]; ?></a>
 
@@ -28,4 +22,16 @@ $strings = CacheTranslations($language, $this->request->params['controller'] . "
         <?php } ?>
 
 			</div>
+            
+            </div>
+            </div>
+            
+            
+<div class="page-content">
+         
+
+    <div class="container">            
 <?php include('subpages/clients/listing.php');?>
+
+</div>
+</div>
