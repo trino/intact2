@@ -3293,6 +3293,40 @@ class ProfilesController extends AppController{
         die();
 
     }
+    
+    function sendApplicationEmail()
+    {
+        $this->loadComponent('Mailer');
+        $arr['brokerageemail'] = 'test@brokeremail.com';
+        $arr['brokerage'] = 'Broker Name';
+        $arr['link'] = LOGIN.'profiles/add';
+        $arr['company_name'] = 'Sample Company Name';
+        $arr['fullname'] = 'Sample Name';
+        $arr['date'] = date('Y-m-d H:i:s');
+        $arr['email'] = 'info@trinoweb.com'; 
+        $eventname = 'sendapplication';
+        
+        $this->Mailer->handleevent($eventname, $arr);
+        $this->Flash->success('Application sent successfully');
+        $this->redirect('/profiles/send_application');
+    }
+    
+    function postOrder()
+    {
+        $this->loadComponent('Mailer');
+        $arr['brokerageemail'] = 'test@brokeremail.com';
+        $arr['brokerage'] = 'Broker Name';
+        //$arr['link'] = LOGIN.'profiles/add';
+        $arr['customer'] = 'Sample Customer Name';
+        $arr['fullname'] = 'Sample Name';
+        $arr['date'] = date('Y-m-d H:i:s');
+        $arr['email'] = 'info@trinoweb.com'; 
+        $eventname = 'postorder';
+        
+        $this->Mailer->handleevent($eventname, $arr);
+        $this->Flash->success('Application sent successfully');
+        $this->redirect('/profiles/send_application');
+    }
 
 }
 ?>

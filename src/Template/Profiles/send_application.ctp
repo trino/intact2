@@ -116,7 +116,9 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class=" col-md-6"></div>
                 <div class="col-md-6 app_send_btn">
-                <a href="" class="btn btn-primary">Send Application</a>
+                <a href="" class="btn btn-primary">Send Application</a><br /><br />
+                <a href="<?php echo $this->request->webroot;?>profiles/sendApplicationEmail" class="btn btn-primary">Send Pre Application Email</a><br /><br />
+                <a href="<?php echo $this->request->webroot;?>profiles/postOrder" class="btn btn-primary">Send Post Application Email</a>
                 </div>
                 </div>
                 </div>
