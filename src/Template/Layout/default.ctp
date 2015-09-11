@@ -202,7 +202,7 @@ jQuery(document).ready(function() {
 				<h2>Contacts</h2>
 				<address class="margin-bottom-40">
 				Phone: 800 123 3456<br>
-				 Email: <a href="mailto:info@metronic.com">info@metronic.com</a>
+				 Email: <a href="mailto:info@metronic.com">info@isbmeereports.com</a>
 				</address>
 			</div>
 		</div>
