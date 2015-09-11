@@ -90,8 +90,8 @@
   
         <div class="col-md-12">
             <!-- BEGIN SAMPLE FORM PORTLET-->
-
-            <div class="row profile-account  profile-content-bg">
+            
+            <div class="profile-account profile-content-bg clearfix">
                 <div class="col-md-3" align="center">
                 <div class="portlet light profile-sidebar-portlet">
                     <img class="img-responsive" id="clientpic" alt="" src="<?= clientimage($this->request->webroot, $settings, $client); ?>" />
