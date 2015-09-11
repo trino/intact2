@@ -15,6 +15,7 @@
 						<span class="username username-hide-mobile">Nick</span>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-default">
+                        <?php if($this->request->session()->read('Profile.id')){?>
 							<li>
 								<a href="<?php echo $this->request->webroot;?>profiles/edit/4">
 								<i class="icon-user"></i> My Profile </a>
@@ -28,6 +29,7 @@
 								<a href="<?php echo $this->request->webroot;?>profiles/logout">
 								<i class="icon-key"></i> Log Out </a>
 							</li>
+                         <?php }?>
 						</ul>
 					</li>
 					<!-- END USER LOGIN DROPDOWN -->

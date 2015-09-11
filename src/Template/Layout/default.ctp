@@ -232,8 +232,8 @@ jQuery(document).ready(function() {
         </div>
 
         <div style="float:right;text-align: right;" class="page-footer-inner col-md-5 col-sm-5 col-xs-12">
-
-            <a href="<?php echo $this->request->webroot;?>pages/view/help" style="color:#a2abb7;">Help</a> / <a href="<?php echo $this->request->webroot;?>pages/view/faq" style="color:#a2abb7;">FAQ</a> / <a href="<?php echo $this->request->webroot;?>pages/view/privacy_code" style="color:#a2abb7;">Privacy Code</a> / <a href="<?php echo $this->request->webroot;?>pages/view/terms" style="color:#a2abb7;">Terms</a> / <a href="<?php echo $this->request->webroot;?>pages/view/version_log" style="color:#a2abb7;">Version Log</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings?toggledebug" style="color:#a2abb7;">Debug Mode (Off)</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings" style="color:#a2abb7;">Settings</a>        </div>
+            <?php if($this->request->session()->read('Profile.id')){?>
+            <a href="<?php echo $this->request->webroot;?>pages/view/help" style="color:#a2abb7;">Help</a> / <a href="<?php echo $this->request->webroot;?>pages/view/faq" style="color:#a2abb7;">FAQ</a> / <a href="<?php echo $this->request->webroot;?>pages/view/privacy_code" style="color:#a2abb7;">Privacy Code</a> / <a href="<?php echo $this->request->webroot;?>pages/view/terms" style="color:#a2abb7;">Terms</a> / <a href="<?php echo $this->request->webroot;?>pages/view/version_log" style="color:#a2abb7;">Version Log</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings?toggledebug" style="color:#a2abb7;">Debug Mode (Off)</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings" style="color:#a2abb7;">Settings</a><?php } ?>        </div>
 </div>
         <div class="scroll-to-top">
             <i class="icon-arrow-up"></i>

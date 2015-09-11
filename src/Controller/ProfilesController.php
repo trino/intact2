@@ -23,6 +23,7 @@ class ProfilesController extends AppController{
         $this->loadComponent('Mailer');
         $this->loadComponent('Document');
         $this->loadComponent('Trans');
+        if($this->request->params['action']!='add' && $this->request->params['action']!='add_company')
         $this->Settings->verifylogin($this, "profiles");
     }
     
@@ -805,7 +806,7 @@ class ProfilesController extends AppController{
     }
 
     public function add() {
-        
+        /*
         $this->getsidebar("Sidebar");
 
         $this->set('uid', '0');
@@ -892,7 +893,7 @@ class ProfilesController extends AppController{
         }
         $this->set(compact('profile'));
 
-        //$this->render("edit");
+       $this->render("edit");*/
     }
     
 

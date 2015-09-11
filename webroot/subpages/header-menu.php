@@ -15,6 +15,7 @@
 			<!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
 			<div class="hor-menu ">
 				<ul class="nav navbar-nav">
+                <?php if($this->request->session()->read('Profile.id')){?>
 					<li class="active">
 						<a href="<?php echo $this->request->webroot;?>">Dashboard</a>
 					</li>
@@ -96,8 +97,9 @@
 							
 						</ul>
 					</li>
-					
+				<?php }?>	
 				</ul>
+                
 			</div>
 			<!-- END MEGA MENU -->
 		</div>
