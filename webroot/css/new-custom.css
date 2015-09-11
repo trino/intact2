@@ -584,7 +584,10 @@
 .page-container .page-content .dashboard-stat .visual-hover > i {
     color: white;
     opacity: 0.8;
-    transition: all 0.7s ease-in-out 0s;
+                        -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out; 
 }
 .dashboard-stat.blue-madison .visual-hover > i {
     color: white;
@@ -613,4 +616,32 @@
   -moz-transition: all 0.7s ease-in-out;
   -o-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out; 
+}
+
+.page-content .dashboard-stat .visual-hover {
+  display: block;
+  float: none;
+  font-size: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin-bottom: 15px;
+  padding-left: 0;
+  padding-top: 0;
+  text-align: center;
+  width: 100%;
+                          -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+
+.dashboard-stat.dashboard-stat-light.green-haze:hover {
+        -ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+    transform: rotate(360deg);
+                              -webkit-transition: all 0.7s ease-in-out !important;
+  -moz-transition: all 0.7s ease-in-out !important;
+  -o-transition: all 0.7s ease-in-out !important;
+  transition: all 0.7s ease-in-out !important;
 }
