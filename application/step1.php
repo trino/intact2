@@ -4,6 +4,8 @@
 <!--[if IE 9]>
 <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
+<?php 
+    include('../config/paths.php');?>
 <html lang="en">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
@@ -24,14 +26,39 @@
     <link href="../webroot/css/new-custom.css" rel="stylesheet"type="text/css"/>
     <script src="../webroot/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
     <script src="../webroot/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script>
+    $(function(){
+    $('.nextstep').click(function(){
+        
+        $('.overlay-wrapper').show();
+        window.setTimeout(function(){ window.location='<?php echo WEB_ROOT;?>application/step2.php' }, 1500);
+    });
+    });
+    </script>
+    <style>
+    .overlay-wrapper {
+    background: rgba(255, 255, 255, 0.7) none repeat scroll 0 0;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+}
+.overlay {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+}
+    </style>
    
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
 <body>
 
-<?php 
-    include('../config/paths.php');?>
+
 
 <div style="width:70%;" class="content clearfix"> 
 
@@ -168,7 +195,7 @@
                 
                               
                     <div class="col-md-12 col-sm-12 col-xs-12 subz">
-              <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right" >
+              <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right nextstep" >
                     Next <i class="m-icon-swapright m-icon-white"></i>
               </a>
         </div>
@@ -185,9 +212,14 @@
 
 </div>
 
-
+<div class="overlay-wrapper">
+<div class="overlay">
+<img src="/veritas3-0/assets/admin/layout/img/ajax-loading.gif" />
+</div>
+</div>
 
 
 </body>
-</html>    
+</html>  
+  
     
