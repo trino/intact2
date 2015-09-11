@@ -13,7 +13,7 @@
 	<div class="page-content">
         <div class="container">
             <div class="row">   
-                <div class="col-md-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="portlet light">
                         <!--div class="header_address row">
                         <div class="col-md-12">

@@ -572,3 +572,65 @@ label {
 }
 
 
+
+/*** RESPONSIVE CSS ***/
+
+/* Portrait tablet to landscape and desktop */
+
+@media (min-width: 981px) and (max-width: 1200px) {
+    .page-header .page-header-menu .hor-menu .navbar-nav > li > a {
+  font-size: 12px !important;
+  font-weight: normal;
+  padding: 15px 8px !important;
+}
+    
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+    
+    
+}
+
+
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+body .page-header .page-header-top .page-logo {
+    margin: 0 auto;
+    text-align: center;
+    width: 100% !important;
+}
+
+.page-header .page-header-top .top-menu {
+  display: block !important;
+  float: none !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.page-header .page-header-top .top-menu .navbar-nav {
+  float: none !important;
+  vertical-align: middle !important;
+}
+
+.page-header .page-header-top .top-menu {
+  clear: both;
+  display: block;
+  margin-top: 10px !important;
+}
+
+.page-footer-inner {
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.page-container {
+    overflow-x: hidden;
+}
+
+.page-footer-inner {
+  text-align: center !important;
+}
+
+}

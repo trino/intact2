@@ -118,6 +118,7 @@ jQuery(document).ready(function() {
 	<!-- BEGIN HEADER TOP -->
 	<div class="page-header-top">
 		<div class="container">
+        <div class="row">
 			<!-- BEGIN LOGO -->
 			<div class="page-logo col-md-3 col-sm-3 col-xs-12">
             <?php $logo = $this->requestAction('Logos/getlogo/0', ['return']); ?>
@@ -145,6 +146,7 @@ jQuery(document).ready(function() {
 			<!-- END TOP NAVIGATION MENU -->
 		</div>
 	</div>
+    </div>
 	<!-- END HEADER TOP -->
 	<!-- BEGIN HEADER MENU -->
 	<?php include('subpages/header-menu.php')?>
@@ -225,11 +227,11 @@ jQuery(document).ready(function() {
 <div class="page-footer">
             <div class="container">
             <div class="row">
-            <div class="page-footer-inner col-md-7">
+            <div class="page-footer-inner col-md-7 col-sm-7 col-xs-12">
             2015 &copy; Powered by MEE  <!--a style="color:white;" href="https://isbc.ca">ISB Canada</a-->
         </div>
 
-        <div style="float:right;text-align: right;" class="page-footer-inner col-md-5">
+        <div style="float:right;text-align: right;" class="page-footer-inner col-md-5 col-sm-5 col-xs-12">
 
             <a href="<?php echo $this->request->webroot;?>pages/view/help" style="color:#a2abb7;">Help</a> / <a href="<?php echo $this->request->webroot;?>pages/view/faq" style="color:#a2abb7;">FAQ</a> / <a href="<?php echo $this->request->webroot;?>pages/view/privacy_code" style="color:#a2abb7;">Privacy Code</a> / <a href="<?php echo $this->request->webroot;?>pages/view/terms" style="color:#a2abb7;">Terms</a> / <a href="<?php echo $this->request->webroot;?>pages/view/version_log" style="color:#a2abb7;">Version Log</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings?toggledebug" style="color:#a2abb7;">Debug Mode (Off)</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings" style="color:#a2abb7;">Settings</a>        </div>
 </div>
