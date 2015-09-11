@@ -8,10 +8,10 @@ include(APP."../application/signature.php");
                 <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="portlet light ">
                 <div class="header_approved row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="col-md-8 col-sm-8 col-xs-12">
                 <h2>Approved Driver History Form</h2>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-12 logo">
+                <div class="col-md-4 col-sm-4 col-xs-12 logo">
                 <div class="main-logo">
                 <img src="<?php echo WEB_ROOT;?>img/intact_logo.png" />
                 </div>

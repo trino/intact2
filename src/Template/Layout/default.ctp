@@ -122,7 +122,7 @@ jQuery(document).ready(function() {
 			<!-- BEGIN LOGO -->
 			<div class="page-logo col-md-3 col-sm-3 col-xs-12">
             <?php $logo = $this->requestAction('Logos/getlogo/0', ['return']); ?>
-				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" style="width: 180px;" /></a>
+				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" /></a>
                 
 			</div>
 			<!-- END LOGO -->
