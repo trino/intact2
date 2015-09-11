@@ -22,13 +22,13 @@
 						<a href="<?php echo $this->request->webroot;?>profiles/listall">My Drivers</a>
 					</li>
                     <li class="">
-						<a href="<?php echo $this->request->webroot;?>profiles/allorders">My orders</a>
+						<a href="<?php echo $this->request->webroot;?>profiles/allorders">My Orders</a>
 					</li>
 					
 					
 					<li class="menu-dropdown classic-menu-dropdown ">
 						<a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
-						My clients <i class="fa fa-angle-down"></i>
+						My Clients <i class="fa fa-angle-down"></i>
 						</a>
 						<ul class="dropdown-menu pull-left">
 							<li class="">
@@ -41,7 +41,7 @@
 								
 							</li>
                             <li class="">
-								<a href="<?php echo $this->request->webroot;?>profiles/add_company"><i class="icon-user"></i> My MEE drivers</a>								
+								<a href="<?php echo $this->request->webroot;?>profiles/add_company"><i class="icon-user"></i> My Drivers</a>
 							</li>
 							
 							
@@ -52,7 +52,7 @@
                     
                     <li class="menu-dropdown classic-menu-dropdown ">
 						<a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
-						My MEE documents <i class="fa fa-angle-down"></i>
+						My Documents <i class="fa fa-angle-down"></i>
 						</a>
 						<ul class="dropdown-menu pull-left">
 							<li class="">
@@ -71,7 +71,7 @@
                     
 					<li class="menu-dropdown classic-menu-dropdown ">
 						<a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
-						Others <i class="fa fa-angle-down"></i>
+						More <i class="fa fa-angle-down"></i>
 						</a>
 						<ul class="dropdown-menu pull-left">
 							<li class="">

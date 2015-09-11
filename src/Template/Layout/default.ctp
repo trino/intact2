@@ -127,12 +127,12 @@ jQuery(document).ready(function() {
 			</div>
 			<!-- END LOGO -->
             <!-- BEGIN LOGO_TEXT -->
-            <div class="logo-text col-md-6 col-sm-6 col-xs-12">
+            <div class="logo-text col-md-6 col-sm-6 col-xs-12" style="border:1px solid #dadada;padding:5px;">
 				<div class="logo-mid">
-                <a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo" style="width: 100px;" /></a>
+                <a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo" style="width: 80px;" /></a>
                 </div>
                 <div class="mid-text">
-                Commercial Trucking Insurance
+               <span style="font-size:22px;"> Commercial Trucking Insurance</span>
                 </div>
 			</div>
             <!-- END LOGO -->

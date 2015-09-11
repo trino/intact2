@@ -1,7 +1,7 @@
 <div class="top-menu">
 
 	<!--<img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo-default" style="width: 120px;padding-right:20px;" />-->
-<img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo-default" style="width: 120px;padding-right:20px;" />
+<img src="<?php echo $this->request->webroot;?>img/picture12387734266816.jpg" alt="logo" class="logo-default" style="width: 170px;padding:6px 10px 0 0;" />
 
 
 				<ul class="nav navbar-nav pull-right">
