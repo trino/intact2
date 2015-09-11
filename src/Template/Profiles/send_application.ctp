@@ -32,13 +32,10 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                 <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                <label class="control-label col-md-4">Select Insurer
+                <label class="control-label col-md-4">Insurer
                 </label>
                 <div class="col-md-8">
-                <select class="form-control required" name="title" required>
-                     <option value="intact">Intact</option>
-                     <option value="unintact">Unintact</option>
-                 </select>
+                    <img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" class="img-responsive" style="width: 120px;padding-right:20px;" />
                 </div>
                 </div>
                 </div>
