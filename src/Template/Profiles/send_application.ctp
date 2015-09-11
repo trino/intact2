@@ -17,36 +17,34 @@
             <div class="row">
 
 
-                <div class="send-application col-md-12 portlet light">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="send-application portlet light">
                 <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                 <h2>Send Application Process</h2>
                 </div>
                 </div>
                 <form id="sendappForm" class="sendapplication-form" method="post" action="">
                 <div class="row">
                 
-                <div class="send-application-form col-md-12">
+                <div class="send-application-form col-md-8 col-sm-12 col-xs-12">
                 <h4>Please input the following information to send application</h4>
                 <div class="row">
-                <div class="col-md-12 no-padding margin-bottom-10">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                 <div class="row">
-                <div class="col-md-12">
-                <label class="control-label col-md-4">Select Insurer
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                <label class="control-label col-md-4">Insurer
                 </label>
                 <div class="col-md-8">
-                <select class="form-control required" name="title" required>
-                     <option value="intact">Intact</option>
-                     <option value="unintact">Unintact</option>
-                 </select>
+                    <img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" class="img-responsive" style="width: 120px;padding-right:20px;" />
                 </div>
                 </div>
                 </div>
                 </div>
                 
-                <div class="col-md-12 no-padding margin-bottom-10">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                 <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                 <label class="control-label col-md-4">Select Company
                 </label>
                 <div class="col-md-8">
@@ -59,9 +57,9 @@
                 </div>
                 </div>
                 
-                <div class="col-md-12 no-padding margin-bottom-10">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                 <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                 <label class="control-label col-md-4">Select Driver
                 </label>
                 <div class="col-md-8">
@@ -75,9 +73,9 @@
                 </div>
                 
                 
-                <div class="col-md-12 no-padding margin-bottom-10">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                 <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                 <label class="control-label col-md-4">Policy Number</label>
                 <div class="col-md-8">
                 <input class="form-control" value="" required="" placeholder="" name="policy">
@@ -88,9 +86,9 @@
                 </div>
                 
                 
-                <div class="col-md-12 no-padding margin-bottom-10">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                 <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                 <label class="control-label col-md-4">To :</label>
                 <div class="col-md-8">
                 <input class="form-control" value="" required="" placeholder="" name="to">
@@ -100,9 +98,9 @@
                 
                 </div>
                 
-                <div class="col-md-12 no-padding margin-bottom-10">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                 <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                 <label class="control-label col-md-4">Email</label>
                 <div class="col-md-8">
                 <input class="form-control" value="" required="" placeholder="" name="email">
@@ -113,9 +111,9 @@
                 </div>
                 
                 
-                <div class="col-md-12 no-padding margin-bottom-10">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                 <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class=" col-md-6"></div>
                 <div class="col-md-6 app_send_btn">
                 <a href="" class="btn btn-primary">Send Application</a>
@@ -132,6 +130,7 @@
                 </div>
                 
                 
+                </div>
                 </div>
                 </div>
                 </div>

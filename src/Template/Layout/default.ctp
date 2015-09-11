@@ -118,21 +118,35 @@ jQuery(document).ready(function() {
 	<!-- BEGIN HEADER TOP -->
 	<div class="page-header-top">
 		<div class="container">
+        <div class="row">
 			<!-- BEGIN LOGO -->
-			<div class="page-logo">
+			<div class="page-logo col-md-3 col-sm-3 col-xs-12">
             <?php $logo = $this->requestAction('Logos/getlogo/0', ['return']); ?>
-				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" style="width: 180px;" /></a>
-
+				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" /></a>
+                
 			</div>
 			<!-- END LOGO -->
+            <!-- BEGIN LOGO_TEXT -->
+            <div class="logo-text col-md-6 col-sm-6 col-xs-12">
+				<div class="logo-mid">
+                <a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo" style="width: 100px;" /></a>
+                </div>
+                <div class="mid-text">
+                Commercial Trucking Insurance
+                </div>
+			</div>
+            <!-- END LOGO -->
 			<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 			<a href="javascript:;" class="menu-toggler"></a>
 			<!-- END RESPONSIVE MENU TOGGLER -->
 			<!-- BEGIN TOP NAVIGATION MENU -->
+            <div class="col-md-3 col-sm-12 col-xs-12">
 			<?php include('subpages/top-menu.php');?>
+            </div>
 			<!-- END TOP NAVIGATION MENU -->
 		</div>
 	</div>
+    </div>
 	<!-- END HEADER TOP -->
 	<!-- BEGIN HEADER MENU -->
 	<?php include('subpages/header-menu.php')?>
@@ -153,27 +167,27 @@ jQuery(document).ready(function() {
 <div class="page-prefooter">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3 col-sm-6 col-xs-12 footer-block">
+			<div class="col-md-5 col-sm-5 col-xs-12 footer-block">
 				<h2>About</h2>
 				<p>
-					 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam dolore.
+					 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam dolore.Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l depois divoltis pra.
 				</p>
 			</div>
-			<div class="col-md-3 col-sm-6 col-xs12 footer-block">
-				<h2>Subscribe Email</h2>
+			<div class="col-md-4 col-sm-4 col-xs12 footer-block">
+				<h2>Problem with this page?</h2>
 				<div class="subscribe-form">
 					<form action="javascript:;">
 						<div class="input-group">
-							<input type="text" placeholder="mail@email.com" class="form-control">
+							<input type="text" placeholder="Your message" class="form-control">
 							<span class="input-group-btn">
-							<button class="btn" type="submit">Submit</button>
+							<button class="btn" type="submit">Send</button>
 							</span>
 						</div>
 					</form>
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-6 col-xs-12 footer-block">
-				<h2>Follow Us On</h2>
+				<!--h2>Follow Us On</h2>
 				<ul class="social-icons">
 					<li>
 						<a href="javascript:;" data-original-title="rss" class="rss"></a>
@@ -196,9 +210,9 @@ jQuery(document).ready(function() {
 					<li>
 						<a href="javascript:;" data-original-title="vimeo" class="vimeo"></a>
 					</li>
-				</ul>
+				</ul-->
 			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12 footer-block">
+			<div class="col-md-2 col-sm-2 col-xs-12 footer-block">
 				<h2>Contacts</h2>
 				<address class="margin-bottom-40">
 				Phone: 800 123 3456<br>
@@ -212,16 +226,18 @@ jQuery(document).ready(function() {
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
             <div class="container">
-            <div class="page-footer-inner col-md-7">
+            <div class="row">
+            <div class="page-footer-inner col-md-7 col-sm-7 col-xs-12">
             2015 &copy; Powered by MEE  <!--a style="color:white;" href="https://isbc.ca">ISB Canada</a-->
         </div>
 
-        <div style="float:right;text-align: right;" class="page-footer-inner col-md-5">
+        <div style="float:right;text-align: right;" class="page-footer-inner col-md-5 col-sm-5 col-xs-12">
 
             <a href="<?php echo $this->request->webroot;?>pages/view/help" style="color:#a2abb7;">Help</a> / <a href="<?php echo $this->request->webroot;?>pages/view/faq" style="color:#a2abb7;">FAQ</a> / <a href="<?php echo $this->request->webroot;?>pages/view/privacy_code" style="color:#a2abb7;">Privacy Code</a> / <a href="<?php echo $this->request->webroot;?>pages/view/terms" style="color:#a2abb7;">Terms</a> / <a href="<?php echo $this->request->webroot;?>pages/view/version_log" style="color:#a2abb7;">Version Log</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings?toggledebug" style="color:#a2abb7;">Debug Mode (Off)</a> / <a href="<?php echo $this->request->webroot;?>profiles/settings" style="color:#a2abb7;">Settings</a>        </div>
 </div>
         <div class="scroll-to-top">
             <i class="icon-arrow-up"></i>
+        </div>
         </div>
         </div>
 <div class="scroll-to-top">

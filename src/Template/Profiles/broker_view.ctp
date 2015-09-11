@@ -79,7 +79,12 @@
                                                 <div class="checker disabled" id="uniform-888">
                                                     <span class="checked"><input type="checkbox" checked="" disabled="disabled" class="checkhiredriver" id="888" value="1" name="stat"></span></div> Intact Policy or Quote# <span class="hired_msg"></span>
                                                 </label><br>
-                                                <a style="margin-top:2px;width:75%;" class="blue-stripe btn floatleft grey-cascade" href="<?php echo $this ->request->webroot; ?>orders/productSelection?driver=888&amp;ordertype=CAR">Order Products A La Carte <i class="m-icon-swapright m-icon-white"></i></a>                        </div>
+                                                <a style="margin-top:2px;width:80%;" class="btn floatleft grey-cascade addpro" href="<?php echo $this ->request->webroot; ?>orders/productSelection?driver=888&amp;ordertype=CAR">Order Products A La Carte <i class="m-icon-swapright m-icon-white"></i></a>
+                                                <a style="margin-top:2px;width:80%;" class="btn floatleft grey-cascade addpro" href="javascript:void(0)">Driver's Record Abstract <i class="m-icon-swapright m-icon-white"></i></a>
+                                                <a style="margin-top:2px;width:80%;" class="btn floatleft grey-cascade addpro" href="javascript:void(0)">LOE  <i class="m-icon-swapright m-icon-white"></i></a>
+                                                <a style="margin-top:2px;width:80%;" class="btn floatleft grey-cascade addpro" href="javascript:void(0)">Auto Plus <i class="m-icon-swapright m-icon-white"></i></a>
+                                                
+                                                </div>
 
 
                     </div>
@@ -1247,7 +1252,7 @@
 		
 					
                     <td>
-                        CVOR                    </td>
+                        LOE                    </td>
 		
 
 					
@@ -1267,7 +1272,7 @@
 		
 					
                     <td>
-                        Check DL                    </td>
+                        Auto Plus                   </td>
 		
 
 					
@@ -1324,122 +1329,7 @@
 
             
                 <!-- BEGIN PROFILE CONTENT -->
-                <div class="">
-                    <div class="row">
-
-                        <div class="clearfix"></div>
-                        <div class="col-md-12">
-                            <!-- BEGIN PORTLET -->
-                            <div class="portlet">
-
-                                <div class="portlet box yellow">
-                                    <div class="portlet-title">
-                                        <div class="caption">
-                                            <a name="2015-08-31 11:32:16"></a>
-                                            <i class="fa fa-folder-open-o"></i>Order Score Sheet                                            - 2015-08-31 11:32:16                                        </div>
-
-                                            <a class="btn  small" href="<?php echo $this ->request->webroot; ?>orders/vieworder/41/783?order_type=CAR?forms=1603,1627" style="float:right; display:none;">View Order</a>
-                                    </div>
-                                    <div class="portlet-body">
-                                        <div oldclass="table-scrollable">
-
-                                            <div class="col-sm-12"><table class="table-condensed table-striped table-bordered table-hover dataTable no-footer"><tbody><tr><th colspan="3">Order Information (ID: 783)</th></tr><tr><th width="25%">Created on</th><td colspan="2">2015-08-31 11:32:16</td></tr><tr><th>Order Type</th><td colspan="2">CAR</td></tr><tr><th>Submitted by</th><td width="1%" align="center">835</td><td><a href="<?php echo $this ->request->webroot; ?>profiles/view/835" class="nohide">Cristina Bruno (Cristina)</a></td></tr><tr><th>Submitted for</th><td width="1%" align="center">888</td><td><a href="<?php echo $this ->request->webroot; ?>profiles/view/888" class="nohide">Beverly Hills (Beverly)</a></td></tr><tr><th>Client</th><td align="center">41</td><td>Huron Services Group</td></tr></tbody></table>                <div style="float:right; margin-top: 10px;">
-                    <a class="btn btn-lg default red-stripe" href="#">
-                       FAIL </a><a class="btn btn-lg red" href="#">
-                        <i class="fa fa-bar-chart-o"></i>                     </a></div></div>
-
-            
-                    <div class="clearfix"></div>
-                    <div style="margin-bottom: 8px;" class="col-md-12">
-                    <h4 style=""><i class="icon-doc font-blue-hoki"></i>
-                    <span class="caption-subject bold font-blue-hoki uppercase">
-                    Products Ordered </span></h4>
-                    </div>
-
-                    <div class="clearfix"></div>
-                    <div style="" class="col-md-12">
-                    <table style="margin-bottom: 0px;" class="table">
-                    <tbody>
-
-                                <tr role="" class="">
-                    <td>
-                        <span class="icon-notebook"></span>
-                    </td>
-										
-		
-					
-                    <td>
-                        Autoplus       </td>
-		
-
-					
-<td class="actions">
-<span class="label label-info">pending </span>
-</td>
-<td><span class="label label-danger">Fail</span></td>
-
-
-                  
-                </tr>
-                                <tr role="" class="">
-                    <td>
-                        <span class="icon-notebook"></span>
-                    </td>
-										
-		
-					
-                    <td>
-                        Letter Of Experience                    </td>
-		
-
-					
-<td class="actions">
-<span class="label label-info">pending </span>
-</td>
-<td><span class="label label-danger">Fail</span></td>
-
-
-                  
-                </tr>
                 
-                                                    <tr>
-                                                        <td colspan="4">
-
-                                                            <h4 style="margin-left: -7px;"><i class="icon-doc font-blue-hoki"></i>
-								<span class="caption-subject bold font-blue-hoki uppercase">
-								Documents Submitted </span></h4>
-
-                                                            <div class="clearfix"></div>
-                                                        </td>
-                                                    </tr>
-
-
-
-                                                    <tr role="row" class="even"><td><span class="icon-notebook"></span></td><td><a href="<?php echo $this ->request->webroot; ?>documents/view/41/2029/?type=4&amp;order_id=783">Consent Form</a></td><td class="actions"><span class="label label-sm label-success" style="">Submitted</span></td><td></td></tr><tr role="row" class="odd"><td><span class="icon-notebook"></span></td><td><a href="<?php echo $this ->request->webroot; ?>documents/view/41/2028/?type=9&amp;order_id=783">Letter of Experience</a></td><td class="actions"><span class="label label-sm label-success" style="">Submitted</span></td><td></td></tr><tr role="row" class="even"><td><span class="icon-notebook"></span></td><td><a href="<?php echo $this ->request->webroot; ?>documents/view/41/2030/?type=15&amp;order_id=783">Upload ID/Documents</a></td><td class="actions"><span class="label label-sm label-success" style="">Submitted</span></td><td></td></tr></tbody></table><table class="table-condensed table-striped table-bordered table-hover dataTable no-footer"></table>                                                    
-                                                        
-                                                    
-                                                    
-                                                
-
-
-                                            </div>
-
-                                            <div class="clearfix"></div>
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <!-- END PORTLET -->
-
-
-                                </div>
-                            </div>
-                            <!-- END PORTLET -->
-                        </div>
-                    </div>
-                </div>
 
                     <!-- END PROFILE CONTENT -->                                            </div>
                                                                             <div id="tab_1_7" class="tab-pane ">

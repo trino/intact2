@@ -49,7 +49,7 @@
  <div class="container">
 <div class="row">
     <div class="col-md-12">
-        <div class="portlet box yellow-casablanca ">
+        <div class="portlet box">
             
             <div class="portlet-body form">
 

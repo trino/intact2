@@ -19,16 +19,16 @@
 						<a href="<?php echo $this->request->webroot;?>">Dashboard</a>
 					</li>
                     <li class="">
-						<a href="<?php echo $this->request->webroot;?>profiles/listall">My Applicants</a>
+						<a href="<?php echo $this->request->webroot;?>profiles/listall">My Drivers</a>
 					</li>
                     <li class="">
-						<a href="<?php echo $this->request->webroot;?>profiles/allorders">My MEE orders</a>
+						<a href="<?php echo $this->request->webroot;?>profiles/allorders">My orders</a>
 					</li>
 					
 					
 					<li class="menu-dropdown classic-menu-dropdown ">
 						<a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
-						My MEE clients <i class="fa fa-angle-down"></i>
+						My clients <i class="fa fa-angle-down"></i>
 						</a>
 						<ul class="dropdown-menu pull-left">
 							<li class="">

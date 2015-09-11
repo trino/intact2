@@ -31,6 +31,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <link href="<?php echo $this->request->webroot;?>assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $this->request->webroot;?>assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
+<link href="<?php echo $this->request->webroot;?>css/new-custom.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN PAGE LEVEL STYLES -->
 <link href="<?php echo $this->request->webroot;?>assets/global/plugins/select2/select2.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $this->request->webroot;?>assets/admin/pages/css/login-soft.css" rel="stylesheet" type="text/css"/>

@@ -13,7 +13,8 @@
 	<div class="page-content">
         <div class="container">
             <div class="row">   
-                <div class="col-md-12 portlet light">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="portlet light">
                         <!--div class="header_address row">
                         <div class="col-md-12">
                         <h2>BROKER ADDRESS </h2>
@@ -27,6 +28,7 @@
                         
                 </div>
                 <div class="clearfix"></div>
+            </div>
             </div>
         </div>
     </div>

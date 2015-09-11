@@ -27,7 +27,10 @@
                     <div class="row">
         				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-bottom-10">
         					<a class="dashboard-stat dashboard-stat-light blue-madison" href="<?php echo $this->request->webroot;?>profiles/add">
-        					<div class="visual">
+        					<div class="visual-bg">
+        						<i class="fa fa-user fa-icon-medium"></i>
+        					</div>
+                            <div class="visual">
         						<i class="fa fa-user fa-icon-medium"></i>
         					</div>
                             <div class="visual-hover">
@@ -44,12 +47,17 @@
         					</div>
         					</a>
         				</div>
-        				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-bottom-10">
         					<a class="dashboard-stat dashboard-stat-light red-intense" href="<?php echo $this->request->webroot;?>profiles/send_application">
-        					<div class="visual">
+        					<div class="visual-bg">
         						<i class="fa fa-envelope-o"></i>
-
         					</div>
+                            <div class="visual">
+        						<i class="fa fa-envelope-o"></i>
+        					</div>
+                            <div class="visual-hover">
+                            <i class="fa fa-inbox"></i>
+                            </div>
         					<div class="details">
         						<div class="number">
         							 Send Application
@@ -60,12 +68,17 @@
         					</div>
         					</a>
         				</div>
-        				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-bottom-10">
         					<a class="dashboard-stat dashboard-stat-light green-haze" href="<?php echo $this->request->webroot;?>profiles/add_company">
-        					<div class="visual">
+        					<div class="visual-bg">
         						<i class="fa fa-suitcase"></i>
-
         					</div>
+                            <div class="visual">
+        						<i class="fa fa-suitcase"></i>
+        					</div>
+                            <div class="visual-hover">
+                            <i class="fa fa-briefcase"></i>
+                            </div>
         					<div class="details">
         						<div class="number">
         							 Add A Company
@@ -76,12 +89,17 @@
         					</div>
         					</a>
         				</div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-bottom-10">
         					<a class="dashboard-stat dashboard-stat-light yellow" href="javascript:;">
-        					<div class="visual">
+        					<div class="visual-bg">
         						<i class="fa fa-tags"></i>
-
         					</div>
+                            <div class="visual">
+        						<i class="fa fa-tags"></i>
+        					</div>
+                            <div class="visual-hover">
+                            <i class="fa fa-tag"></i>
+                            </div>
         					<div class="details">
         						<div class="number">
         							 Buy Product
