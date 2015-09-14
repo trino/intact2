@@ -6,7 +6,7 @@
     use Cake\Controller\Controller;
     use Cake\ORM\TableRegistry;
 
-    include_once(APP . '../webroot/subpages/soap/nusoap.php');
+    //include_once(APP . '../webroot/subpages/soap/nusoap.php');//missing!!!
 
     class OrdersController extends AppController {
 
@@ -15,11 +15,19 @@
             'order' => ['id' => 'DESC'],
         ];
 
+        function ajaxhandler($Action = ""){
+            switch($Action){
+                case "approveorder":
+                    $this->Manager->edit_database("orders", "id", $_POST["id"], array("approved" => 1));
+                    break;
+            }
+            die();
+        }
+
         public function intact(){
 
         }
-        public function buy_products()
-        {
+        public function buy_products() {
             
         }
 
