@@ -47,6 +47,11 @@ class ProfilesController extends AppController{
     {
         
     }
+
+    public function driver_view()
+    {
+
+    }
     public function listall()
     {
         

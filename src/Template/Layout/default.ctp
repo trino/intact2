@@ -40,7 +40,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <link href="<?php echo $this->request->webroot;?>css/new-custom.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN THEME STYLES -->
 <!-- DOC: To use 'rounded corners' style just load 'components-rounded.css' stylesheet instead of 'components.css' in the below style tag -->
-<link href="<?php echo $this->request->webroot;?>assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+<link href="<?php echo $this->request->webroot;?>assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css">
 <link href="<?php echo $this->request->webroot;?>assets/global/css/plugins.css" rel="stylesheet" type="text/css">
 <link href="<?php echo $this->request->webroot;?>assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
 <link href="<?php echo $this->request->webroot;?>assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">

@@ -44,7 +44,7 @@
                                <input type="text" name="supervisor_phone[]" role="phone" class="form-control">
                                </div>
                                </div>
-                               
+
                                <div class="form-group row">
                                <label class="control-label col-md-3">Supervisor's Email:</label>
                                <div class="col-md-3">
@@ -55,7 +55,7 @@
                                <input type="text" name="supervisor_secondary_email[]" role="email" class="form-control email1">
                                </div>
                                </div>
-                               
+
                                <div class="form-group row">
                                 <label class="control-label col-md-3">Employment Start Date:</label>
                                 <div class="col-md-3">
@@ -76,7 +76,7 @@
                                  <input type="text" name="claims_recovery_date[]" class="form-control date-picker datepicker">
                                  </div>
                                  </div>
-                                 
+
                                  <div class="form-group row">
                                     <label class="control-label col-md-3">Employment history confirmed by (Verifier Use Only):</label>
                                     <div class="col-md-3">
@@ -119,11 +119,11 @@
                                    <input type="checkbox" value="1" name="driving_experince_canada_rocky_mountains[]"> Canada: Rocky Mountains
                                    <input type="checkbox" value="1" name="driving_experince_usa[]"> USA
                                 </div>
-                
+
                                 </div>
                 </div>
-                
-                
+
+
 
         <div class="delete">
             <a href="javascript:void(0);" class="btn red no-print deleteloe" >Delete</a>

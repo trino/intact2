@@ -1192,7 +1192,7 @@
                                        </div>
                         <div class="clearfix"></div>
                         <div class="col-md-12 margin-top-10 row" style="padding-left: 0;padding-right: 0;">
-                            <div class="col-md-5 row">
+                            <div class="col-md-4 row">
                             <label class="control-label col-md-4 required" style="margin-top: 5px;"><strong>Rating</strong></label>
                             <div class="col-md-8">
                             <select required="" name="title" class="form-control required">
@@ -1206,15 +1206,17 @@
                             </div>
                             </div>                  
                                          
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                                  <label class="control-label col-md-6" style="margin-top: 5px;"><strong>Annual Premium</strong></label>
                             <div class="col-md-6">
                               <input type="text" class="form-control" placeholder="$" />
                             </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4" style="text-align: right">
                             <button class="btn btn-success"> Pass</button>
-                            <button class="btn btn-danger"> Fail</button>
+                                <button class="btn btn-warning"> Conditional</button>
+
+                                <button class="btn btn-danger"> Fail</button>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -1245,7 +1247,10 @@
 
 					
 <td class="actions">
-<span class="label label-info">pending </span>
+
+    <a target="_blank" href="#" class="btn btn-primary dl">Download</a>
+
+
 </td>
 <td><span class="label label-success">Pass</span></td>
 
@@ -1264,7 +1269,7 @@
 
 					
 <td class="actions">
-<span class="label label-info">pending </span>
+    <a target="_blank" href="#" class="btn btn-primary dl">Download</a>
 </td>
 <td><span class="label label-success">Pass</span></td>
 
@@ -1284,7 +1289,7 @@
 
 					
 <td class="actions">
-<span class="label label-info">pending </span>
+    <a target="_blank" href="#" class="btn btn-primary dl">Download</a>
 </td>
 <td><span class="label label-danger">Fail</span></td>
 
@@ -1303,7 +1308,7 @@
 
 					
 <td class="actions">
-<span class="label label-info">pending </span>
+    <a target="_blank" href="#" class="btn btn-primary dl">Download</a>
 </td>
 <td><span class="label label-danger">Fail</span></td>
 

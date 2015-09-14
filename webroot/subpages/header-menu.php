@@ -38,7 +38,7 @@
                             </li>
 
                             <li class="">
-                                <a href="<?php echo $this->request->webroot; ?>profiles/add_company"><i class="icon-envelope"></i>
+                                <a href="<?php echo $this->request->webroot; ?>profiles/send_application"><i class="icon-envelope"></i>
                                     Send Application</a>
                             </li>
 

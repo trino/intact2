@@ -15,7 +15,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    
+
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
           type="text/css"/>
           <link href="../webroot/assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
@@ -24,18 +24,18 @@
     <link href="../webroot/css/new-custom.css" rel="stylesheet"type="text/css"/>
     <script src="../webroot/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
     <script src="../webroot/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-   
+
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
 <body>
 
-<?php 
+<?php
     include('../config/paths.php');
     include('api.php');
     ?>
 
-<div style="width:70%;" class="content clearfix"> 
+<div style="width:70%;" class="content clearfix">
 
 
 <form id="form_employment">
@@ -44,13 +44,13 @@
 <div id="subtab_2_2" class="tab-pane active">
     <form id="step2-form">
 
-        
+
         <div class="form-group row">
             <h3 class="col-md-12">Past Employer</h3>
         </div>
         <div class="gndn">
 
-                
+
                     <div class="form-group row">
                         <label class="control-label col-md-3">Company Name:</label>
                         <div class=" col-md-9">
@@ -89,7 +89,7 @@
                                <input type="text" name="supervisor_phone[]" role="phone" class="form-control">
                                </div>
                                </div>
-                               
+
                                <div class="form-group row">
                                <label class="control-label col-md-3">Supervisor's Email:</label>
                                <div class="col-md-3">
@@ -100,7 +100,7 @@
                                <input type="text" name="supervisor_secondary_email[]" role="email" class="form-control email1">
                                </div>
                                </div>
-                               
+
                                <div class="form-group row">
                                 <label class="control-label col-md-3">Employment Start Date:</label>
                                 <div class="col-md-3">
@@ -121,7 +121,7 @@
                                  <input type="text" name="claims_recovery_date[]" class="form-control date-picker datepicker">
                                  </div>
                                  </div>
-                                 
+
                                  <div class="form-group row">
                                     <label class="control-label col-md-3">Employment history confirmed by (Verifier Use Only):</label>
                                     <div class="col-md-3">
@@ -164,25 +164,24 @@
                                     <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="driving_experince_canada_rocky_mountains[]"></span></div></div><span>Canada: Rocky Mountains</span></label>
                                     <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="driving_experince_usa[]"></span></div></div><span>USA</span></label>
                                 </div>
-                
+
                 </div>
                 <div id="more_div"></div>
-                           
+
               <div class="col-md-12 col-sm-12 col-xs-12 subz">
               <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right" >
                     Next <i class="m-icon-swapright m-icon-white"></i>
               </a>
         </div>
-        
+
 
 </div></form></div></div>
 </form>
 
-    
+
 
 </div>
 
 
 </body>
-</html>    
-    
+</html>

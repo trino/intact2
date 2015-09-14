@@ -204,11 +204,11 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="row margin-bottom-10">
-                        <div class="col-md-10 col-sm-10 col-xs-12 col-sm-10 col-xs-12">
-                            <h4>Loss Experience:  Please upload Loss Experience </h4>
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-sm-10 col-xs-12">
+                            <h4>Loss Experience:  Please Upload Loss Experience </h4>
                         </div>
-                        <div class="col-md-2 col-sm-2 col-xs-2 upload_btns">
-                           <a href="" class="btn btn-primary">Upload Button </a>
+                        <div class="col-md-3 col-sm-3 col-xs-3 upload_btns">
+                           <a href="" class="btn btn-primary">Upload Loss Experience </a>
                         </div>
                     </div>
                     <div class="row margin-bottom-10">
