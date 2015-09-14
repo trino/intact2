@@ -118,7 +118,7 @@
             <li>
                 <a href="<?php echo $this->request->webroot; ?>">
                     <i class="fa fa-bell"></i>
-                    <span class="title">Help (Email to ISB)</span>
+                    <span class="title">Help</span>
                     <span class="selected"></span>
 
                 </a>

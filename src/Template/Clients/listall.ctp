@@ -38,7 +38,6 @@
                         <table class="table table-hover  table-striped table-bordered table-hover dataTable no-footer">
                             <thead>
                             <tr class="sorting">
-                                <th width="50px"><a href="<?php echo $this->request->webroot;?>clients?sort=id&amp;direction=asc" class="desc">ID</a></th>
                                 <th width="220px">Logo</th>
                                 <th><a href="<?php echo $this->request->webroot;?>clients?sort=company_name&amp;direction=asc">Client</a></th>
 
@@ -49,7 +48,6 @@
                             
 
                                             <tr>
-                                                <td>41</td>
                                                 <td align="center">
 
                                                                                                                 <a href="<?php echo $this->request->webroot;?>clients/edit/41?view">
@@ -67,14 +65,13 @@
 
                                                         <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>clients/edit/41">Edit</a>                                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Huron Services Group&quot;?');" href="<?php echo $this->request->webroot;?>clients/delete/41">Delete</a>
 
-                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">view Driver(s)</a>
+                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">View Driver(s)</a>
                                                                                                             </td>
                                             </tr>
 
                                         
 
                                             <tr>
-                                                <td>38</td>
                                                 <td align="center">
 
                                                                                                                 <a href="<?php echo $this->request->webroot;?>clients/edit/38?view">
@@ -92,14 +89,13 @@
 
                                                         <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>clients/edit/38">Edit</a>                                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Revolution Staffing&quot;?');" href="<?php echo $this->request->webroot;?>clients/delete/38">Delete</a>
 
-                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">view Driver(s)</a>
+                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">View Driver(s)</a>
                                                                                                             </td>
                                             </tr>
 
                                         
 
                                             <tr>
-                                                <td>37</td>
                                                 <td align="center">
 
                                                                                                                 <a href="<?php echo $this->request->webroot;?>clients/edit/37?view">
@@ -117,14 +113,13 @@
 
                                                         <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>clients/edit/37">Edit</a>                                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Patriot Source 1&quot;?');" href="<?php echo $this->request->webroot;?>clients/delete/37">Delete</a>
 
-                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">view Driver(s)</a>
+                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">View Driver(s)</a>
                                                                                                             </td>
                                             </tr>
 
                                         
 
                                             <tr>
-                                                <td>30</td>
                                                 <td align="center">
 
                                                                                                                 <a href="<?php echo $this->request->webroot;?>clients/edit/30?view">
@@ -142,14 +137,13 @@
 
                                                         <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>clients/edit/30">Edit</a>                                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Erb Transport &quot;?');" href="<?php echo $this->request->webroot;?>clients/delete/30">Delete</a>
 
-                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">view Driver(s)</a>
+                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">View Driver(s)</a>
                                                                                                             </td>
                                             </tr>
 
                                         
 
                                             <tr>
-                                                <td>26</td>
                                                 <td align="center">
 
                                                                                                                 <a href="<?php echo $this->request->webroot;?>clients/edit/26?view">
@@ -167,14 +161,13 @@
 
                                                         <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>clients/edit/26">Edit</a>                                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Gordon Food Service&quot;?');" href="<?php echo $this->request->webroot;?>clients/delete/26">Delete</a>
 
-                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">view Driver(s)</a>
+                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">View Driver(s)</a>
                                                                                                             </td>
                                             </tr>
 
                                         
 
                                             <tr>
-                                                <td>25</td>
                                                 <td align="center">
 
                                                                                                                 <a href="<?php echo $this->request->webroot;?>clients/edit/25?view">
@@ -192,14 +185,13 @@
 
                                                         <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>clients/edit/25">Edit</a>                                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Test Dummy&quot;?');" href="<?php echo $this->request->webroot;?>clients/delete/25">Delete</a>
 
-                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">view Driver(s)</a>
+                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">View Driver(s)</a>
                                                                                                             </td>
                                             </tr>
 
                                         
 
                                             <tr>
-                                                <td>17</td>
                                                 <td align="center">
 
                                                                                                                 <a href="<?php echo $this->request->webroot;?>clients/edit/17?view">
@@ -217,7 +209,7 @@
 
                                                         <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>clients/edit/17">Edit</a>                                                            <a class="btn default btn-xs red-stripe" onclick="return confirm('Are you sure you want to delete &quot;Challenger Motor Freight &quot;?');" href="<?php echo $this->request->webroot;?>clients/delete/17">Delete</a>
 
-                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">view Driver(s)</a>
+                                                                                                                    <a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot;?>profiles/listall">View Driver(s)</a>
                                                                                                             </td>
                                             </tr>
 

@@ -1,4 +1,4 @@
-0<?php
+<?php
 include_once('subpages/api.php');
 $settings = $this->requestAction('settings/get_settings');
 $language = $this->request->session()->read('Profile.language');

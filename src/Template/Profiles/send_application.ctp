@@ -33,7 +33,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                 <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                <label class="control-label col-md-4">Insurer
+                <label class="control-label col-md-4"><br>Insurer
                 </label>
                 <div class="col-md-8">
                     <img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" class="img-responsive" style="width: 120px;padding-right:20px;" />
@@ -116,7 +116,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class=" col-md-6"></div>
                 <div class="col-md-6 app_send_btn">
-                <a href="" class="btn btn-primary">Send Application</a><br /><br />
+                <!--a href="" class="btn btn-primary">Send Application</a><br /><br /-->
                 <a href="<?php echo $this->request->webroot;?>profiles/sendApplicationEmail" class="btn btn-primary">Send Pre Application Email</a><br /><br />
                 <a href="<?php echo $this->request->webroot;?>profiles/postOrder" class="btn btn-primary">Send Post Application Email</a>
                 </div>
