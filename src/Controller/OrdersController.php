@@ -18,6 +18,10 @@
         public function intact(){
 
         }
+        public function buy_products()
+        {
+            
+        }
 
         public function productSelection() {
             $this->set('doc_comp', $this->Document);

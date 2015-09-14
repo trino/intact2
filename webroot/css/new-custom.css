@@ -667,3 +667,70 @@ body .page-header .page-header-top .page-logo {
 .form .form-actions .btn-set select {
     max-width: 200px !important;
 }
+
+.pricing-head h3 {
+  background: #36d7ac none repeat scroll 0 0;
+  border-bottom: 1px solid #41b91c;
+  color: #fafafa;
+  font-size: 27px;
+  font-weight: 300;
+  padding: 12px 0;
+    margin-top: 0px !important;
+  text-align: center;
+}
+
+.pricing {
+  border: 3px solid #eee;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.pricing-head h3 span, .pricing-head h4 span {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 0px !important;
+  text-align: center;
+}
+
+.pricing {
+  background: #fff none repeat scroll 0 0 !important;
+  box-shadow: 0 0 3px #555555 !important;
+  margin: 20px !important;
+  padding: 0 0px 0px !important;
+  border-radius:0 !important;
+}
+
+.pricing-footer {
+  color: #777;
+  font-size: 11px;
+  line-height: 17px;
+  padding: 0 20px 19px;
+  text-align: center;
+}
+
+.price-active, .pricing:hover {
+    z-index: 9;
+}
+.pricing:hover {
+    border: 3px solid #36d7ac;
+}
+
+.pricing-content li {
+  border-bottom: 1px solid #f5f9e7;
+  color: #888;
+  font-size: 12px;
+  padding: 7px 15px;
+}
+
+.pricing-content li i {
+  color: #36d7ac;
+  font-size: 16px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+}
+
+.pricing-orders .select2-container.form-control.input-ignore.select2me {
+  display: none;
+}
