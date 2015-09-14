@@ -130,48 +130,7 @@
                             </div>
                             </div><!-- .driver_info -->
                             
-                            <div class="driving_exp col-md-12 col-sm-12 col-xs-12">
-                            <h4>DRIVING EXPERIENCE</h4>
-                            <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
-                            <label class="control-label col-md-6 col-sm-6 col-xs-12 required">Years experience under current class of license</label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input class="form-control" value="" required="" placeholder="" name="ycl">
-                            </div>
-                            </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
-                            <label class="control-label col-md-6 col-sm-6 col-xs-12 required">Years of US commercial driving experience</label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input class="form-control" value="" required="" placeholder="" name="ycde">
-                            </div>
-                            </div>
-                            
-                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
-                            <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                            <label class="control-label col-md-12 col-sm-12 col-xs-12 required">Check your current status below</label>
-                            <div class="col-md-6 col-sm-6 col-xs-12 checkbox-list">
-                                  <label class="checkbox-inline padding-left">
-                                   <div class="checkbox" id="owner-operator"><span class="checked"><input type="checkbox" value="1" id="ownerOperator" name="oo1" class="form-control"></span></div>
-                                   <span>Owner Operator</span>
-                                  </label>
-                                  <label class="checkbox-inline padding-left">
-                                  <div class="checkbox" id="company-driver"><span><input type="checkbox" value="2" id="companyDriver" name="oo1" class="form-control"></span></div>
-                                  <span>Company Driver</span>
-                                   </label>
-                            </div>
-                            </div>
-                            
-                            </div>
-                            
-                            </div>
-                            
-                            </div>
-                            </div><!-- .driving_exp -->
-                            
-                            
-                                          
-                                <div class="col-md-12 col-sm-12 col-xs-12 subz">
+                         <div class="col-md-12 col-sm-12 col-xs-12 subz">
                           <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right nextstep" onclick="$('.overlay-wrapper').show();
         window.setTimeout(function(){  $('#second a').click();$('.overlay-wrapper').hide();}, 1500);" >
                                 Next <i class="m-icon-swapright m-icon-white"></i>
@@ -190,7 +149,7 @@
                                 <div class=" col-md-9">
                                     <input type="text" name="company_name[]" class="form-control">
                                 </div>
-                            </div>
+                            </div> 
 
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Address:</label>
@@ -315,6 +274,43 @@
                     </div>
                                     
                     <div id="tab_1_3" class="tab-pane">
+                        <div class="certify_note margin-bottom-10 margin-top-10 clearfix">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                            I certify that I have completed this application and that all the information is true and accurate.  I authorize Intact Insurance, ISB Canada and/or my Insurance Broker to do a background check(if deemed necessary) in accordance with Provincial and Federal Laws.  I authorize my previous employers listed on this form to release any information requested by Intact Insurance, ISB Canada or my Insurance Broker and hold them harmless of all liability from the release of said information.  
+                            </div>
+                            </div>
+                            
+                            <div class="signature_date clearfix">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="row">
+                            <label class="control-label col-md-12 col-sm-12 col-xs-12">Driver's Signature</label>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                            <?php 
+                            include(APP."../application/signature.php");
+                                //include('/canvas/adddriver.php');
+                                includeCanvas("gfs_signature");
+                            ?>
+                            </div>
+                            
+                            
+                            </div>
+                            
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="row">
+                            <label class="control-label col-md-12 col-sm-12 col-xs-12">Date</label>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control" value="" required="" placeholder="" name="driversigndate">
+                            </div>
+                            
+                            
+                            </div>
+                            
+                            </div>
+                            
+                            </div>
+                                
+                                
                          <div class="col-md-12 col-sm-12 col-xs-12 subz">
                               <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right" >
                                     Submit
