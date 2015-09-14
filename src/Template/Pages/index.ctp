@@ -90,7 +90,7 @@
         					</a>
         				</div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-bottom-10">
-        					<a class="dashboard-stat dashboard-stat-light yellow" href="javascript:;">
+        					<a class="dashboard-stat dashboard-stat-light yellow" href="<?php echo $this->request->webroot;?>orders/buy_products">
         					<div class="visual-bg">
         						<i class="fa fa-tags"></i>
         					</div>

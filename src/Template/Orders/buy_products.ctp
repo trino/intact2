@@ -32,8 +32,7 @@
 
     <div align="right" style="margin-top: 6px;" class="col-xs-3 control-label">Subject</div><div id="driverform" class="col-xs-6">
     <div class="select2-container form-control input-ignore select2me" id="s2id_selecting_driver"><a tabindex="-1" class="select2-choice" href="javascript:void(0)">   <span class="select2-chosen" id="select2-chosen-2">Select Subject            </span><abbr class="select2-search-choice-close"></abbr>   <span role="presentation" class="select2-arrow"><b role="presentation"></b></span></a><label class="select2-offscreen" for="s2id_autogen2"></label><input type="text" role="button" aria-haspopup="true" class="select2-focusser select2-offscreen" aria-labelledby="select2-chosen-2" id="s2id_autogen2"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label class="select2-offscreen" for="s2id_autogen2_search"></label>       <input type="text" aria-autocomplete="list" aria-expanded="true" role="combobox" class="select2-input" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off" aria-owns="select2-results-2" id="s2id_autogen2_search" placeholder="">   </div>   <ul role="listbox" class="select2-results" id="select2-results-2">   </ul></div></div><select id="selecting_driver" data-placeholder="Create New Driver" class="form-control input-ignore select2me select2-offscreen" tabindex="-1" title="">
-                <option selected="">Select Subject            </option>                    <option value="859">  </option>
-                    <option value="883">3 3 3</option>
+                <option selected="">Select Subject            </option>
                     <option value="857">Abdelhay  Rhihani</option>
                     <option value="277">Abdolreza  Eshaghpour</option>
                     <option value="226">Abdul  Khaliq</option>
@@ -282,6 +281,7 @@
     <li id="product_1650"><div class="col-xs-10"><i class="fa fa-file-text-o"></i> <label for="form5">Education Verification</label></div><div class="col-xs-2"><div class="" id=""><span><input type="checkbox" id="form5" value="1650"></span></div></div><div class="clearfix"></div></li>
     <li id="product_1627"><div class="col-xs-10"><i class="fa fa-file-text-o"></i> <label for="form6">Letter Of Experience</label></div><div class="col-xs-2"><div class="" id=""><span><input type="checkbox" id="form6" value="1627"></span></div></div><div class="clearfix"></div></li>
     <li id="product_72"><div class="col-xs-10"><i class="fa fa-file-text-o"></i> <label for="form7">Check DL</label></div><div class="col-xs-2"><div class="" id=""><span><input type="checkbox" id="form7" value="72"></span></div></div><div class="clearfix"></div></li>
+    <li id="product_72"><div class="col-xs-10"><i class="fa fa-file-text-o"></i> <label for="form7">Auto Plus</label></div><div class="col-xs-2"><div class="" id=""><span><input type="checkbox" id="form7" value="72"></span></div></div><div class="clearfix"></div></li>
     </div>
     </ul>
     

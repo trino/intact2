@@ -140,6 +140,7 @@
                         </div>
                     </div>
                     <div id="tab_1_2" class="tab-pane">
+                        <div>
                         <div class="form-group row">
                             <h3 class="col-md-12">Reference 1</h3>
                         </div>
@@ -259,15 +260,13 @@
                                 </div>
                 
                                 </div>
-                                <div id="more_div"></div>
-                           
-                        
-        
+                                
                         <div class="clearfix"></div>
                      </div>
-                     
-                     <hr />
-                     
+                     </div>
+                    
+                     <div id="more_div">
+                      <hr />
                          <div class="form-group row">
                             <h3 class="col-md-12">Reference 2</h3>
                         </div>
@@ -387,10 +386,13 @@
                                 </div>
                 
                                 </div>
-                                <div id="more_div"></div>
-                                <div id="add_more_div">
+                               </div>
+                
+                </div>
+                
+    <div id="add_more_div">
         <p>&nbsp;</p>
-        <input type="hidden" value="1" id="count_past_emp" name="count_past_emp" />
+        <input type="hidden" value="2" id="count_past_emp" name="count_past_emp" />
         <a onclick="add_more();" class="btn green no-print" href="javascript:void(0);">Add More</a>
     </div>
                            
@@ -403,8 +405,7 @@
         
                         <div class="clearfix"></div>
                      </div>
-                    
-                    </div>
+                  
                                     
                     <div id="tab_1_3" class="tab-pane">
                         <div class="certify_note margin-bottom-10 margin-top-10 clearfix">
@@ -466,4 +467,32 @@
          <?php //include('subpages/profile/adddriver.php');?>   
     </div>
 
+<script>
+
+    var requiredreferences = 2;
+
+    function add_more() {//$("#add_more").click(function () {
+        var references = Number($('#count_past_emp').val())+Number(1);
+        $.ajax({
+            url: "<?= $this->request->webroot;?>subpages/documents/addloe.php?references=" + references,
+            success: function (res) {
+                $("#more_div").append(res);
+                
+                $('#count_past_emp').attr('value', references);
+            },
+            error: function (res){
+                //alert(res);
+            }
+        });
+    }
+
+    $(".deleteloe").live("click", function () {
+        $(this).parent().parent().remove();
+        var c = $('#count_past_emp').val();
+        var counter = parseInt(c) - 1;
+        $('#count_past_emp').attr('value', counter);
+        references = references - 1;
+    });
+
+</script>
 
