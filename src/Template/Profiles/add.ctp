@@ -65,7 +65,7 @@
                             <form id="approvedForm" class="step1-form" method="post" action="">
                             <div class="driver_info col-md-12 col-sm-12 col-xs-12">
                             <h4>DRIVER INFORMATION</h4>
-                            <div class="row">
+
                             <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                             <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -130,59 +130,146 @@
                             </div>
                             </div><!-- .driver_info -->
                             
-                            <div class="driving_exp col-md-12 col-sm-12 col-xs-12">
-                            <h4>DRIVING EXPERIENCE</h4>
-                            <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
-                            <label class="control-label col-md-6 col-sm-6 col-xs-12 required">Years experience under current class of license</label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input class="form-control" value="" required="" placeholder="" name="ycl">
-                            </div>
-                            </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
-                            <label class="control-label col-md-6 col-sm-6 col-xs-12 required">Years of US commercial driving experience</label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input class="form-control" value="" required="" placeholder="" name="ycde">
-                            </div>
-                            </div>
-                            
-                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
-                            <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                            <label class="control-label col-md-12 col-sm-12 col-xs-12 required">Check your current status below</label>
-                            <div class="col-md-6 col-sm-6 col-xs-12 checkbox-list">
-                                  <label class="checkbox-inline padding-left">
-                                   <div class="checkbox" id="owner-operator"><span class="checked"><input type="checkbox" value="1" id="ownerOperator" name="oo1" class="form-control"></span></div>
-                                   <span>Owner Operator</span>
-                                  </label>
-                                  <label class="checkbox-inline padding-left">
-                                  <div class="checkbox" id="company-driver"><span><input type="checkbox" value="2" id="companyDriver" name="oo1" class="form-control"></span></div>
-                                  <span>Company Driver</span>
-                                   </label>
-                            </div>
-                            </div>
-                            
-                            </div>
-                            
-                            </div>
-                            
-                            </div>
-                            </div><!-- .driving_exp -->
-                            
-                            
-                                          
-                                <div class="col-md-12 col-sm-12 col-xs-12 subz">
+                         <div class="col-md-12 col-sm-12 col-xs-12 subz">
                           <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right nextstep" onclick="$('.overlay-wrapper').show();
         window.setTimeout(function(){  $('#second a').click();$('.overlay-wrapper').hide();}, 1500);" >
                                 Next <i class="m-icon-swapright m-icon-white"></i>
                           </a>
                     </div>
                            </form> 
+                           <div class="clearfix"></div>
                         </div>
-                    </div>
+                       
                     <div id="tab_1_2" class="tab-pane">
+                        <div>
                         <div class="form-group row">
-                            <h3 class="col-md-12">Past Employer</h3>
+                            <h3 class="col-md-12">Reference 1</h3>
+                        </div>
+                        <div class="gndn">
+                            <div class="form-group row">
+                                <label class="control-label col-md-3">Company Name:</label>
+                                <div class=" col-md-9">
+                                    <input type="text" name="company_name[]" class="form-control">
+                                </div>
+                            </div> 
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Address:</label>
+                                    <div class="col-md-3">
+                                        <input type="text" name="address[]" class="form-control">
+                                    </div>
+                                    <label class="control-label col-md-3">City:</label>
+                                    <div class="col-md-3">
+                                        <input type="text" name="city[]" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                <label class="control-label col-md-3">Province/State:</label>
+                                <div class="col-md-3">
+                                    <input type="text" name="state_province[]" class="form-control">
+                                </div>
+                                <label class="control-label col-md-3">Country:</label>
+                                <div class="col-md-3">
+                                <input type="text" name="country[]" class="form-control">
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                <label class="control-label col-md-3">Supervisor's Name:</label>
+                                <div class="col-md-3">
+                                <input type="text" name="supervisor_name[]" class="form-control">
+                                </div>
+                               <label class="control-label col-md-3">Phone Number:</label>
+                               <div class="col-md-3">
+                               <input type="text" name="supervisor_phone[]" role="phone" class="form-control">
+                               </div>
+                               </div>
+                               
+                               <div class="form-group row">
+                               <label class="control-label col-md-3">Supervisor's Email:</label>
+                               <div class="col-md-3">
+                               <input type="text" name="supervisor_email[]" role="email" class="form-control email1">
+                               </div>
+                               <label class="control-label col-md-3">Secondary Email:</label>
+                               <div class="col-md-3">
+                               <input type="text" name="supervisor_secondary_email[]" role="email" class="form-control email1">
+                               </div>
+                               </div>
+                               
+                               <div class="form-group row">
+                                <label class="control-label col-md-3">Employment Start Date:</label>
+                                <div class="col-md-3">
+                                <input type="text" name="employment_start_date[]" class="form-control date-picker">
+                                </div>
+                                <label class="control-label col-md-3">Employment End Date:</label>
+                                <div class="col-md-3">
+                                <input type="text" name="employment_end_date[]" class="form-control date-picker">
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                <label class="control-label col-md-3">Claims with this Employer:</label>
+                               <div class="col-md-3">
+                                <label class="radio-inline"><div class="radio"><input type="radio" value="1" name="claims_with_employer_35881[]"></div><span>Yes</span></label>
+                                <label class="radio-inline"><div class="radio"><input type="radio" value="0" name="claims_with_employer_35881[]"></div><span>No</span>  </div></label>
+                                 <label class="control-label col-md-3">Date Claims Occurred:</label>
+                                 <div class="col-md-3">
+                                 <input type="text" name="claims_recovery_date[]" class="form-control date-picker">
+                                 </div>
+                                 </div>
+                                 
+                                 <div class="form-group row">
+                                    <label class="control-label col-md-3">Employment history confirmed by (Verifier Use Only):</label>
+                                    <div class="col-md-3">
+                                        <input type="text" name="emploment_history_confirm_verify_use[]" class="form-control">
+                                    </div>
+
+                                <label class="control-label col-md-3">US DOT MC/MX#:</label>
+                                <div class="col-md-3">
+                                <input type="text" class="form-control" name="us_dot[]">
+                                </div>
+
+                                <label style="display: none;" class="control-label col-md-3"></label>
+                                <div class="col-md-3">
+                                <input type="text" name="signature[]" style="display: none;" class="form-control">
+                                </div>
+                                </div>
+
+                                <div class="form-group row">
+                                <label class="control-label col-md-3">Date:</label>
+                                <div class="col-md-3">
+                                <input type="text" name="signature_datetime[]" class="form-control date-picker">
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                            <label class="control-label col-md-3">Equipment Operated: </label>
+                                            <div class="col-md-9">
+                                               <label class="checkbox-inline"> <div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="equipment_vans[]"></span></div></div><span>Vans</span></label>
+                                                <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="equipment_reefer[]"></span></div></div><span>Reefers</span></label>
+                                                <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="equipment_decks[]"></span></div></div><span>Decks</span></label>
+                                                <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="equipment_super[]"></span></div></div><span>Super B's</span></label>
+                                                <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="equipment_straight_truck[]"></span></div></div><span>Straight Truck</span></label>
+                                                <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="equipment_others[]"></span></div></div><span>Others:</span></label>
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                <label class="control-label col-md-3">Driving Experience: </label>
+                                <div class="col-md-9">
+                                    <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="driving_experince_local[]"></span></div></div><span>Local</span></label>
+                                    <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="driving_experince_canada[]"></span></div></div><span>Canada</span></label>
+                                    <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="driving_experince_canada_rocky_mountains[]"></span></div></div><span>Canada: Rocky Mountains</span></label>
+                                    <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="driving_experince_usa[]"></span></div></div><span>USA</span></label>
+                                </div>
+                
+                                </div>
+                                
+                        <div class="clearfix"></div>
+                     </div>
+                     </div>
+                    
+                     <div id="more_div">
+                      <hr />
+                         <div class="form-group row">
+                            <h3 class="col-md-12">Reference 2</h3>
                         </div>
                         <div class="gndn">
                             <div class="form-group row">
@@ -300,7 +387,15 @@
                                 </div>
                 
                                 </div>
-                                <div id="more_div"></div>
+                               </div>
+                
+                </div>
+                
+    <div id="add_more_div">
+        <p>&nbsp;</p>
+        <input type="hidden" value="2" id="count_past_emp" name="count_past_emp" />
+        <a onclick="add_more();" class="btn green no-print" href="javascript:void(0);">Add More</a>
+    </div>
                            
                           <div class="col-md-12 col-sm-12 col-xs-12 subz">
                               <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right" onclick="$('.overlay-wrapper').show();
@@ -311,10 +406,48 @@
         
                         <div class="clearfix"></div>
                      </div>
-                    
-                    </div>
+                  
                                     
                     <div id="tab_1_3" class="tab-pane">
+                        <div class="certify_note margin-bottom-10 margin-top-10 clearfix">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                            I certify that I have completed this application and that all the information is true and accurate.  I authorize Intact Insurance, ISB Canada and/or my Insurance Broker to do a background check(if deemed necessary) in accordance with Provincial and Federal Laws.  I authorize my previous employers listed on this form to release any information requested by Intact Insurance, ISB Canada or my Insurance Broker and hold them harmless of all liability from the release of said information.  
+                            </div>
+                            </div>
+                            
+                            <div class="signature_date clearfix">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="row">
+                            <label class="control-label col-md-12 col-sm-12 col-xs-12">Driver's Signature</label>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                            <?php 
+                                include(APP."../application/signature.php");
+                                //include('/canvas/adddriver.php');
+                                includeCanvas("adddriver");
+                                
+                            ?>
+                     
+                            </div>
+                            
+                            
+                            </div>
+                            
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="row">
+                            <label class="control-label col-md-12 col-sm-12 col-xs-12">Date</label>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control" value="" required="" placeholder="" name="driversigndate" />
+                            </div>
+                            
+                            
+                            </div>
+                            
+                            </div>
+                            
+                            </div>
+                                
+                                
                          <div class="col-md-12 col-sm-12 col-xs-12 subz">
                               <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right" >
                                     Submit
@@ -337,4 +470,31 @@
          <?php //include('subpages/profile/adddriver.php');?>   
     </div>
 
+<script>
+
+    function add_more() {//$("#add_more").click(function () {
+        var references = Number($('#count_past_emp').val())+Number(1);
+        $.ajax({
+            url: "<?= $this->request->webroot;?>subpages/documents/addloe.php?references=" + references,
+            success: function (res) {
+                $("#more_div").append(res);
+                
+                $('#count_past_emp').attr('value', references);
+            },
+            error: function (res){
+                //alert(res);
+            }
+        });
+    }
+
+    $(".deleteloe").live("click", function () {
+        $(this).parent().parent().remove();
+        var c = $('#count_past_emp').val();
+        var counter = parseInt(c) - 1;
+        $('#count_past_emp').attr('value', counter);
+        references = references - 1;
+    });
+
+
+</script>
 
