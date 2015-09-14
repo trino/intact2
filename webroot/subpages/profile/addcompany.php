@@ -505,7 +505,7 @@
                                             FUEL TAX CALCULATOR
                                         </HEADER>
                                         <?php
-                                            printtable($this, $Manager, "logos", "id", false, false, true, true);
+                                            printtable($this, $Manager, "fuelchart", "id", false, false, true, true);
                                         ?>
                                         <FOOTER>
                                             Completion of this form does not bind coverage.<BR>
