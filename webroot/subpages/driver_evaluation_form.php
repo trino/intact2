@@ -21,7 +21,7 @@
 													* </span>
 													</label>
 													<div class="col-md-4">
-														<input type="text" placeholder="" class="form-control date-picker" name=""/>
+														<input type="text" placeholder="" class="form-control date-picker datepicker" name=""/>
 														
 													</div>
 												</div>

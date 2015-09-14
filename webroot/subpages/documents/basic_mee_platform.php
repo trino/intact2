@@ -271,7 +271,7 @@
         <div class="col-md-12">
                     <label class="control-label col-md-6">When did you get your AZ License and have you been commercially driving consistently since you got your license?</label>  
                     <div class="col-md-6">              
-                        <input type="text" name="az_license_date" class="date-picker form-control" />
+                        <input type="text" name="az_license_date" class="date-picker datepicker form-control" />
                     </div>
         </div>
         
@@ -646,7 +646,7 @@
             <div class="col-md-12">
                         <label class="control-label col-md-6">Dates for the above?</label>  
                         <div class="col-md-6">              
-                            <input type="text" name="date_above" class="form-control date-picker" value="<?php if(isset($basic_mee_platform))echo $basic_mee_platform->date_above;?>" />
+                            <input type="text" name="date_above" class="form-control date-picker datepicker" value="<?php if(isset($basic_mee_platform))echo $basic_mee_platform->date_above;?>" />
                         </div>
             </div>
             
@@ -696,7 +696,7 @@
         <div class="col-md-12">
                     <label class="control-label col-md-6">Date of application</label>  
                     <div class="col-md-6">              
-                        <input type="text" name="date_of_application2" class="form-control date-picker" value="<?php if(isset($basic_mee_platform))echo $basic_mee_platform->date_of_application2;?>" />
+                        <input type="text" name="date_of_application2" class="form-control date-picker datepicker" value="<?php if(isset($basic_mee_platform))echo $basic_mee_platform->date_of_application2;?>" />
                     </div>
         </div>
         
@@ -855,7 +855,7 @@
                     <label class="control-label col-md-6">Do you have a FAST card?</label>  
                     <div class="col-md-6"> 
                         <input type="text" class="form-control" name="fast_number" value="<?php if(isset($basic_mee_platform))echo $basic_mee_platform->fast_number;?>" placeholder="Number" style="margin-bottom: 5px;" />
-                        <input type="text" class="form-control date-picker" name="fast_expiry" value="<?php if(isset($basic_mee_platform))echo $basic_mee_platform->expiry_date;?>" placeholder="Expiry Date" style="margin-bottom: 5px;" />             
+                        <input type="text" class="form-control date-picker datepicker" name="fast_expiry" value="<?php if(isset($basic_mee_platform))echo $basic_mee_platform->expiry_date;?>" placeholder="Expiry Date" style="margin-bottom: 5px;" />
                         
                         
                     </div>

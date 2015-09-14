@@ -83,12 +83,12 @@
    <div class="form-group left15 col-md-12">
         <label class="control-label col-md-3 required"><translate>verifs_employment</translate>:</label>
         <div class="col-md-3">
-            <input type="text" class="form-control date-picker datepicker required" required name="employment_start_date[]"/>
+            <input type="text" class="form-control date-picker datepicker datepicker required" required name="employment_start_date[]"/>
         </div>
 
         <label class="control-label col-md-3 required"><translate>verifs_employment2</translate>:</label>
         <div class="col-md-3">
-            <input type="text" class="form-control date-picker datepicker required" required name="employment_end_date[]"/>
+            <input type="text" class="form-control date-picker datepicker datepicker required" required name="employment_end_date[]"/>
         </div>
    </div>
 
@@ -100,7 +100,7 @@
         </div>
          <label class="control-label col-md-3"><translate>verifs_dateclaims</translate>:</label>
          <div class="col-md-3">
-            <input type="text" class="form-control date-picker datepicker" name="claims_recovery_date[]"/>
+            <input type="text" class="form-control date-picker datepicker datepicker" name="claims_recovery_date[]"/>
          </div>
    </div>
 
@@ -125,7 +125,7 @@
    <div class="form-group left15 col-md-12">
         <label class="control-label col-md-3"><translate>verifs_date</translate>:</label>
         <div class="col-md-9">
-            <input type="text" class="form-control date-picker datepicker" disabled name="signature_datetime[]" value="<?= date("Y-m-d"); ?>"/>
+            <input type="text" class="form-control date-picker datepicker datepicker" disabled name="signature_datetime[]" value="<?= date("Y-m-d"); ?>"/>
         </div>
    </div>
 

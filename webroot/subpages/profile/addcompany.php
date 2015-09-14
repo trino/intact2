@@ -26,7 +26,7 @@
 
                     <label class="control-label col-md-4 col-sm-4 col-xs-12 col-sm-4 col-xs-12">DATE: </label>
                     <div class="col-md-8 col-sm-8 col-xs-12">
-                        <input class="form-control" value="" required="" placeholder="(Todays Date)" name="date">
+                        <input class="form-control datepicker" value="" required="" placeholder="(Todays Date)" name="date">
                     </div>
 
                 </div>
@@ -810,6 +810,15 @@
 
         <div class="col-md-12 col-sm-12 col-xs-12 margin-bottom-10">
             <div class="row">
+                <label class="control-label col-md-3">DATE :	</label>
+                <div class="col-md-9 col-sm-9 col-xs-12 col-sm-9 col-xs-12">
+                    <input class="form-control datepicker" value="" required="" placeholder="" name="date">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 margin-bottom-10">
+            <div class="row">
                 <label class="control-label col-md-3">SIGNATURE OF APPLICANT :	</label>
                 <div class="col-md-9 col-sm-9 col-xs-12 col-sm-9 col-xs-12">
                     <?php
@@ -819,14 +828,6 @@
             </div>
         </div>
 
-        <div class="col-md-12 col-sm-12 col-xs-12 margin-bottom-10">
-            <div class="row">
-                <label class="control-label col-md-3">DATE :	</label>
-                <div class="col-md-9 col-sm-9 col-xs-12 col-sm-9 col-xs-12">
-                    <input class="form-control" value="" required="" placeholder="" name="date">
-                </div>
-            </div>
-        </div>
 
         <div class="col-md-12 col-sm-12 col-xs-12 subz">
             <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right" >

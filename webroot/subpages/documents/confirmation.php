@@ -80,7 +80,7 @@
         <label class="control-label col-md-12" style="margin-top: 5px;"><?= $strings["forms_datetime"]; ?>: </label>
 
         <div class="col-md-12">
-            <input disabled="disabled" type="text" class="form-control date-picker" name="conf_date" id="conf_date"
+            <input disabled="disabled" type="text" class="form-control date-picker datepicker" name="conf_date" id="conf_date"
                    value="<?php if (isset($modal->created)) echo $modal->created; else {
                        echo date('Y-m-d  H:i:s');
                    } ?>"/>

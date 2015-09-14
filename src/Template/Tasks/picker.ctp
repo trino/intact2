@@ -1358,7 +1358,7 @@
 									<div class="form-group">
 										<label class="control-label col-md-3">Default Datepicker</label>
 										<div class="col-md-3">
-											<input class="form-control form-control-inline input-medium date-picker" size="16" type="text" value=""/>
+											<input class="form-control form-control-inline input-medium date-picker datepicker" size="16" type="text" value=""/>
 											<span class="help-block">
 											Select date </span>
 										</div>
@@ -1366,7 +1366,7 @@
 									<div class="form-group">
 										<label class="control-label col-md-3">Disable Past Dates</label>
 										<div class="col-md-3">
-											<div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-start-date="+0d">
+											<div class="input-group input-medium date date-picker datepicker" data-date-format="dd-mm-yyyy" data-date-start-date="+0d">
 												<input type="text" class="form-control" readonly>
 												<span class="input-group-btn">
 												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
@@ -1380,7 +1380,7 @@
 									<div class="form-group">
 										<label class="control-label col-md-3">Start With Years</label>
 										<div class="col-md-3">
-											<div class="input-group input-medium date date-picker" data-date="12-02-2012" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
+											<div class="input-group input-medium date date-picker datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
 												<input type="text" class="form-control" readonly>
 												<span class="input-group-btn">
 												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
@@ -1394,7 +1394,7 @@
 									<div class="form-group">
 										<label class="control-label col-md-3">Months Only</label>
 										<div class="col-md-3">
-											<div class="input-group input-medium date date-picker" data-date="10/2012" data-date-format="mm/yyyy" data-date-viewmode="years" data-date-minviewmode="months">
+											<div class="input-group input-medium date date-picker datepicker" data-date="10/2012" data-date-format="mm/yyyy" data-date-viewmode="years" data-date-minviewmode="months">
 												<input type="text" class="form-control" readonly>
 												<span class="input-group-btn">
 												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
@@ -1408,7 +1408,7 @@
 									<div class="form-group">
 										<label class="control-label col-md-3">Date Range</label>
 										<div class="col-md-4">
-											<div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
+											<div class="input-group input-large date-picker datepicker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
 												<input type="text" class="form-control" name="from">
 												<span class="input-group-addon">
 												to </span>
@@ -1422,7 +1422,7 @@
 									<div class="form-group">
 										<label class="control-label col-md-3">Inline</label>
 										<div class="col-md-3">
-											<div class="date-picker" data-date-format="mm/dd/yyyy">
+											<div class="date-picker datepicker" data-date-format="mm/dd/yyyy">
 											</div>
 										</div>
 									</div>
@@ -1448,13 +1448,13 @@
 												<div class="form-group">
 													<label class="control-label col-md-4">Default Datepicker</label>
 													<div class="col-md-8">
-														<input class="form-control input-medium date-picker" size="16" type="text" value=""/>
+														<input class="form-control input-medium date-picker datepicker" size="16" type="text" value=""/>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="control-label col-md-4">Disable Past Dates</label>
 													<div class="col-md-8">
-														<div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-start-date="+0d">
+														<div class="input-group input-medium date date-picker datepicker" data-date-format="dd-mm-yyyy" data-date-start-date="+0d">
 															<input type="text" class="form-control" readonly>
 															<span class="input-group-btn">
 															<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
@@ -1468,7 +1468,7 @@
 												<div class="form-group">
 													<label class="control-label col-md-4">Start With Years</label>
 													<div class="col-md-8">
-														<div class="input-group input-medium date date-picker" data-date="12-02-2012" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
+														<div class="input-group input-medium date date-picker datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
 															<input type="text" class="form-control" readonly>
 															<span class="input-group-btn">
 															<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
@@ -1480,7 +1480,7 @@
 												<div class="form-group">
 													<label class="control-label col-md-4">Months Only</label>
 													<div class="col-md-8">
-														<div class="input-group input-medium date date-picker" data-date="10/2012" data-date-format="mm/yyyy" data-date-viewmode="years" data-date-minviewmode="months">
+														<div class="input-group input-medium date date-picker datepicker" data-date="10/2012" data-date-format="mm/yyyy" data-date-viewmode="years" data-date-minviewmode="months">
 															<input type="text" class="form-control" readonly>
 															<span class="input-group-btn">
 															<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
@@ -1492,7 +1492,7 @@
 												<div class="form-group">
 													<label class="control-label col-md-4">Date Range</label>
 													<div class="col-md-8">
-														<div class="input-group input-medium date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
+														<div class="input-group input-medium date-picker datepicker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
 															<input type="text" class="form-control" name="from">
 															<span class="input-group-addon">
 															to </span>

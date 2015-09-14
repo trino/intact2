@@ -3,7 +3,7 @@ var ComponentsPickers = function () {
     var handleDatePickers = function () {
 
         if (jQuery().datepicker) {
-            $('.date-picker').datepicker({
+            $('.date-picker datepicker').datepicker({
                 rtl: Metronic.isRTL(),
                 orientation: "left",
                 autoclose: true

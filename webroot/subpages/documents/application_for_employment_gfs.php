@@ -623,8 +623,8 @@ function makerow($profile, $Fields){
                 <tr>
                     <td>
                         <label class="col-md-12">Dates of Employment</label>
-                        <div class="col-md-6"><input type="text" class="date-picker form-control" name="date_of_employment_from1" placeholder="From" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_from1;?>" /></div>
-                        <div class="col-md-6"><input type="text" class="date-picker form-control" name="date_of_employment_to1" placeholder="To" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_to1;?>" /></div></div>
+                        <div class="col-md-6"><input type="text" class="date-picker datepicker form-control" name="date_of_employment_from1" placeholder="From" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_from1;?>" /></div>
+                        <div class="col-md-6"><input type="text" class="date-picker datepicker form-control" name="date_of_employment_to1" placeholder="To" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_to1;?>" /></div></div>
                     </td>
                     <td colspan="2">
                         <label class="col-md-12">Type of work done</label>
@@ -660,8 +660,8 @@ function makerow($profile, $Fields){
                 <tr>
                     <td>
                         <label class="col-md-12">Dates of Employment</label>
-                        <div class="col-md-6"><input type="text" class="date-picker form-control" name="date_of_employment_from2" placeholder="From" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_from2;?>" /></div>
-                        <div class="col-md-6"><input type="text" class="date-picker form-control" name="date_of_employment_to2" placeholder="To" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_to2;?>" /></div></div>
+                        <div class="col-md-6"><input type="text" class="date-picker datepicker form-control" name="date_of_employment_from2" placeholder="From" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_from2;?>" /></div>
+                        <div class="col-md-6"><input type="text" class="date-picker datepicker form-control" name="date_of_employment_to2" placeholder="To" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_to2;?>" /></div></div>
                     </td>
                     <td colspan="2">
                         <label class="col-md-12">Type of work done</label>
@@ -697,8 +697,8 @@ function makerow($profile, $Fields){
                 <tr>
                     <td>
                         <label class="col-md-12">Dates of Employment</label>
-                        <div class="col-md-6"><input type="text" class="date-picker form-control" name="date_of_employment_from3" placeholder="From" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_from3;?>" /></div>
-                        <div class="col-md-6"><input type="text" class="date-picker form-control" name="date_of_employment_to3" placeholder="To" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_to3;?>" /></div></div>
+                        <div class="col-md-6"><input type="text" class="date-picker datepicker form-control" name="date_of_employment_from3" placeholder="From" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_from3;?>" /></div>
+                        <div class="col-md-6"><input type="text" class="date-picker datepicker form-control" name="date_of_employment_to3" placeholder="To" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_to3;?>" /></div></div>
                     </td>
                     <td colspan="2">
                         <label class="col-md-12">Type of work done</label>
@@ -916,7 +916,7 @@ through 7 inclusive, and acknowledge that with my signature below.
         
         <div class="col-md-6">
             <label class="col-md-6">Dated</label>
-            <input type="text" name="dated" class="form-control date-picker" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->dated;?>" />
+            <input type="text" name="dated" class="form-control date-picker datepicker" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->dated;?>" />
         </div>
         <div class="col-md-6">
             <label class="col-md-12">Signature</label>
@@ -936,7 +936,7 @@ through 7 inclusive, and acknowledge that with my signature below.
             </div>
             <div class="col-md-4">
                 <label class="col-md-6">Date Employed</label>
-                <div class="col-md-6"><input type="text" name="date_employed" class="form-control date-picker" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_employed;?>" /></div>            
+                <div class="col-md-6"><input type="text" name="date_employed" class="form-control date-picker datepicker" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_employed;?>" /></div>
             </div>
             <div class="col-md-4">
                 <label class="col-md-6">Starting Salary/Wage</label>

@@ -95,7 +95,7 @@
 <script>
     $(function(){
 
-        $('.date-picker1').datepicker({
+        $('.date-picker datepicker1').datepicker({
 
         })
         //Listen for the change even on the input

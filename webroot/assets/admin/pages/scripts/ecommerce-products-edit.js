@@ -147,7 +147,7 @@ var EcommerceProductsEdit = function () {
 
     var initComponents = function () {
         //init datepickers
-        $('.date-picker').datepicker({
+        $('.date-picker datepicker').datepicker({
             rtl: Metronic.isRTL(),
             autoclose: true
         });

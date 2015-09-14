@@ -439,7 +439,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label">Expiry Date: </label>
-                                        <input type="text" value="2015-10-10" class="form-control req_driver date-picker" name="expiry_date" disabled="disabled">
+                                        <input type="text" value="2015-10-10" class="form-control req_driver date-picker datepicker" name="expiry_date" disabled="disabled">
 
 
                                     </div>

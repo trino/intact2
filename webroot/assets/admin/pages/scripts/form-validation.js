@@ -303,11 +303,11 @@ var FormValidation = function () {
             });
 
             //initialize datepicker
-            $('.date-picker').datepicker({
+            $('.date-picker datepicker').datepicker({
                 rtl: Metronic.isRTL(),
                 autoclose: true
             });
-            $('.date-picker .form-control').change(function() {
+            $('.date-picker datepicker .form-control').change(function() {
                 form3.validate().element($(this)); //revalidate the chosen dropdown value and show error or success message for the input 
             })
     }

@@ -6,7 +6,7 @@
 <div class="form-group col-md-12">
                 <label class="control-label col-md-6">Date : </label>
                 <div class="col-md-6">
-					<input type="text" class="form-control date-picker" name="date_of_accident[]"/>
+					<input type="text" class="form-control date-picker datepicker" name="date_of_accident[]"/>
 				</div>
             </div>
             

@@ -247,3 +247,20 @@ jQuery(document).ready(function() {
 </body>
 <!-- END BODY -->
 </html>
+
+<script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+
+<SCRIPT>
+	language = 'English';
+	$(function () {
+		$(".datepicker").datepicker({
+			changeMonth: true,
+			changeYear: true,
+			yearRange: '1980:2020',
+			dateFormat: 'mm/dd/yy'
+		});
+	});
+</SCRIPT>

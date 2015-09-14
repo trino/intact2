@@ -322,18 +322,18 @@
 
                                                                 <div class="form-group col-md-4">
                                                                     <label class="control-label"><?= $strings["forms_startdate"];?>:</label>
-                                                                    <input type="text" class="form-control date-picker"
+                                                                    <input type="text" class="form-control date-picker datepicker"
                                                                            name="date_start" <?php if (isset($client->date_start)) { ?> value="<?php echo $client->date_start; ?>" <?php } ?>/>
                                                                 </div>
                                                                 <div class="form-group col-md-4">
                                                                     <label class="control-label"><?= $strings["forms_enddate"];?>:</label>
-                                                                    <input type="text" class="form-control date-picker"
+                                                                    <input type="text" class="form-control date-picker datepicker"
                                                                            name="date_end" <?php if (isset($client->date_end)) { ?> value="<?php echo $client->date_end; ?>" <?php } ?>/>
                                                                 </div>
 
                                                                 <!--div class="form-group col-md-4">
                                                                     <label class="control-label">Date</label>
-                                                                    <input type="text" class="form-control date-picker"
+                                                                    <input type="text" class="form-control date-picker datepicker"
                                                                            name="client_date" <?php if (isset($client->client_date)) { ?> value="<?php echo $client->client_date; ?>" <?php } ?>/>
                                                                 </div-->
 
@@ -378,7 +378,7 @@
                                                                     <div class="form-group col-md-4">
                                                                         <label class="control-label"><?= $strings["forms_arisreverification"];?>:</label>
                                                                         <input type="text"
-                                                                               class="form-control form-control-inline date-picker"
+                                                                               class="form-control form-control-inline date-picker datepicker"
                                                                                name="reverification" <?php if (isset($client->reverification)) { ?> value="<?php echo $client->reverification; ?>" <?php } ?>/>
                                                                     </div>
                                                                     <div class="form-group col-md-4">

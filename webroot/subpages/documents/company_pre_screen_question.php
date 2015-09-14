@@ -48,7 +48,7 @@ include_once 'subpages/filelist.php';
         </div>
         <div class="col-md-4">
             <label class="control-label">Date: </label>
-            <input type="text" class="form-control date-picker" placeholder="YYYY-MM-DD" name="pre_screen_date">
+            <input type="text" class="form-control date-picker datepicker" placeholder="YYYY-MM-DD" name="pre_screen_date">
         </div>
         <div class="col-md-4">
             <label class="control-label">Position: </label>
@@ -432,7 +432,7 @@ include_once 'subpages/filelist.php';
                 <label class="control-label">When did you get your AZ License and have you been commercially driving consistently since you got your license?</label>
             </div>
             <div class="col-md-6">
-                <input type="text" class="form-control date-picker" placeholder="YYYY-MM-DD" name="discover_az_license_date" />
+                <input type="text" class="form-control date-picker datepicker" placeholder="YYYY-MM-DD" name="discover_az_license_date" />
             </div>
         </div>
 
@@ -647,7 +647,7 @@ include_once 'subpages/filelist.php';
                 <label class="control-label">As we are a long haul company, driving to the USA is a requirement for most runs. Are you willing cross the border? Have you ever crossed the border with a load?</label>
             </div>
             <div class="col-md-6">
-                <input type="text" class="form-control date-picker" placeholder="YYYY-MM-DD" name="willing_cross_border" />
+                <input type="text" class="form-control date-picker datepicker" placeholder="YYYY-MM-DD" name="willing_cross_border" />
             </div>
         </div>
 

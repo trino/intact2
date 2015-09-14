@@ -59,11 +59,11 @@
                                <div class="form-group row">
                                 <label class="control-label col-md-3">Employment Start Date:</label>
                                 <div class="col-md-3">
-                                <input type="text" name="employment_start_date[]" class="form-control date-picker">
+                                <input type="text" name="employment_start_date[]" class="form-control date-picker datepicker">
                                 </div>
                                 <label class="control-label col-md-3">Employment End Date:</label>
                                 <div class="col-md-3">
-                                <input type="text" name="employment_end_date[]" class="form-control date-picker">
+                                <input type="text" name="employment_end_date[]" class="form-control date-picker datepicker">
                                 </div>
                                 </div>
                                 <div class="form-group row">
@@ -73,7 +73,7 @@
                                 <input type="radio" value="0" name="claims_with_employer_35881[]">No </div>
                                  <label class="control-label col-md-3">Date Claims Occurred:</label>
                                  <div class="col-md-3">
-                                 <input type="text" name="claims_recovery_date[]" class="form-control date-picker">
+                                 <input type="text" name="claims_recovery_date[]" class="form-control date-picker datepicker">
                                  </div>
                                  </div>
                                  
@@ -97,7 +97,7 @@
                                 <div class="form-group row">
                                 <label class="control-label col-md-3">Date:</label>
                                 <div class="col-md-3">
-                                <input type="text" name="signature_datetime[]" class="form-control date-picker">
+                                <input type="text" name="signature_datetime[]" class="form-control date-picker datepicker">
                                 </div>
                                 </div>
                                 <div class="form-group row">

@@ -929,8 +929,8 @@
                 <tr>
                     <td>
                         <label class="col-md-12">Dates of Employment</label>
-                        <div class="col-md-6"><input type="text" class="date-picker form-control" name="date_of_employment_from1" placeholder="From" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_from1;?>" /></div>
-                        <div class="col-md-6"><input type="text" class="date-picker form-control" name="date_of_employment_to1" placeholder="To" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_to1;?>" /></div></div>
+                        <div class="col-md-6"><input type="text" class="date-picker datepicker form-control" name="date_of_employment_from1" placeholder="From" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_from1;?>" /></div>
+                        <div class="col-md-6"><input type="text" class="date-picker datepicker form-control" name="date_of_employment_to1" placeholder="To" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_to1;?>" /></div></div>
                     </td>
                     <td colspan="2">
                         <label class="col-md-12">Type of work done</label>
@@ -966,8 +966,8 @@
                 <tr>
                     <td>
                         <label class="col-md-12">Dates of Employment</label>
-                        <div class="col-md-6"><input type="text" class="date-picker form-control" name="date_of_employment_from2" placeholder="From" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_from2;?>" /></div>
-                        <div class="col-md-6"><input type="text" class="date-picker form-control" name="date_of_employment_to2" placeholder="To" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_to2;?>" /></div></div>
+                        <div class="col-md-6"><input type="text" class="date-picker datepicker form-control" name="date_of_employment_from2" placeholder="From" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_from2;?>" /></div>
+                        <div class="col-md-6"><input type="text" class="date-picker datepicker form-control" name="date_of_employment_to2" placeholder="To" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_to2;?>" /></div></div>
                     </td>
                     <td colspan="2">
                         <label class="col-md-12">Type of work done</label>
@@ -1003,8 +1003,8 @@
                 <tr>
                     <td>
                         <label class="col-md-12">Dates of Employment</label>
-                        <div class="col-md-6"><input type="text" class="date-picker form-control" name="date_of_employment_from3" placeholder="From" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_from3;?>" /></div>
-                        <div class="col-md-6"><input type="text" class="date-picker form-control" name="date_of_employment_to3" placeholder="To" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_to3;?>" /></div></div>
+                        <div class="col-md-6"><input type="text" class="date-picker datepicker form-control" name="date_of_employment_from3" placeholder="From" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_from3;?>" /></div>
+                        <div class="col-md-6"><input type="text" class="date-picker datepicker form-control" name="date_of_employment_to3" placeholder="To" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_of_employment_to3;?>" /></div></div>
                     </td>
                     <td colspan="2">
                         <label class="col-md-12">Type of work done</label>

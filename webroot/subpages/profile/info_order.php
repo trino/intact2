@@ -415,7 +415,7 @@
                                     <div class="form-group">
                                         <label class="control-label"><?= $strings["forms_expirydate"]; ?>:</label>
                                         <input <?php echo $is_disabled ?> name="expiry_date" type="text"
-                                                                          class="form-control date-picker" <?php if (isset($p->expiry_date)) { ?> value="<?php echo $p->expiry_date; ?>" <?php } ?> disabled="disabled" />
+                                                                          class="form-control date-picker datepicker" <?php if (isset($p->expiry_date)) { ?> value="<?php echo $p->expiry_date; ?>" <?php } ?> disabled="disabled" />
 
                                     </div>
                                 </div>

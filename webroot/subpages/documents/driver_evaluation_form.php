@@ -33,7 +33,7 @@ $strings2 = CacheTranslations($language, array("drivereval_%", "tasks_date", "fi
 													* </span>
 													</label>
 													<div class="col-md-6">
-														<input type="text" placeholder="" class="form-control date-picker" name="issued_date"/>
+														<input type="text" placeholder="" class="form-control date-picker datepicker" name="issued_date"/>
 														
 													</div>
 												</div>

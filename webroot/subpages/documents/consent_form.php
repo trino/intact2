@@ -38,7 +38,7 @@
 
 
             <div class="col-md-4 margin-bottom-10"><label class="control-label"><?= $strings["forms_dateofbirth"]; ?>: </label>
-                <input type="text" class="form-control date-picker required" placeholder="<?= $strings["forms_dateformat"]; ?>" value="<?php if (isset($consent_detail))echo $consent_detail->birth_date;?>"
+                <input type="text" class="form-control date-picker datepicker required" placeholder="<?= $strings["forms_dateformat"]; ?>" value="<?php if (isset($consent_detail))echo $consent_detail->birth_date;?>"
                        name="birth_date"/>
             </div>
 
@@ -215,12 +215,12 @@
 
 
                 <div class="col-md-4"><label class="control-label"><?= $strings["forms_dateofbirth"]; ?>: </label>
-                    <input type="text" class="form-control date-picker" placeholder="<?= $strings["forms_dateformat"]; ?>" value="<?php if (isset($consent_detail))echo $consent_detail->criminal_date_birth;?>"
+                    <input type="text" class="form-control date-picker datepicker" placeholder="<?= $strings["forms_dateformat"]; ?>" value="<?php if (isset($consent_detail))echo $consent_detail->criminal_date_birth;?>"
                            name="criminal_date_birth"/>
                 </div>
 
                 <div class="col-md-4"><label class="control-label"><?= $strings2["tasks_date"]; ?>: </label>
-                    <input type="text" class="form-control date-picker" placeholder="<?= $strings["forms_dateformat"]; ?>" name="criminal_date" value="<?php if (isset($consent_detail))echo $consent_detail->criminal_date;?>"
+                    <input type="text" class="form-control date-picker datepicker" placeholder="<?= $strings["forms_dateformat"]; ?>" name="criminal_date" value="<?php if (isset($consent_detail))echo $consent_detail->criminal_date;?>"
                            value="<?php echo date("Y-m-d"); ?>"/>
                 </div>
             </div>
@@ -304,7 +304,7 @@
                                 <td><input type="text" class="form-control" name="offence[]"
                                            value="<?php echo $co[$k]; ?>"/>
                                 </td>
-                                <td><input type="text" class="form-control date-picker" name="date_of_sentence[]"
+                                <td><input type="text" class="form-control date-picker datepicker" name="date_of_sentence[]"
                                            value="<?php echo $cd[$k]; ?>"/></td>
                                 <td><input type="text" class="form-control" name="location[]"
                                            value="<?php echo $cl[$k]; ?>"/></td>
@@ -360,7 +360,7 @@
                 <label class="control-label col-md-2"><?= $strings2["tasks_date"]; ?>: </label>
 
                 <div class="col-md-2">
-                    <input type="text" class="form-control date-picker" name="authorize_date"/>
+                    <input type="text" class="form-control date-picker datepicker" name="authorize_date"/>
                 </div>
                 <input type="hidden" class="form-control" name="authorize_signature" />
 

@@ -58,7 +58,7 @@
                         ?>
                         </select>
                     </div>
-    				<div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy-mm-dd">
+    				<div class="input-group input-large date-picker datepicker input-daterange" data-date="10/11/2012" data-date-format="yyyy-mm-dd">
     					<span class="input-group-addon"> <?= $strings["analytics_start"]; ?> </span>
     					<input type="text" class="form-control" name="from" value="<?php if(isset($_GET['from'])) echo $_GET['from'];?>" style="min-width: 100px;"/>
     					<span class="input-group-addon"> <?= $strings["analytics_finish"]; ?> </span>

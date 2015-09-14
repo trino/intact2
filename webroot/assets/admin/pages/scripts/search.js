@@ -4,7 +4,7 @@ var Search = function () {
         //main function to initiate the module
         init: function () {
             if (jQuery().datepicker) {
-                $('.date-picker').datepicker();
+                $('.date-picker datepicker').datepicker();
             }
 
             Metronic.initFancybox();

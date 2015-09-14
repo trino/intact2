@@ -23,7 +23,7 @@ echo $strings["clients_requalifynotice"];
         <td><?= $strings["clients_requalifywhen"] ?></td>
         <td><input type="radio" <?php if(isset($client)&& $client->requalify_re=='1')echo "checked";?> name="requalify_re" value="1" onclick="$('.r_date').hide();"/> <?= $strings["clients_anniversary"]; ?>
             <br><?= $strings["clients_or"]; ?><br> <input type="radio" <?php if(isset($client)&& $client->requalify_re=='0')echo "checked";?> name="requalify_re" value="0" onclick="$('.r_date').show();"><?= $strings["clients_selectadate"]; ?>
-            <input type="text" class="form-control date-picker r_date" style="width:50%;<?php echo (isset($client)&& $client->requalify_re==1)?"display:none":"display:block";?>;" name="requalify_date" value="<?php  if(isset($client)&& $client->requalify_date!="")echo $client->requalify_date; else echo date('Y-m-d');?>">
+            <input type="text" class="form-control date-picker datepicker r_date" style="width:50%;<?php echo (isset($client)&& $client->requalify_re==1)?"display:none":"display:block";?>;" name="requalify_date" value="<?php  if(isset($client)&& $client->requalify_date!="")echo $client->requalify_date; else echo date('Y-m-d');?>">
         </td>
     </tr>
 

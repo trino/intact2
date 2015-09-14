@@ -47,11 +47,11 @@
                      <div class="form-group row">
                                 <label class="control-label col-md-3">Education Start Date</label>
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control date-picker" name="education_start_date[]" />
+                                    <input type="text" class="form-control date-picker datepicker" name="education_start_date[]" />
                                 </div>
                                 <label class="control-label col-md-3">Education End Date</label>
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control date-picker" name="education_end_date[]" />
+                                    <input type="text" class="form-control date-picker datepicker" name="education_end_date[]" />
                                 </div>
                     </div>
 
@@ -62,7 +62,7 @@
                                 </div>
                                 <label class="control-label col-md-3">Date Claims Occured</label>
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control date-picker" name="date_claims_occur[]" />
+                                    <input type="text" class="form-control date-picker datepicker" name="date_claims_occur[]" />
                                 </div>
                     </div>
 
@@ -137,7 +137,7 @@
                                 <!--</div>-->
                         <label class="col-md-3 control-label">Date:</label>
                         <div class="col-md-3">
-                        <input type="text" class="form-control date-picker" name="date_time[]" />
+                        <input type="text" class="form-control date-picker datepicker" name="date_time[]" />
                         </div>
 
     </div>

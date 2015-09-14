@@ -89,11 +89,11 @@ $strings2 = CacheTranslations($language, array("verifs_%", "tasks_date", "file_a
                        <div class="form-group col-md-12">
                         <label class="control-label col-md-3"><?= $strings2["verifs_employment"]; ?>: </label>
                         <div class="col-md-3">
-                        <input type="text" class="form-control date-picker" name="employment_start_date[]" value="<?php echo $emp->employment_start_date;?>"/>
+                        <input type="text" class="form-control date-picker datepicker" name="employment_start_date[]" value="<?php echo $emp->employment_start_date;?>"/>
                         </div>
                         <label class="control-label col-md-3"><?= $strings2["verifs_employment2"]; ?>: </label>
                         <div class="col-md-3">
-                        <input type="text" class="form-control date-picker" name="employment_end_date[]" value="<?php echo $emp->employment_end_date;?>"/>
+                        <input type="text" class="form-control date-picker datepicker" name="employment_end_date[]" value="<?php echo $emp->employment_end_date;?>"/>
                         </div>
                         </div>
                         <div class="form-group col-md-12">
@@ -136,7 +136,7 @@ $strings2 = CacheTranslations($language, array("verifs_%", "tasks_date", "file_a
 
                             <label class="control-label col-md-3"><?= $strings2["verifs_dateclaims"]; ?>: </label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control date-picker" name="claims_recovery_date[]" value="<?php echo $emp->claims_recovery_date;?>"/>
+                                <input type="text" class="form-control date-picker datepicker" name="claims_recovery_date[]" value="<?php echo $emp->claims_recovery_date;?>"/>
                             </div>
                         </div>
 
@@ -161,7 +161,7 @@ $strings2 = CacheTranslations($language, array("verifs_%", "tasks_date", "file_a
                         <div class="form-group col-md-12">
                             <label class="control-label col-md-3"><?= $strings2["tasks_date"]; ?>: </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control date-picker" name="signature_datetime[]" value="<?php echo $emp->signature_datetime;?>"/>
+                            <input type="text" class="form-control date-picker datepicker" name="signature_datetime[]" value="<?php echo $emp->signature_datetime;?>"/>
                         </div>
                     </div>
 
@@ -432,11 +432,11 @@ $strings2 = CacheTranslations($language, array("verifs_%", "tasks_date", "file_a
                                <div class="form-group row">
                                 <label class="control-label col-md-3"><?= $strings2["verifs_employment"]; ?>:</label>
                                 <div class="col-md-3">
-                                <input type="text" class="form-control date-picker" name="employment_start_date[]"/>
+                                <input type="text" class="form-control date-picker datepicker" name="employment_start_date[]"/>
                                 </div>
                                 <label class="control-label col-md-3"><?= $strings2["verifs_employment2"]; ?>:</label>
                                 <div class="col-md-3">
-                                <input type="text" class="form-control date-picker" name="employment_end_date[]"/>
+                                <input type="text" class="form-control date-picker datepicker" name="employment_end_date[]"/>
                                 </div>
                                 </div>
                                 <div class="form-group row">
@@ -447,7 +447,7 @@ $strings2 = CacheTranslations($language, array("verifs_%", "tasks_date", "file_a
                                 </div>
                                  <label class="control-label col-md-3"><?= $strings2["verifs_dateclaims"]; ?>:</label>
                                  <div class="col-md-3">
-                                 <input type="text" class="form-control date-picker" name="claims_recovery_date[]"/>
+                                 <input type="text" class="form-control date-picker datepicker" name="claims_recovery_date[]"/>
                                  </div>
                                  </div>
                                  
@@ -471,7 +471,7 @@ $strings2 = CacheTranslations($language, array("verifs_%", "tasks_date", "file_a
                                 <div class="form-group row">
                                 <label class="control-label col-md-3"><?= $strings2["tasks_date"]; ?>:</label>
                                 <div class="col-md-3">
-                                <input type="text" class="form-control date-picker" name="signature_datetime[]"/>
+                                <input type="text" class="form-control date-picker datepicker" name="signature_datetime[]"/>
                                 </div>
                                 </div>
                                 <div class="form-group row">
@@ -600,7 +600,7 @@ $(function(){
         var c = $('#count_past_emp').val();
         var counter = parseInt(c)+1;
         $('#count_past_emp').attr('value',counter);
-        $('.date-picker').datepicker({
+        $('.date-picker datepicker').datepicker({
                 rtl: Metronic.isRTL(),
                 orientation: "left",
                 autoclose: true,

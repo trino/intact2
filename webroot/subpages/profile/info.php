@@ -698,7 +698,7 @@ loadreasons($param, $strings, true);
                                     <div class="form-group">
                                         <label class="control-label"><?= $strings["forms_expirydate"]; ?>: </label>
                                         <input <?php echo $is_disabled ?> name="expiry_date" type="text"
-                                                                          class="form-control req_driver date-picker"
+                                                                          class="form-control req_driver date-picker datepicker"
                                                                           value="<?php if (isset($p->expiry_date)) echo $p->expiry_date; ?>"/>
 
 

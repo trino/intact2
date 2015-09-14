@@ -38,11 +38,11 @@
             <div class="form-group col-md-12">
                 <label class="control-label col-md-3">Dates: From </label>
 				<div class="col-md-3">
-					<input type="text" class="form-control date-picker" placeholder="YYYY-MM-DD"/>
+					<input type="text" class="form-control date-picker datepicker" placeholder="YYYY-MM-DD"/>
 				</div>
                 <label class="control-label col-md-3">To </label>
 				<div class="col-md-3">
-					<input type="text" class="form-control date-picker" placeholder="YYYY-MM-DD"/>
+					<input type="text" class="form-control date-picker datepicker" placeholder="YYYY-MM-DD"/>
 				</div>
             </div>
             
