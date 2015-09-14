@@ -28,12 +28,12 @@
                 <div class="row">
                 
                 <div class="send-application-form col-md-8 col-sm-12 col-xs-12">
-                <h4>Please input the following information to send application</h4>
-                <div class="row">
+                <h4 class=" margin-bottom-10">Please input the following information to send application</h4>
+                <div class="row" style="">
                 <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
-                <div class="row">
+                <div class="row" style="margin-top: 10px;">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                <label class="control-label col-md-4"><br>Insurer
+                <label class="control-label col-md-4">Insurer
                 </label>
                 <div class="col-md-8">
                     <img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" class="img-responsive" style="width: 120px;padding-right:20px;" />
@@ -89,7 +89,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                 <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                <label class="control-label col-md-4">To :</label>
+                <label class="control-label col-md-4">To</label>
                 <div class="col-md-8">
                 <input class="form-control" value="" required="" placeholder="" name="to">
                 </div>
