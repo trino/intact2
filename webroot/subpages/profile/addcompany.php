@@ -798,7 +798,7 @@
                     <h4>COMMENTS / CLARIFICATION OF DETAILS</h4>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 detail-textarea">
-                            <div class="row"><label class="control-label col-md-12 col-sm-12 col-xs-12">Referred by Old Republic Website "find a broker"</label></div>
+                            <div class="row"><label class="control-label col-md-12 col-sm-12 col-xs-12">Referred by Intact Website "find a broker"</label></div>
                             <textarea name="detials" class="form-control required" placeholder=""></textarea>
                         </div>
                     </div>

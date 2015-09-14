@@ -24,18 +24,24 @@
                     <li class="menu-dropdown classic-menu-dropdown ">
                         <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown"
                            href="javascript:;">
-                            My Clients <i class="fa fa-angle-down"></i>
+                            My Companies <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu pull-left">
                             <li class="">
 
                                 <a href="<?php echo $this->request->webroot; ?>clients/listall"><i
-                                        class="icon-list"></i> List Clients</a>
+                                        class="icon-list"></i> List Companies</a>
                             </li>
                             <li class="">
                                 <a href="<?php echo $this->request->webroot; ?>clients/add"><i class="icon-plus"></i>
-                                    Add Client</a>
+                                    Add Company</a>
                             </li>
+
+                            <li class="">
+                                <a href="<?php echo $this->request->webroot; ?>profiles/add_company"><i class="icon-envelope"></i>
+                                    Send Application</a>
+                            </li>
+
                         </ul>
                     </li>
 
@@ -60,6 +66,10 @@
                             </li>
 
 
+                            <li class="">
+                                <a href="<?php echo $this->request->webroot; ?>profiles/send_application"><i class="icon-envelope"></i>
+                                    Send Application</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -78,7 +88,7 @@
 
                             </li>
                             <li class="">
-                                <a href="#"><i class="icon-plus"></i>
+                                <a href="<?php echo $this->request->webroot; ?>orders/buy_products"><i class="icon-plus"></i>
                                     Place Order</a>
 
                             </li>

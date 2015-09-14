@@ -15,7 +15,9 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
 <div class="portlet light clearfix">
 <div class="row">
-    <div class="col-xs-8"><div class="pricing hover-effect pricing-orders"><div class="pricing-head pricing-head-active"><h3>Order Products A La Carte<span>Place an Order A La Carte</span></h3></div><input type="hidden" value="add_driver" name="document_type"><div class="form-group clientsel"><div style="margin-top: 15px;" class="row"><div align="right" style="margin-top: 6px;" class="col-xs-3 control-label">Client</div><div class="col-xs-6">
+    <div class="col-xs-3">
+        </div>
+    <div class="col-xs-6"><div class="pricing hover-effect pricing-orders"><div class="pricing-head pricing-head-active"><h3>Order Products A La Carte<span>Place an Order A La Carte</span></h3></div><input type="hidden" value="add_driver" name="document_type"><div class="form-group clientsel"><div style="margin-top: 15px;" class="row"><div align="right" style="margin-top: 6px;" class="col-xs-3 control-label">Client</div><div class="col-xs-6">
         <script type="text/javascript">
             function reload(value) {
                 var container = document.getElementById("selecting_driver");
@@ -304,6 +306,11 @@
     <div class="pricing-footer"><p></p><hr><p></p><a class="btn btn-danger  btn-lg placenow" id="qua_btn" href="javascript:void(0);">Continue <i class="m-icon-swapright m-icon-white"></i></a></div>
     </div>
     </div>
+
+    <div class="col-xs-3">
+    </div>
+
+
     </div>
     
     </div>
