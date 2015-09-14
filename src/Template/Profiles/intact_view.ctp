@@ -82,9 +82,9 @@
                                                 </label>
                                                 <br>
                                                 <a style="margin-top:2px;width:80%;" class="btn floatleft grey-cascade addpro" href="javascript:void(0)">Order Products A La Carte <i class="m-icon-swapright m-icon-white"></i></a>
-                                                <a style="margin-top:2px;width:80%;" class="btn floatleft grey-cascade addpro" href="javascript:void(0)">Driver's Record Abstract <i class="m-icon-swapright m-icon-white"></i></a>
-                                                <a style="margin-top:2px;width:80%;" class="btn floatleft grey-cascade addpro" href="javascript:void(0)">LOE  <i class="m-icon-swapright m-icon-white"></i></a>
-                                                <a style="margin-top:2px;width:80%;" class="btn floatleft grey-cascade addpro" href="javascript:void(0)">Auto Plus <i class="m-icon-swapright m-icon-white"></i></a>
+                                                <a style="margin-top:2px;width:80%;" class="btn floatleft grey-cascade addpro" href="javascript:void(0)">Driver License History <i class="m-icon-swapright m-icon-white"></i></a>
+                                                <a style="margin-top:2px;width:80%;" class="btn floatleft grey-cascade addpro" href="javascript:void(0)">Pre-employment Screening <br/> Program  <i class="m-icon-swapright m-icon-white"></i></a>
+                                                <a style="margin-top:2px;width:80%;" class="btn floatleft grey-cascade addpro" href="javascript:void(0)">Check DL <i class="m-icon-swapright m-icon-white"></i></a>
                                                 </div>
 
 
@@ -1240,7 +1240,7 @@
 		
 					
                     <td>
-                        Driver License History                    </td>
+                        Driver's Record Abstract              </td>
 		
 
 					
@@ -1259,7 +1259,7 @@
 		
 					
                     <td>
-                        Pre-employment Screening Program                    </td>
+                        CVDR                    </td>
 		
 
 					
@@ -1279,7 +1279,26 @@
 		
 					
                     <td>
-                        Check DL                    </td>
+                        Letter of Experience                    </td>
+		
+
+					
+<td class="actions">
+<span class="label label-info">pending </span>
+</td>
+<td><span class="label label-danger">Fail</span></td>
+
+                  
+                </tr>
+                                  <tr role="" class="">
+                    <td>
+                        <span class="icon-notebook"></span>
+                    </td>
+										
+		
+					
+                    <td>
+                         Auto Plus                 </td>
 		
 
 					
