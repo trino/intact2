@@ -81,7 +81,7 @@
                             </div>
         					<div class="details">
         						<div class="number">
-        							 Add A Company
+									New Business Application
         						</div>
         						<!--<div class="desc">
         							 Add

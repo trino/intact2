@@ -137,7 +137,7 @@ jQuery(document).ready(function() {
 					<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo" style="width: 85px;" /></a>
 				</div>
 				<div class="mid-text">
-					<h4> Commercial Trucking Insurance</h4>
+					<h4> Commercial Automobile Insurance</h4>
 				</div>
 			</div>
 
