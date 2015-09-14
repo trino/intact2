@@ -207,8 +207,8 @@
                         <div class="col-md-10 col-sm-10 col-xs-12 col-sm-10 col-xs-12">
                             <h4>Loss Experience:  Please upload Loss Experience </h4>
                         </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 upload_btns">
-                            Upload button
+                        <div class="col-md-2 col-sm-2 col-xs-2 upload_btns">
+                           <a href="" class="btn btn-primary">Upload Button </a>
                         </div>
                     </div>
                     <div class="row margin-bottom-10">
