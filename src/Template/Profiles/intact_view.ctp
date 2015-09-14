@@ -58,9 +58,9 @@
 <div class="row margin-top-5">
     <div class="col-md-12">
 
-        <div class="profile-content profile-content-bg" >
+        <div class="profile-content" >
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3" style="background:white;">
                     <!-- PORTLET MAIN -->
                     <div class="portlet light profile-sidebar-portlet">
                         <!-- SIDEBAR USERPIC -->
@@ -152,8 +152,7 @@
         }
     }
 </script>
-
-<span style="color:red;">subpages/profile/info.php #INC117</span><script>var reasons = false; //Action is: view</script>
+                                        <script>var reasons = false; //Action is: view</script>
 <div class="portlet-body form">
     <input type="hidden" class="client_profile_id" value="" name="client_ids">
 
@@ -1073,7 +1072,8 @@
                                                 <div class="cleafix">&nbsp;</div>
 
                                                 <div class="portlet-body">
-                                                    <span style="color:red;">subpages/documents/recruiter_notes.php #INC129</span><div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><div class=" light recruiter_notes" style="overflow: hidden; width: auto; height: 200px;">
+
+                                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><div class=" light recruiter_notes" style="overflow: hidden; width: auto; height: 200px;">
     
     <div class="">
         <input type="hidden" value="0" id="rid">
@@ -1163,8 +1163,7 @@
 
     }
 </style>
-
-<span style="color:red;">subpages/documents/forview.php #INC144</span><br><span style="color:red;">filelist.php #INC158</span><!-- BEGIN PROFILE CONTENT --><div class="row"><div class="clearfix"></div><div class="col-md-12"><!-- BEGIN PORTLET --><div class="portlet"><div class="portlet box blue"><div class="portlet-title"><div class="caption">Documents</div></div><div style="min-height: 100px !important;" class="portlet-body"><div style="margin-bottom: 8px;" class="col-md-12"><h4 style="margin-left: -7px;"><i class="icon-doc font-blue-hoki"></i><span class="caption-subject bold font-blue-hoki uppercase"> Documents Submitted</span></h4></div><table style="margin-bottom: 0px;" class="table"><tbody><tr role="row" class="even"><td><span class="icon-notebook"></span></td><td><a href="<?php echo $this ->request->webroot; ?>documents/view/41/2024/?type=18">Application for Insurance</a></td><td class="actions"><span class="label label-sm label-success" style="">Submitted</span></td><td></td></tr></tbody></table><div class="clearfix"></div><!-- END PORTLET --></div></div></div></div></div>
+<!-- BEGIN PROFILE CONTENT --><div class="row"><div class="clearfix"></div><div class="col-md-12"><!-- BEGIN PORTLET --><div class="portlet"><div class="portlet box blue"><div class="portlet-title"><div class="caption">Documents</div></div><div style="min-height: 100px !important;" class="portlet-body"><div style="margin-bottom: 8px;" class="col-md-12"><h4 style="margin-left: -7px;"><i class="icon-doc font-blue-hoki"></i><span class="caption-subject bold font-blue-hoki uppercase"> Documents Submitted</span></h4></div><table style="margin-bottom: 0px;" class="table"><tbody><tr role="row" class="even"><td><span class="icon-notebook"></span></td><td><a href="<?php echo $this ->request->webroot; ?>documents/view/41/2024/?type=18">Application for Insurance</a></td><td class="actions"><span class="label label-sm label-success" style="">Submitted</span></td><td></td></tr></tbody></table><div class="clearfix"></div><!-- END PORTLET --></div></div></div></div></div>
                 <!-- BEGIN PROFILE CONTENT -->
                 <div class="">
                     <div class="row">
@@ -1337,8 +1336,8 @@
                 
                                     </div>
                                                                             <div id="tab_1_7" class="tab-pane ">
-                                        <span style="color:red;display:block;padding:10px;">subpages/profile/block.php #INC116</span>
-<ul class="nav nav-tabs nav-justified">
+
+                                                                                <ul class="nav nav-tabs nav-justified">
                 <li class="active">
                 <a data-toggle="tab" href="#subtab_2_1">Configuration</a>
             </li>
@@ -2616,8 +2615,8 @@ $(function(){
 </script>
                                     </div>
                                                                         <div id="tab_1_8" class="tab-pane ">
-                                        <span style="color:red;">subpages/profile/feedback.php #INC124445</span>
-<div class="portlet box green-haze">
+
+                                                                            <div class="portlet box green-haze">
     <div class="portlet-title">
         <div class="caption">
             <i class="fa fa-briefcase"></i>Surveys Submitted

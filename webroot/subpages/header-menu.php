@@ -41,11 +41,7 @@
 								<a href="<?php echo $this->request->webroot;?>clients/add"><i class="icon-plus"></i> Add Client</a>
 								
 							</li>
-                            <li class="">
-								<a href="<?php echo $this->request->webroot;?>profiles/add_company"><i class="icon-user"></i> My Drivers</a>
-							</li>
-							
-							
+
 							
 							
 						</ul>

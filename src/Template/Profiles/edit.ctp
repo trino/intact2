@@ -87,12 +87,12 @@
 
 <!-- END PAGE HEADER-->
 <!-- BEGIN PAGE CONTENT-->
-<div class="row margin-top-20">
-    <div class="col-md-12">
+<div class="row margin-top-20"
+    <div class="col-md-12" >
 
-        <div class="profile-content profile-content-bg">
+        <div class="profile-content">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3"  style="background: white;">
                     <!-- PORTLET MAIN -->
                     <div class="portlet light profile-sidebar-portlet">
                         <!-- SIDEBAR USERPIC -->
