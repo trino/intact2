@@ -1,4 +1,23 @@
 <?php
+$Inline=true;
+$GLOBALS["inline"] = $Inline;
+if($Inline){?>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.4.6/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.4.6/bootstrap-editable/js/bootstrap-editable.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.fn.editable.defaults.mode = 'popup';
+            $.fn.editable.defaults.success = function(response, newValue) {
+                reload('');
+            };
+
+            $('.editable').editable();
+        });
+    </script>
+<?php }
 /*
     To do list:
     - fix references
@@ -464,6 +483,20 @@ if (isset($_GET["action"])){
         case "truncate":
             $Manager->truncate_table($_GET["table"]);
             break;
+        case "inlinesave":
+            //$Manager->debugprint( print_r($_POST,true)  . "\r\n" . print_r($_GET,true));
+            quickedit($Manager, $_GET["table"], $_POST["pk"], $_POST["name"], $_POST["value"]);
+            die();
+            break;
+    }
+}
+
+function quickedit($Manager, $Table, $PrimaryKeyValue, $Column, $Value){
+    $PrimaryKey = $Manager->get_primary_key($Table);
+    $Data = $Manager->get_entry($Table, $PrimaryKeyValue, $PrimaryKey);
+    if($Data) {
+        $Tag = getTag($Data->$Column, true);
+        $Manager->edit_database($Table, $PrimaryKey, $PrimaryKeyValue, array($Column => $Tag . $Value));
     }
 }
 
@@ -471,12 +504,14 @@ if (isset($_POST["action"])){
     if(isset($_POST["id"])){$ID = getID($_POST["id"]);}
     switch($_POST["action"]){
         case "delete":
+            if(!$_POST["key"]){ $_POST["key"] = $Manager->get_primary_key($_POST["table"]);}
             fixreferences($Manager, $_POST["table"], true, "A", 1, 0, -1);
             $Manager->delete_all($_POST["table"], array($_POST["key"] => $ID));
             echo "Deleted from " . $_POST["table"] . " where " . $_POST["key"] . " = " . $ID;
             break;
         case "save":
             if (isset($_POST["Data"])) {
+                if(!$_POST["key"]){ $_POST["key"] = $Manager->get_primary_key($_POST["table"]);}
                 foreach ($_POST["Data"] as $Key => $Data) {
                     if($Key == "new"){
                         $ID = $Manager->edit_database($_POST["table"], $_POST["key"], false, $Data);
@@ -640,405 +675,416 @@ if(isset($_GET["table"]) && $_GET["table"]){
     $Count = $Data->count();
     if(!$HTMLMode){$Data = $Manager->paginate($Data);}
 if(!$EmbeddedMode){ ?>
-    <div class="form-actions">
-    <div class="row">
-        <div class="col-md-6" align="left">
-            <div id="sample_2_paginate" class="dataTables_paginate paging_simple_numbers" style="margin-top:-10px;">
-                <ul class="pagination sorting">
-                    <LI><A HREF="<?= $this->request->webroot . $Controller; ?>">Back</A></LI>
-                    <?php if(!$HTMLMode){ ?>
-                        <LI><A ONCLICK="return save(false);">Save</A></LI>
-                        <LI><A HREF="?table=<?= $Table; ?>&action=clearcache">Clear Cache</A></LI>
-                    <?php } ?>
-                    <LI><A HREF="?table=<?= $Table;?>&mode=<?php
-                        if($HTMLMode){
-                            echo 'sql">SQL';
-                        } else {
-                            echo 'html">HTML';
-                        }
-                        ?></A></LI>
+    <div class="form-actions" style="padding-top: 0px;padding-bottom: 0px;margin-bottom: 10px;margin-top: 0px;">
+        <div class="row">
+            <div class="col-md-6" align="left">
+                <div id="sample_2_paginate" class="dataTables_paginate paging_simple_numbers" style="margin-top:-10px;">
+                    <ul class="pagination sorting">
+                        <LI><A HREF="<?= $this->request->webroot . $Controller; ?>">Back</A></LI>
+                        <?php if(!$HTMLMode){ ?>
+                            <LI><A ONCLICK="return save(false);">Save</A></LI>
+                            <LI><A HREF="?table=<?= $Table; ?>&action=clearcache">Clear Cache</A></LI>
+                        <?php } ?>
+                        <LI><A HREF="?table=<?= $Table;?>&mode=<?php
+                            if($HTMLMode){
+                                echo 'sql">SQL';
+                            } else {
+                                echo 'html">HTML';
+                            }
+                            ?></A></LI>
                             </ul>
                         </div>
                     </DIV>
                     <?php if(!$HTMLMode){?>
                         <div class="col-md-6" align="right">
-                        <div id="sample_2_paginate" class="dataTables_paginate paging_simple_numbers" style="margin-top:-10px;">
-                            <ul class="pagination sorting">
-                                <?= $this->Paginator->prev('< ' . __($strings["dashboard_previous"])); ?>
-                                <?= $this->Paginator->numbers(); ?>
-                                <?= $this->Paginator->next(__($strings["dashboard_next"]) . ' >'); ?>
-                            </ul>
-                        </div>
+                            <div id="sample_2_paginate" class="dataTables_paginate paging_simple_numbers" style="margin-top:-10px;">
+                                <ul class="pagination sorting">
+                                    <?= $this->Paginator->prev('< ' . __($strings["dashboard_previous"])); ?>
+                                    <?= $this->Paginator->numbers(); ?>
+                                    <?= $this->Paginator->next(__($strings["dashboard_next"]) . ' >'); ?>
+                                </ul>
+                            </div>
+                </div>
+                <?php } ?>
             </div>
-            <?php } ?>
         </div>
-    </div>
-<?php }
-if(!$HTMLMode){?>
-    <SCRIPT>
-        var lastsection;
-        function showsection(Name){
-            if(Name != lastsection){
-                visible(Name,true);
-                if(lastsection){visible(lastsection, false);}
-                lastsection = Name;
-            }
-        }
-    </SCRIPT>
-    <table class="table table-hover table-striped table-bordered table-hover dataTable no-footer">
-        <TR>
-            <TD>
-                <?php
-                $Buttons = array("action_search" => "Search", "action_newcol" => "New Column", "action_insert" => "Insert Rows", "action_clear" => "Clear", "action_copy" => "Copy", "Refresh");
-                foreach($Buttons as $Event => $Value){
-                    if(is_numeric($Event)){
-                        switch(strtolower($Value)){
-                            case "floatright":
-                                $floatright = true;
-                                break;
-                            case "refresh":
-                                echo '<INPUT TYPE="BUTTON" onclick="reload(' . "''" . ');" Value="Refresh" style="float: right;">';
-                                break;
-                        }
-                    } else {
-                        echo '<INPUT TYPE="button" onclick="showsection(' . "'" . $Event . "'" . ')" value="' . $Value . '" ';
-                        if(isset($floatright)){echo 'style="float:right;"';}
-                        echo '> ';
+        <?php }
+        if(!$HTMLMode){?>
+            <SCRIPT>
+                var lastsection;
+                function showsection(Name){
+                    if(Name != lastsection){
+                        visible(Name,true);
+                        if(lastsection){visible(lastsection, false);}
+                        lastsection = Name;
                     }
                 }
-                ?>
-            </TD>
-        </TR>
-        <TR ID="action_search" style="display: none">
-            <TD>
-                <FORM method="get" action="<?= $this->request->webroot . $Controller; ?>">
-                    <INPUT TYPE="hidden" name="table" value="<?= $Table; ?>">
-                    <INPUT TYPE="text" name="search" placeholder="Search" value="<?php if(isset($_GET["search"])){echo $_GET["search"];} ?>">
-                    <SELECT NAME="column" style="height:24px;">
+            </SCRIPT>
+            <table class="table table-hover table-striped table-bordered table-hover dataTable no-footer">
+                <TR>
+                    <TD>
                         <?php
-                        foreach($Columns as $ColumnName => $ColumnData){
-                            echo '<OPTION value="' . $ColumnName . '"';
-                            if(isset($_GET["column"]) && $_GET["column"] == $ColumnName){echo ' SELECTED';}
-                            echo '>' . getletter($Letters, $ColumnName) . ucfirst2($ColumnName, true) . '</OPTION>';
+                        $Buttons = array("action_search" => "Search", "action_newcol" => "New Column", "action_insert" => "Insert Rows", "action_clear" => "Clear", "action_copy" => "Copy", "action_port" => "Import/Export", "Refresh");
+                        foreach($Buttons as $Event => $Value){
+                            if(is_numeric($Event)){
+                                switch(strtolower($Value)){
+                                    case "floatright":
+                                        $floatright = true;
+                                        break;
+                                    case "refresh":
+                                        echo '<INPUT TYPE="BUTTON" onclick="reload(' . "''" . ');" Value="Refresh" style="float: right;">';
+                                        break;
+                                }
+                            } else {
+                                echo '<INPUT TYPE="button" onclick="showsection(' . "'" . $Event . "'" . ')" value="' . $Value . '" ';
+                                if(isset($floatright)){echo 'style="float:right;"';}
+                                echo '> ';
+                            }
                         }
                         ?>
-                    </SELECT>
-                    <input type="submit" value="Search">
-                </FORM>
-            </TD>
-        </TR>
-        <TR ID="action_clear" style="display: none">
-            <TD>
-                <FORM method="get" action="<?= $this->request->webroot . $Controller; ?>">
-                    <INPUT TYPE="hidden" name="action" value="truncate">
-                    <INPUT TYPE="hidden" name="table" value="<?= $Table; ?>">
-                    <INPUT TYPE="submit" value="Empty Table" onclick="return confirm('Are you sure you want to erase <?= addslashes($Table); ?>?')">
-                </FORM>
-            </TD>
-        </TR>
-        <TR ID="action_newcol" style="display: none">
-            <TD>
-                <INPUT TYPE="text" name="name" placeholder="Name" id="newcol_name">
-                <SELECT id="newcol_type" style="height:24px;">
-                    <OPTION value="INT">Number</OPTION>
-                    <OPTION value="DECIMAL">Decimal</OPTION>
-                    <OPTION value="TINYINT">Boolean</OPTION>
-                    <OPTION value="VARCHAR" SELECTED>Text</OPTION>
-                </SELECT>
-                <LABEL>Length:</LABEL>
-                <INPUT TYPE="text" value="255" maxlength="4" size="4" id="newcol_length" title="I recommend a VARCHAR with a length of at least 255, to allow for equations">
-                <LABEL>Position:</LABEL>
-                <SELECT id="newcol_pos" style="height:24px;">
-                    <OPTION value="FIRST">At the beginning</OPTION>
-                    <?php
-                    foreach($Columns as $ColumnName => $ColumnData){
-                        echo '<OPTION VALUE="' . $ColumnName . '">After: ' . getletter($Letters, $ColumnName) . ucfirst2($ColumnName, true) . '</OPTION>';
-                    }
-                    ?>
-                    <OPTION SELECTED value="">At the end</OPTION>
-                </SELECT>
-                <input type="button" value="New Column" onclick="newcol();">
-            </TD>
-        </TR>
-        <TR ID="action_insert" style="display: none">
-            <TD>
-                <LABEL>Rows:</LABEL>
-                <INPUT TYPE="number" value="1" min="1" max="1000"  id="insert_num">
-                <LABEL>Before:</LABEL>
-                <INPUT TYPE="number" value="1" min="1" max="<?= $Manager->get_last_entry($Table,$PrimaryKey)+1; ?>"  id="insert_where">
-                <INPUT TYPE="button" value="Insert Rows" onclick="insertrows();">
-            </TD>
-        </TR>
-        <TR ID="action_copy" style="display: none" width="100%">
-            <TD class="nowrap" width="100%">
-                <INPUT TYPE="text" placeholder="Range, Row # or Column letter" id="copy_range">
-                <INPUT TYPE="button" value="Copy" onclick="copyreference();">
-                <INPUT TYPE="text" id="copy_paste" style="width:50%;">
-            </TD>
-        </TR>
-    </TABLE>
-<?php } ?>
+                    </TD>
+                </TR>
+                <TR ID="action_port" style="display: none">
+                    <TD>
+                        <A HREF="" class="btn">Export as CSV</A>
+                        <A HREF="" class="btn">Export as mySQL</A>
+                    </TD>
+                </TR>
+                <TR ID="action_search" style="display: none">
+                    <TD>
+                        <FORM method="get" action="<?= $this->request->webroot . $Controller; ?>">
+                            <INPUT TYPE="hidden" name="table" value="<?= $Table; ?>">
+                            <INPUT TYPE="text" name="search" placeholder="Search" value="<?php if(isset($_GET["search"])){echo $_GET["search"];} ?>">
+                            <SELECT NAME="column" style="height:24px;">
+                                <?php
+                                foreach($Columns as $ColumnName => $ColumnData){
+                                    echo '<OPTION value="' . $ColumnName . '"';
+                                    if(isset($_GET["column"]) && $_GET["column"] == $ColumnName){echo ' SELECTED';}
+                                    echo '>' . getletter($Letters, $ColumnName) . ucfirst2($ColumnName, true) . '</OPTION>';
+                                }
+                                ?>
+                            </SELECT>
+                            <input type="submit" value="Search">
+                        </FORM>
+                    </TD>
+                </TR>
+                <TR ID="action_clear" style="display: none">
+                    <TD>
+                        <FORM method="get" action="<?= $this->request->webroot . $Controller; ?>">
+                            <INPUT TYPE="hidden" name="action" value="truncate">
+                            <INPUT TYPE="hidden" name="table" value="<?= $Table; ?>">
+                            <INPUT TYPE="submit" value="Empty Table" onclick="return confirm('Are you sure you want to erase <?= addslashes($Table); ?>?')">
+                        </FORM>
+                    </TD>
+                </TR>
+                <TR ID="action_newcol" style="display: none">
+                    <TD>
+                        <INPUT TYPE="text" name="name" placeholder="Name" id="newcol_name">
+                        <SELECT id="newcol_type" style="height:24px;">
+                            <OPTION value="INT">Number</OPTION>
+                            <OPTION value="DECIMAL">Decimal</OPTION>
+                            <OPTION value="TINYINT">Boolean</OPTION>
+                            <OPTION value="VARCHAR" SELECTED>Text</OPTION>
+                        </SELECT>
+                        <LABEL>Length:</LABEL>
+                        <INPUT TYPE="text" value="255" maxlength="4" size="4" id="newcol_length" title="I recommend a VARCHAR with a length of at least 255, to allow for equations">
+                        <LABEL>Position:</LABEL>
+                        <SELECT id="newcol_pos" style="height:24px;">
+                            <OPTION value="FIRST">At the beginning</OPTION>
+                            <?php
+                            foreach($Columns as $ColumnName => $ColumnData){
+                                echo '<OPTION VALUE="' . $ColumnName . '">After: ' . getletter($Letters, $ColumnName) . ucfirst2($ColumnName, true) . '</OPTION>';
+                            }
+                            ?>
+                            <OPTION SELECTED value="">At the end</OPTION>
+                        </SELECT>
+                        <input type="button" value="New Column" onclick="newcol();">
+                    </TD>
+                </TR>
+                <TR ID="action_insert" style="display: none">
+                    <TD>
+                        <LABEL>Rows:</LABEL>
+                        <INPUT TYPE="number" value="1" min="1" max="1000"  id="insert_num">
+                        <LABEL>Before:</LABEL>
+                        <INPUT TYPE="number" value="1" min="1" max="<?= $Manager->get_last_entry($Table,$PrimaryKey)+1; ?>"  id="insert_where">
+                        <INPUT TYPE="button" value="Insert Rows" onclick="insertrows();">
+                    </TD>
+                </TR>
+                <TR ID="action_copy" style="display: none" width="100%">
+                    <TD class="nowrap" width="100%">
+                        <INPUT TYPE="text" placeholder="Range, Row # or Column letter" id="copy_range">
+                        <INPUT TYPE="button" value="Copy" onclick="copyreference();">
+                        <INPUT TYPE="text" id="copy_paste" style="width:50%;">
+                    </TD>
+                </TR>
+            </TABLE>
+        <?php } ?>
 
-<?php } else if(!$EmbeddedMode) {
-    $Tables = $Manager->enum_tables();
-}
-?>
-    <STYLE>
-        .nowrap{
-            white-space: nowrap;
+        <?php } else if(!$EmbeddedMode) {
+            $Tables = $Manager->enum_tables();
         }
-    </STYLE>
-    <SCRIPT>
-        <?php writevisible(); ?>
-        var MyURL = '<?= $Manager->webroot(); ?>excel';
-        var Embedded = '<?= $EmbeddedMode; ?>';
-
-        window.onbeforeunload = function (e) {
-            if (changed.length > 0) {
-                var message = "Are you sure you want to quit without saving?", e = e || window.event;
-                if (e) {e.returnValue = message;}// For IE and Firefox
-                return message;// For Safari
+        ?>
+        <STYLE>
+            .nowrap{
+                white-space: nowrap;
             }
-        };
+        </STYLE>
+        <SCRIPT>
+            <?php writevisible(); ?>
+            var MyURL = '<?= $Manager->webroot(); ?>excel';
+            var Embedded = '<?= $EmbeddedMode; ?>';
+            var CurrentTable = '';
+            var CurrentPrimaryKey = '';
 
-        var columns = <?php if (is_array($Columns)) { echo javascriptarray(array_keys($Columns));} else { echo "false;"; } ?>
-        var tables = <?php if (is_array($Tables)) { echo javascriptarray($Tables);} else { echo "false;"; } ?>
-        var changed = new Array();
-        var changedNew = false;
-        function mychangeevent(ID, DoPush){
-            var RET = checktags(ID, "single");
-            if(DoPush) {
-                var Index = changed.indexOf(ID);
-                if (RET["Status"]) {
-                    if (Index == -1) {
-                        changed.push(ID);
+            window.onbeforeunload = function (e) {
+                if (changed.length > 0) {
+                    var message = "Are you sure you want to quit without saving?", e = e || window.event;
+                    if (e) {e.returnValue = message;}// For IE and Firefox
+                    return message;// For Safari
+                }
+            };
+
+            var columns = <?php if (is_array($Columns)) { echo javascriptarray(array_keys($Columns));} else { echo "false;"; } ?>
+            var tables = <?php if (is_array($Tables)) { echo javascriptarray($Tables);} else { echo "false;"; } ?>
+            var changed = new Array();
+            var changedNew = false;
+            function mychangeevent(ID, DoPush){
+                var RET = checktags(ID, "single");
+                if(DoPush) {
+                    var Index = changed.indexOf(ID);
+                    if (RET["Status"]) {
+                        if (Index == -1) {
+                            changed.push(ID);
+                        }
+                    } else if (Index > -1) {
+                        changed.splice(Index, 1);
                     }
-                } else if (Index > -1) {
-                    changed.splice(Index, 1);
                 }
             }
-        }
 
-        function removeelement(id) {
-            return (elem=document.getElementById(id)).parentNode.removeChild(elem);
-        }
-
-        function save(DoAlert){
-            var ID, Text = "";
-            for (index = 0; index < changed.length; ++index) {
-                ID = changed[index];
-                if(Text){Text = Text + "&";}
-                Text = Text + ID + "=" + encodeURIComponent(getinputvalue(ID));
+            function removeelement(id) {
+                return (elem=document.getElementById(id)).parentNode.removeChild(elem);
             }
-            $.ajax({
-                url: MyURL,
-                type: "post",
-                dataType: "HTML",
-                data: "action=save&key=<?= $PrimaryKey; ?>&table=<?= $Table; ?>&" + Text,
-                success: function (msg) {
-                    if(DoAlert){alert(msg);}
-                    reload("");
-                }
-            })
-            changed = new Array();
-            return false;
-        }
 
-        function deleterow(ID){
-            if (confirm("Are you sure you want to delete '" + ID + "'?")){
+            function save(DoAlert){
+                var ID, Text = "";
+                for (index = 0; index < changed.length; ++index) {
+                    ID = changed[index];
+                    if(Text){Text = Text + "&";}
+                    Text = Text + ID + "=" + encodeURIComponent(getinputvalue(ID));
+                }
                 $.ajax({
                     url: MyURL,
                     type: "post",
                     dataType: "HTML",
-                    data: "action=delete&table=<?= $Table; ?>&key=<?= $PrimaryKey; ?>&id=" + ID,
+                    data: "action=save&key=&table=" + CurrentTable + "&" + Text,
                     success: function (msg) {
-                        alert(msg);
-                        removeelement(ID);
+                        if(DoAlert){alert(msg);}
+                        reload("");
                     }
                 })
+                changed = new Array();
+                return false;
             }
-            return false;
-        }
 
-        function getchildtag(element, tagname){
-            var Header = element.getElementsByTagName(tagname);
-            if(Header){
-                return '<' + tagname + '>' + Header[0].innerHTML.trim() + '</' + tagname + '>';
+            function deleterow(ID){
+                if (confirm("Are you sure you want to delete '" + ID + "'?")){
+                    $.ajax({
+                        url: MyURL,
+                        type: "post",
+                        dataType: "HTML",
+                        data: "action=delete&table=" + CurrentTable + "&key=&id=" + ID,
+                        success: function (msg) {
+                            alert(msg);
+                            removeelement(ID);
+                        }
+                    })
+                }
+                return false;
             }
-            return "";
-        }
-        function reload(URL){
-            if(URL){ URL = "&" + URL; }
-            if(Embedded){
-                var element = document.getElementById(Embedded);
-                var Header = getchildtag(element, 'header');
-                var Footer = getchildtag(element, 'footer');
-                element.innerHTML = '<TABLE WIDTH="100%;" HEIGHT="100%"><tr><td valign="middle" align="center"><IMG SRC="<?= $this->request->webroot;?>webroot/assets/global/img/loading-spinner-blue.gif"></TD></TR></TABLE>';
-                $.ajax({
-                    url: MyURL,
-                    type: "get",
-                    dataType: "HTML",
-                    data: "table=<?= $Table; ?>&embedded" + URL,
-                    success: function (msg) {
-                        element.innerHTML = Header + msg + Footer;
-                    }
-                })
-            } else {
-                window.open(MyURL + "?table=<?php
+
+            function getchildtag(element, tagname){
+                var Header = element.getElementsByTagName(tagname);
+                if(Header){
+                    return '<' + tagname + '>' + Header[0].innerHTML.trim() + '</' + tagname + '>';
+                }
+                return "";
+            }
+            function reload(URL){
+                if(URL){ URL = "&" + URL; }
+                if(Embedded){
+                    var element = document.getElementById(Embedded);
+                    var Header = getchildtag(element, 'header');
+                    var Footer = getchildtag(element, 'footer');
+                    element.innerHTML = '<TABLE WIDTH="100%;" HEIGHT="100%"><tr><td valign="middle" align="center"><IMG SRC="<?= $this->request->webroot;?>webroot/assets/global/img/loading-spinner-blue.gif"></TD></TR></TABLE>';
+                    $.ajax({
+                        url: MyURL,
+                        type: "get",
+                        dataType: "HTML",
+                        data: "table=<?= $Table; ?>&embedded" + URL,
+                        success: function (msg) {
+                            element.innerHTML = Header + msg + Footer;
+                        }
+                    })
+                } else {
+                    window.open(MyURL + "?table=<?php
                 echo $Table;
                 if(isset($HTMLMode) && $HTMLMode) {echo "&mode=html";}
                 if (isset($_GET["page"])){
                     echo "&page=" . $_GET["page"] . "&sort=" . $_GET["sort"] . "&direction=" . $_GET["direction"];
                 }
                 ?>" + URL,"_self");
+                }
             }
-        }
 
-        function deletecolumn(Name){
-            if (confirm("Are you sure you want to delete '" + Name + "'?")){
+            function deletecolumn(Name){
+                if (confirm("Are you sure you want to delete '" + Name + "'?")){
+                    $.ajax({
+                        url: MyURL,
+                        type: "post",
+                        dataType: "HTML",
+                        data: "action=deletecolumn&table=" + CurrentTable + "&name=" + Name,
+                        success: function (msg) {
+                            alert(msg);
+                            reload("");
+                        }
+                    })
+                }
+                return false;
+            }
+
+            function deletetable(Name){
+                if (confirm("Are you sure you want to delete '" + Name + "'?")){
+                    $.ajax({
+                        url: MyURL,
+                        type: "post",
+                        dataType: "HTML",
+                        data: "action=deletetable&table=" + Name,
+                        success: function (msg) {
+                            alert(msg);
+                            removeelement("table" + Name);
+                        }
+                    })
+                }
+                return false;
+            }
+
+            function newtable(){
+                var Name =  prompt("Please enter a table name", "New Table").toLowerCase();
+                if(Name) {
+                    if(tables.indexOf(Name) >-1){
+                        alert("That table exists already");
+                        return false;
+                    }
+                    $.ajax({
+                        url: MyURL,
+                        type: "post",
+                        dataType: "HTML",
+                        data: "action=newtable&table=" + Name,
+                        success: function (msg) {
+                            tables.push(Name);
+                            alert(msg);
+                            window.open(MyURL + "?table=" + Name ,"_self");
+                        }
+                    })
+                }
+                return false;
+            }
+
+            function insertrows(){
                 $.ajax({
                     url: MyURL,
                     type: "post",
                     dataType: "HTML",
-                    data: "action=deletecolumn&table=<?= $Table; ?>&name=" + Name,
+                    data: "action=insertrows&table=" + CurrentTable + "&number=" + getinputvalue("insert_num") + "&where=" + getinputvalue("insert_where"),
                     success: function (msg) {
+                        if(msg){alert(msg);}
+                        reload("");
+                    }
+                })
+            }
+
+            function newcol(){
+                var Name = getinputvalue("newcol_name");
+                if (columns.indexOf(Name) > -1){
+                    alert("'" + Name + "' exists already");
+                    return false;
+                }
+
+                $.ajax({
+                    url: MyURL,
+                    type: "post",
+                    dataType: "HTML",
+                    data: "action=newcolumn&table=" + CurrentTable + "&name=" + Name + "&type=" + getinputvalue("newcol_type") + "&length=" + getinputvalue("newcol_length") + "&position=" + getinputvalue("newcol_pos"),
+                    success: function (msg) {
+                        columns.push(Name);
                         alert(msg);
                         reload("");
                     }
                 })
             }
-            return false;
-        }
 
-        function deletetable(Name){
-            if (confirm("Are you sure you want to delete '" + Name + "'?")){
-                $.ajax({
-                    url: MyURL,
-                    type: "post",
-                    dataType: "HTML",
-                    data: "action=deletetable&table=" + Name,
-                    success: function (msg) {
-                        alert(msg);
-                        removeelement("table" + Name);
-                    }
-                })
-            }
-            return false;
-        }
-
-        function newtable(){
-            var Name =  prompt("Please enter a table name", "New Table").toLowerCase();
-            if(Name) {
-                if(tables.indexOf(Name) >-1){
-                    alert("That table exists already");
-                    return false;
-                }
-                $.ajax({
-                    url: MyURL,
-                    type: "post",
-                    dataType: "HTML",
-                    data: "action=newtable&table=" + Name,
-                    success: function (msg) {
-                        tables.push(Name);
-                        alert(msg);
-                        window.open(MyURL + "?table=" + Name ,"_self");
-                    }
-                })
-            }
-            return false;
-        }
-
-        function insertrows(){
-            $.ajax({
-                url: MyURL,
-                type: "post",
-                dataType: "HTML",
-                data: "action=insertrows&table=<?= $Table;?>&number=" + getinputvalue("insert_num") + "&where=" + getinputvalue("insert_where"),
-                success: function (msg) {
-                    if(msg){alert(msg);}
-                    reload("");
-                }
-            })
-        }
-
-        function newcol(){
-            var Name = getinputvalue("newcol_name");
-            if (columns.indexOf(Name) > -1){
-                alert("'" + Name + "' exists already");
-                return false;
-            }
-
-            $.ajax({
-                url: MyURL,
-                type: "post",
-                dataType: "HTML",
-                data: "action=newcolumn&table=<?= $Table;?>&name=" + Name + "&type=" + getinputvalue("newcol_type") + "&length=" + getinputvalue("newcol_length") + "&position=" + getinputvalue("newcol_pos"),
-                success: function (msg) {
-                    columns.push(Name);
-                    alert(msg);
-                    reload("");
-                }
-            })
-        }
-
-        function copyreference(){
-            var Range = getinputvalue("copy_range");
-            if(Range) {
-                $.ajax({
-                    url: MyURL,
-                    type: "post",
-                    dataType: "HTML",
-                    data: "action=copyreference&table=<?= $Table;?>&range=" + Range,
-                    success: function (msg) {
-                        setvalue("copy_paste", msg);
-                    }
-                })
-            } else {
-                setvalue("copy_paste", "");
-            }
-        }
-
-        var downID = "";
-        function handleevent(ID, eventtype, eventname){
-            var element = document.getElementById(ID);
-            var value = getinputvalue(ID);
-            switch(eventtype){
-                case 0://oncontextmenu
-                    if(!Embedded){
-                        reload("action=edit&id=" + ID);
-                        return false;
-                    }
-                    break;
-                case 1://onclick
-
-                    break;
-                case 2://ondblclick
-                    if(!element.hasAttribute("READONLY")) {
-                        var newvalue = prompt("What would you like the new value of " + ID + " to be?", value);
-                        if (newvalue && value != newvalue) {
-                            element.setAttribute("value", newvalue);
-                            mychangeevent(ID, true);
-                            save(false);
+            function copyreference(){
+                var Range = getinputvalue("copy_range");
+                if(Range) {
+                    $.ajax({
+                        url: MyURL,
+                        type: "post",
+                        dataType: "HTML",
+                        data: "action=copyreference&table=" + CurrentTable + "&range=" + Range,
+                        success: function (msg) {
+                            setvalue("copy_paste", msg);
                         }
-                    }
-                    break;
-                case 3://onmousedown
-                    downID = ID;
-                    break;
-                case 4://onmousemove
-
-                    break;
-                case 5://mouseup
-                    if (downID != ID) {
-                        alert("Select: " + downID + " to " + ID);
-                        //setvalue("clip_range", downID + ":" + ID);
-                    }
-                    break;
+                    })
+                } else {
+                    setvalue("copy_paste", "");
+                }
             }
-        }
 
-        <?php loadreasons("edit", $strings); ?>
-    </SCRIPT>
+            var downID = "";
+            function handleevent(ID, eventtype, tablename){
+                var element = document.getElementById(ID);
+                var value = getinputvalue(ID);
+                if(Embedded){Embedded = "excel_" + tablename;}
+                CurrentTable = tablename;
+                switch(eventtype){
+                    case 0://oncontextmenu
+                        if(!Embedded){
+                            reload("action=edit&id=" + ID);
+                            return false;
+                        }
+                        break;
+                    case 1://onclick
+
+                        break;
+                    case 2://ondblclick
+                        if(!element.hasAttribute("READONLY")) {
+                            var name = "row " + ID.substr(5, ID.length-6).replace("][", " column ");
+                            var newvalue = prompt("What would you like the new value of " + name + " in " + CurrentTable + " to be?", value);
+                            if (newvalue && value != newvalue) {
+                                element.setAttribute("value", newvalue);
+                                mychangeevent(ID, true);
+                                save(false);
+                            }
+                        }
+                        break;
+                    case 3://onmousedown
+                        downID = ID;
+                        break;
+                    case 4://onmousemove
+
+                        break;
+                    case 5://mouseup
+                        if (downID != ID) {
+                            alert("Select: " + downID + " to " + ID);
+                            //setvalue("clip_range", downID + ":" + ID);
+                        }
+                        break;
+                }
+            }
+
+            <?php loadreasons("edit", $strings); ?>
+        </SCRIPT>
 
 <?php
 function printtableheader($EmbeddedMode, $Top){
@@ -1098,7 +1144,7 @@ function printtable($_this, $Manager, $Table, $PrimaryKey = "", $Columns = false
         if(!($HTMLMode && $ColumnName == $PrimaryKey)) {
             $Me = $ColumnName;
             $Value = '="return handleevent(' . "'" . $Me . "', ";
-            echo "\r\n" . '<TH class="nowrap" ' . $events[0] . $Value . "0,'');" . '" title="' . $ColumnData["comment"] . '">';//handleevent(ID, eventtype, eventname
+            echo "\r\n" . '<TH class="nowrap" ' . $events[0] . $Value . "0,'" . $Table . "');" . '" title="' . $ColumnData["comment"] . '">';//handleevent(ID, eventtype, eventname
             if ($ColumnName == $PrimaryKey) {
                 echo '<i class="fa fa-key"></i>';
             }
@@ -1130,7 +1176,7 @@ function printtable($_this, $Manager, $Table, $PrimaryKey = "", $Columns = false
                     $Value = '="return handleevent(' . "'" . $Me . "', ";
                     echo '<TD ID="' . $Me . '" ';
                     foreach($events as $index => $event){
-                        echo $event . $Value . $index . ",'" . $event . "'" . ');" ';
+                        echo $event . $Value . $index . ",'" . $Table . "'" . ');" ';
                     }
                     $Value = $Row->$ColumnName;
                     $ColKeys = getTag($ColumnData["comment"],true);
@@ -1228,7 +1274,11 @@ function printtable($_this, $Manager, $Table, $PrimaryKey = "", $Columns = false
                             }
                         }
                     }
-
+                    $Inline=!isset($Keys["readonly"]) && $GLOBALS["inline"];
+                    if($Inline){
+                        $Start .= '<a href="javascript:;" data-name="' . $ColumnName . '" data-type="text" data-pk="' . $Row->$PrimaryKey . '" data-url="' . $Manager->webroot() . 'excel?action=inlinesave&table=' . $Table . '" data-original-title="Enter ' . ucfirst2($ColumnName, true) . '" class="editable">';
+                        $Finish = '</A>' . $Finish;
+                    }
                     echo '>' . $Start . $Value . $Finish . '</TD>';
                 }
             } else {

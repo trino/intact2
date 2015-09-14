@@ -488,12 +488,12 @@
                             <div class="row">
                                 <div class="col-md-8 col-sm-8 col-xs-12">FUEL TAX CALCULATOR 	</div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 upload_btns">
-                                    <DIV ID="fuelchart" style="width: 100%; height: 400px; border: 1px solid black; overflow: auto; resize: both;">
+                                    <DIV ID="excel_fuelchart" style="width: 100%; height: 400px; border: 1px solid black; overflow: auto; resize: both;">
                                         <HEADER>
                                             FUEL TAX CALCULATOR
                                         </HEADER>
                                         <?php
-                                            printtable($this, $Manager, "fuelchart", "id", false, false, "fuelchart", true);
+                                            printtable($this, $Manager, "fuelchart", "id", false, false, true, true);
                                         ?>
                                         <FOOTER>
                                             Completion of this form does not bind coverage.<BR>
@@ -734,12 +734,12 @@
                                 <div class="col-md-8 col-sm-8 col-xs-12">Cargo Detail Chart 	</div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 upload_btns">
 
-                                    <DIV ID="exceltest" style="width: 100%; height: 400px; border: 1px solid black; overflow: auto; resize: both;">
+                                    <DIV ID="excel_test" style="width: 100%; height: 400px; border: 1px solid black; overflow: auto; resize: both;">
                                         <HEADER>
                                             Cargo Details chart
                                         </HEADER>
                                         <?php
-                                        printtable($this, $Manager, "test", "id", false, false, "exceltest", true);
+                                        printtable($this, $Manager, "test", "id", false, false, true, true);
                                         ?>
                                         <FOOTER>
                                             Completion of this form does not bind coverage.<BR>
