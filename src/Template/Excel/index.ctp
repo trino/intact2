@@ -1,5 +1,5 @@
 <?php
-$Inline=true;
+$Inline=false;
 $GLOBALS["inline"] = $Inline;
 if($Inline){?>
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
