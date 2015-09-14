@@ -2,20 +2,20 @@
 <table class="table table-condensed table-striped table-bordered table-hover dataTable no-footer">
                             <thead>
                             <tr class="sorting">
-                                <th><a href="<?php echo $this->request->webroot;?>/orders/orderslist?sort=id&amp;direction=asc" class="desc">Order ID
+                                <th><a href="<?php echo $this->request->webroot;?>/orders/orderslist?sort=id&amp;direction=asc" class="desc">Order
 </a></th>
                                 <th><a href="<?php echo $this->request->webroot;?>/orders/orderslist?sort=orders.order_type&amp;direction=asc">Company Name
 </a></th>
                                 <th><a href="<?php echo $this->request->webroot;?>/orders/orderslist?sort=user_id&amp;direction=asc">Driver Name
 </a></th>
-                               <th><a href="<?php echo $this->request->webroot;?>/orders/orderslist?sort=complete&amp;direction=asc">Broker who placed order
+                               <th><a href="<?php echo $this->request->webroot;?>/orders/orderslist?sort=complete&amp;direction=asc">Broker
 </a></th>
                                 
-                                <th><a href="<?php echo $this->request->webroot;?>/orders/orderslist?sort=client_id&amp;direction=asc">Date Ordered
+                                <th><a href="<?php echo $this->request->webroot;?>/orders/orderslist?sort=client_id&amp;direction=asc">Ordered
 </a></th>
-                                <th>Date Completed
+                                <th>Completed
 </th>
-                                <th><a href="<?php echo $this->request->webroot;?>/orders/orderslist?sort=created&amp;direction=asc">Created (YYYY-MM-DD)</a></th>
+                                <th><a href="<?php echo $this->request->webroot;?>/orders/orderslist?sort=created&amp;direction=asc">Created</a></th>
                                 <th class="actions">Actions</th>
                                 <!--th><a href="<?php echo $this->request->webroot;?>/orders/orderslist?sort=bright_planet_html_binary&amp;direction=asc">Status</a></th-->
 

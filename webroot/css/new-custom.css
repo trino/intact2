@@ -395,7 +395,6 @@
   box-shadow: 0 0 5px #6c6c6c;
   display: block !important;
   margin: 0 auto;
-  padding-bottom: 15px !important;
   position: relative;
   -webkit-transition: all 0.7s ease-in-out;
   -moz-transition: all 0.7s ease-in-out;
@@ -665,4 +664,7 @@ body .page-header .page-header-top .page-logo {
   text-align: center !important;
 }
 
+}
+.form .form-actions .btn-set select {
+    max-width: 200px !important;
 }

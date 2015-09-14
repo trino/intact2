@@ -45,9 +45,9 @@
 			<div class="page-title">
 				<h1>Clients <small>Edit</small></h1>
 			</div>
-            
+
             <div class="page-bar">
- 
+
     <!--a href="javascript:window.print();" class="floatright btn btn-info">Print</a-->
     <?php
         if (isset($disabled) || isset($_GET['view'])) { ?>
@@ -69,17 +69,17 @@
 
         }
 
-       
+
     ?>
 </div>
-			
+
 		</div>
 	</div>
 	<!-- END PAGE HEAD -->
 	<!-- BEGIN PAGE CONTENT -->
 	<div class="page-content">
-    
-    
+
+
             <div class="container">
 
 
@@ -87,10 +87,10 @@
 
 
 <div class="row">
-  
+
         <div class="col-md-12">
             <!-- BEGIN SAMPLE FORM PORTLET-->
-            
+
             <div class="profile-account profile-content-bg clearfix">
                 <div class="col-md-3" align="center">
                 <div class="portlet light profile-sidebar-portlet">
@@ -529,7 +529,7 @@
                                                                  style="height:75px; margin-bottom:-1px;padding-right: 30px;margin-right: 5px;margin-left: 5px;"
                                                                  align="right">
                                                                 <div class="row">
-                                                                    <button type="submit" class="btn btn-primary" 
+                                                                    <button type="submit" class="btn btn-primary"
                                                                             id="save_client_p1"><?= $strings["forms_savechanges"]; ?>
                                                                     </button>
                                                                     <!--button type="submit" class="btn btn-info" onclick="$('#client_drafts').val('1',function(){$('#save_client_p1').click();});">Save As Draft</button-->
@@ -832,7 +832,7 @@
                         event.preventDefault();
                         if(!checkalltags("")){return false;}
 
-                           $('.overlay-wrapper').show(); 
+                           $('.overlay-wrapper').show();
                         $('#save_client_p1').text('<?= $strings["forms_saving"];?>');
                         var str = '';
                         $('.moredocs').each(function () {
@@ -862,8 +862,8 @@
                         str = str + '&invoice_terms=' + $('#invoice_terms').val();
                         str = str + '&description=' + $('#description').val();
 
-//alert(str);           
-                        
+//alert(str);
+
                         $.ajax({
                             url: '<?php echo $this->request->webroot;?>clients/saveClients/<?php echo $id?>',
                             data: str,
@@ -922,7 +922,7 @@
                             data: 'id=' + id,
                             url: "<?php echo $this->request->webroot;?>clients/removefiles/" + file,
                             success: function (msg) {
-                                    
+
                             }
                         });
                         $(this).parent().parent().remove();

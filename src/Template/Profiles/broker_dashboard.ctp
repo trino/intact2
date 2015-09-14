@@ -61,7 +61,7 @@
                                         <td><font color="green">2015-09-02 11:51:40</font></td>
                                         <td class="actions  util-btn-margin-bottom-5">
 
-                                            
+
                                                                                             <a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">View</a><a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">Score Card</a>
                                             <a onclick="return confirm('Are you sure you want to delete &quot;823&quot;?');" class="btn default btn-xs red-stripe" href="/veritas3-0/orders/deleteorder/823">
                                                         Delete</a>
@@ -101,7 +101,7 @@
                                         <td><font color="green">2015-09-02 11:51:40</font></td>
                                         <td class="actions  util-btn-margin-bottom-5">
 
-                                            
+
                                                                                            <a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">View</a> <a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/887?getprofilescore=1">Score Card</a>
                                             <a onclick="return confirm('Are you sure you want to delete &quot;822&quot;?');" class="btn default btn-xs red-stripe" href="/veritas3-0/orders/deleteorder/822">
                                                         Delete</a>
@@ -141,7 +141,7 @@
                                         <td><font color="green">2015-09-02 11:45:34</font></td>
                                         <td class="actions  util-btn-margin-bottom-5">
 
-                                            
+
                                                                                             <a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">View</a><a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">Score Card</a>
                                             <a onclick="return confirm('Are you sure you want to delete &quot;821&quot;?');" class="btn default btn-xs red-stripe" href="/veritas3-0/orders/deleteorder/821">
                                                         Delete</a>
@@ -181,7 +181,7 @@
                                         <td><font color="green">2015-09-02 11:45:34</font></td>
                                         <td class="actions  util-btn-margin-bottom-5">
 
-                                            
+
                                                                                             <a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">View</a><a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/887?getprofilescore=1">Score Card</a>
                                             <a onclick="return confirm('Are you sure you want to delete &quot;820&quot;?');" class="btn default btn-xs red-stripe" href="/veritas3-0/orders/deleteorder/820">
                                                         Delete</a>
@@ -221,7 +221,7 @@
                                         <td><font color="green">2015-09-02 11:42:10</font></td>
                                         <td class="actions  util-btn-margin-bottom-5">
 
-                                            
+
                                                                                             <a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">View</a><a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">Score Card</a>
                                             <a onclick="return confirm('Are you sure you want to delete &quot;819&quot;?');" class="btn default btn-xs red-stripe" href="/veritas3-0/orders/deleteorder/819">
                                                         Delete</a>
@@ -261,7 +261,7 @@
                                         <td><font color="green">2015-09-02 11:42:10</font></td>
                                         <td class="actions  util-btn-margin-bottom-5">
 
-                                            
+
                                                                                             <a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">View</a><a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/887?getprofilescore=1">Score Card</a>
                                             <a onclick="return confirm('Are you sure you want to delete &quot;818&quot;?');" class="btn default btn-xs red-stripe" href="/veritas3-0/orders/deleteorder/818">
                                                         Delete</a>
@@ -301,7 +301,7 @@
                                         <td><font color="green">2015-09-02 11:41:07</font></td>
                                         <td class="actions  util-btn-margin-bottom-5">
 
-                                            
+
                                                                                             <a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">View</a><a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">Score Card</a>
                                             <a onclick="return confirm('Are you sure you want to delete &quot;817&quot;?');" class="btn default btn-xs red-stripe" href="/veritas3-0/orders/deleteorder/817">
                                                         Delete</a>
@@ -341,7 +341,7 @@
                                         <td><font color="green">2015-09-02 11:41:07</font></td>
                                         <td class="actions  util-btn-margin-bottom-5">
 
-                                            
+
                                                                                             <a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">View</a><a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/887?getprofilescore=1">Score Card</a>
                                             <a onclick="return confirm('Are you sure you want to delete &quot;816&quot;?');" class="btn default btn-xs red-stripe" href="/veritas3-0/orders/deleteorder/816">
                                                         Delete</a>
@@ -381,7 +381,7 @@
                                         <td><font color="green">2015-09-02 10:14:44</font></td>
                                         <td class="actions  util-btn-margin-bottom-5">
 
-                                            
+
                                                                                             <a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">View</a><a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">Score Card</a>
                                             <a onclick="return confirm('Are you sure you want to delete &quot;815&quot;?');" class="btn default btn-xs red-stripe" href="/veritas3-0/orders/deleteorder/815">
                                                         Delete</a>
@@ -421,7 +421,7 @@
                                         <td><font color="green">2015-09-02 10:13:53</font></td>
                                         <td class="actions  util-btn-margin-bottom-5">
 
-                                            
+
                                                                                             <a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">View</a><a class="btn default btn-xs blue-soft-stripe" href="/veritas3-0/profiles/view/888?getprofilescore=1">Score Card</a>
                                             <a onclick="return confirm('Are you sure you want to delete &quot;814&quot;?');" class="btn default btn-xs red-stripe" href="/veritas3-0/orders/deleteorder/814">
                                                         Delete</a>

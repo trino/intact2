@@ -119,31 +119,33 @@ jQuery(document).ready(function() {
 	<div class="page-header-top">
 		<div class="container">
         <div class="row">
-			<!-- BEGIN LOGO -->
-			<div class="page-logo col-md-3 col-sm-3 col-xs-12">
-            <?php $logo = $this->requestAction('Logos/getlogo/0', ['return']); ?>
+
+			<div class="page-logo col-md-3 col-sm-3 col-xs-12" style="margin: 10px 0;">
+				<?php $logo = $this->requestAction('Logos/getlogo/0', ['return']); ?>
 				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" /></a>
-                
+
 			</div>
-			<!-- END LOGO -->
-            <!-- BEGIN LOGO_TEXT -->
-            <div class="logo-text col-md-6 col-sm-6 col-xs-12" style="border:1px solid #dadada;padding:5px;">
+
+
+			<div class=" col-md-5 col-sm-5 col-xs-12" style="margin:20px 0;">
+
 				<div class="logo-mid">
-                <a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo" style="width: 80px;" /></a>
-                </div>
-                <div class="mid-text">
-               <span style="font-size:22px;"> Commercial Trucking Insurance</span>
-                </div>
+					<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo" style="width: 85px;" /></a>
+				</div>
+				<div class="mid-text">
+					<h4> Commercial Trucking Insurance</h4>
+				</div>
 			</div>
-            <!-- END LOGO -->
-			<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+
+
 			<a href="javascript:;" class="menu-toggler"></a>
-			<!-- END RESPONSIVE MENU TOGGLER -->
-			<!-- BEGIN TOP NAVIGATION MENU -->
-            <div class="col-md-3 col-sm-12 col-xs-12">
-			<?php include('subpages/top-menu.php');?>
-            </div>
-			<!-- END TOP NAVIGATION MENU -->
+
+			<div class="col-md-4 col-sm-4 col-xs-12"  style="margin: 10px 0;">
+				<?php include('subpages/top-menu.php');?>
+			</div>
+
+
+
 		</div>
 	</div>
     </div>
@@ -167,18 +169,18 @@ jQuery(document).ready(function() {
 <div class="page-prefooter">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-5 col-sm-5 col-xs-12 footer-block">
+			<div class="col-md-4 col-sm-5 col-xs-12 footer-block">
 				<h2>About</h2>
 				<p>
 					 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam dolore.Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l depois divoltis pra.
 				</p>
 			</div>
-			<div class="col-md-4 col-sm-4 col-xs12 footer-block">
-				<h2>Problem with this page?</h2>
+			<div class="col-md-3 col-sm-4 col-xs12 footer-block">
+				<h2>Send us a note</h2>
 				<div class="subscribe-form">
 					<form action="javascript:;">
 						<div class="input-group">
-							<input type="text" placeholder="Your message" class="form-control">
+							<input type="textarea" placeholder="Your message" class="form-control">
 							<span class="input-group-btn">
 							<button class="btn" type="submit">Send</button>
 							</span>
@@ -186,8 +188,8 @@ jQuery(document).ready(function() {
 					</form>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12 footer-block">
-				<!--h2>Follow Us On</h2>
+			<div class="col-md-2 col-sm-6 col-xs-12 footer-block">
+				<h2>Follow Us On</h2>
 				<ul class="social-icons">
 					<li>
 						<a href="javascript:;" data-original-title="rss" class="rss"></a>
@@ -198,24 +200,18 @@ jQuery(document).ready(function() {
 					<li>
 						<a href="javascript:;" data-original-title="twitter" class="twitter"></a>
 					</li>
-					<li>
-						<a href="javascript:;" data-original-title="googleplus" class="googleplus"></a>
-					</li>
+
 					<li>
 						<a href="javascript:;" data-original-title="linkedin" class="linkedin"></a>
 					</li>
-					<li>
-						<a href="javascript:;" data-original-title="youtube" class="youtube"></a>
-					</li>
-					<li>
-						<a href="javascript:;" data-original-title="vimeo" class="vimeo"></a>
-					</li>
-				</ul-->
+
+				</ul>
 			</div>
 			<div class="col-md-2 col-sm-2 col-xs-12 footer-block">
-				<h2>Contacts</h2>
+				<h2>Quick Contacts</h2>
 				<address class="margin-bottom-40">
-				Phone: 800 123 3456<br>
+				 Phone: 800 123 3456<br>
+				 Other: 800 123 3456<br>
 				 Email: <a href="mailto:info@metronic.com">info@isbmeereports.com</a>
 				</address>
 			</div>
