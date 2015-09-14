@@ -69,8 +69,8 @@
                                 <div class="form-group row">
                                 <label class="control-label col-md-3">Claims with this Employer:</label>
                                <div class="col-md-3">
-                                <label class="radio-inline"><div class="radio"><input type="radio" value="1" name="claims_with_employer_35881[]"></div><span>Yes</span></label>
-                                <label class="radio-inline"><div class="radio"><input type="radio" value="0" name="claims_with_employer_35881[]"></div><span>No</span>  </div></label>
+                               <input type="radio" value="1" name="claims_with_employer_35881[]">Yes
+                                <input type="radio" value="0" name="claims_with_employer_35881[]">No </div>
                                  <label class="control-label col-md-3">Date Claims Occurred:</label>
                                  <div class="col-md-3">
                                  <input type="text" name="claims_recovery_date[]" class="form-control date-picker">
@@ -103,21 +103,21 @@
                                 <div class="form-group row">
                                             <label class="control-label col-md-3">Equipment Operated: </label>
                                             <div class="col-md-9">
-                                               <label class="checkbox-inline"> <div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="equipment_vans[]"></span></div></div><span>Vans</span></label>
-                                                <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="equipment_reefer[]"></span></div></div><span>Reefers</span></label>
-                                                <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="equipment_decks[]"></span></div></div><span>Decks</span></label>
-                                                <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="equipment_super[]"></span></div></div><span>Super B's</span></label>
-                                                <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="equipment_straight_truck[]"></span></div></div><span>Straight Truck</span></label>
-                                                <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="equipment_others[]"></span></div></div><span>Others:</span></label>
+                                               <input type="checkbox" value="1" name="equipment_vans[]"> Vans
+                                               <input type="checkbox" value="1" name="equipment_reefer[]"> Reefers
+                                               <input type="checkbox" value="1" name="equipment_decks[]"> Decks
+                                               <input type="checkbox" value="1" name="equipment_super[]"> Super B's
+                                               <input type="checkbox" value="1" name="equipment_straight_truck[]"> Straight Truck
+                                               <input type="checkbox" value="1" name="equipment_others[]"> Others:
                                 </div>
                                 </div>
                                 <div class="form-group row">
                                 <label class="control-label col-md-3">Driving Experience: </label>
                                 <div class="col-md-9">
-                                    <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="driving_experince_local[]"></span></div></div><span>Local</span></label>
-                                    <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="driving_experince_canada[]"></span></div></div><span>Canada</span></label>
-                                    <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="driving_experince_canada_rocky_mountains[]"></span></div></div><span>Canada: Rocky Mountains</span></label>
-                                    <label class="checkbox-inline"><div class="checkbox"><div class="checked"><span><input type="checkbox" value="1" name="driving_experince_usa[]"></span></div></div><span>USA</span></label>
+                                   <input type="checkbox" value="1" name="driving_experince_local[]"> Local
+                                   <input type="checkbox" value="1" name="driving_experince_canada[]"> Canada
+                                   <input type="checkbox" value="1" name="driving_experince_canada_rocky_mountains[]"> Canada: Rocky Mountains
+                                   <input type="checkbox" value="1" name="driving_experince_usa[]"> USA
                                 </div>
                 
                                 </div>

@@ -65,7 +65,7 @@
                             <form id="approvedForm" class="step1-form" method="post" action="">
                             <div class="driver_info col-md-12 col-sm-12 col-xs-12">
                             <h4>DRIVER INFORMATION</h4>
-                            <div class="row">
+
                             <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                             <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -137,8 +137,9 @@
                           </a>
                     </div>
                            </form> 
+                           <div class="clearfix"></div>
                         </div>
-                    </div>
+                       
                     <div id="tab_1_2" class="tab-pane">
                         <div>
                         <div class="form-group row">
@@ -420,10 +421,12 @@
                             <label class="control-label col-md-12 col-sm-12 col-xs-12">Driver's Signature</label>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                             <?php 
-                            include(APP."../application/signature.php");
+                                include(APP."../application/signature.php");
                                 //include('/canvas/adddriver.php');
-                                includeCanvas("gfs_signature");
+                                includeCanvas("adddriver");
+                                
                             ?>
+                     
                             </div>
                             
                             
@@ -434,7 +437,7 @@
                             <div class="row">
                             <label class="control-label col-md-12 col-sm-12 col-xs-12">Date</label>
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                            <input class="form-control" value="" required="" placeholder="" name="driversigndate">
+                            <input class="form-control" value="" required="" placeholder="" name="driversigndate" />
                             </div>
                             
                             
@@ -469,8 +472,6 @@
 
 <script>
 
-    var requiredreferences = 2;
-
     function add_more() {//$("#add_more").click(function () {
         var references = Number($('#count_past_emp').val())+Number(1);
         $.ajax({
@@ -493,6 +494,7 @@
         $('#count_past_emp').attr('value', counter);
         references = references - 1;
     });
+
 
 </script>
 
