@@ -141,7 +141,18 @@
         </div>
    </div>
 
-   <div class="form-group left15 col-md-12">
+    <div class="form-group row">
+        <label class="control-label col-md-3"><translate>verifs_cargohauled</translate>: </label>
+        <div class="col-md-9">
+            <LABEL><input type="checkbox" name="cargo_tanker[]" value="1"/>&nbsp;<translate>verifs_tanker</translate>&nbsp;</LABEL>
+            <LABEL><input type="checkbox" name="cargo_dangerous[]" value="1"/>&nbsp;<translate>verifs_dangerous</translate>&nbsp;</LABEL>
+            <LABEL><input type="checkbox" name="cargo_livestock[]" value="1"/>&nbsp;<translate>verifs_livestock</translate>&nbsp;</LABEL>
+            <LABEL><input type="checkbox" name="cargo_liquid[]" value="1"/>&nbsp;<translate>verifs_liquid</translate>&nbsp;</LABEL>
+        </div>
+    </div>
+
+
+    <div class="form-group left15 col-md-12">
         <label class="control-label col-md-3"><translate>verifs_drivingexp</translate>: </label>
         <div class="col-md-9">
             <input type="checkbox" name="driving_experince_local[]" value="1"/>&nbsp;<translate>verifs_local</translate>&nbsp;
