@@ -9,6 +9,7 @@
 $Controller = strtolower($this->request->params['controller']);
 $GLOBALS["Controller"] = $Controller;
 if(isset($_GET["embedded"])){$EmbeddedMode=true;}
+if(!isset($Table)){$Table="";}
 if(isset($EmbeddedMode)){
     if(!isset($_GET["table"])){$_GET["table"]=$Table;}
 } else {
@@ -620,7 +621,7 @@ if (!$EmbeddedMode && $Manager->webroot(true) == "intact2"){
     echo '<div class="page-content"><div class="container"><div class="row"><div class="col-md-12"><div class="portlet light">';
 }
 
-if(isset($_GET["table"])){
+if(isset($_GET["table"]) && $_GET["table"]){
     $HTMLMode=(isset($_GET["mode"]) && $_GET["mode"] == "html") || $EmbeddedMode || isset($_GET["htmlmode"]);
     $Table = $_GET["table"];
     $GLOBALS["Table"] = $Table;
@@ -778,9 +779,10 @@ if(!$HTMLMode){?>
     </TABLE>
 <?php } ?>
 
-<?php } else {
+<?php } else if(!$EmbeddedMode) {
     $Tables = $Manager->enum_tables();
-}?>
+}
+?>
     <STYLE>
         .nowrap{
             white-space: nowrap;
@@ -884,7 +886,7 @@ if(!$HTMLMode){?>
             } else {
                 window.open(MyURL + "?table=<?php
                 echo $Table;
-                if($HTMLMode) {echo "&mode=html";}
+                if(isset($HTMLMode) && $HTMLMode) {echo "&mode=html";}
                 if (isset($_GET["page"])){
                     echo "&page=" . $_GET["page"] . "&sort=" . $_GET["sort"] . "&direction=" . $_GET["direction"];
                 }
@@ -1060,22 +1062,24 @@ function asDollars($value = 0) {
     return str_replace(".", ".<SUP>", $tempstr) . "</SUP>";
 }
 
-if(isset($_GET["table"])) {
-    if($PrimaryKey){
-        printtable($this, $Manager, $_GET["table"], $PrimaryKey, $Columns, $Letters, $EmbeddedMode, $HTMLMode, $Data, $Count, $Conditions);
+if(!$EmbeddedMode) {
+    if (isset($_GET["table"])) {
+        if ($PrimaryKey) {
+            printtable($this, $Manager, $_GET["table"], $PrimaryKey, $Columns, $Letters, $EmbeddedMode, $HTMLMode, $Data, $Count, $Conditions);
+        } else {
+            printtableheader($EmbeddedMode, true);
+            echo '<TH>This table has no primary key and cannot be edited</TH></TR></THEAD><TBODY>';
+            printtableheader($EmbeddedMode, false);
+        }
     } else {
         printtableheader($EmbeddedMode, true);
-        echo '<TH>This table has no primary key and cannot be edited</TH></TR></THEAD><TBODY>';
+        echo '<TH>Table</TH></TR></THEAD><TBODY>';
+        foreach ($Tables as $Table) {
+            echo '<TR ID="table' . $Table . '"><TD><A onclick="return deletetable(' . "'" . $Table . "'" . ');"><i class="fa fa-times"></i></A> <A HREF="?table=' . $Table . '">' . $Table . '</A></TD></TR>';
+        }
+        echo '<TR><TD><A onclick="return newtable();"><i class="fa fa-floppy-o"></i> New Table</A>';
         printtableheader($EmbeddedMode, false);
     }
-} else {
-    printtableheader($EmbeddedMode, true);
-    echo '<TH>Table</TH></TR></THEAD><TBODY>';
-    foreach($Tables as $Table){
-        echo '<TR ID="table' . $Table . '"><TD><A onclick="return deletetable(' . "'" . $Table . "'" . ');"><i class="fa fa-times"></i></A> <A HREF="?table=' . $Table . '">' . $Table . '</A></TD></TR>';
-    }
-    echo '<TR><TD><A onclick="return newtable();"><i class="fa fa-floppy-o"></i> New Table</A>';
-    printtableheader($EmbeddedMode, false);
 }
 
 function printtable($_this, $Manager, $Table, $PrimaryKey = "", $Columns = false, $Letters = false, $EmbeddedMode = false, $HTMLMode = false, $Data = false, $Count = false, $Conditions = false){
