@@ -131,7 +131,7 @@
                             $driver=0;
                     ?>
                     <div class="col-md-12" style="padding:0;">
-                        <div class="portlet light no-print" style="border:0;">
+                        <div class="portlet light no-print clearfix" style="border:0;">
                            
                             <div class="portlet-body form" >
 

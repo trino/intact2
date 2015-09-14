@@ -45,6 +45,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <link href="<?php echo $this->request->webroot;?>assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
 <link href="<?php echo $this->request->webroot;?>assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
 <link href="<?php echo $this->request->webroot;?>assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
+<link href="<?php echo $this->request->webroot;?>assets/admin/pages/css/pricing-table.css" rel="stylesheet" type="text/css" id="style_color">
+<link href="<?php echo $this->request->webroot;?>assets/admin/pages/css/pricing-tables.css" rel="stylesheet" type="text/css">
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -101,6 +103,7 @@ jQuery(document).ready(function() {
    Metronic.init(); // init metronic core componets
    Layout.init(); // init layout
    Demo.init(); // init demo(theme settings page)
+   QuickSidebar.init(); // init quick sidebar
    //Index.init(); // init index page
    Tasks.initDashboardWidget(); // init tash dashboard widget
 });
@@ -207,11 +210,11 @@ jQuery(document).ready(function() {
 
 				</ul>
 			</div>
-			<div class="col-md-2 col-sm-2 col-xs-12 footer-block">
+			<div class="col-md-3 col-sm-3 col-xs-12 footer-block">
 				<h2>Quick Contacts</h2>
 				<address class="margin-bottom-40">
-				 Phone: 800 123 3456<br>
-				 Other: 800 123 3456<br>
+				 Phone: 800 123 3456<br />
+				 Other: 800 123 3456<br />
 				 Email: <a href="mailto:info@metronic.com">info@isbmeereports.com</a>
 				</address>
 			</div>
