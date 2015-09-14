@@ -89,6 +89,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo $this->request->webroot;?>assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
 <script src="<?php echo $this->request->webroot;?>assets/admin/pages/scripts/index3.js" type="text/javascript"></script>
 <script src="<?php echo $this->request->webroot;?>assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
+<script src="<?php echo $this->request->webroot;?>assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 
 

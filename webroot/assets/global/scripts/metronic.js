@@ -200,7 +200,7 @@ var Metronic = function() {
         if (!$().uniform) {
             return;
         }
-        var test = $("input[type=checkbox]:not(.toggle, .make-switch, .icheck), input[type=radio]:not(.toggle, .star, .make-switch, .icheck)");
+        var test = $("input[type=checkbox]:not(.toggle, .md-check, .md-radiobtn, .make-switch, .icheck), input[type=radio]:not(.toggle, .md-check, .md-radiobtn, .star, .make-switch, .icheck)");
         if (test.size() > 0) {
             test.each(function() {
                 if ($(this).parents(".checker").size() === 0) {
@@ -210,6 +210,81 @@ var Metronic = function() {
             });
         }
     };
+
+    // Handlesmaterial design checkboxes
+    var handleMaterialDesign = function() {
+
+        // Material design ckeckbox and radio effects
+        $('body').on('click', '.md-checkbox > label, .md-radio > label', function() {
+            var the = $(this);
+            // find the first span which is our circle/bubble
+            var el = $(this).children('span:first-child');
+              
+            // add the bubble class (we do this so it doesnt show on page load)
+            el.addClass('inc');
+              
+            // clone it
+            var newone = el.clone(true);  
+              
+            // add the cloned version before our original
+            el.before(newone);  
+              
+            // remove the original so that it is ready to run on next click
+            $("." + el.attr("class") + ":last", the).remove();
+        }); 
+
+        if ($('body').hasClass('page-md')) { 
+            // Material design click effect
+            // credit where credit's due; http://thecodeplayer.com/walkthrough/ripple-click-effect-google-material-design       
+            var element, circle, d, x, y;
+            $('body').on('click', 'a.btn, button.btn, input.btn, label.btn', function(e) { 
+                element = $(this);
+      
+                if(element.find(".md-click-circle").length == 0) {
+                    element.prepend("<span class='md-click-circle'></span>");
+                }
+                    
+                circle = element.find(".md-click-circle");
+                circle.removeClass("md-click-animate");
+                
+                if(!circle.height() && !circle.width()) {
+                    d = Math.max(element.outerWidth(), element.outerHeight());
+                    circle.css({height: d, width: d});
+                }
+                
+                x = e.pageX - element.offset().left - circle.width()/2;
+                y = e.pageY - element.offset().top - circle.height()/2;
+                
+                circle.css({top: y+'px', left: x+'px'}).addClass("md-click-animate");
+
+                setTimeout(function() {
+                    circle.remove();      
+                }, 1000);
+            });
+        }
+
+        // Floating labels
+        var handleInput = function(el) {
+            if (el.val() != "") {
+                el.addClass('edited');
+            } else {
+                el.removeClass('edited');
+            }
+        } 
+
+        $('body').on('keydown', '.form-md-floating-label .form-control', function(e) { 
+            handleInput($(this));
+        });
+        $('body').on('blur', '.form-md-floating-label .form-control', function(e) { 
+            handleInput($(this));
+        });        
+
+        $('.form-md-floating-label .form-control').each(function(){
+            if ($(this).val().length > 0) {
+                $(this).addClass('edited');
+            }
+        });
+    }
 
     // Handles custom checkboxes & radios using jQuery iCheck plugin
     var handleiCheck = function() {
@@ -244,6 +319,14 @@ var Metronic = function() {
         $('.make-switch').bootstrapSwitch();
     };
 
+    // Handles Bootstrap confirmations
+    var handleBootstrapConfirmation = function() {
+        if (!$().confirmation) {
+            return;
+        }
+        $('[data-toggle=confirmation]').confirmation({ container: 'body', btnOkClass: 'btn btn-sm btn-success', btnCancelClass: 'btn btn-sm btn-danger'});
+    }
+    
     // Handles Bootstrap Accordions.
     var handleAccordions = function() {
         $('body').on('shown.bs.collapse', '.accordion.scrollable', function(e) {
@@ -255,12 +338,18 @@ var Metronic = function() {
     var handleTabs = function() {
         //activate tab if tab id provided in the URL
         if (location.hash) {
-            var tabid = location.hash.substr(1);
+            var tabid = encodeURI(location.hash.substr(1));
             $('a[href="#' + tabid + '"]').parents('.tab-pane:hidden').each(function() {
                 var tabid = $(this).attr("id");
                 $('a[href="#' + tabid + '"]').click();
             });
             $('a[href="#' + tabid + '"]').click();
+        }
+
+        if ($().tabdrop) {
+            $('.tabbable-tabdrop .nav-pills, .tabbable-tabdrop .nav-tabs').tabdrop({
+                text: '<i class="fa fa-ellipsis-v"></i>&nbsp;<i class="fa fa-angle-down"></i>'
+            });
         }
     };
 
@@ -357,6 +446,13 @@ var Metronic = function() {
         });
     };
 
+    // Handle textarea autosize 
+    var handleTextareaAutosize = function() {
+        if (typeof(autosize) == "function") {
+            autosize(document.querySelector('textarea.autosizeme'));
+        }
+    }
+
     // Handles Bootstrap Popovers
 
     // last popep popover
@@ -437,6 +533,130 @@ var Metronic = function() {
         }
     };
 
+    // handle group element heights
+    var handleHeight = function() {
+       $('[data-auto-height]').each(function() {
+            var parent = $(this);
+            var items = $('[data-height]', parent);
+            var height = 0;
+            var mode = parent.attr('data-mode');
+            var offset = parseInt(parent.attr('data-offset') ? parent.attr('data-offset') : 0);
+
+            items.each(function() {
+                if ($(this).attr('data-height') == "height") {
+                    $(this).css('height', '');
+                } else {
+                    $(this).css('min-height', '');
+                }
+
+                var height_ = (mode == 'base-height' ? $(this).outerHeight() : $(this).outerHeight(true));
+                if (height_ > height) {
+                    height = height_;
+                }
+            });
+
+            height = height + offset;
+
+            items.each(function() {
+                if ($(this).attr('data-height') == "height") {
+                    $(this).css('height', height);
+                } else {
+                    $(this).css('min-height', height);
+                }
+            });
+       });       
+    }
+
+    // Handle 
+    var handlePromo = function() {
+
+        var init = function() {
+            var html = '';
+
+            html  = '<div class="promo-layer" style="z-index: 100000; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0, 0.8)">';  
+            html += '   <div style="z-index: 100001; top: 50%; left: 50%; margin: -300px 0 0 -400px; width: 800px; height: 600px; position: fixed;">';
+            html += '       <div class="row">';
+            html += '           <div class="col-md-12" style="text-align: center">';
+            html += '               <h3 style="color: white; margin-bottom: 30px; font-size: 28px; line-height: 36px; font-weight: 400;">You are one step behind in choosing a perfect <br>admin theme for your project.</h3>';
+            html += '               <p style="color: white; font-size: 18px;">Just to recap some notable facts about Metronic:</p>';
+            html += '               <ul style="list-style:none; margin: 30px auto 20px auto; padding: 10px; display: block; width: 550px;  text-align: left; background: #fddf00;  color: #000000;transform:rotate(-2deg);">';
+            html += '                   <li style="list-style:none; padding: 4px 8px; font-size: 15px;">';
+            html += '                      <span style="display: inline-block; width: 10px; height: 10px; border-radius: 20px !important; background: rgba(0, 0, 0, 0.2); margin-right: 5px;  margin-top: 7px;"></span>';
+            html += '                      The Most Popular #1 Selling Admin Theme of All Time.';
+            html += '                   </li>';
+            html += '                   <li style="list-style:none; padding: 4px 8px; font-size: 15px;">';
+            html += '                      <span style="display: inline-block; width: 10px; height: 10px; border-radius: 20px !important; background: rgba(0, 0, 0, 0.2); margin-right: 5px;  margin-top: 7px;"></span>';
+            html += '                      Trusted By Over 30,000 Users Around The Globe.';
+            html += '                   </li>';  
+            html += '                   <li style="list-style:none; padding: 4px 8px; font-size: 15px;">';
+            html += '                      <span style="display: inline-block; width: 10px; height: 10px; border-radius: 20px !important; background: rgba(0, 0, 0, 0.2); margin-right: 5px;  margin-top: 7px;"></span>';
+            html += '                      5 Star Rating From Over 3000 Users.';
+            html += '                   </li>';  
+            html += '                   <li style="list-style:none; padding: 4px 8px; font-size: 15px;">';
+            html += '                      <span style="display: inline-block; width: 10px; height: 10px; border-radius: 20px !important; background: rgba(0, 0, 0, 0.2); margin-right: 5px;  margin-top: 7px;"></span>';
+            html += '                      Used By Listed Companies In Small To Enterprise Solutions.';
+            html += '                   </li>';  
+            html += '                   <li style="list-style:none; padding: 4px 8px; font-size: 15px;">';
+            html += '                      <span style="display: inline-block; width: 10px; height: 10px; border-radius: 20px !important; background: rgba(0, 0, 0, 0.2); margin-right: 5px;  margin-top: 7px;"></span>';
+            html += '                      Includes 700+ Templates, 80+ Plugins, 1500+ UI Components.';
+            html += '                   </li>';  
+            html += '                   <li style="list-style:none; padding: 4px 8px; font-size: 15px;">';
+            html += '                      <span style="display: inline-block; width: 10px; height: 10px; border-radius: 20px !important; background: rgba(0, 0, 0, 0.2); margin-right: 5px;  margin-top: 7px;"></span>';
+            html += '                      Backed By A Team With Combined 42 Years of Experience In The Field.';
+            html += '                   </li>';  
+            html += '                   <li style="list-style:none; padding: 4px 8px; font-size: 15px;">';
+            html += '                      <span style="display: inline-block; width: 10px; height: 10px; border-radius: 20px !important; background: rgba(0, 0, 0, 0.2); margin-right: 5px;  margin-top: 7px;"></span>';
+            html += '                      A Product Of Over 3 Years Of Continuous Improvements';
+            html += '                   </li>'; 
+            html += '                   <li style="list-style:none; padding: 4px 8px; font-size: 15px;">';
+            html += '                      <span style="display: inline-block; width: 10px; height: 10px; border-radius: 20px !important; background: rgba(0, 0, 0, 0.2); margin-right: 5px;  margin-top: 7px;"></span>';
+            html += '                      Get All The Above & Even More Just For 28$';
+            html += '                   </li>'; 
+            html += '               </ul>';
+            html += '           </div>';
+            html += '       </div>';
+            html += '       <div class="row">';
+            html += '           <div class="col-md-12" style="margin-top: 20px;">';
+            html += '               <center><a class="btn btn-circle btn-danger btn-lg" style="padding: 12px 28px; font-size: 14px; text-transform: uppercase1;" href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes&utm_source=preview&utm_medium=banner&utm_campaign=Preview%20Engage" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Now!</a>';
+            html += '               &nbsp;&nbsp;<a class="btn btn-circle btn-default btn-lg promo-remind" style="padding: 11px 28px; font-size: 14px; text-transform: uppercase1;background: none; color: #fff;" href="javascript:;">Remind Me Later</a>';
+            html += '               <a class="btn btn-circle btn-default btn-lg promo-dismiss" style="padding: 12px 12px; font-size: 14px; text-transform: uppercase1; background: none; color: #aaa; border: 0" href="javascript:;">Dismiss</a></center>';
+            html += '           </div>';
+            html += '       </div>';
+            html += '   </div>';
+            html += '</div>';
+
+            $('body').append(html);
+
+            $('.promo-dismiss').click(function(){
+                $('.promo-layer').remove();
+
+                $.cookie('user-dismiss', 1, { expires: 7, path: '/' });
+            });
+
+            $('.promo-remind').click(function(){
+                $('.promo-layer').remove();
+
+                $.cookie('user-page-views', 1, { expires: 1, path: '/' });
+            });
+        }
+
+        if ($.cookie) {
+            var pageViews = $.cookie('user-page-views') ? parseInt($.cookie('user-page-views')) : 0;
+            var userDismiss = $.cookie('user-dismiss') ? parseInt($.cookie('user-dismiss')) : 0;
+            
+            pageViews = pageViews + 1;
+            $.cookie('user-page-views', pageViews, { expires: 1, path: '/' });
+
+            //alert(pageViews);
+
+            if (userDismiss === 0 && (pageViews === 8 || pageViews === 15 || pageViews === 25 || pageViews === 40 || pageViews === 55 || pageViews === 70)) {
+                setTimeout(init, 1000);
+            }
+        } else {
+            return;
+        }
+    };
+
     //* END:CORE HANDLERS *//
 
     return {
@@ -449,7 +669,8 @@ var Metronic = function() {
             handleInit(); // initialize core variables
             handleOnResize(); // set and handle responsive    
 
-            //UI Component handlers            
+            //UI Component handlers     
+            handleMaterialDesign(); // handle material design       
             handleUniform(); // hanfle custom radio & checkboxes
             handleiCheck(); // handles custom icheck radio and checkboxes
             handleBootstrapSwitch(); // handle bootstrap switch plugin
@@ -464,9 +685,16 @@ var Metronic = function() {
             handlePopovers(); // handles bootstrap popovers
             handleAccordions(); //handles accordions 
             handleModals(); // handle modals
+            handleBootstrapConfirmation(); // handle bootstrap confirmations
+            handleTextareaAutosize(); // handle autosize textareas
+
+            //Handle group element heights
+            handleHeight();
+            this.addResizeHandler(handleHeight); // handle auto calculating height on window resize
 
             // Hacks
             handleFixInputPlaceholderForIE(); //IE8 & IE9 input placeholder issue fix
+            handlePromo();
         },
 
         //main function to initiate core javascript after ajax complete
@@ -482,6 +710,7 @@ var Metronic = function() {
             handleTooltips(); // handle bootstrap tooltips
             handlePopovers(); // handles bootstrap popovers
             handleAccordions(); //handles accordions 
+            handleBootstrapConfirmation(); // handle bootstrap confirmations
         },
 
         //init main components 
@@ -511,6 +740,10 @@ var Metronic = function() {
             if (el) {
                 if ($('body').hasClass('page-header-fixed')) {
                     pos = pos - $('.page-header').height();
+                } else if ($('body').hasClass('page-header-top-fixed')) {
+                    pos = pos - $('.page-header-top').height();
+                } else if ($('body').hasClass('page-header-menu-fixed')) {
+                    pos = pos - $('.page-header-menu').height();
                 }
                 pos = pos + (offeset ? offeset : -1 * el.height());
             }
@@ -862,6 +1095,18 @@ var Metronic = function() {
             } else {
                 return '';
             }
+        },
+
+        getResponsiveBreakpoint: function(size) {
+            // bootstrap responsive breakpoints
+            var sizes = {
+                'xs' : 480,     // extra small
+                'sm' : 768,     // small
+                'md' : 992,     // medium
+                'lg' : 1200     // large
+            };
+
+            return sizes[size] ? sizes[size] : 0; 
         }
     };
 
