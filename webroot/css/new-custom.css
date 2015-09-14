@@ -76,12 +76,28 @@
 
 .driving_exp label .checkbox {
   display: inline-block !important;
-  margin-top: 0 !important;
-  padding-left: 0 !important;
 }
 
 .signature_date label {
     text-align: center;
+}
+
+.tab-pane div .radio-inline {
+    padding-left: 0 !important;
+}
+
+.gndn div label .radio {
+  margin-left: 0 !important;
+  margin-right: 5px;
+}
+
+.gndn div .checkbox-inline {
+  padding-left: 0 !important;
+}
+
+.gndn div label .checkbox {
+  display: inline-block;
+  margin-right: 5px;
 }
 
 
@@ -592,14 +608,17 @@ label {
   margin-top: -26px !important;
 }
 
-.step1-form .checkbox-inline span {
-    margin-left: 7px;
-}
-
 .province-select {
   padding-left: 9px !important;
   width: 55%;
 }
+
+
+/*** ORDER TYPE CSS ***/
+.pricing-margin {
+    margin: 20px 0 !important;
+}
+
 
 
 
