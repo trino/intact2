@@ -565,7 +565,7 @@ function clientimage($webroot, $settings, $clients = ""){
     $filename = 'img/clients/' . $settings->client_img;
     if (is_object($clients) && isset($clients->image) && $clients->image){
         $tempfilename = 'img/jobs/' . $clients->image;
-        if (file_exists($tempfilename)){
+        if (file_exists($tempfilename)){ 
             $filename = $tempfilename;
         }
     }

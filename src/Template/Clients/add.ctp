@@ -601,8 +601,7 @@
                                                                             class="sublisting">
                                                                             <td>
 
-                            <span
-                                id="sub_<?php echo $sub['id']; ?>"><?php echo ucfirst($sub['title']); ?></span>
+                            <span id="sub_<?php echo $sub['id']; ?>"><?php echo ucfirst($sub['title']); ?></span>
                                                                             </td>
 
                                                                             <?php
@@ -999,7 +998,7 @@
                                 $('#delete_' + button_id).attr('title', response);
                             }
                             else {
-                                $("#clientpic").attr("src", '<?php echo $this->request->webroot;?>img/jobs/' + response);
+                                $("#clientpic").attr("src", '<?php echo $this->request->webroot;?>img/clients/' + response);
                                 $('#client_img').val(response);
                             }
 //$('.flashimg').show();
