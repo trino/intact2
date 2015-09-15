@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12 logo">
                             <div class="main-logo">
-                                <img src="<?php echo WEB_ROOT; ?>img/intact_logo.png"/>
+                                <img src="<?= WEB_ROOT; ?>img/intact_logo.png"/>
                             </div>
                             <div class="clearfix"></div>
                             <span>Intact Insurance Company</span>
@@ -149,21 +149,64 @@
                                                         class="control-label col-md-5 col-sm-5 col-xs-12 required padding-right">Current License Class:</label>
 
                                                     <div class="col-md-7 col-sm-7 col-xs-12">
-                                                        <input class="form-control" value="" required="" placeholder=""
-                                                               name="dlc">
+                                                        <input class="form-control" value="" required="" placeholder="" name="dlc">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12 required">Date
-                                                        of receipt for this class:</label>
-
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12 required">Date of receipt for this class:</label>
                                                     <div class="col-md-8 col-sm-8 col-xs-12">
-                                                        <input class="form-control datepicker" value="" required=""
-                                                               placeholder="" name="drc">
+                                                        <input class="form-control datepicker" value="" required="" placeholder="" name="drc">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
+
+
+                                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <label class="control-label col-md-5 col-sm-5 col-xs-12 required padding-right">Date First License in Canada or USA (Class G or equivalent):</label>
+
+                                                    <div class="col-md-7 col-sm-7 col-xs-12">
+                                                        <input class="form-control" value="" required="" placeholder="" name="datefirstlicense">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12 required">Years of experience with current class of license:</label>
+
+                                                    <div class="col-md-8 col-sm-8 col-xs-12">
+                                                        <input class="form-control datepicker" value="" required="" placeholder="" name="yearsofexp">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <label class="control-label col-md-5 col-sm-5 col-xs-12 required padding-right">Years of experience driving in the USA:</label>
+
+                                                    <div class="col-md-7 col-sm-7 col-xs-12">
+                                                        <input class="form-control datepicker" value="" required="" placeholder="" name="yearsofusa">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12 required">Check your current status below:</label>
+
+                                                    <div class="col-md-8 col-sm-8 col-xs-12">
+                                                        <select class="form-control datepicker" name="checkstatus">
+                                                            <?php
+                                                                $types = array("Owner operator", "Company Driver", "Contractor Operation");
+                                                                foreach($types as $Index => $Name){
+                                                                    echo '<OPTION VALUE="' . $Index . '">' . $Name . "</OPTION>";
+                                                                }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
                                     </div>
                             </div>
                             <!-- .driver_info -->
