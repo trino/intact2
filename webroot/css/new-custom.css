@@ -86,19 +86,22 @@
     padding-left: 0 !important;
 }
 
-.gndn div label .radio {
-  margin-left: 0 !important;
-  margin-right: 5px;
-}
-
-.gndn div .checkbox-inline {
-  padding-left: 0 !important;
-}
-
-.gndn div label .checkbox {
+.radio-inline, .checkbox-inline {
+  cursor: pointer;
   display: inline-block;
-  margin-right: 5px;
+  font-weight: 400;
+  margin-bottom: 0;
   padding-left: 0 !important;
+  vertical-align: middle;
+}
+
+.footer-block address > div {
+  margin-bottom: 2px;
+}
+
+.footer-block address strong {
+    display: inline-block;
+    width: 60px;
 }
 
 
@@ -275,7 +278,7 @@
 }
 
 .footer-block address a {
-    color: #a2abb7;
+    color: #4db3a4;
           -webkit-transition: all 0.7s ease-in-out;
   -moz-transition: all 0.7s ease-in-out;
   -o-transition: all 0.7s ease-in-out;
@@ -284,7 +287,7 @@
 
 .footer-block address a:hover {
     text-decoration: none;
-    color: #4db3a4 !important;
+    color: #a2abb7 !important;
       -webkit-transition: all 0.7s ease-in-out;
   -moz-transition: all 0.7s ease-in-out;
   -o-transition: all 0.7s ease-in-out;
@@ -417,11 +420,14 @@
   transition: all 0.7s ease-in-out; 
 }
 
+.page-content .dashboard-stat, .page-content .dashboard-stat:hover {
+    text-decoration: none !important;
+} 
+
 .visual-bg i {
   color: #fff;
-  font-size: 120px;
+  font-size: 100px;
   left: -20px;
-  bottom: -20px;
   line-height: 110px;
   opacity: 0.1;
   position: absolute;
@@ -570,7 +576,7 @@ label {
 }
 
 .form-actions .forget-password #forget-password {
-  color: #fff !important;
+  color: #00fa72 !important;
   font-weight: 600;
   text-transform: uppercase !important;
 }
@@ -752,7 +758,7 @@ body .page-header .page-header-top .page-logo {
   position: relative;
 }
 
-.form-control:focus {
+.form-md-line-input .form-control:focus {
   border-color: #4db3a4 !important;
   border-width: 2px !important;
   outline: 0 none;

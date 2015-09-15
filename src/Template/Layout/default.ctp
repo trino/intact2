@@ -173,13 +173,13 @@ jQuery(document).ready(function() {
 <div class="page-prefooter">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 col-sm-5 col-xs-12 footer-block">
+			<div class="col-md-4 col-sm-3 col-xs-12 footer-block">
 				<h2>About</h2>
 				<p>
 					 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam dolore.Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l depois divoltis pra.
 				</p>
 			</div>
-			<div class="col-md-3 col-sm-4 col-xs12 footer-block">
+			<div class="col-md-3 col-sm-3 col-xs12 footer-block">
 				<h2>Send us a note</h2>
 				<div class="subscribe-form">
 					<form action="javascript:;">
@@ -192,7 +192,7 @@ jQuery(document).ready(function() {
 					</form>
 				</div>
 			</div>
-			<div class="col-md-2 col-sm-6 col-xs-12 footer-block">
+			<div class="col-md-2 col-sm-3 col-xs-12 footer-block">
 				<h2>Follow Us On</h2>
 				<ul class="social-icons">
 					<li>
@@ -214,9 +214,9 @@ jQuery(document).ready(function() {
 			<div class="col-md-3 col-sm-3 col-xs-12 footer-block">
 				<h2>Quick Contacts</h2>
 				<address class="margin-bottom-40">
-				 Phone: 800 123 3456<br />
-				 Other: 800 123 3456<br />
-				 Email: <a href="mailto:info@metronic.com">info@isbmeereports.com</a>
+				 <div><strong>Phone :</strong> 800 123 3456</div>
+				 <div><strong>Other :</strong> 800 123 3456</div>
+				 <div><strong>Email :</strong> <a href="mailto:info@metronic.com">info@isbmeereports.com</a></div>
 				</address>
 			</div>
 		</div>

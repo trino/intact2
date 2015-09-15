@@ -19,7 +19,7 @@
         <div class="row">
             <!--span style="color:red;">clients/listing.php #INC113</span-->
             <div class="col-md-12">
-                <div class="portlet light">
+                <div class="portlet box">
 
                     <div class="portlet-body form">
 
