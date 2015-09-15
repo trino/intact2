@@ -55,7 +55,7 @@
 
                 <div class="form-actions top chat-form" style="margin-top:0;margin-bottom:0;" align="right">
 
-                    <div class="btn-set">
+                    <div class="btn-set" align="right">
 
 
                         <form action="<?php echo $this->request->webroot; ?>documents/index" method="get">

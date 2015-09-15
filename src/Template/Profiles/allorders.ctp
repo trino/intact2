@@ -27,12 +27,12 @@
             <div class="portlet-body form">
             <form align="right" class="form-actions" method="get"
                               action="<?php echo $this->request->webroot; ?>order/search" style="border-top: 0;">
-
+<div align="right">
 
                             <input type="search" aria-controls="sample_1" value="" placeholder="Search Order"
                                    name="search" class="form-control input-inline">
                             <button style="" class="btn btn-primary input-inline" type="submit">Search</button>
-
+</div>
                         </form>
                 <?php include("subpages/pending_orders.php");?>
                 <div class="clearfix"></div>

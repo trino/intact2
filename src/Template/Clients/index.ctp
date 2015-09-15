@@ -10,7 +10,7 @@ $strings = CacheTranslations($language, $this->request->params['controller'] . "
 		<div class="container">
 			<!-- BEGIN PAGE TITLE -->
 			<div class="page-title">
-			<h1><?php echo ucfirst($strings["settings_client"]);?></h1>
+			<h1><?php echo ucfirst($strings["settings_client"]);?> <small>List</small></h1>
 			</div>
     <div class="page-bar">
 

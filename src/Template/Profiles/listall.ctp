@@ -63,13 +63,13 @@
             <div class="portlet-body form">
 
 
-                <div style="margin-top:0;margin-bottom:0;" class="form-actions top chat-form">
+                <div style="margin-top:0;margin-bottom:0;" class="form-actions top chat-form" >
                     
-                    <div class="btn-set">
-                        <form method="get" action="<?php echo $this->request->webroot;?>profiles/index">
+                    <div class="btn-set" style="float:right !important;">
+                        <form method="get" action="<?php echo $this->request->webroot;?>profiles/index" >
                             
 
-                            
+                          
 
                                                                 <select name="filter_by_client" style="" class="form-control showprodivision input-inline">
                                         <option value="">Client</option>

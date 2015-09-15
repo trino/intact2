@@ -618,10 +618,33 @@ label {
 }
 
 
+.gndn label .checked {
+  display: inline-block;
+}
+
+.gndn label .checkbox {
+  padding-left: 0 !important;
+}
+
+.nav-tabs {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.alert-wrapper {
+    background: rgba(0, 0, 0, 0) url("../webroot/assets/admin/pages/media/bg/1.jpg") no-repeat fixed center top 100% / cover !important;
+}
+
+.alert-wrapper .alert {
+  margin: 5px 0 15px;
+}
+
+
 /*** ORDER TYPE CSS ***/
 .pricing-margin {
     margin: 20px 0 !important;
 }
+
 
 
 

@@ -9,19 +9,13 @@
 
     <div class="col-md-12">
         <div class="portlet box grey-salsa">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-globe"></i>
-                    <?php echo $strings["index_listclients"]; ?>
-                </div>
-            </div>
             <div class="portlet-body form">
 
 
                 <form action="<?php echo $this->request->webroot; ?>clients/search" method="get" class="form-actions"
                       align="right">
 
-
+<div align="right">
                     <?php if (isset($_GET['draft'])) { ?><input type="hidden" name="draft"/><?php } ?>
 
                     <input class="form-control input-inline" name="search" type="search"
@@ -29,7 +23,7 @@
                            value="<?php if (isset($search_text)) echo $search_text; ?>"
                            aria-controls="sample_1"/>
                     <button type="submit" class="btn btn-primary input-inline" style=""><?= $strings["dashboard_search"] ?></button>
-
+</div>
                 </form>
 
 

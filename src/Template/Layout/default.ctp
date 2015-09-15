@@ -45,6 +45,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <link href="<?php echo $this->request->webroot;?>assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
 <link href="<?php echo $this->request->webroot;?>assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
 <link href="<?php echo $this->request->webroot;?>assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
+<link href="<?php echo $this->request->webroot;?>assets/admin/pages/css/pricing-table.css" rel="stylesheet" type="text/css">
+<link href="<?php echo $this->request->webroot;?>assets/admin/pages/css/pricing-tables.css" rel="stylesheet" type="text/css">
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -155,11 +157,10 @@ jQuery(document).ready(function() {
 	<!-- END HEADER MENU -->
 </div>
 <!-- END HEADER -->
+<div class="alert-wrapper"><div class="container"><?= $this->Flash->render() ?></div></div>
 <!-- BEGIN PAGE CONTAINER -->
-<div class="page-container">
-        <?= $this->Flash->render() ?>
+<div class="page-container">  
         <?= $this->fetch('content') ?>
-	
 	<!-- END PAGE CONTENT -->
 </div>
 <!-- END PAGE CONTAINER -->

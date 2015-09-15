@@ -26,12 +26,12 @@
 
                         <form align="right" class="form-actions" method="get"
                               action="<?php echo $this->request->webroot; ?>clients/search" style="border-top: 0;">
-
-
+                                
+<div align="right">
                             <input type="search" aria-controls="sample_1" value="" placeholder="Search Clients"
                                    name="search" class="form-control input-inline">
                             <button style="" class="btn btn-primary input-inline" type="submit">Search</button>
-
+</div>
                         </form>
 
 
