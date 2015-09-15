@@ -830,6 +830,9 @@ class ManagerComponent extends Component {
     function AppName(){
         return  $_SERVER["SERVER_NAME"];
     }
+    function ScriptName(){
+        return "Intact 2";
+    }
 
     function isJson($string) {
         if($string && !is_array($string)){
