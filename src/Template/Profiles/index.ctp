@@ -99,12 +99,6 @@ $super = $this->request->session()->read('Profile.super');
 
 
         <div class="portlet box green-haze">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-user"></i>
-                     <?= $strings["index_listprofile"]; ?>
-                </div>
-            </div>
 
 
             <div class="portlet-body form">

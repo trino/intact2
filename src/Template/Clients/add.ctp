@@ -118,11 +118,9 @@
 
                     <div class="clearfix"></div>
 
-                    <div class="portlet box grey-salsa">
-                        <div class="portlet-title">
-                            <div class="caption">
-                                <i class="fa fa-briefcase"></i><?= $strings["clients_manager"]; ?>
-                            </div>
+                    <div class="portlet box">
+                        <div class="tabbable tabbable-custom portlet-body form">
+                            
                             <ul class="nav nav-tabs">
                                 <li class="active">
                                     <a href="#tab_1_1" data-toggle="tab"><?= $strings["clients_info"]; ?></a>
@@ -155,7 +153,7 @@
 
 
                             </ul>
-                        </div>
+                       
 
                         <div class="portlet-body form">
                             <div class="form-body" style="padding-bottom: 0px;">
@@ -739,6 +737,7 @@
 
                                             <!-- END SAMPLE FORM PORTLET-->
                                         </div>
+                                         </div>
                                     </div>
                                 </div>
                             </div>
