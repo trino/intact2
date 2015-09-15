@@ -1,5 +1,5 @@
 <?php
-if($this->request->session()->read('debug')){ echo "<span style ='color:red;'>subpages/employment_verification_form.php #INC???</span>"; }
+if($this->request->session()->read('debug')){ echo "<span style ='color:red;'>" . __FILE__ . " #INC???</span>"; }
 $strings2 = CacheTranslations($language, array("verifs_%"), $settings, False);
 die("Don't use this one.");
 ?>

@@ -1,6 +1,6 @@
 <?php
 if($this->request->session()->read('debug'))
-        echo "<span style ='color:red;'>adminlisting.php #INC114</span>";
+        echo "<span style ='color:red;'>" . __FILE__ . " #INC114</span>";
  if(isset($cid))$jid = $cid; else $jid = "";?>
 <?php $users = $this->requestAction('/profiles/getallusers/5/'.$jid);?>
 <div class="form-group">

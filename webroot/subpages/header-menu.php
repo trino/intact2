@@ -1,3 +1,11 @@
+<?php
+    $settings = $this->requestAction('settings/get_settings');
+    $debug = $this->request->session()->read('debug');
+    include_once('subpages/api.php');
+    $language = $this->request->session()->read('Profile.language');
+    $strings = CacheTranslations($language, array("langswitch", "orders_create"), $settings);//,$registry);
+?>
+
 <div class="page-header-menu">
     <div class="container">
         <!-- BEGIN HEADER SEARCH BOX -->
@@ -17,7 +25,7 @@
             <ul class="nav navbar-nav">
                 <?php if ($this->request->session()->read('Profile.id')) { ?>
                     <li class="active">
-                        <a href="<?php echo $this->request->webroot; ?>">Dashboard</a>
+                        <a href="<?php echo $this->request->webroot; ?>"><?= $strings["dashboard_dashboard"]; ?></a>
                     </li>
 
 
@@ -28,18 +36,17 @@
                         </a>
                         <ul class="dropdown-menu pull-left">
                             <li class="">
-
-                                <a href="<?php echo $this->request->webroot; ?>clients"><i
-                                        class="icon-list"></i> List Companies</a>
+                                <a href="<?php echo $this->request->webroot; ?>clients"><i class="icon-list"></i>
+                                    <?= $strings["index_listclients"]; ?></a>
                             </li>
                             <li class="">
                                 <a href="<?php echo $this->request->webroot; ?>clients/add"><i class="icon-plus"></i>
-                                    Add Company</a>
+                                    <?= $strings["index_createclients"]; ?></a>
                             </li>
 
                             <li class="">
                                 <a href="<?php echo $this->request->webroot; ?>profiles/send_application"><i class="icon-envelope"></i>
-                                    Send Application</a>
+                                    <?= $strings["index_sendapplication"]; ?></a>
                             </li>
 
                         </ul>
@@ -56,19 +63,19 @@
                             <li class="">
 
                                 <a href="<?php echo $this->request->webroot; ?>profiles"><i
-                                        class="icon-list"></i> List Drivers</a>
+                                        class="icon-list"></i> <?= $strings["index_listprofiles"]; ?></a>
 
                             </li>
                             <li class="">
                                 <a href="<?php echo $this->request->webroot; ?>profiles/add"><i class="icon-plus"></i>
-                                    Add Driver</a>
+                                    <?= $strings["index_createprofile"]; ?></a>
 
                             </li>
 
 
                             <li class="">
                                 <a href="<?php echo $this->request->webroot; ?>profiles/send_application"><i class="icon-envelope"></i>
-                                    Send Application</a>
+                                    <?= $strings["index_sendapplication"]; ?></a>
                             </li>
                         </ul>
                     </li>
@@ -82,18 +89,13 @@
                         </a>
                         <ul class="dropdown-menu pull-left">
                             <li class="">
-
                                 <a href="<?php echo $this->request->webroot; ?>profiles/allorders"><i
-                                        class="icon-list"></i> List Orders</a>
-
+                                        class="icon-list"></i> <?= $strings["index_listorders"]; ?></a>
                             </li>
                             <li class="">
                                 <a href="<?php echo $this->request->webroot; ?>orders/buy_products"><i class="icon-plus"></i>
-                                    Place Order</a>
-
+                                    <?= $strings["orders_create"]; ?></a>
                             </li>
-
-
                         </ul>
                     </li>
 
@@ -104,18 +106,13 @@
                         </a>
                         <ul class="dropdown-menu pull-left">
                             <li class="">
-
                                 <a href="<?php echo $this->request->webroot; ?>documents/index"><i
-                                        class="icon-list"></i> List Document</a>
-
+                                        class="icon-list"></i> <?= $strings["index_listdocuments"]; ?></a>
                             </li>
                             <li class="">
                                 <a href="<?php echo $this->request->webroot; ?>documents/add"><i class="icon-plus"></i>
-                                    Add Document</a>
-
+                                    <?= $strings["index_createdocument"]; ?></a>
                             </li>
-
-
                         </ul>
                     </li>
 
@@ -127,7 +124,7 @@
                         <ul class="dropdown-menu pull-left">
                             <li class="">
 
-                                <a href="<?php echo $this->request->webroot; ?>tasks/calender"><i class="fa fa-edit"></i> Tasks</a>
+                                <a href="<?php echo $this->request->webroot; ?>tasks/calender"><i class="fa fa-edit"></i> <?= $strings["index_tasks"]; ?></a>
 
                             </li>
                             <li class="">
@@ -139,7 +136,8 @@
                             </li>
 
                             <li class="">
-                                <a href=javascript:;><i class="fa fa-comment"></i> Language</a>
+                                <a href="<?php echo $this->request->webroot; ?>profiles/langswitch/<?php echo $this->request->session()->read('Profile.id'); ?>">
+                                    <i class="icon-user"></i> <?= $strings["langswitch"]; ?></a>
                             </li>
 
 

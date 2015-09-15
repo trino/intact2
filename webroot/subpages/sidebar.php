@@ -18,8 +18,9 @@
 
     <div class="page-sidebar navbar-collapse collapse">
         <?php
-            if ($this->request->session()->read('debug'))
-                echo "<span style ='color:red;'>sidebar.php #INC162</span>";
+            if ($this->request->session()->read('debug')) {
+                echo "<span style ='color:red;'>" . __FILE__ . " #INC162</span>";
+            }
         ?>
         <ul id="mainbar" class="<?php echo $settings->sidebar; ?>" data-keep-expanded="false" data-auto-scroll="true"
             data-slide-speed="200">
@@ -135,13 +136,8 @@
             </li>
             
             <li>
-                <a href="<?php echo $this->request->webroot; ?>">
-                    <i class="fa fa-comment"></i>
-                    <span class="title">Language</span>
-                    <span class="selected"></span>
-
-                </a>
-
+                <a href="<?php echo $this->request->webroot; ?>profiles/langswitch/<?php echo $this->request->session()->read('Profile.id'); ?>">
+                    <i class="icon-user"></i> <?= $strings["langswitch"]; ?> </a>
             </li>
             
             

@@ -1,11 +1,10 @@
-  <?php
- if($this->request->session()->read('debug'))
-        echo "<span style ='color:red;'>recruiter_contact_table.php #INC161</span>";
- ?>
 <?php
-$profiles = $this->requestAction('Profiles/getProfile');
-$contact =  $this->requestAction('Profiles/getContact');
-//include("subpages/profileslisting.php");
+    if($this->request->session()->read('debug')) {
+     echo "<span style ='color:red;'>" . __FILE__ . " #INC161</span>";
+    }
+    $profiles = $this->requestAction('Profiles/getProfile');
+    $contact =  $this->requestAction('Profiles/getContact');
+    //include("subpages/profileslisting.php");
 ?>
 <div class="scrolldiv" style="margin-bottom: 15px;">
 <input type="text" id="searchProfile" onkeyup="searchProfile()" class="form-control" placeholder="Search <?php echo ucfirst($settings->profile); ?> s" />

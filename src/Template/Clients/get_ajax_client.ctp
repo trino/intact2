@@ -1,11 +1,10 @@
-<tbody>
 <?php
+if($this->request->session()->read('debug')){ echo "<span style ='color:red;'>" . __FILE__ . " #INC501</span>"; }
+echo '<TBODY>';
 if ($clients){
-	foreach ($clients as $o)
-	{
+	foreach ($clients as $o) {
 		$pro_ids = explode(",",$o->profile_id);
 		?>
-
 		<tr>
             <td width="5" align="center">
                 <img height="32" src="<?php
@@ -28,11 +27,7 @@ if ($clients){
 ?>
 </tbody>
 <script>
-function addclientz(client_id,addclient,id)
-{
-
-		
-			
+function addclientz(client_id,addclient,id) {
 		$.ajax({
 			type: "post",
 			data: "client_id="+client_id+"&add="+addclient+"&user_id="+id,

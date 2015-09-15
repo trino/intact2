@@ -94,10 +94,17 @@ class ManagerComponent extends Component {
 
 
     //////////////////////////////////profile type API/////////////////////////////////
-    function enum_profile_types(){
-        return $this->enum_table("profile_types");
+    function enum_profile_types($AsTable = false, $Language = ""){
+        $Data = $this->enum_table("profile_types");
+        if($AsTable){
+            $this->iterator_to_array($Data, "id", "title" . $this->checklanguage($Language));
+        }
+        return $Data;
     }
-
+    function checklanguage($Language){
+        if($Language == "English" || $Language == "Debug"){return "";}
+        return $Language;
+    }
 
     /////////////////////////////////document/order API////////////////////////////////
     function load_document($ID, $ReturnSubDoc = false){

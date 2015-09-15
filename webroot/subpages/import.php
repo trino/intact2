@@ -1,7 +1,7 @@
 <?php
 $debug=$this->request->session()->read('debug');
 if($debug) {
-    echo "<span style ='color:red;'>subpages/import.php #INC???</span><P>";
+    echo "<span style ='color:red;'>" . __FILE__ . " #INC???</span><P>";
 }
 ?>
 

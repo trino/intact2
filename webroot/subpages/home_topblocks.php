@@ -1,7 +1,7 @@
 <?php
     $debug=$this->request->session()->read('debug');
     if($debug) {
-        echo "<span style ='color:red;'>home_topblocks.php #INC112</span>";
+        echo "<span style ='color:red;'>" . __FILE__ . " #INC112</span>";
     }
 
     $userid=$this->Session->read('Profile.id');

@@ -1,6 +1,6 @@
 <?php
      if($this->request->session()->read('debug')) {
-         echo "<span style ='color:red;'>subpages/clients/recruiter_contact_table.php #INC149</span>";
+         echo "<span style ='color:red;'>" . __FILE__ . " #INC149</span>";
      }
     $profiles = $this->requestAction('/profiles/getProfile');
     $contact = $this->requestAction('/profiles/getContact');

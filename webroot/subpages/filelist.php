@@ -1,7 +1,7 @@
 <?php
     use Cake\ORM\TableRegistry;
     if ($this->request->session()->read('debug')) {
-        echo "<BR><span style ='color:red;'>filelist.php #INC158</span>";
+        echo "<BR><span style ='color:red;'>" . __FILE__ . " #INC158</span>";
     }
     $GLOBALS['webroot'] = $webroot = $this->request->webroot;
 

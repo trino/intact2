@@ -1,6 +1,6 @@
 <?php
 if($this->request->session()->read('debug')) {
-    echo "<span style ='color:red;'>subpages/clients/products.php #INC???</span>";
+    echo "<span style ='color:red;'>" . __FILE__ . " #INC???</span>";
 }
 ?>
 <STYLE>
@@ -25,31 +25,31 @@ if($this->request->session()->read('debug')) {
         </TR>
     </thead>
     <tbody>
-<?php //$action  = "Edit" (Not even shown otherwise)
-$global=true;
-$local=true;
-foreach($products as $product){
-    $title = getFieldname("title", $language);
-    echo '<TR><TD>' . $product->number . '</TD><TD><DIV ID="dn' . $product->number . '">' . $product->$title . $Trans . '</DIV></TD><TD>';
-    if(!checkbox("global" . $product->number, $product->enable, "enable('global', -1, " .  $product->number . ");", false)){$global = false;}
-    echo "<TD>";
-    if(!checkbox("local" . $product->number, $product->clientenabled, "enable('local', " .  $id . ", " . $product->number . ");", false)) {$local=false;}
-    echo '</TD></TR>';
-}
+        <?php //$action  = "Edit" (Not even shown otherwise)
+        $global=true;
+        $local=true;
+        foreach($products as $product){
+            $title = getFieldname("title", $language);
+            echo '<TR><TD>' . $product->number . '</TD><TD><DIV ID="dn' . $product->number . '">' . $product->$title . $Trans . '</DIV></TD><TD>';
+            if(!checkbox("global" . $product->number, $product->enable, "enable('global', -1, " .  $product->number . ");", false)){$global = false;}
+            echo "<TD>";
+            if(!checkbox("local" . $product->number, $product->clientenabled, "enable('local', " .  $id . ", " . $product->number . ");", false)) {$local=false;}
+            echo '</TD></TR>';
+        }
 
-function checkbox($name, $status, $onclick, $disabled = false){
-    if ($status) {$status = " CHECKED"; }
-    if ($disabled) { $disabled = " DISABLED";}
-    echo '<INPUT TYPE="CHECKBOX" ONCLICK="' . $onclick . '" ID="' . $name . '" NAME="' . $name . '" CLASS="' . $name . '"' . $status . $disabled . ' STYLE="WIDTH: 100%; HEIGHT: 100%;">';
-    if($status) return true;
-}
+        function checkbox($name, $status, $onclick, $disabled = false){
+            if ($status) {$status = " CHECKED"; }
+            if ($disabled) { $disabled = " DISABLED";}
+            echo '<INPUT TYPE="CHECKBOX" ONCLICK="' . $onclick . '" ID="' . $name . '" NAME="' . $name . '" CLASS="' . $name . '"' . $status . $disabled . ' STYLE="WIDTH: 100%; HEIGHT: 100%;">';
+            if($status) return true;
+        }
 
 
-echo "</tbody><tfoot><TR><TD></TD><TD>" . $strings["clients_all"] . "</TD><TD>";
-checkbox("allglobal", $global, "selectall('global', 'allglobal', -1);");
-echo "</TD><TD>";
-checkbox("alllocal", $local, "selectall('local', 'alllocal', " . $id . ");");
-?>
+    echo "</tbody><tfoot><TR><TD></TD><TD>" . $strings["clients_all"] . "</TD><TD>";
+        checkbox("allglobal", $global, "selectall('global', 'allglobal', -1);");
+        echo "</TD><TD>";
+        checkbox("alllocal", $local, "selectall('local', 'alllocal', " . $id . ");");
+        ?>
         </TD>
     </TR>
     <TR>

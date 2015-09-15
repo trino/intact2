@@ -13,7 +13,7 @@ function getstring($String, $language){//no variable processing
 
 $debug=$this->request->session()->read('debug');
 if($debug || true) {
-    echo "<TR><TD><span style ='color:red;'>profiles/get_ajax_profile.ctp #INC???</span></TD></TR>";
+    echo "<TR><TD><span style ='color:red;'>" . __FILE__ . " #INC???</span></TD></TR>";
 }
 
 $i=0;

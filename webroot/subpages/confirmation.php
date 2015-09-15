@@ -1,6 +1,6 @@
  <?php
  if($this->request->session()->read('debug'))
-        echo "<span style ='color:red;'>confirmation.php #INC156</span>";
+        echo "<span style ='color:red;'>" . __FILE__ . " #INC156</span>";
  ?>
 <div class="note note-success">
     <h4 class="block">Confirmation</h4>

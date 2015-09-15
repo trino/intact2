@@ -1,5 +1,5 @@
 <?php if($this->request->session()->read('debug')) {
-    echo "<span style ='color:red;'>subpages/clients/requalify.php #INC???</span><BR>";
+    echo "<span style ='color:red;'>" . __FILE__ . " #INC???</span><BR>";
 }
 echo $strings["clients_requalifynotice"];
 ?>
@@ -7,11 +7,10 @@ echo $strings["clients_requalifynotice"];
 <input type="hidden" name="id" value="<?php echo $client->id; ?>" />
 <table class="table table-condensed  table-striped table-bordered table-hover dataTable no-footer" id="myTable">
     <!--thead>
-    <tr>
-        <th>ID</th>
-        <th>Product</th>
-
-    </tr>
+        <tr>
+            <th>ID</th>
+            <th>Product</th>
+        </tr>
     </thead>
     <tbody-->
     <tr>
@@ -34,8 +33,6 @@ echo $strings["clients_requalifynotice"];
             &nbsp;&nbsp;<input type="radio" <?php if(isset($client)&& $client->requalify_frequency=='3')echo "checked";?> value="3" name="requalify_frequency"> <?= $strings["forms_3month"];?>
             &nbsp;&nbsp;<input type="radio" <?php if(isset($client)&& $client->requalify_frequency=='6')echo "checked";?> value="6" name="requalify_frequency"> <?= $strings["forms_6month"];?>
             &nbsp;&nbsp;<input type="radio" <?php if(isset($client)&& $client->requalify_frequency=='12')echo "checked";?> value="12" name="requalify_frequency"> <?= $strings["forms_12month"];?>
-
-
         </td>
     </tr>
 

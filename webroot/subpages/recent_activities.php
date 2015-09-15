@@ -1,9 +1,8 @@
 <?php
-
     if(false){
-
-    if($this->request->session()->read('debug'))
-        echo "<span style ='color:red;'>recent_activites.php #INC115</span>";
+		if($this->request->session()->read('debug')) {
+			echo "<span style ='color:red;'>" . __FILE__ . " #INC115</span>";
+		}
 ?>
 <div class="row ">
 				<div class="col-md-12 col-sm-12">

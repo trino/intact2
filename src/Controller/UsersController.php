@@ -10,11 +10,11 @@ class UsersController extends AppController {
 
     public $paginate = [
             'limit' => 10,
-        ];
+	];
 
      public function initialize() {
-        parent::initialize();
-        $this->loadComponent('Trans');
+         parent::initialize();
+         $this->loadComponent('Trans');
 		 $this->loadComponent('Settings');
 		 $this->Settings->verifylogin($this, "users");
     }

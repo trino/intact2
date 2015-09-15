@@ -1,3 +1,4 @@
+<?php if($this->request->session()->read('debug')){ echo "<span style ='color:red;'>" . __FILE__ . " #INC501</span>"; } ?>
 <!-- BEGIN PAGE LEVEL STYLES -->
 <link href="../../assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
 <link href="../../assets/admin/pages/css/portfolio.css" rel="stylesheet" type="text/css"/>
@@ -43,7 +44,7 @@
 		<div class="container">
 			<!-- BEGIN PAGE TITLE -->
 			<div class="page-title">
-				<h1>Clients <small>Edit</small></h1>
+				<h1><?= $strings["index_clients"]; ?> <small><?= $strings["dashboard_" . strtolower($action)]; ?></small></h1>
 			</div>
 
             <div class="page-bar">
@@ -78,39 +79,31 @@
 	<!-- END PAGE HEAD -->
 	<!-- BEGIN PAGE CONTENT -->
 	<div class="page-content">
-
-
-            <div class="container">
-
-
-
-
-
-<div class="row">
-
+        <div class="container">
+            <div class="row">
         <div class="col-md-12">
             <!-- BEGIN SAMPLE FORM PORTLET-->
 
             <div class="profile-accountclearfix">
                 <div class="col-md-3" style="background:white;" align="center">
-                <div class="portlet light profile-sidebar-portlet">
-                    <img class="img-responsive" id="clientpic" alt="" src="<?= clientimage($this->request->webroot, $settings, $client); ?>" />
+                    <div class="portlet light profile-sidebar-portlet">
+                        <img class="img-responsive" id="clientpic" alt="" src="<?= clientimage($this->request->webroot, $settings, $client); ?>" />
 
-                    <div class="form-group">
-                        <label class="sr-only" for="exampleInputEmail22"><?= $strings["clients_addeditimage"]; ?></label>
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail22"><?= $strings["clients_addeditimage"]; ?></label>
 
-                        <div class="input-icon">
-                            <a class="btn btn-xs btn-success" href="javascript:void(0)" id="clientimg">
-                                <i class="fa fa-image"></i>
-                                <?= $strings["clients_addeditimage"]; ?>
-                            </a>
+                            <div class="input-icon">
+                                <a class="btn btn-xs btn-success" href="javascript:void(0)" id="clientimg">
+                                    <i class="fa fa-image"></i>
+                                    <?= $strings["clients_addeditimage"]; ?>
+                                </a>
 
+                            </div>
                         </div>
+
+                        <!--php  if (isset($client_docs)) { listfiles($client_docs, "img/jobs/",'client_doc',$delete,  2); } ?-->
+
                     </div>
-
-                    <!--php  if (isset($client_docs)) { listfiles($client_docs, "img/jobs/",'client_doc',$delete,  2); } ?-->
-
-                </div>
                 </div>
 
                 <div class="col-md-9 padding-right">
@@ -159,16 +152,12 @@
                             <div class="form-body" style="padding-bottom: 0px;">
                                 <div class="tab-content">
                                     <?php
-
-                                        if (!isset($_GET['activedisplay']))
-                                        {
+                                        if (!isset($_GET['activedisplay'])){
                                     ?>
                                     <div class="tab-pane active" id="tab_1_1">
                                         <div id="tab_1_1" class="tab-pane active">
                                             <?php
-                                                }
-                                                else
-                                                {
+                                                } else {
                                             ?>
                                             <div class="tab-pane" id="tab_1_1">
                                                 <div id="tab_1_1" class="tab-pane">
@@ -198,8 +187,7 @@
                                                                                 if (isset($cts)) {
                                                                                     if (in_array($ct->id, $cts)) {
                                                                                         ?>
-                                                                                        <option
-                                                                                            value="<?php echo $ct->id; ?>"
+                                                                                        <option value="<?php echo $ct->id; ?>"
                                                                                             <?php if (isset($client->customer_type) && $client->customer_type == $ct->id) { ?>selected="selected"<?php } ?>>
                                                                                             <?php echo $ct->$fieldname; ?>
                                                                                         </option>
@@ -207,8 +195,7 @@
                                                                                     }
                                                                                 } else {
                                                                                     ?>
-                                                                                    <option
-                                                                                        value="<?php echo $ct->id; ?>"
+                                                                                    <option value="<?php echo $ct->id; ?>"
                                                                                         <?php if (isset($client->customer_type) && $client->customer_type == $ct->id) { ?>selected="selected"<?php } ?>>
                                                                                         <?php echo $ct->$fieldname; ?>
                                                                                     </option>
@@ -550,16 +537,12 @@
                                             include('subpages/clients/products.php');
                                             echo "</DIV>";
 
-                                            if ($this->request['action'] != "add" && !isset($_GET['view']))
-                                            {
-                                            if (isset($_GET['activedisplay']))
-                                            {
+                                            if ($this->request['action'] != "add" && !isset($_GET['view'])){
+                                                if (isset($_GET['activedisplay'])){
                                         ?>
                                         <div class="tab-pane active" id="tab_1_2">
                                             <?php
-                                                }
-                                                else
-                                                {
+                                                } else {
                                             ?>
                                             <div class="tab-pane" id="tab_1_2">
                                                 <?php } ?>
@@ -574,9 +557,7 @@
                                                             <th></th>
                                                             <!--<th class="">System</th>-->
                                                             <th class=""><?= $strings["documents_document"]; ?> </th>
-
-                                                            <? if ($settings->mee != "Events Audit") {
-                                                                ?>
+                                                            <? if ($settings->mee != "Events Audit") { ?>
                                                                 <th class=""><?= $strings["index_orders"]; ?></th>
                                                                 <th class=""><?= $strings["clients_displayorder"]; ?></th>
                                                             <? }?>
@@ -588,14 +569,11 @@
 
 
                                                             if ($settings->mee == "Events Audit") {
-
                                                                 foreach ($subdoccli as $subcl) {
-
                                                                     $u++;
                                                                     $sub = $this->requestAction('/clients/getFirstSub/' . $subcl->sub_id);
 
                                                                     if (strtolower($sub['title']) == "audit" || strtolower($sub['title']) == "attachment") {
-
                                                                         ?>
                                                                         <tr id="subd_<?php echo $sub->id; ?>"
                                                                             class="sublisting">
@@ -632,14 +610,12 @@
                                                                 foreach ($subdoccli as $subcl) {
                                                                     $u++;
                                                                     $sub = $this->requestAction('/clients/getFirstSub/' . $subcl->sub_id);
-                                                                    if ($sub) {
-                                                                        ?>
+                                                                    if ($sub) { ?>
                                                                         <tr id="subd_<?php echo $sub->id; ?>"
                                                                             class="sublisting">
                                                                             <td>
 
-                            <span
-                                id="sub_<?php echo $sub['id']; ?>"><?= ucfirst($sub[getFieldname('title', $language)]) . $Trans; ?></span>
+                            <span id="sub_<?php echo $sub['id']; ?>"><?= ucfirst($sub[getFieldname('title', $language)]) . $Trans; ?></span>
                                                                             </td>
 
                                                                             <?php
@@ -870,20 +846,16 @@
 
                                 if (res != 'e' && res != 'email' && res != 'Invalid Email') {
                                     window.location = '<?php echo $this->request->webroot;?>clients/edit/' + res + '?flash';
-                                }
-                                else if (res == 'email') {
+                                } else if (res == 'email') {
                                     alert('<?= addslashes($strings["dashboard_emailexists"]); ?>');
-                                }
-                                else if (res == 'Invalid Email') {
+                                } else if (res == 'Invalid Email') {
                                     $('#tab_1_1 input[type="email"]').focus();
                                     $('#tab_1_1 input[type="email"]').attr('style', 'border-color:red');
                                     $('html,body').animate({
                                             scrollTop: $('#tab_1_1').offset().top
                                         },
                                         'slow');
-                                }
-
-                                else {
+                                } else {
                                     alert('<?= addslashes($strings["clients_notsaved"]); ?>');
                                 }
                                 $('#save_client_p1').text('<?= addslashes($strings["forms_save"]);?>');
@@ -906,8 +878,7 @@
                     var file = $(this).attr('title');
                     if (file == file.replace("&", " ")) {
                         var id = 0;
-                    }
-                    else {
+                    }  else {
                         var f = file.split("&");
                         file = f[0];
                         var id = f[1];
@@ -925,9 +896,9 @@
                         });
                         $(this).parent().parent().remove();
 
-                    }
-                    else
+                    } else {
                         return false;
+                    }
                 });
                 var removeLink = 0;// this variable is for showing and removing links in a add document
                 function addMore(e, obj) {
@@ -1001,7 +972,6 @@
                                 $("#clientpic").attr("src", '<?php echo $this->request->webroot;?>img/clients/' + response);
                                 $('#client_img').val(response);
                             }
-//$('.flashimg').show();
                         }
                     });
                 }

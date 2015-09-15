@@ -28,24 +28,21 @@ class PagesController extends AppController {
     }
 
 	public function index() {
-	   $this->loadComponent('Document');
-       $this->set('doc_comp',$this->Document);
+	    $this->loadComponent('Document');
+        $this->set('doc_comp',$this->Document);
         $this->getAllClient();
-	   $this->loadModel('Clients');
+	    $this->loadModel('Clients');
         if(isset($_GET['orderflash']))
         $this->Flash->success($this->Trans->getString("flash_orderdraft"));
         $userid=$this->request->session()->read('Profile.id');
 		$setting = $this->Settings->get_permission($userid);
-// debug($setting);die();
         if(isset($setting->client_list) && $setting->client_list==0) {
             $this->set('hideclient',1);
         }
         else
         $this->set('hideclient',0);
 		$this->set('client', $this->paginate($this->Clients));
-
         $this->loadproducts();
-
         $this->set('forms',  TableRegistry::get('order_products')->find('all'));
         $this->getsubdocument_topblocks($userid);
 	}
@@ -58,6 +55,7 @@ class PagesController extends AppController {
         $products = TableRegistry::get('product_types')->find('all');
         $this->set($VariableName,  $products);
     }
+
     function getenabledprovinces($ProductID, $Province = "ALL"){
         $forms = array();
         $items = TableRegistry::get('order_provinces')->find("all")->where(['ProductID' => $ProductID, "Province" => $Province]);
@@ -93,13 +91,12 @@ class PagesController extends AppController {
 
     function get_content($slug){
         $content = TableRegistry::get("contents");
-        //$query = $content->query();
         $l =  $content->find()->where(['slug'=>$slug])->first();
         $this->response->body(($l));
         return $this->response;
         die();
-
     }
+
     function cms($slug){
     }
 
@@ -128,9 +125,8 @@ class PagesController extends AppController {
 
     function view($slug){
         $content = TableRegistry::get("contents");
-        //$query = $content->query();
-          $l =  $content->find()->where(['slug'=>$slug])->first();
-          $this->set('content',$l);
+        $l =  $content->find()->where(['slug'=>$slug])->first();
+        $this->set('content',$l);
     }
     function recent_more(){
         $this->layout = 'blank';

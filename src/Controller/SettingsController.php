@@ -47,10 +47,9 @@ class SettingsController extends AppController {
 
     function changebody(){
          $class = $_POST['class'];
+        $box = 0;
          if(isset($_POST['box'])) {
              $box = $_POST['box'];
-         }else {
-             $box = 0;
          }
          $setting = TableRegistry::get('Settings');
          $query = $setting->query();
@@ -138,10 +137,11 @@ class SettingsController extends AppController {
             $q = $query->all();
             $d = 0;
             foreach ($q as $c) {
-                if ($c->display > $d)
+                if ($c->display > $d) {
                     $d = $c->display;
-                else
+                }else {
                     $d = $d;
+                }
             }
         }
         $this->response->body($d);

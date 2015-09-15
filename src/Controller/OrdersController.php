@@ -606,14 +606,6 @@
 
         }
 
-        function appendSQL($cond, $Query){
-            if ($cond) {
-                return $cond . ' AND ' . $Query;
-            } else {
-                return $Query;
-            }
-        }
-
         function get_orderscount($type, $c_id = ""){
             $u = $this->request->session()->read('Profile.id');
             if (!$this->request->session()->read('Profile.super')) {
@@ -901,7 +893,6 @@
                 ->where(['orders.id' => $order_id])->contain(['Profiles', 'Clients', 'RoadTest'])->first();
 
             $this->set('order', $order);
-            //  debug($order);
         }
 
         function savedriver($oid) {
@@ -913,7 +904,7 @@
                 ->query()->update()
                 ->set($arr)
                 ->where(['profiles.id' => $oid])->execute();
-
+            //shouldn't there be a: $this->set('order', $order);
             die();
         }
         function requalify($uid) {
@@ -924,7 +915,7 @@
                 ->query()->update()
                 ->set($arr)
                 ->where(['profiles.id' => $uid])->execute();
-
+            //shouldn't there be a: $this->set('order', $order);
             die();
         }
 
@@ -932,7 +923,6 @@
 
         public function saveAttachmentsPrescreen($data = NULL, $count = 0)
         {//count is to delete all while first insertion and no delete for following insertion
-
             $this->Document->saveAttachmentsPrescreen($data, $count);
             die();
         }
@@ -1161,8 +1151,7 @@
             return $Query;
         }
 
-        function getClientByDriver($driver)
-        {
+        function getClientByDriver($driver) {
             //$controller = $this->_registry->getController();
             $settings = $this->Settings->get_settings();
             $logged_id = $this->request->session()->read('Profile.id');
@@ -1245,9 +1234,7 @@
             $doc = $doc->find()->where(['id' => $id])->first();
             $province = $doc->driver_province;
             $arr = array('BC','MB','NU','NT','QC','SK','YT');
-            //$arr = array('BC','SK','MB');
-            echo '0';
-            if(in_array($province,$arr)) {echo '1';}
+            if(in_array($province,$arr)) {echo '1';} else {echo '0';}
             die();
         }
 
@@ -1257,8 +1244,7 @@
             $province = $doc->driver_province;
             //$arr = array('BC','MB','NU','NT','QC','SK','YT');
             $arr = array('BC','SK','MB');
-            echo '0';
-            if(in_array($province,$arr)) {echo '1';}
+            if(in_array($province,$arr)) {echo '1';} else {echo '0';}
             die();
         }
 
@@ -1269,6 +1255,7 @@
             }
             return $query;
         }
+
         public function hasattachments($orderid){
             $docs = TableRegistry::get('doc_attachments');
             $query = $docs->find();
@@ -1451,7 +1438,6 @@
         public function makeneworder($values){
             $table = TableRegistry::get('orders');
             $date = date('Y-m-d H:i:s');
-            //$values = array();
             $table->query()->insert(array_keys($values))->values($values)->execute();
         }
         public function groupdocument($docid, $orderid){
@@ -1460,9 +1446,5 @@
                 ->where(['id' => $docid])
                 ->execute();
         }
-        
-       
-        
-
     }
 

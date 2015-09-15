@@ -1,6 +1,6 @@
 <?php //echo die('here');
      if($this->request->session()->read('debug')) {
-         echo "<span style ='color:red;'>home_blocks.php #INC111</span>";
+         echo "<span style ='color:red;'>" . __FILE__ . " #INC111</span>";
      }
 ?>
 <div class="row home_blocks">

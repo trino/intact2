@@ -11,8 +11,8 @@ class TasksController extends AppController {
 
     
      public function initialize() {
-        parent::initialize();
-        $this->loadComponent('Trans');
+         parent::initialize();
+         $this->loadComponent('Trans');
          $this->loadComponent('Settings');
          $this->Settings->verifylogin($this, "schedules");
     }
@@ -131,14 +131,12 @@ class TasksController extends AppController {
     function date($date) {
         $events = TableRegistry::get('Events');
         $event = $events->find()->where(['user_id'=>$this->request->session()->read('Profile.id'),'date LIKE "'.$date.'%"'])->order(['date'])->all();
-        //debug($event);
         $this->set('events', $event);
     }
 
     function calender() {
         $events = TableRegistry::get('Events');
         $event = $events->find()->where(['user_id'=>$this->request->session()->read('Profile.id')])->order(['date'=>'DESC'])->all();
-        //debug($event);
         $this->set('events', $event);
     }
 

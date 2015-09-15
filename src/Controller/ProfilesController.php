@@ -710,8 +710,7 @@ class ProfilesController extends AppController{
     }
 
 
-    function removefiles($file)
-    {
+    function removefiles($file) {
         if (isset($_POST['id']) && $_POST['id'] != 0) {
             $this->loadModel("ProfileDocs");
             $this->ProfileDocs->deleteAll(['id' => $_POST['id']]);
@@ -2408,44 +2407,6 @@ class ProfilesController extends AppController{
 
                 if ($o->bright_planet_html_binary) {
                     $this->create_files_from_binary($o->id, "bright_planet_html_binary", $o->bright_planet_html_binary);
-
-                    /*
-                    $sendit = strip_tags(trim($this->get_mee_results_binary($o->bright_planet_html_binary, "Driver's Record Abstract")));
-                    if ($sendit) {
-                        $this->save_bright_planet_grade($o->id, 'ins_1', $sendit);
-                    }
-
-                    $sendit = strip_tags(trim($this->get_mee_results_binary($o->bright_planet_html_binary, "Pre-employment Screening Program Report")));
-                    if ($sendit) {
-                     $this->save_bright_planet_grade($o->id, 'ins_77', $sendit);
-                    }
-
-                    $sendit = strip_tags(trim($this->get_mee_results_binary($o->bright_planet_html_binary, "CVOR")));
-                    if ($sendit) {
-                       $this->save_bright_planet_grade($o->id, 'ins_14', $sendit);
-                    }
-                    $sendit = strip_tags(trim($this->get_mee_results_binary($o->bright_planet_html_binary, "Premium National Criminal Record Check")));
-                    if ($sendit) {
-                      $this->save_bright_planet_grade($o->id, 'ebs_1603', $sendit);
-                    }
-
-                    $sendit = strip_tags(trim($this->get_mee_results_binary($o->bright_planet_html_binary, "Certifications")));
-                    if ($sendit) {
-                     $this->save_bright_planet_grade($o->id, 'ebs_1650', $sendit);
-                    }
-
-                    $sendit = strip_tags(trim($this->get_mee_results_binary($o->bright_planet_html_binary, "TransClick")));
-                    if ($sendit) {
-                     $this->save_bright_planet_grade($o->id, 'ins_78', $sendit);
-                    }
-
-                    $sendit = strip_tags(trim($this->get_mee_results_binary($o->bright_planet_html_binary, "Letter Of Experience")));
-                    if ($sendit) {
-                     $this->save_bright_planet_grade($o->id, 'ebs_1627', $sendit);
-                    }
-
-                   $this->save_bright_planet_grade($o->id, 'bright_planet_html_binary', null);
-                    */
                 }
 
                 if ($complete == 1 && $o->complete == 0) {
@@ -3171,52 +3132,7 @@ class ProfilesController extends AppController{
     
     public function huron($cid) {
         $file = fopen(APP."../webroot/profile.csv","r");
-        $fields = array('title',
-'fname',
-'lname',
-'username',
-'email',
-'password',
-'driver',
-'address',
-'street',
-'city',
-'province',
-'postal',
-'country',
-'phone',
-'image',
-'admin',
-'super',
-'profile_type',
-'driver_license_no',
-'driver_province',
-'us_dot',
-'applicants_email',
-'transclick',
-'mname',
-'dob',
-'expiry_date',
-'gender',
-'isb_id',
-'placeofbirth',
-'created_by',
-'created',
-'drafts',
-'is_hired',
-'ptypes',
-'ctypes',
-'language',
-'automatic_email',
-'automatic_sent',
-'hear',
-'requalify',
-'hired_date',
-'emailsent',
-'send_to',
-'sin',
-'otherinfo');
-
+        $fields = array('title', 'fname', 'lname', 'username', 'email', 'password', 'driver', 'address', 'street', 'city', 'province', 'postal', 'country', 'phone', 'image', 'admin', 'super', 'profile_type', 'driver_license_no', 'driver_province', 'us_dot', 'applicants_email', 'transclick', 'mname', 'dob', 'expiry_date', 'gender', 'isb_id', 'placeofbirth', 'created_by', 'created', 'drafts', 'is_hired', 'ptypes', 'ctypes', 'language', 'automatic_email', 'automatic_sent', 'hear', 'requalify', 'hired_date', 'emailsent', 'send_to', 'sin', 'otherinfo');
         $mon = array('Jan'=>'01','Feb'=>'02','Mar'=>'03','Apr'=>'04','May'=>'05','Jun'=>'06','Jul'=>'07','Aug'=>'08','Sep'=>'09','Oct'=>'10','Nov'=>'11','Dec'=>'12');
         
         while($arrs = fgetcsv($file)) {
@@ -3300,8 +3216,7 @@ class ProfilesController extends AppController{
 
     }
     
-    function sendApplicationEmail()
-    {
+    function sendApplicationEmail() {
         $this->loadComponent('Mailer');
         $arr['brokerageemail'] = 'test@brokeremail.com';
         $arr['brokerage'] = 'Broker Name';
@@ -3310,26 +3225,22 @@ class ProfilesController extends AppController{
         $arr['fullname'] = 'Sample Name';
         $arr['date'] = date('Y-m-d H:i:s');
         $arr['email'] = 'info@trinoweb.com'; 
-        $eventname = 'sendapplication';
-        
-        $this->Mailer->handleevent($eventname, $arr);
+
+        $this->Mailer->handleevent('sendapplication', $arr);
         $this->Flash->success('Application sent successfully');
         $this->redirect('/profiles/send_application');
     }
     
-    function postOrder()
-    {
+    function postOrder() {
         $this->loadComponent('Mailer');
         $arr['brokerageemail'] = 'test@brokeremail.com';
         $arr['brokerage'] = 'Broker Name';
-        //$arr['link'] = LOGIN.'profiles/add';
         $arr['customer'] = 'Sample Customer Name';
         $arr['fullname'] = 'Sample Name';
         $arr['date'] = date('Y-m-d H:i:s');
         $arr['email'] = 'info@trinoweb.com'; 
-        $eventname = 'postorder';
-        
-        $this->Mailer->handleevent($eventname, $arr);
+
+        $this->Mailer->handleevent('postorder', $arr);
         $this->Flash->success('Application sent successfully');
         $this->redirect('/profiles/send_application');
     }

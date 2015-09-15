@@ -1,6 +1,6 @@
  <?php
  if($this->request->session()->read('debug'))
-        echo "<span style ='color:red;'>accident_report.php #INC154</span>";
+        echo "<span style ='color:red;'>" . __FILE__ . " #INC154</span>";
  ?>
 <div>
 <div class="form-group col-md-12">

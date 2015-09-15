@@ -1,6 +1,6 @@
   <?php
  if($this->request->session()->read('debug'))
-        echo "<span style ='color:red;'>profileslisting.php #INC160</span>";
+        echo "<span style ='color:red;'>" . __FILE__ . " #INC160</span>";
  ?>
 <?php $users = $this->requestAction('/profiles/getallusers');?>
 <div class="form-group">

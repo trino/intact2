@@ -1,5 +1,5 @@
 <?php
-    if ($_SERVER['SERVER_NAME'] == 'localhost') { echo "<span style ='color:red;'>profiles/products.ctp #INC not assigned</span>";}
+    if ($_SERVER['SERVER_NAME'] == 'localhost') { echo "<span style ='color:red;'>" . __FILE__ . " #INC not assigned</span>";}
     $language = $this->request->session()->read('Profile.language');
 ?>
 <style>

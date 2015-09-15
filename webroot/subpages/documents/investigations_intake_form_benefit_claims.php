@@ -1,5 +1,5 @@
 <?php
- if($this->request->session()->read('debug')){ echo "<span style ='color:red;'>subpages/documents/investigations_intake_form_benefit_claims.php #INC501</span>"; }
+ if($this->request->session()->read('debug')){ echo "<span style ='color:red;'>" . __FILE__ . " #INC501</span>"; }
  $is_disabled = '';//there is no place for attachments
 if(isset($disabled)) { $is_disabled = 'disabled="disabled"'; }
  ?>
