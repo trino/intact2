@@ -382,15 +382,9 @@ class FeedbacksController extends AppController{
     		if ($this->request->is('post')) {
     			if ($docs->save($doc)) {
     			      echo "OK";
-    				//$this->Flash->success('The Survey has been sent.');
-                    	//return $this->redirect('/documents/index');
-    			} else {
-    				//$this->Flash->error('Survey not sent. Please try again.');
-                    //return $this->redirect('/feedbacks/add');
     			}
     		}
         }
-		//$this->set(compact('client'));
         $this->render('add');
         die();
     }

@@ -18,6 +18,10 @@ class ManagerComponent extends Component {
         return $this->Controller->request->session()->read('Profile.' . $Key);
     }
 
+    function isAdmin(){
+        return $this->read("super") || $this->read("admin");
+    }
+
     public function get_profile($UserID){
         return $this->get_entry("profiles", $UserID, "id");
     }

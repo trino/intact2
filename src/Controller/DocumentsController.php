@@ -135,7 +135,6 @@ class DocumentsController extends AppController{
 
 
         if ($cond) {
-           // debug($doc);die($cond);
             $doc = $doc->where([$cond]);
         }
 
@@ -185,7 +184,6 @@ class DocumentsController extends AppController{
 
     public function load_sub_doc($table, $varname, $did = 0){
         $survey = TableRegistry::get($table);
-        //$pre_at = TableRegistry::get('driver_application_accident');
         if(!isset($_GET['order_id'])) {
             $sur = $survey->find()->where(['document_id' => $did])->first();
         }else {
@@ -392,8 +390,6 @@ class DocumentsController extends AppController{
     public function savedoc($cid = 0, $did = 0) {
         $this->set('doc_comp',$this->Document);
         $this->loadComponent('Mailer');
-        //$this->Mailer->handleevent("documentcreatedb", array("site" => "","email" => "roy", "company_name" => "", "username" => $this->request->session()->read('Profile.username'), "id" => $did, "path" => "", "profile_type" => ""));
-
         $ret = $this->Document->savedoc($this->Mailer, $cid,$did);
         //$this->Mailer->handleevent("documentcreated", $ret);
         die();
@@ -445,6 +441,7 @@ class DocumentsController extends AppController{
         if($Set != "NA") {$this->set($Set, $Table);}
         return $Table;
     }
+
     function add($cid = 0, $did = 0, $type = NULL){
         $clients = TableRegistry::get('Clients');
         if($cid==0) {
@@ -526,25 +523,22 @@ class DocumentsController extends AppController{
                 }
             }
         } else {
-
             if ($did != 0) {
-
                 $doc = TableRegistry::get('orders');
                 $query = $doc->find()->where(['id' => $did])->first();
                 $this->set('document', $query);
                 if ($setting->document_edit == 0 || count($doc) == 0 || $cn == 0) {
                     $this->Flash->error($this->Trans->getString("flash_permissions") . ' (023)');
                     return $this->redirect("/");
-
                 }
 
             } else {
                 if ($setting->document_create == 0 || count($doc) == 0 || $cn == 0) {
                     $this->Flash->error($this->Trans->getString("flash_permissions") . ' (022)');
                     return $this->redirect("/");
-
                 }
             }
+
             if (isset($_POST['uploaded_for'])) {
                 $docs = TableRegistry::get('orders');
 
@@ -560,9 +554,6 @@ class DocumentsController extends AppController{
                     if ($docs->save($doc)) {
                         $this->Flash->success($this->Trans->getString("flash_docsaved"));
                         $this->redirect('orders/orderslist');
-                    } else {
-                        //$this->Flash->error('Client could not be saved. Please try again.');
-                        //echo "e";
                     }
 
                 } else {
@@ -753,7 +744,6 @@ class DocumentsController extends AppController{
     }
 
     function analytics(){
-        $isAdmin = $this->Manager->read("super") || $this->Manager->read("admin");
         $conditions = array('draft' => 0);
         $isAdmin=false;
         if(!$isAdmin){
@@ -804,7 +794,6 @@ class DocumentsController extends AppController{
         if(isset($_POST['id']) && $_POST['id']!= 0) {
             $this->loadModel("AttachDocs");
             $this->AttachDocs->deleteAll(['id'=>$_POST['id']]);
-
         }
         unlink(WWW_ROOT."img/jobs/" . $file);
         die();
@@ -946,7 +935,6 @@ class DocumentsController extends AppController{
                     $docz = $doczs->newEntity($ds);
                     $doczs->save($docz);
                     if(isset($_POST['attach_doc'])) {
-
                         $model = $this->loadModel('DocAttachments');
                         $model->deleteAll(['document_id'=> $did]);
                         $client_docs = $_POST['attach_doc'];
@@ -1117,52 +1105,51 @@ class DocumentsController extends AppController{
                         unset($doczs);
                     $this->success(True, $draft, True, $did);
                 }
-                } else {
-                    $arr['document_id'] = 0;                   
-                    if(!isset($_GET['order_id'])) {
-                        $arr['order_id'] = $did;
-                    }else{
-                        $arr['order_id'] = $_GET['order_id'];
-                        $did = $_GET['order_id'];
-                    }
-                    $arr['document_id'] = 0;
-                    if (isset($_POST['uploaded_for'])) {
-                        $uploaded_for = $_POST['uploaded_for'];
-                    }else {
-                        $uploaded_for = '';
-                    }
-                    $for_doc = array('document_type'=>'Audit','sub_doc_id'=>8,'order_id'=>$arr['order_id'],'user_id'=>'','uploaded_for'=>$uploaded_for);
-                    $this->Document->saveDocForOrder($for_doc);
-                    
+            } else {
+                $arr['document_id'] = 0;
+                if(!isset($_GET['order_id'])) {
+                    $arr['order_id'] = $did;
+                }else{
+                    $arr['order_id'] = $_GET['order_id'];
+                    $did = $_GET['order_id'];
+                }
+                $arr['document_id'] = 0;
+                if (isset($_POST['uploaded_for'])) {
+                    $uploaded_for = $_POST['uploaded_for'];
+                }else {
+                    $uploaded_for = '';
+                }
+                $for_doc = array('document_type'=>'Audit','sub_doc_id'=>8,'order_id'=>$arr['order_id'],'user_id'=>'','uploaded_for'=>$uploaded_for);
+                $this->Document->saveDocForOrder($for_doc);
+
+                $doczs = TableRegistry::get('audits');
+                $check = $doczs->find()->where(['order_id'=>$did])->first();
+                unset($doczs);
+                if (!$check) {
+                    $ds['order_id'] = $did;
+                    $ds['document_id'] = 0;
+                    $ds['date'] = $_POST['year']."-".$_POST['month'];
                     $doczs = TableRegistry::get('audits');
-                    $check = $doczs->find()->where(['order_id'=>$did])->first();
+                    foreach($_POST as $k=>$v) {
+                        $ds[$k]=$v;
+                    }
+                    $docz = $doczs->newEntity($ds);
+                    $doczs->save($docz);
                     unset($doczs);
-                    if (!$check) {
-                        $ds['order_id'] = $did;
-                        $ds['document_id'] = 0;
-                        $ds['date'] = $_POST['year']."-".$_POST['month'];
-                        $doczs = TableRegistry::get('audits');
-                        foreach($_POST as $k=>$v) {
-                            $ds[$k]=$v;
-                        }
-                        $docz = $doczs->newEntity($ds);
-                        $doczs->save($docz);
-                        unset($doczs);
-                        } else {
-                            $this->loadModel('Audits');
-                          $this->Audits->deleteAll(['order_id' => $did]);
-                            $doczs = TableRegistry::get('audits');
-                            $ds['order_id'] = $did;
-                            $ds['date'] = $_POST['year']."-".$_POST['month'];
-                            foreach($_POST as $k=>$v) {
-                                $ds[$k]=$v;
-                            }
-                            $docz = $doczs->newEntity($ds);
-                            $doczs->save($docz);
-                            unset($doczs);  
-                        }
-                    
-                die();
+                } else {
+                    $this->loadModel('Audits');
+                    $this->Audits->deleteAll(['order_id' => $did]);
+                    $doczs = TableRegistry::get('audits');
+                    $ds['order_id'] = $did;
+                    $ds['date'] = $_POST['year']."-".$_POST['month'];
+                    foreach($_POST as $k=>$v) {
+                        $ds[$k]=$v;
+                    }
+                    $docz = $doczs->newEntity($ds);
+                    $doczs->save($docz);
+                    unset($doczs);
+                }
+            die();
             }
         }
     }

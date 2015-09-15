@@ -25,19 +25,18 @@
             $this->Settings->verifylogin($this, "clients");
         }
         
-        public function listall()
-        {
+        public function listall() {
             
         }
+
         function getclient_id($id) {
             $client = TableRegistry::get('clients')->find()->where(['id' => '17'])->first();
             $pid = $client->profile_id;
             $pids = explode(",", $pid);
+            $q = 0;
             if (in_array($id, $pids)) {
                 $q = '1';
-
-            } else
-                $q = 0;
+            }
             $this->response->body($q);
             return $this->response;
             die();
@@ -110,10 +109,9 @@
                 $this->Flash->error($this->Trans->getString("flash_permissions") . ' (020)');
                 return $this->redirect("/");
             }
+            $draft = 0;
             if (isset($_GET['draft'])) {
                 $draft = 1;
-            } else {
-                $draft = 0;
             }
             $querys = TableRegistry::get('Clients');
             $query = $querys->find()->where(['drafts' => $draft]);
@@ -127,15 +125,13 @@
                 $this->Flash->error($this->Trans->getString("flash_permissions") . ' (019)');
                 return $this->redirect("/");
             }
+            $draft = 0;
+            $search = "";
             if (isset($_GET['draft'])) {
                 $draft = 1;
-            } else {
-                $draft = 0;
             }
             if (isset($_GET['search'])) {
                 $search = $_GET['search'];
-            } else {
-                $search = "";
             }
             $searchs = strtolower($search);
             $querys = TableRegistry::get('Clients');
@@ -149,7 +145,6 @@
 
         public function view($id = null) {
             $setting = $this->Settings->get_permission($this->request->session()->read('Profile.id'));
-
             if ($setting->client_list == 0) {
                 $this->Flash->error($this->Trans->getString("flash_permissions") . ' (018)');
                 return $this->redirect("/");
@@ -253,7 +248,6 @@
             $setting = $this->Settings->get_permission($this->request->session()->read('Profile.id'));
             $settings = $this->Settings->get_settings();
             $this->set('settings', $settings);
-
             $this->loadModel("ClientTypes");
             $this->set('client_types', $this->ClientTypes->find()->where(['enable' => '1'])->all());
             if ($setting->client_create == 0) {
@@ -262,7 +256,6 @@
 
             }
             $rec = '';
-            $con = '';
             $count = 1;
             if (isset($_POST['recruiter_id'])) {
                 foreach ($_POST['recruiter_id'] as $ri) {
@@ -272,7 +265,6 @@
                         $rec = $rec . ',' . $ri;
                     }
                     $count++;
-
                 }
             }
             unset($_POST['recruiter_id']);
@@ -294,10 +286,7 @@
             $clients = TableRegistry::get('Clients');
             $client = $clients->newEntity($_POST);
             if ($this->request->is('post')) {
-
                 if ($clients->save($client)) {
-                    //if (isset($_POST['division'])) {
-                    //}
                     $this->Flash->success($this->Trans->getString("flash_usersaved"));
                     return $this->redirect(['action' => 'edit', $client->id]);
                 } else {
@@ -534,9 +523,6 @@
                     $client = $this->loadprofile($_POST["client_id"], "id", "clients");
                     $document = $this->loadprofile($_POST["doc_id"], "id", "documents");
                     $URL = LOGIN . "documents/view/" . $_POST["client_id"] . "/" . $_POST["doc_id"] . "?type=" . $_POST["form"];
-
-                    //echo print_r($profile, true) . "<p>" .  print_r($creator, true)  . "<p>" .  print_r($_POST, true)  . "<P>" . $URL;
-
                     $ut = '';
                     if ($profile->profile_type) {
                         $u = $profile->profile_type;
@@ -640,9 +626,7 @@
             if ($check_client_id == 1) {
                 $this->Flash->error($this->Trans->getString("flash_norecord"));
                 return $this->redirect("/clients/index");
-                //die();
             }
-
             $checker = $this->Settings->check_client_permission($this->request->session()->read('Profile.id'), $id);
             if ($checker == 0) {
                 $this->Flash->error($this->Trans->getString("flash_permissions") . ' (016)');
@@ -656,9 +640,6 @@
             if(isset($_GET['flash'])) {
                 $this->Flash->success($this->Trans->getString("flash_clientsaved"));
             }
-                
-                //return $this->redirect("/clients");
-            
             $this->loadModel("ClientTypes");
             $this->set('client_types', $this->ClientTypes->find()->where(['enable' => '1'])->all());
             $docs = TableRegistry::get('client_docs');
@@ -795,6 +776,7 @@
             return $this->response;
             die();
         }
+
         function cmp($a, $b){
             return strcmp($a->subtype->title, $b->subtype->title);
         }
@@ -802,12 +784,8 @@
         function orders_doc($cid,$o_name){
             $products = TableRegistry::get('product_types');
             $ordertype=strtolower(urldecode($o_name));
-            //$product = $products->find()->where(['Name'=>urldecode($o_name)])->first();
             $product=$products->find('all', array('conditions' => array("OR" => array( array('LOWER(Acronym)' => $ordertype),array('LOWER(Name)' => $ordertype)))))->first();
-
-
             $doc_ids= $product->doc_ids;
-            //die($doc_ids);
             if($doc_ids!="" && $product->Bypass==0) {
                 $doc = TableRegistry::get('client_sub_order');
                 $query = $doc->find();
@@ -883,16 +861,13 @@
                         $check = $query->first();
 
                         if ($v2 == '1') {
-
                             if ($check) {
-
                                 $query2 = $subp->query();
                                 $query2->update()
                                     ->set(['display_order' => $v2])
                                     ->where(['client_id' => $id, 'subdoc_id' => $k2])
                                     ->execute();
                             } else {
-
                                 $query2 = $subp->query();
                                 $query2->insert(['client_id', 'subdoc_id', 'display_order'])
                                     ->values(['client_id' => $id, 'subdoc_id' => $k2, 'display_order' => $v2])
@@ -1016,8 +991,6 @@
             $q = $query->first();
             $this->response->body(($q));
             return $this->response;
-            //return $q;
-
         }
 
         function getAllClient(){
@@ -1056,7 +1029,6 @@
             $q = $query->find()->where(['client_id' => $cid])->all();
             $this->response->body($q);
             return $this->response;
-
         }
 
         function dropdown(){
@@ -1064,45 +1036,39 @@
         }
 
         function addprofile(){
-            $settings = $this->Settings->get_settings();
-
             $query = TableRegistry::get('clients');
             $q = $query->find()->where(['id' => $_POST['client_id']])->first();
             $profile_id = $q->profile_id;
             $pros = explode(",", $profile_id);
-            $flash = "";
             $p_ids = "";
-            if ($_POST['add'] == '1')//should use $settings->client not "client"
-            {
+            if ($_POST['add'] == '1'){
                 array_push($pros, $_POST['user_id']);
                 $pro_id = array_unique($pros);
                 $flash = $this->Trans->getString("flash_assignedtoclient");
             } else {
                 $pro_id = array_diff($pros, array($_POST['user_id']));
                 $flash = $this->Trans->getString("flash_removedfromclient");
-                //array_pop($pros,$_POST['user_id']);
             }
 
             foreach ($pro_id as $k => $p) {
-                if (count($pro_id) == $k + 1)
+                if (count($pro_id) == $k + 1) {
                     $p_ids .= $p;
-                else
+                }else {
                     $p_ids .= $p . ",";
+                }
             }
             $p_ids = str_replace(',', ' ', $p_ids);
             $p_ids = trim($p_ids);
             $p_ids = str_replace(' ', ',', $p_ids);
             $p_ids = str_replace(',,', ',', $p_ids);
             $p_ids = str_replace(',,', ',', $p_ids);
-            if ($query->query()->update()->set(['profile_id' => $p_ids])
+            if (!$query->query()->update()->set(['profile_id' => $p_ids])
                 ->where(['id' => $_POST['client_id']])
                 ->execute()
             ) {
-                echo $flash;
-            }else {
-                echo $this->Trans->getString("flash_clientfail");
+                $flash = $this->Trans->getString("flash_clientfail");
             }
-            //echo $p_ids;
+            echo $flash;
             die();
         }
 
@@ -1122,12 +1088,11 @@
         }
 
         function divisionDropDown($cid){
-            $size = "xlarge";
-            if (isset($_GET["istable"])) {
-                if ($_GET["istable"] == 1) {
-                    $size = "large";
-                }
-            }
+            /*$size = "xlarge";
+            if (isset($_GET["istable"])&& $_GET["istable"] == 1) {
+                $size = "large";
+            }*/
+
             $size = "ignore";
 
             $query = TableRegistry::get('client_divison');
@@ -1330,8 +1295,6 @@
 
         public function check_document($subid = ''){
             $languages = $_POST["languages"];
-
-            //$subname = strtolower($subname);
             $q = TableRegistry::get('subdocuments');
             $que = $q->find();
 
@@ -1375,14 +1338,13 @@
         public function getLogo(){
             $id = $this->request->session()->read('Profile.id');
             $client = TableRegistry::get('clients')->find()->where(['profile_id LIKE "'.$id.',%" OR profile_id LIKE "%,'.$id.',%" OR profile_id LIKE "%,'.$id.'"'])->first();
-            $image = array();
-            if($client)
-            $image['client'] = $client->image;
-            else
-            $image['client'] = false;
+            $image = array('client' => false);
+            if($client) {
+                $image['client'] = $client->image;
+            }
             if(!$image['client']) {
                 if($client) {
-                    $cid = $client->id;
+                    //$cid = $client->id;
                     $setting = TableRegistry::get('settings')->find()->where(['id'=>1])->first();
                     $image['setting'] = $setting->client_img;
                 }
@@ -1470,19 +1432,13 @@
                 }
                 $profile = TableRegistry::get('profiles')->find('all')->where(['id IN('.$c->profile_id.')','id NOT IN ('.$escape_ids.')','requalify'=>'1', 'profile_type IN('.$p_types.')','expiry_date<>""','expiry_date >='=>$today]);
                 unset($escape_ids);
-                //debug($profile);
-                //die();
                 foreach($profile as $p) {
-                    //echo $p->id;
                     if($c->requalify_re == '1') {
                          $date = $p->hired_date;
                           if(strtotime($date) < strtotime($today)) {
                                 $date =  $this->getnextdate($date,$frequency);
                           }
                     }
-                   
-                    //echo $date;
-                    //die();
                     if($today == $date || $date == $nxt_date) {
                         $pro .=$p->id.","; 
                         $p_name .= $p->username.",";
@@ -1522,9 +1478,7 @@
                         $arr['uploaded_for'] = $driver;
                         $ord = TableRegistry::get('orders');
                         $doc = $ord->newEntity($arr);
-                        if($ord->save($doc))
-                        {
-                            
+                        if($ord->save($doc)) {
                             $cc['profile_id'] = $driver;
                             $cc['cron_date'] = date('Y-m-d');
                             $cc['client_id'] = $c->id;
@@ -1548,21 +1502,18 @@
                         
                     }
                     array_push($marr,$arr);
-                    
                     unset($arr);
                 } else {
                     $msg .= "No Profiles found.";
                 }
-                                
             }
-                    $this->set('arrs',$marr);
-                    $this->set('msg',$msg);
+            $this->set('arrs',$marr);
+            $this->set('msg',$msg);
         }
 
-          function getnextdate($date, $frequency) {
+        function getnextdate($date, $frequency) {
             $today = date('Y-m-d');
             $nxt_date = date('Y-m-d', strtotime($date)+($frequency*24*60*60*30));
-            
             if (strtotime($nxt_date) < strtotime($today)) {
                 $d = $this->getnextdate($nxt_date, $frequency);
             } else {
@@ -1571,25 +1522,20 @@
             return $d;
         }
 
-    function web($order_type = null, $forms = null, $driverid = null, $orderid = null) {
-        $this->set('order_type',$order_type);
-        $this->set('form',$forms);
-        $this->set('driverid',$driverid);
-        $this->set('orderid',$orderid);
-    }
+        function web($order_type = null, $forms = null, $driverid = null, $orderid = null) {
+            $this->set('order_type',$order_type);
+            $this->set('form',$forms);
+            $this->set('driverid',$driverid);
+            $this->set('orderid',$orderid);
+        }
     
-    function assignedTo($cid,$rid) {
-        
-        $cli = TableRegistry::get('clients')->find()->where(['id'=>$cid])->first();
-        $pro = $cli->profile_id;
-        $arr = explode(',',$pro);
-        //echo $rid;
-        //var_dump($arr);
-        $check = in_array($rid,$arr);
-        $this->response->body($check);
+        function assignedTo($cid,$rid) {
+            $cli = TableRegistry::get('clients')->find()->where(['id'=>$cid])->first();
+            $pro = $cli->profile_id;
+            $arr = explode(',',$pro);
+            $check = in_array($rid,$arr);
+            $this->response->body($check);
             return $this->response;
-        
-    }
-        
+        }
 }
 ?>

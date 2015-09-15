@@ -12,13 +12,9 @@ class LoginController extends AppController{
         parent::initialize();
         $this->loadComponent('Settings');
         $this->loadComponent('Trans');
-        if($this->request->session()->read('Profile.id'))
-        {
-            //$this->redirect($this->referer());
+        if($this->request->session()->read('Profile.id')) {
             $this->redirect('/pages');
         }
-        //if($this->Cookie->read('name'))
-        
     }
     function index(){
         $this->loadComponent('Cookie');
@@ -84,8 +80,6 @@ class LoginController extends AppController{
                     if(! isset($_GET["nocookie"])) {$this->redirect($URL);}
                 //}
             }
-        }else {
-           // die();
         }
     }
 } 

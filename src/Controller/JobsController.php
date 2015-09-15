@@ -21,7 +21,6 @@ class JobsController extends AppController {
     }
     
 	public function index() {
-	   
 		$this->set('job', $this->paginate($this->Jobs));
 	}
 

@@ -559,14 +559,9 @@
             $cond = '';
             if (!$this->request->session()->read('Profile.super')) {
                 $u = $this->request->session()->read('Profile.id');
-
                 $setting = $this->Settings->get_permission($u);
                 if ($setting->document_others == 0) {
-                    if ($cond == '') {
-                        $cond = $cond . ' user_id = ' . $u;
-                    }else {
-                        $cond = $cond . ' AND user_id = ' . $u;
-                    }
+                    $cond = $this->appendSQL($cond, ' user_id = ' . $u);
                 }
 
             }
@@ -575,40 +570,21 @@
             }
 
             if (isset($_GET['table']) && $_GET['table']) {
-                if ($cond == '') {
-                    $cond = $cond . ' orders.id IN (SELECT order_id FROM ' . $_GET['table'] . ')';
-                }else {
-                    $cond = $cond . ' AND orders.id IN (SELECT order_id FROM ' . $_GET['table'] . ')';
-                }
+                $cond = $this->appendSQL($cond, ' orders.id IN (SELECT order_id FROM ' . $_GET['table'] . ')');
             }
             if (!$this->request->session()->read('Profile.admin') && $setting->orders_others == 0) {
-                if ($cond == '') {
-                    $cond = $cond . ' orders.user_id = ' . $this->request->session()->read('Profile.id');
-                }else {
-                    $cond = $cond . ' AND orders.user_id = ' . $this->request->session()->read('Profile.id');
-                }
+                $cond = $this->appendSQL($cond, ' orders.user_id = ' . $this->request->session()->read('Profile.id'));
             }
             if (isset($_GET['submitted_by_id']) && $_GET['submitted_by_id']) {
-                if ($cond == '') {
-                    $cond = $cond . ' orders.user_id = ' . $_GET['submitted_by_id'];
-                }else {
-                    $cond = $cond . ' AND orders.user_id = ' . $_GET['submitted_by_id'];
-                }
+                $cond = $this->appendSQL($cond, ' orders.user_id = ' . $_GET['submitted_by_id']);
             }
             if (isset($_GET['client_id']) && $_GET['client_id']) {
-                if ($cond == '') {
-                    $cond = $cond . ' orders.client_id = ' . $_GET['client_id'];
-                }else {
-                    $cond = $cond . ' AND orders.client_id = ' . $_GET['client_id'];
-                }
+                $cond = $this->appendSQL($cond, ' orders.client_id = ' . $_GET['client_id']);
             }
             if (isset($_GET['division']) && $_GET['division']) {
-                if ($cond == '') {
-                    $cond = $cond . ' division = "' . $_GET['division'] . '"';
-                }else {
-                    $cond = $cond . ' AND division = "' . $_GET['division'] . '"';
-                }
+                $cond = $this->appendSQL($cond, ' division = "' . $_GET['division'] . '"');
             }
+
             if ($cond) {
                 $order = $order->where([$cond])->contain(['Profiles']);
             } else {
@@ -630,10 +606,16 @@
 
         }
 
+        function appendSQL($cond, $Query){
+            if ($cond) {
+                return $cond . ' AND ' . $Query;
+            } else {
+                return $Query;
+            }
+        }
+
         function get_orderscount($type, $c_id = ""){
-
             $u = $this->request->session()->read('Profile.id');
-
             if (!$this->request->session()->read('Profile.super')) {
                 $setting = $this->Settings->get_permission($u);
                 //var_dump($setting);
@@ -681,43 +663,31 @@
 
         public function save_ebs_pdi($orderid, $pdi) {
             $this->set('doc_comp', $this->Document);
-            $query2 = TableRegistry::get('orders');
-            $arr['ebs_pdi'] = $pdi;
-            $query2 = $query2->query();
-            $query2->update()
-                ->set($arr)
-                ->where(['id' => $orderid])
-                ->execute();
+            $query2 = $this->updatecell($orderid, array('ebs_pdi' => $pdi));
             $this->response->body($query2);
             return $this->response;
         }
 
+        function updatecell($orderid, $Data){
+            $query2 = TableRegistry::get('orders');
+            $query2 = $query2->query();
+            $query2->update()
+                ->set($Data)
+                ->where(['id' => $orderid])
+                ->execute();
+            return $query2;
+        }
 
 
         public function writing_complete($orderid) {
-            $query2 = TableRegistry::get('orders');
-            $arr['complete_writing'] = 1;
-            $query2 = $query2->query();
-            $query2->update()
-                ->set($arr)
-                ->where(['id' => $orderid])
-                ->execute();
+            $query2 = $this->updatecell($orderid, array('complete_writing' => 1));
             $this->response->body($query2);
             return $this->response;
         }
 
-
-
         public function save_webservice_ids($orderid, $ins_id, $ebs_id) {
             $this->set('doc_comp', $this->Document);
-            $query2 = TableRegistry::get('orders');
-            $arr['ins_id'] = $ins_id;
-            $arr['ebs_id'] = $ebs_id;
-            $query2 = $query2->query();
-            $query2->update()
-                ->set($arr)
-                ->where(['id' => $orderid])
-                ->execute();
+            $query2 = $this->updatecell($orderid, array('ins_id' => $ins_id, 'ebs_id' => $ebs_id));
             $this->response->body($query2);
             return $this->response;
         }
@@ -725,17 +695,8 @@
         public function save_pdi($orderid, $id, $pdi) {
       //   echo '555555555'. $orderid . ' ' .  $id . ' ' . $pdi;
             $this->set('doc_comp', $this->Document);
-            $query2 = TableRegistry::get('orders');
-            $arr="";
             if (in_array($pdi, array("ins_79", "ins_1", "ins_14", "ins_77", "ins_78", "ebs_1603", "ebs_1627", "ebs_1650", "ins_72", "ins_31", "ins_32"))) {
-                $arr = array($pdi => $id);
-
-                $query2 = $query2->query();
-                $query2->update()
-                    ->set($arr)
-                    ->where(['id' => $orderid])
-                    ->execute();
-
+                $query2 = $this->updatecell($orderid,array($pdi => $id));
                 $this->response->body($query2);
             }
 
@@ -929,7 +890,6 @@
                 ->where(['order_id' => $oid, 'sub_id' => 42, 'attachment <> ""']);
 
             $this->set(compact('education'));
-
             $this->set(compact('att'));
         }
 
