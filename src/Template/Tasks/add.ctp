@@ -45,41 +45,28 @@ if ($this->request->session()->read('timediff') && isset($event)) {
 if(isset($isdisabled)) {$disabled = "disabled='disabled'";}
 
 ?>
-<h3 class="page-title">
-			<?=$strings["tasks_pagetitle"];?></small>
-			</h3>
-			<div class="page-bar">
-				<ul class="page-breadcrumb">
-					<li>
-						<i class="fa fa-home"></i>
-						<a href="<?= $this->request->webroot . '">' . $strings["dashboard_dashboard"] ?></a>
-						<i class="fa fa-angle-right"></i>
-					</li>
-					<li>
-						<a href="<?php echo $this->request->webroot;?>tasks/calender"><?= $strings["tasks_tasks"]; ?></a>
-                        <i class="fa fa-angle-right"></i>
-					</li>
-                    <li>
-						<?php
-                            if(isset($isdisabled)) {
-                                echo $strings["dashboard_view"];
-                            } elseif(isset($event)){
-                                echo $strings["dashboard_edit"];
-                            }else{
-                                echo $strings["dashboard_add"];
-                            }
-                        ?>
-					</li>
-				</ul>
-                <?php
-                if (isset($event)) {
-                    echo '<a href="javascript:window.print();" class="floatright btn btn-info">' . $strings["dashboard_print"] . '</a>';
-                }?>
-
+<div class="page-head">
+		<div class="container">
+			<!-- BEGIN PAGE TITLE -->
+			<div class="page-title">
+				<h1>Task <small>Add</small></h1>
 			</div>
-
+			
+		</div>
+	</div>
+	<!-- END PAGE HEAD -->
+	<!-- BEGIN PAGE CONTENT -->
+	<div class="page-content">
+    
+    
+            <div class="container">
+                
 <div class="row">
+<div class="col-md-12">
 <div class="col-md-10">
+					<div class="portlet box calendar">
+
+						<div class="portlet-body form">
 <div data-always-visible="0" data-rail-visible="0" data-handle-color="#dae3e7">
 	<form action="" class="form-horizontal" method="post">
 		<!-- TASK HEAD -->
@@ -142,6 +129,12 @@ if(isset($isdisabled)) {$disabled = "disabled='disabled'";}
 	</form>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <link rel="stylesheet" type="text/css" href="<?php echo $this->request->webroot;?>css/date.css"/>
 <style>
     .table-condensed td:hover{cursor:pointer; }

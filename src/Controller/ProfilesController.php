@@ -64,7 +64,7 @@ class ProfilesController extends AppController{
     function upload_img($id){
         if (isset($_FILES['myfile']['name']) && $_FILES['myfile']['name']) {
             $arr = explode('.', $_FILES['myfile']['name']);
-            $ext = end($arr);
+            $ext = end($arr); 
             $rand = rand(100000, 999999) . '_' . rand(100000, 999999) . '.' . $ext;
             $allowed = array('jpg', 'jpeg', 'png', 'bmp', 'gif');
             $check = strtolower($ext);
