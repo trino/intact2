@@ -129,7 +129,7 @@ jQuery(document).ready(function() {
 			</div>
 			<!-- END LOGO -->
             <!-- BEGIN LOGO_TEXT -->
-            <div class="logo-text col-md-6 col-sm-6 col-xs-12">
+            <div class="logo-text col-md-5 col-sm-6 col-xs-12">
 				<div class="logo-mid">
                 <a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo" style="width: 100px;" /></a>
                 </div>
@@ -142,7 +142,7 @@ jQuery(document).ready(function() {
 			<a href="javascript:;" class="menu-toggler"></a>
 			<!-- END RESPONSIVE MENU TOGGLER -->
 			<!-- BEGIN TOP NAVIGATION MENU -->
-            <div class="col-md-3 col-sm-12 col-xs-12">
+            <div class="col-md-4 col-sm-12 col-xs-12">
 			<?php include('subpages/top-menu.php');?>
             </div>
 			<!-- END TOP NAVIGATION MENU -->

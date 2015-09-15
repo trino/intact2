@@ -98,7 +98,7 @@ $super = $this->request->session()->read('Profile.super');
     <div class="col-md-12">
 
 
-        <div class="portlet box green-haze">
+        <div class="portlet box">
 
 
             <div class="portlet-body form">
