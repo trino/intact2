@@ -29,7 +29,7 @@
                         <ul class="dropdown-menu pull-left">
                             <li class="">
 
-                                <a href="<?php echo $this->request->webroot; ?>clients/listall"><i
+                                <a href="<?php echo $this->request->webroot; ?>clients"><i
                                         class="icon-list"></i> List Companies</a>
                             </li>
                             <li class="">

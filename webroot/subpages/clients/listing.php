@@ -172,14 +172,16 @@
                                                         <?php
 
                                                         }
-                                                        
-                                                        if($sidebar->aggregate)
+                                                       
+                                                        /*if($sidebar->aggregate)
                                                         {
                                                             ?>
                                                             <a href="<?php echo $this->request->webroot;?>documents/aggregate/<?php echo $clients->id;?>" class="<?= btnclass("btn-info", "blue-soft") . '">' . $strings["clients_aggregate"] ?></a>
                                                             <?php
-                                                        }
+                                                        }*/
                                                     ?>
+                                                    <a href="<?php echo $this->request->webroot;?>profiles/index?filter_by_client=<?php echo $clients->id;?>" class="btn default btn-xs blue-soft-stripe">View
+                                                Driver(s)</a>
                                                 </td>
                                             </tr>
 
