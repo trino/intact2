@@ -587,6 +587,40 @@ label {
   padding: 10px;
 }
 
+.portlet.calendar .fc-button {
+  color: #000 !important;
+  top: -47px !important;
+}
+
+.calendar .btn {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 100px;
+}
+
+.calendar .form-body .col-md-3 {
+    margin-top: 35px;
+}
+
+.header_approved {
+  background: #f5f5f5 none repeat scroll 0 0;
+  border-bottom: 1px solid #e5e5e5;
+  border-radius: 5px 5px 0 0;
+  margin: -12px -20px !important;
+  margin-bottom: 20px !important;
+  padding: 10px;
+}
+
+.profiles-adds .form-actions {
+  background: #f5f5f5 none repeat scroll 0 0;
+  margin-top: -28px;
+}
+
+.nav-tabs > li > a {
+    margin-right: 0 !important;
+}
+
 /*** CSS FOR LOGO_MID HEADER ***/
 .logo-text {
     text-align: center;

@@ -16,7 +16,7 @@ echo "<SCRIPT LANGUAGE='JavaScript'>var Language = '" . $language . "';</SCRIPT>
 		<div class="container">
 			<!-- BEGIN PAGE TITLE -->
 			<div class="page-title">
-				<h1>Profiles <small>Settings</small></h1>
+				<h1>Task <small>Add</small></h1>
 			</div>
 			
 		</div>
@@ -29,14 +29,15 @@ echo "<SCRIPT LANGUAGE='JavaScript'>var Language = '" . $language . "';</SCRIPT>
             <div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="portlet box green-meadow calendar">
-						<div class="portlet-title">
-							<div class="caption">
-								<i class="fa fa-gift"></i><?= $strings["index_tasks"];?>
-							</div>
-						</div>
-						<div class="portlet-body">
-							<div class="row">
+					<div class="portlet box calendar">
+
+						<div class="portlet-body form">
+                        
+                        <div class="form-actions top chat-form" style="margin-top:0;margin-bottom:0;">
+
+                </div>
+                        
+							<div class="row form-body">
 								<div class="col-md-3 col-sm-12">
 									<!-- BEGIN DRAGGABLE EVENTS PORTLET-->
 									<!--<h3 class="event-form-title">Draggable Events</h3>-->
@@ -53,15 +54,15 @@ echo "<SCRIPT LANGUAGE='JavaScript'>var Language = '" . $language . "';</SCRIPT>
 										<input type="checkbox" id="drop-remove"/>remove after drop </label>
 										<hr class="visible-xs"/>
 									</div>-->
-                                    <a href="<?php echo $this->request->webroot;?>tasks/add" id="event_add" type="button" class="btn red">
+                                    <a href="<?php echo $this->request->webroot;?>tasks/add" id="event_add" type="button" class="btn green">
 											<?= $strings["tasks_addtask"]; ?></a>
 
-<?php
+<!--<?php
 if ($this->request->session()->read('Profile.super')) {
        echo '<br><a style="margin-top: 10px;" class="btn btn-warning" href="' . $this->request->webroot . 'profiles/cron/true">Run the CRON ' . $this->request->session()->read('timediff') . '</A>';
        echo '<br><a style="margin-top: 10px;" class="btn btn-warning" href="' . $this->request->webroot . 'profiles/cron?testemail">Send test email</A>';
 }
-?>
+?>-->
 
 
 
@@ -86,6 +87,17 @@ if ($this->request->session()->read('Profile.super')) {
 								</div>
 							</div>
 							<!-- END CALENDAR PORTLET-->
+                            <div class="form-actions" style="height:75px;">
+                    <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6" align="left">
+                        
+                        </div>
+                        <div class="col-md-6" align="right">
+                        </div>
+                        </div>
+                    </div>
+                </div>
 						</div>
 					</div>
 				</div>

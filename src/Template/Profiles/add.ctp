@@ -30,7 +30,7 @@
 </div>
 <!-- END PAGE HEAD -->
 <!-- BEGIN PAGE CONTENT -->
-<div class="page-content">
+<div class="page-content profiles-adds">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -48,8 +48,6 @@
                         </div>
                     </div>
                     <!-- .header_approved  -->
-
-                    <hr/>
                     <ul class="nav nav-tabs">
                         <li class="active">
                             <a data-toggle="tab" href="#tab_1_1" id="1">Step 1</a>
@@ -785,9 +783,21 @@
                             </div>
                         </div>
                     </div>
-
-
+                    
                 </div>
+                
+                  <div class="form-actions" style="height:75px;">
+                    <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6" align="left">
+                       
+                        </div>
+                        <div class="col-md-6" align="right">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>

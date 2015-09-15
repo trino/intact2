@@ -49,6 +49,10 @@ class PagesController extends AppController {
         $this->set('forms',  TableRegistry::get('order_products')->find('all'));
         $this->getsubdocument_topblocks($userid);
 	}
+    
+    function contact (){
+        
+    }
 
     function loadproducts($VariableName = 'products'){
         $products = TableRegistry::get('product_types')->find('all');

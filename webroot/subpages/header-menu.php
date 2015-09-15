@@ -127,15 +127,15 @@
                         <ul class="dropdown-menu pull-left">
                             <li class="">
 
-                                <a href=javascript:;><i class="fa fa-edit"></i> Tasks</a>
+                                <a href="<?php echo $this->request->webroot; ?>tasks/calender"><i class="fa fa-edit"></i> Tasks</a>
 
                             </li>
                             <li class="">
-                                <a href=javascript:;><i class="fa fa-bell"></i> Help</a>
+                                <a href="<?php echo $this->request->webroot;?>pages/view/help"><i class="fa fa-bell"></i> Help</a>
 
                             </li>
                             <li class="">
-                                <a href=javascript:;><i class="fa fa-envelope"></i> Contact Us</a>
+                                <a href="<?php echo $this->request->webroot; ?>pages/contact"><i class="fa fa-envelope"></i> Contact Us</a>
                             </li>
 
                             <li class="">
