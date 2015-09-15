@@ -37,14 +37,13 @@ class DocumentsController extends AppController{
         $this->loadComponent('Document');
         $this->loadComponent('Mailer');
         $this->loadComponent('Trans');
-
+        $this->Document->init($this);
         $this->Settings->verifylogin($this, "documents");
     }
 
     public function index() {
         $cond = '';
         $this->set('doc_comp', $this->Document);
-
         $this->Document->fixsubmittedfor();
 
         $setting = $this->Settings->get_permission($this->request->session()->read('Profile.id'));

@@ -8,6 +8,10 @@ use Cake\View\Helper\SessionHelper;
     
 
 class DocumentComponent extends Component{
+    function init($Controller){
+        $this->Controller = $Controller;
+    }
+
 	function fixsubmittedfor(){
         $Table = TableRegistry::get("documents");
         //debug($Table->query("UPDATE `documents` SET uploaded_for = user_id WHERE uploaded_for = 0"));
@@ -30,27 +34,27 @@ class DocumentComponent extends Component{
                 $txtfile = '';
                 $orders = TableRegistry::get('orders');
                 if(!$did || $did == '0'){
-                $arr['title'] = 'order_' . $_POST['uploaded_for'] . '_' . date('Y-m-d H:i:s');
-                $txtfile = $txtfile.'Title: '.$arr['title']."\n";}
+                    $arr['title'] = 'order_' . $_POST['uploaded_for'] . '_' . date('Y-m-d H:i:s');
+                    $txtfile = $txtfile.'Title: '.$arr['title']."\n";
+                }
                 $arr['uploaded_for'] = $_POST['uploaded_for'];
                 $txtfile = $txtfile.'Uploaded for: User Id# '.$arr['uploaded_for']."\n";
                 $txtfile = $txtfile.'Uploaded By: User Id# '.$this->request->session()->read('Profile.id')."\n";
                 $sig = explode('/',$_POST['recruiter_signature']);
                 if(isset($_GET['order_type'])){
-                $arr['order_type'] = $_GET['order_type'];
-                $txtfile = $txtfile.'Order Type: '.$arr['order_type']."\n";
+                    $arr['order_type'] = $_GET['order_type'];
+                    $txtfile = $txtfile.'Order Type: '.$arr['order_type']."\n";
                 }
                 if(isset($_GET['forms'])){
-                $arr['forms'] = $_GET['forms'];
-                $txtfile = $txtfile.'Product selected: Numbers#'.$arr['forms']."\n";
+                    $arr['forms'] = $_GET['forms'];
+                    $txtfile = $txtfile.'Product selected: Numbers#'.$arr['forms']."\n";
                 }
                 $arr['recruiter_signature'] = end($sig);
                 if(!isset($_GET['draft']) || (isset($_GET['draft']) && !$_GET['draft'])){
-                
-                $myfile = fopen(APP."../webroot/order_submitted/Order_".date('Y_m_d_h_i_s').".txt", "w") or die("Unable to open file!");
-                
-                fwrite($myfile, $txtfile);
-                fclose($myfile);
+                    $myfile = fopen(APP."../webroot/order_submitted/Order_".date('Y_m_d_h_i_s').".txt", "w") or die("Unable to open file!");
+
+                    fwrite($myfile, $txtfile);
+                    fclose($myfile);
                 }
                 //echo APP."../Order_".date('Y_m_d_h_i_s').".txt";
                 //die('here');
@@ -63,34 +67,25 @@ class DocumentComponent extends Component{
                         $dr = $orde->draft;
                         if($dr=='0' || !$dr){
                             $dr = 0;
-                            //$this->Flash->success('Order submitted successfully');
                         } else{
                             $dr =1;
-                            //$this->Flash->success('Order saved as draft');
                         }
                     } else{
                         $dr = 1;
-                        //$this->Flash->success('Order saved as draft');
                     }
                 } else{
                     $dr = 1;
-                    //$this->Flash->success('Order saved as draft');
                 }
+
                 //$this->set('dr',$dr);
                 if (isset($_GET['draft']) && $_GET['draft']){
                     if($dr){
                         $arr['draft'] = 1;
-                        //if(isset($_POST['conf_date']))
-                        //$this->Flash->success('Order saved as draft');
-
                     } else{
                         $arr['draft'] = 0;
-                        //$this->Flash->success('Order submitted successfully');
                     }
                 } else{
-                    //if(!$dr)
                     $arr['draft'] = 0;
-                    //$this->Flash->success('Order submitted successfully');
                 }
                     
                 $arr['client_id'] = $cid;
@@ -113,8 +108,6 @@ class DocumentComponent extends Component{
                     $order = $orders->newEntity($arr);
 
                     if ($orders->save($order)) {
-                        //$this->Flash->success('Client saved successfully.');
-                        
                         if($arr['draft']==0) {
                             $docus = TableRegistry::get('Documents');
                             $queri3 = $docus->query();
@@ -125,9 +118,6 @@ class DocumentComponent extends Component{
                         }
                         
                         echo $order->id;
-                    } else {
-                        //$this->Flash->error('Client could not be saved. Please try again.');
-                        //echo "e";
                     }
                 } else {
                     $query2 = $orders->query();
@@ -135,8 +125,6 @@ class DocumentComponent extends Component{
                         ->set($arr)
                         ->where(['id' => $did])
                         ->execute();
-                    //$this->Flash->success('Client saved successfully.');
-
                     if($arr['draft']==0) {
                                 $path = $this->getUrl();
                                 $get_client = TableRegistry::get('Clients');
@@ -167,16 +155,6 @@ class DocumentComponent extends Component{
                                             $username =   $user_id = $controller->request->session()->read('Profile.username');
                                             $ret = array("site" => $setting->mee,"email" => $em, "company_name" => $client_name, "username" => $username, "id" => $did, "path" => $path, "profile_type" => $ut, "place" => 1);
                                             if($emailenabled) {$Mailer->handleevent("documentcreated", $ret);}
-/*
-                                            $from = array('info@'.$path => $setting->mee);
-                                            $to = $p;
-                                             $sub = 'Order Submitted';
-                                            $msg = 'A new order has been created in '.$path.'<br />
-                                            <br/>
-
-                                            By: '.$uq->username.' (Profile Type: '.$ut.')<br/> Date : '.date('Y-m-d H:i:s').'<br/><br /> Client Name: ' . $client_name.'<br/> For: '.$p.'<br /><br /> Regards,<br />The '.$setting->mee.' Team';
-                                            // $controller->Mailer->sendEmail($from, $to, $sub, $msg);
-*/
                                         }
                                     }
                                 } else {
@@ -206,25 +184,20 @@ class DocumentComponent extends Component{
                 $docs = TableRegistry::get('Documents');
                 if (isset($_GET['draft']) && $_GET['draft']){
                     $arr['draft'] = 1;
-                    //$controller->Flash->success('Document saved as draft');
-                    }
-                else{
+                } else{
                     $arr['draft'] = 0;
-                    //$controller->Flash->success('Document submitted successfully');
-                    }
+                }
                 $arr['sub_doc_id'] = $_POST['sub_doc_id'];
-                if (isset($_POST['uploaded_for']))
+                if (isset($_POST['uploaded_for'])) {
                     $arr['uploaded_for'] = $_POST['uploaded_for'];
-
+                }
                 $arr['client_id'] = $cid;
                 $arr['document_type'] = urldecode($_GET['document']);
-                if ((!$did || $did == '0'))
+                if ((!$did || $did == '0')) {
                     $arr['created'] = date('Y-m-d H:i:s');
-                //$arr['conf_recruiter_name'] = $_POST['conf_recruiter_name'];
-                //$arr['conf_driver_name'] = $_POST['conf_driver_name'];
-                //$arr['conf_date'] = $_POST['conf_date'];
-                if ((!$did || $did == '0') && ($arr['sub_doc_id'] < 7 || $arr['sub_doc_id'] == 15 || $arr['sub_doc_id'] == 9 || $arr['sub_doc_id'] == 10))
-                {
+                }
+
+                if ((!$did || $did == '0') && ($arr['sub_doc_id'] < 7 || $arr['sub_doc_id'] == 15 || $arr['sub_doc_id'] == 9 || $arr['sub_doc_id'] == 10)) {
                     $arr['user_id'] = $controller->request->session()->read('Profile.id');
                     $doc = $docs->newEntity($arr);
 
@@ -236,49 +209,30 @@ class DocumentComponent extends Component{
                         $client_name = $gc->company_name;
                         $assignedProfile = $this->getAssignedProfile($cid);
                        
-                        if($assignedProfile)
-                        {
-                            if(!isset($_GET['draft']) && !($_GET['draft']))
-                            {
+                        if($assignedProfile) {
+                            if(!isset($_GET['draft']) && !($_GET['draft'])) {
                                 $profile = $this->getProfilePermission($assignedProfile->profile_id, 'document');
-                                if($profile)
-                                {
-                                    foreach($profile as $p)
-                                    {
-                                        
-                                $pro_query = TableRegistry::get('Profiles');
-                                $email_query = $pro_query->find()->where(['super' => 1])->first();
-                                $em = $email_query->email;
-                                $user_id = $controller->request->session()->read('Profile.id');
-                                $uq = $pro_query->find('all')->where(['id' => $user_id])->first();
-                                if (isset($uq->profile_type))
-                                  {
-                                    $u = $uq->profile_type;
-                                    $type_query = TableRegistry::get('profile_types');
-                                    $type_q = $type_query->find()->where(['id'=>$u])->first(); 
-                                    $ut = $type_q->title;
-                                  }
-                                  //$path = 'https://isbmeereports.com/documents/view/'.$cid;
-                                if($emailenabled) {
-                                    $ret = array("site" => $setting->mee, "email" => $p, "company_name" => $client_name, "username" => $uq->username, "id" => $did, "path" => $path, "profile_type" => $ut, "place" => 3);
-                                    $Mailer->handleevent("documentcreated", $ret);
-                                }/*
-                                $from = array('info@'.$path => $setting->mee);
-                                $to = $p;
-                                 $sub = 'Document Submitted';
-                                $msg = 'A new document has been created in '.$path.'<br /><br />
-                                Username : '.$uq->username.'<br/>Profile Type : '.$ut.'<br/> Date : '.date('Y-m-d H:i:s').'<br/>Client Name: ' . $client_name.'<br/> Document type : '.$arr['document_type'].'<br /><br />Regards,<br />The '.$setting->mee.' Team';
-  */
-                                 //$controller->Mailer->sendEmail($from, $to, $sub, $msg);
+                                if($profile) {
+                                    foreach($profile as $p) {
+                                        $pro_query = TableRegistry::get('Profiles');
+                                        $email_query = $pro_query->find()->where(['super' => 1])->first();
+                                        $em = $email_query->email;
+                                        $user_id = $controller->request->session()->read('Profile.id');
+                                        $uq = $pro_query->find('all')->where(['id' => $user_id])->first();
+                                        if (isset($uq->profile_type)) {
+                                            $u = $uq->profile_type;
+                                            $type_query = TableRegistry::get('profile_types');
+                                            $type_q = $type_query->find()->where(['id'=>$u])->first();
+                                            $ut = $type_q->title;
+                                          }
+                                        if($emailenabled) {
+                                            $ret = array("site" => $setting->mee, "email" => $p, "company_name" => $client_name, "username" => $uq->username, "id" => $did, "path" => $path, "profile_type" => $ut, "place" => 3);
+                                            $Mailer->handleevent("documentcreated", $ret);
+                                        }
                                     }
                                 }
                             }
-                            else 
-                            {
-                                
-                            }
                         }
-                        //$this->Flash->success('Client saved successfully.');
                         echo $doc->id;
                         if(!isset($_GET['draft']) || !($_GET['draft'])){
                             $pro_query = TableRegistry::get('Profiles');
@@ -286,40 +240,23 @@ class DocumentComponent extends Component{
                             $em = $email_query->email;
                             $user_id = $controller->request->session()->read('Profile.id');
                             $uq = $pro_query->find('all')->where(['id' => $user_id])->first();
-                            if ($uq->profile_type)
-                              {
+                            $ut = '';
+                            if ($uq->profile_type) {
                                 $u = $uq->profile_type;
                                 $type_query = TableRegistry::get('profile_types');
-                                $type_q = $type_query->find()->where(['id'=>$u])->first(); 
-                                if($type_q)
-                                $ut = $type_q->title;
-                                else
-                                $ut = '';
-                                
-                              }
-                              else
-                              $ut = '';
+                                $type_q = $type_query->find()->where(['id'=>$u])->first();
+                                if($type_q) {
+                                    $ut = $type_q->title;
+                                }
+                            }
+                        }
 
-                            //$this->Mailer->handleevent("documentcreated", array("site" => $setting->mee,"email" => $em, "company_name" => $client_name, "username" => $uq->username, "id" => $did, "path" => $path, "profile_type" => $ut));
-                            /*
-                            $from = array('info@'.$path => $setting->mee);
-                            $to = $em;
-                             $sub = 'Document Submitted';
-                            $msg = 'A new document has been created in '.$path.'<br /><br />
-
-                            Username : '.$uq->username.'<br/>Profile Type : '.$ut.'<br/> Date : '.date('Y-m-d H:i:s').'<br/>Client Name: ' . $client_name.'<br/> Document type : '.$arr['document_type'].'<br/> <br /> Regards,<br />The '.$setting->mee.' Team';
-*/
-                            // $controller->Mailer->sendEmail($from, $to, $sub, $msg);
-                             }
-                        if(isset($_POST['attach_doc']))
-                        {
+                        if(isset($_POST['attach_doc'])) {
                             $model = $controller->loadModel('AttachDocs');
                             $model->deleteAll(['doc_id'=>$doc->id]);
                             $client_docs = explode(',',$_POST['attach_doc']);
-                            foreach($client_docs as $d)
-                            {
-                                if($d != "")
-                                {
+                            foreach($client_docs as $d) {
+                                if($d != "") {
                                     $attach = TableRegistry::get('attach_docs');
                                     $ds['doc_id']= $doc->id;
                                     $ds['file'] =$d;
@@ -329,13 +266,9 @@ class DocumentComponent extends Component{
                                 }
                             }
                         }
-                    } else {
-                        //$this->Flash->error('Client could not be saved. Please try again.');
-                        //echo "e";
                     }
 
-                } else
-                {
+                } else {
                    
                     $query2 = $docs->query();
                     $query2->update()
@@ -348,16 +281,12 @@ class DocumentComponent extends Component{
                         $client_name = $gc->company_name;
                         $assignedProfile = $this->getAssignedProfile($cid);
                      
-                        if($assignedProfile)
-                        {
-                            if(!isset($_GET['draft']) || !($_GET['draft']))
-                            {
+                        if($assignedProfile) {
+                            if(!isset($_GET['draft']) || !($_GET['draft'])) {
                                 $profile = $this->getProfilePermission($assignedProfile->profile_id, 'document');
-                                
-                                if($profile)
-                                {
-                                    foreach($profile as $p)
-                                    {
+
+                                if($profile) {
+                                    foreach($profile as $p) {
                                         //these will get the same results every time, why are they in a loop?
                                         $pro_query = TableRegistry::get('Profiles');
                                         $email_query = $pro_query->find()->where(['super' => 1])->first();
@@ -365,25 +294,13 @@ class DocumentComponent extends Component{
 
                                         $user_id = $controller->request->session()->read('Profile.id');//shouldn't this be $p?
                                         $uq = $pro_query->find('all')->where(['id' => $user_id])->first();
-                                        if (isset($uq->profile_type))
-                                          {
+                                        if (isset($uq->profile_type)) {
                                             $u = $uq->profile_type;
                                             $type_query = TableRegistry::get('profile_types');
                                             $type_q = $type_query->find()->where(['id'=>$u])->first(); 
                                             $ut = $type_q->title;
-                                          }
+                                        }
 
-                                        //
-                                          $path = 'https://isbmeereports.com/documents/view/'.$cid;
-                                        /*
-                                        $from = array('info@'.$path => $setting->mee);
-                                        $to = $p;
-                                        $sub = 'Document Submitted';
-                                        $msg = 'A new document has been created in '.$path.'<br /><br />
-                                        Username : '.$uq->username.'<br/>Profile Type : '.$ut.'<br/> Date : '.date('Y-m-d H:i:s').'<br/>Client Name: ' . $client_name.'<br/> Document type : '.$arr['document_type'].'<br /><br />Regards,<br />The '.$setting->mee.' Team';
-            
-                                        //$controller->Mailer->sendEmail($from, $to, $sub, $msg);
-*/
                                         if($emailenabled) {
                                             $username = $user_id = $controller->request->session()->read('Profile.username');
                                             $ret = array("site" => $setting->mee, "email" => $p, "company_name" => $client_name, "username" => $username, "id" => $did, "path" => $path, "profile_type" => $ut, "place" => 4);
@@ -393,29 +310,11 @@ class DocumentComponent extends Component{
                                 }
                             }
                         }
-                        /*if(isset($_POST['attach_doc']))
-                        {
-                            $model = $controller->loadModel('AttachDocs');
-                            $model->deleteAll(['document_id'=>$did]);
-                            $client_docs = explode(',',$_POST['attach_doc']);
-                            foreach($client_docs as $d)
-                            {
-                                if($d != "")
-                                {
-                                    $attach = TableRegistry::get('attach_docs');
-                                    $ds['doc_id']= $did;
-                                    $ds['file'] =$d;
-                                     $att = $attach->newEntity($ds);
-                                     $attach->save($att);
-                                    unset($att);
-                                }
-                            }
-                        }*/
+
                     echo $did;
                 }
                 
             }
-           // return $ret;
             die();
         }
 
@@ -445,21 +344,15 @@ class DocumentComponent extends Component{
                 
                 $arr['created'] = $ord->created;
                 if($arr['document_type']!='Employment Verification' && $arr['document_type']!='Education Verification' && $arr['document_type']!='Consent Form'){
-                $doc = $docs->find()->where(['order_id'=>$arr['order_id'],'sub_doc_id'=>$arr['sub_doc_id']])->first();
+                     $doc = $docs->find()->where(['order_id'=>$arr['order_id'],'sub_doc_id'=>$arr['sub_doc_id']])->first();
+                } else{
+                    $doc = $docs->find()->where(['document_type'=>$arr['document_type'],'order_id'=>$arr['order_id'],'sub_doc_id'=>$arr['sub_doc_id']])->first();
                 }
-                else{
-                    
-                $doc = $docs->find()->where(['document_type'=>$arr['document_type'],'order_id'=>$arr['order_id'],'sub_doc_id'=>$arr['sub_doc_id']])->first();
-                }
-                if(!$doc)
-                {
-                    
+
+                if(!$doc) {
                     $doc = $docs->newEntity($arr);
                     $docs->save($doc);
-                }
-                else
-                {
-                    //die('there');
+                } else {
                     $query2 = $docs->query();
                     $query2->update()
                         ->set($arr)
@@ -468,22 +361,23 @@ class DocumentComponent extends Component{
                 }
                return true;
         }
-        public function savePrescreening()
-        {
+
+        public function savePrescreening() {
             $controller = $this->_registry->getController();
             $prescreen = TableRegistry::get('pre_screening');
             $arr['client_id'] = $_POST['cid'];
             $arr['user_id'] = $controller->request->session()->read('Profile.id');
             if (!isset($_GET['document']) || isset($_GET['order_id'])) {
-                if(!isset($_GET['order_id']))
-                $arr['order_id'] = $_POST['order_id'];
-                else
-                $arr['order_id'] = $_GET['order_id'];
+                if(!isset($_GET['order_id'])) {
+                    $arr['order_id'] = $_POST['order_id'];
+                }else {
+                    $arr['order_id'] = $_GET['order_id'];
+                }
                 $arr['document_id'] = 0;
-                if (isset($_POST['uploaded_for']))
+                $uploaded_for = '';
+                if (isset($_POST['uploaded_for'])) {
                     $uploaded_for = $_POST['uploaded_for'];
-                else
-                    $uploaded_for = '';
+                }
                 $for_doc = array('document_type'=>'Pre-Screening','sub_doc_id'=>1,'order_id'=>$arr['order_id'],'user_id'=>$arr['user_id'],'uploaded_for'=>$uploaded_for);
                 $this->saveDocForOrder($for_doc);
             } else {
@@ -497,13 +391,14 @@ class DocumentComponent extends Component{
             // $del_prescreen = $prescreen->get(['document_id'=>$_POST['document_id']]);
             $del = $prescreen->query();
             if (!isset($_GET['document']) || isset($_GET['order_id'])){
-                if(!isset($_GET['order_id']))
-                $del->delete()->where(['order_id' => $_POST['order_id']])->execute();
-                else
-                $del->delete()->where(['order_id' => $_GET['order_id']])->execute();
+                if(!isset($_GET['order_id'])) {
+                    $del->delete()->where(['order_id' => $_POST['order_id']])->execute();
+                }else {
+                    $del->delete()->where(['order_id' => $_GET['order_id']])->execute();
                 }
-            else
+            } else {
                 $del->delete()->where(['document_id' => $_POST['order_id']])->execute();
+            }
 
             foreach (explode("&", $_POST['inputs']) as $data) {
                 $input = explode("=", $data);
@@ -512,29 +407,29 @@ class DocumentComponent extends Component{
                     if ($input[0] == 'attach_doc[]' || $input[0] == 'attach_doc%5B%5D'){
                         $atta = urldecode($input[1]);
                         $att[] = trim($atta);
-                        
-                        }
+                    }
                     continue;
                 }
                 if ($input[1] != '') {
-
                     $arr[$input[0]] = urldecode($input[1]);
                 }
-
-                //echo $data."<br/>";
             }
-            if (!isset($att))
+
+            if (!isset($att)) {
                 $att = null;
+            }
+
             //var_dump($att);
             if (isset($att)) {
                 $count = 0;
                 foreach ($att as $at) {
                     $count++;
                     if (!isset($_GET['document']) || isset($_GET['order_id'])) {
-                        if(!isset($_GET['order_id']))
-                        $saveData['order_id'] = $_POST['order_id'];
-                        else
-                        $saveData['order_id'] = $_GET['order_id'];
+                        if(!isset($_GET['order_id'])) {
+                            $saveData['order_id'] = $_POST['order_id'];
+                        }else {
+                            $saveData['order_id'] = $_GET['order_id'];
+                        }
                         $saveData['document_id'] = 0;
                     } else {
                         $saveData['document_id'] = $_POST['order_id'];
@@ -550,24 +445,25 @@ class DocumentComponent extends Component{
             $prescreen->save($save);
             die;
         }
-        public function savedDriverApp($document_id = 0, $cid = 0)
-        {
+
+        public function savedDriverApp($document_id = 0, $cid = 0) {
             // echo "<pre>";print_r($_POST);die;
             $controller = $this->_registry->getController();
             $arr['client_id'] = $cid;
             $arr['user_id'] = $controller->request->session()->read('Profile.id');
             
             if (!isset($_GET['document']) || isset($_GET['order_id'])) {
-                if(!isset($_GET['order_id']))
-                $arr['order_id'] = $document_id;
-                else
-                $arr['order_id'] = $_GET['order_id'];
+                if(!isset($_GET['order_id'])) {
+                    $arr['order_id'] = $document_id;
+                }else {
+                    $arr['order_id'] = $_GET['order_id'];
+                }
                 $arr['document_id'] = 0;
-                
-                if (isset($_POST['uploaded_for']))
+
+                $uploaded_for = '';
+                if (isset($_POST['uploaded_for'])) {
                     $uploaded_for = $_POST['uploaded_for'];
-                else
-                    $uploaded_for = '';
+                }
                 $for_doc = array('document_type'=>'Driver Application','sub_doc_id'=>2,'order_id'=>$arr['order_id'],'user_id'=>$arr['user_id'],'uploaded_for'=>$uploaded_for);
                 $this->saveDocForOrder($for_doc);
             } else {
@@ -584,12 +480,13 @@ class DocumentComponent extends Component{
 
             $del = $driverApps->query();
             if (!isset($_GET['document']) || isset($_GET['order_id'])){
-                if(isset($_GET['order_id']))
-                $document_id = $_GET['order_id']; 
-                $del->delete()->where(['order_id' => $document_id])->execute();
+                if(isset($_GET['order_id'])) {
+                    $document_id = $_GET['order_id'];
                 }
-            else
+                $del->delete()->where(['order_id' => $document_id])->execute();
+            } else {
                 $del->delete()->where(['document_id' => $document_id])->execute();
+            }
 
             $driverAcc = array('date_of_accident',
                 'nature_of_accident',
@@ -640,8 +537,9 @@ class DocumentComponent extends Component{
                     foreach ($_POST['attach_doc'] as $v) {
                         $count++;
                         if (!isset($_GET['document']) || isset($_GET['order_id'])){ 
-                            if(isset($_GET['order_id']))
-                            $document_id = $_GET['order_id'];
+                            if(isset($_GET['order_id'])) {
+                                $document_id = $_GET['order_id'];
+                            }
                             $att['order_id'] = $document_id;
                             $att['document_id'] = 0;
                         } else {
@@ -670,11 +568,10 @@ class DocumentComponent extends Component{
                 }
 
             }
-
             die;
         }
-        public function savedDriverEvaluation($document_id = 0, $cid = 0)
-        {
+
+        public function savedDriverEvaluation($document_id = 0, $cid = 0) {
             // echo "<pre>";print_r($_POST);die;
             $controller = $this->_registry->getController();
             $roadTest = TableRegistry::get('road_test');
@@ -683,21 +580,21 @@ class DocumentComponent extends Component{
             $arr['user_id'] = $controller->request->session()->read('Profile.id');
             
             if (!isset($_GET['document']) || isset($_GET['order_id'])) {
-                if(!isset($_GET['order_id']))
-                $arr['order_id'] = $document_id;
-                else
-                $arr['order_id'] = $_GET['order_id'];
+                if(!isset($_GET['order_id'])) {
+                    $arr['order_id'] = $document_id;
+                }else {
+                    $arr['order_id'] = $_GET['order_id'];
+                }
                 $arr['document_id'] = 0;
                 
                 
-                if (isset($_POST['uploaded_for']))
+                if (isset($_POST['uploaded_for'])) {
                     $uploaded_for = $_POST['uploaded_for'];
-                else
+                }else {
                     $uploaded_for = '';
+                }
                 $for_doc = array('document_type'=>'Road test','sub_doc_id'=>3,'order_id'=>$arr['order_id'],'user_id'=>$arr['user_id'],'uploaded_for'=>$uploaded_for);
                 $this->saveDocForOrder($for_doc);
-                
-                
             } else {
                 $arr['document_id'] = $document_id;
                 $arr['order_id'] = 0;
@@ -708,19 +605,20 @@ class DocumentComponent extends Component{
                 if(isset($_GET['order_id']))
                 $document_id = $_GET['order_id'];
                 $del->delete()->where(['order_id' => $document_id])->execute();
-                }
-            else
+            } else {
                 $del->delete()->where(['document_id' => $document_id])->execute();
+            }
 
             if (isset($_POST['attach_doc'])) {
                 $count = 0;
                 foreach ($_POST['attach_doc'] as $v) {
                     $count++;
                     if (!isset($_GET['document']) || isset($_GET['order_id'])) {
-                        if(!isset($_GET['order_id']))
-                        $att['order_id'] = $document_id;
-                        else
-                        $att['order_id'] = $_GET['order_id'];
+                        if(!isset($_GET['order_id'])) {
+                            $att['order_id'] = $document_id;
+                        }else {
+                            $att['order_id'] = $_GET['order_id'];
+                        }
                         $att['document_id'] = 0;
                     } else {
                         $att['document_id'] = $document_id;
@@ -728,13 +626,11 @@ class DocumentComponent extends Component{
                     }
                     $att['attachment'] = $v;
                     $this->saveAttachmentsRoadTest($att, $count);
-
                 }
             }
+
             foreach ($_POST as $data => $val) {
-
                 if ($data == "document_type" || $data == 'attach_doc') {
-
                     continue;
                 } else {
                     if (isset($_POST[$data])) {
@@ -743,15 +639,11 @@ class DocumentComponent extends Component{
                 }
 
             }
-
             $save = $roadTest->newEntity($arr);
-            if ($roadTest->save($save)) {
-                //echo $save->id;
-            }
             die;
         }
-        public function savedMeeOrder($document_id = 0, $cid = 0)
-        {
+
+        public function savedMeeOrder($document_id = 0, $cid = 0) {
             $controller = $this->_registry->getController();
             $consentForm = TableRegistry::get('consent_form');
             
@@ -759,22 +651,22 @@ class DocumentComponent extends Component{
             $arr['user_id'] = $controller->request->session()->read('Profile.id');
             
             if (!isset($_GET['document']) || isset($_GET['order_id'])) {
-                if(!isset($_GET['order_id']))
-                $arr['order_id'] = $document_id;
-                else
-                $arr['order_id'] = $_GET['order_id'];
+                if(!isset($_GET['order_id'])) {
+                    $arr['order_id'] = $document_id;
+                }else {
+                    $arr['order_id'] = $_GET['order_id'];
+                }
                 $arr['document_id'] = 0;
                 
                 
-                if (isset($_POST['uploaded_for']))
+                if (isset($_POST['uploaded_for'])) {
                     $uploaded_for = $_POST['uploaded_for'];
-                else
+                }else {
                     $uploaded_for = '';
+                }
                 $for_doc = array('document_type'=>'Consent Form','sub_doc_id'=>4,'order_id'=>$arr['order_id'],'user_id'=>$arr['user_id'],'uploaded_for'=>$uploaded_for);
                 $this->saveDocForOrder($for_doc);
-                
-                
-                
+
             } else {
                 $arr['document_id'] = $document_id;
                 $arr['order_id'] = 0;
@@ -783,13 +675,14 @@ class DocumentComponent extends Component{
 
             $del = $consentForm->query();
             if (!isset($_GET['document']) || isset($_GET['order_id'])){
-                if(!isset($_GET['order_id']))
-                $del->delete()->where(['order_id' => $document_id])->execute();
-                else
-                $del->delete()->where(['order_id' => $_GET['order_id']])->execute();
+                if(!isset($_GET['order_id'])) {
+                    $del->delete()->where(['order_id' => $document_id])->execute();
+                }else {
+                    $del->delete()->where(['order_id' => $_GET['order_id']])->execute();
                 }
-            else
+            } else {
                 $del->delete()->where(['document_id' => $document_id])->execute();
+            }
 
             $post = $_POST;
             if (isset($_POST['attach_doc'])) {
@@ -797,10 +690,11 @@ class DocumentComponent extends Component{
                 foreach ($_POST['attach_doc'] as $v) {
                     $count++;
                     if (!isset($_GET['document']) || isset($_GET['order_id'])) {
-                        if(!isset($_GET['order_id']))
-                        $att['order_id'] = $document_id;
-                        else
-                        $att['order_id'] = $_GET['order_id'];
+                        if(!isset($_GET['order_id'])) {
+                            $att['order_id'] = $document_id;
+                        }else {
+                            $att['order_id'] = $_GET['order_id'];
+                        }
                         $att['document_id'] = 0;
                     } else {
                         $att['document_id'] = $document_id;
@@ -811,25 +705,18 @@ class DocumentComponent extends Component{
 
                 }
             }
-            foreach ($_POST as $data => $val) {
 
+            foreach ($_POST as $data => $val) {
                 if ($data == 'offence' || $data == 'date_of_sentence' || $data == 'location' || $data == 'attach_doc') {
                     continue;
                 }
-                //echo $data." ".$val."<br />";
                 $arr[$data] = urldecode($val);
-
             }
 
-// echo "<pre>";print_r($arr);die;
             $save = $consentForm->newEntity($arr);
             if ($consentForm->save($save)) {
                 $id = $save->id;
                 $consentFormCri = TableRegistry::get('consent_form_criminal');
-
-                // $del = $consentFormCri->query();
-                // $del->delete()->where(['consent_form_id'=>$id])->execute();
-
                 for ($i = 0; $i < 8; $i++) {
                     $crm['consent_form_id'] = $id;
                     $crm['offence'] = urldecode($post['offence'][$i]);
@@ -839,13 +726,10 @@ class DocumentComponent extends Component{
                     $consentFormCri->save($saveCrm);
                 }
             }
-
             die;
         }
-        function saveEmployment($document_id = 0, $cid = 0)
-        {
-            // echo "<pre>";print_r($_POST);die;
-            //employement
+
+        function saveEmployment($document_id = 0, $cid = 0) {
             $controller = $this->_registry->getController();
             $employment = TableRegistry::get('employment_verification');
             
@@ -854,18 +738,19 @@ class DocumentComponent extends Component{
             
             
             if (!isset($_GET['document']) || isset($_GET['order_id'])) {
-                if(!isset($_GET['order_id']))
-                $arr['order_id'] = $document_id;
-                else
-                $arr['order_id'] = $_GET['order_id'];
+                if(!isset($_GET['order_id'])) {
+                    $arr['order_id'] = $document_id;
+                }else {
+                    $arr['order_id'] = $_GET['order_id'];
+                }
                 $arr['document_id'] = 0;
                 
                 
-                if (isset($_POST['uploaded_for']))
+                if (isset($_POST['uploaded_for'])) {
                     $uploaded_for = $_POST['uploaded_for'];
-                else
+                }else {
                     $uploaded_for = '';
-                
+                }
                 $for_doc = array('document_type'=>'Employment Verification','sub_doc_id'=>9,'order_id'=>$arr['order_id'],'user_id'=>$arr['user_id'],'uploaded_for'=>$uploaded_for);                
                 $this->saveDocForOrder($for_doc);
                 
@@ -880,33 +765,25 @@ class DocumentComponent extends Component{
             
 
             $del = $employment->query();
-            /*if (!isset($_GET['document']) || isset($_GET['order_id'])){
-                if(!isset($_GET['order_id']))
-                    $del->delete()->where(['order_id' => $_GET['order_id']])->execute();
-                    else
-                    $del->delete()->where(['order_id' => $document_id])->execute();
-                    
-                
-                }
-            else
-                $del->delete()->where(['document_id' => $document_id])->execute();*/
             if (!isset($_GET['document']) || isset($_GET['order_id'])){
-                if(isset($_GET['order_id']))
-                $document_id = $_GET['order_id'];
-                $del->delete()->where(['order_id' => $document_id])->execute();
+                if(isset($_GET['order_id'])) {
+                    $document_id = $_GET['order_id'];
                 }
-            else
+                $del->delete()->where(['order_id' => $document_id])->execute();
+            } else {
                 $del->delete()->where(['document_id' => $document_id])->execute();
+            }
 
             if (isset($_POST['attach_doc'])) {
                 $count = 0;
                 foreach ($_POST['attach_doc'] as $v) {
                     $count++;
                     if (!isset($_GET['document']) || isset($_GET['order_id'])) {
-                        if(!isset($_GET['order_id']))
-                        $att['order_id'] = $document_id;
-                        else
-                        $att['order_id'] = $_GET['order_id'];
+                        if(!isset($_GET['order_id'])) {
+                            $att['order_id'] = $document_id;
+                        }else {
+                            $att['order_id'] = $_GET['order_id'];
+                        }
                         $att['document_id'] = 0;
                     } else {
                         $att['document_id'] = $document_id;
@@ -917,12 +794,14 @@ class DocumentComponent extends Component{
 
                 }
             }
+
             for ($i = 0; $i < $_POST['count_past_emp']; $i++) {
                 if (!isset($_GET['document']) || isset($_GET['order_id'])) {
-                    if(!isset($_GET['order_id']))
-                    $arr2['order_id'] = $document_id;
-                    else
-                    $arr2['order_id'] = $_GET['order_id'];
+                    if(!isset($_GET['order_id'])) {
+                        $arr2['order_id'] = $document_id;
+                    }else {
+                        $arr2['order_id'] = $_GET['order_id'];
+                    }
                     $arr2['document_id'] = 0;
                 } else {
                     $arr2['document_id'] = $document_id;
@@ -931,100 +810,14 @@ class DocumentComponent extends Component{
                 $arr2['client_id'] = $cid;
                 $arr2['user_id'] = $controller->request->session()->read('Profile.id');
 
-                if (isset($_POST['company_name'][$i])) {
-                    $arr2['company_name'] = urldecode($_POST['company_name'][$i]);
+
+                $Check = $this->getColumnNames("employment_verification");
+                foreach($Check as $Key){
+                    if (isset($_POST[$Key][$i])) {
+                        $arr2[$Key] = urldecode($_POST[$Key][$i]);
+                    }
                 }
 
-                if (isset($_POST['address'][$i])) {
-                    $arr2['address'] = urldecode($_POST['address'][$i]);
-                }
-
-                if (isset($_POST['city'][$i])) {
-                    $arr2['city'] = urldecode($_POST['city'][$i]);
-                }
-
-                if (isset($_POST['state_province'][$i])) {
-                    $arr2['state_province'] = urldecode($_POST['state_province'][$i]);
-                }
-
-                if (isset($_POST['country'][$i])) {
-                    $arr2['country'] = urldecode($_POST['country'][$i]);
-                }
-
-                if (isset($_POST['supervisor_name'][$i])) {
-                    $arr2['supervisor_name'] = urldecode($_POST['supervisor_name'][$i]);
-                }
-
-                if (isset($_POST['supervisor_phone'][$i])) {
-                    $arr2['supervisor_phone'] = urldecode($_POST['supervisor_phone'][$i]);
-                }
-
-                if (isset($_POST['supervisor_email'][$i])) {
-                    $arr2['supervisor_email'] = urldecode($_POST['supervisor_email'][$i]);
-                }
-
-                if (isset($_POST['supervisor_secondary_email'][$i])) {
-                    $arr2['supervisor_secondary_email'] = urldecode($_POST['supervisor_secondary_email'][$i]);
-                }
-
-                if (isset($_POST['employment_start_date'][$i])) {
-                    $arr2['employment_start_date'] = urldecode($_POST['employment_start_date'][$i]);
-                }
-
-                if (isset($_POST['employment_end_date'][$i])) {
-                    $arr2['employment_end_date'] = urldecode($_POST['employment_end_date'][$i]);
-                }
-                if (isset($_POST['claims_recovery_date'][$i])) {
-                    $arr2['claims_recovery_date'] = urldecode($_POST['claims_recovery_date'][$i]);
-                }
-                if (isset($_POST['emploment_history_confirm_verify_use'][$i])) {
-                    $arr2['emploment_history_confirm_verify_use'] = urldecode($_POST['emploment_history_confirm_verify_use'][$i]);
-                }
-                if (isset($_POST['us_dot'][$i])) {
-                    $arr2['us_dot'] = urldecode($_POST['us_dot'][$i]);
-                }
-                if (isset($_POST['us_dotsignature'][$i])) {
-                    $arr2['us_dotsignature'] = urldecode($_POST['us_dotsignature'][$i]);
-                }
-                if (isset($_POST['signature'][$i])) {
-                    $arr2['signature'] = urldecode($_POST['signature'][$i]);
-                }
-                if (isset($_POST['signature_datetime'][$i])) {
-                    $arr2['signature_datetime'] = urldecode($_POST['signature_datetime'][$i]);
-                }
-
-                if (isset($_POST['equipment_vans'][$i])) {
-                    $arr2['equipment_vans'] = urldecode($_POST['equipment_vans'][$i]);
-                }
-                if (isset($_POST['equipment_reefer'][$i])) {
-                    $arr2['equipment_reefer'] = urldecode($_POST['equipment_reefer'][$i]);
-                }
-                if (isset($_POST['equipment_decks'][$i])) {
-                    $arr2['equipment_decks'] = urldecode($_POST['equipment_decks'][$i]);
-                }
-                if (isset($_POST['equipment_super'][$i])) {
-                    $arr2['equipment_super'] = urldecode($_POST['equipment_super'][$i]);
-                }
-                if (isset($_POST['equipment_straight_truck'][$i])) {
-                    $arr2['equipment_straight_truck'] = urldecode($_POST['equipment_straight_truck'][$i]);
-                }
-                if (isset($_POST['equipment_others'][$i])) {
-                    $arr2['equipment_others'] = urldecode($_POST['equipment_others'][$i]);
-                }
-
-                //driving
-                if (isset($_POST['driving_experince_local'][$i])) {
-                    $arr2['driving_experince_local'] = urldecode($_POST['driving_experince_local'][$i]);
-                }
-                if (isset($_POST['driving_experince_canada'][$i])) {
-                    $arr2['driving_experince_canada'] = urldecode($_POST['driving_experince_canada'][$i]);
-                }
-                if (isset($_POST['driving_experince_canada_rocky_mountains'][$i])) {
-                    $arr2['driving_experince_canada_rocky_mountains'] = urldecode($_POST['driving_experince_canada_rocky_mountains'][$i]);
-                }
-                if (isset($_POST['driving_experince_usa'][$i])) {
-                    $arr2['driving_experince_usa'] = urldecode($_POST['driving_experince_usa'][$i]);
-                }
                 for ($l = 0; $l <= 100; $l++) {
                     if (isset($_POST['claims_with_employer_' . $l][$i])) {
                         $arr2['claims_with_employer'] = urldecode($_POST['claims_with_employer_' . $l][$i]);
@@ -1038,8 +831,12 @@ class DocumentComponent extends Component{
 
             die;
         }
-        function saveEducation($document_id = NULL, $cid = NULL)
-        {
+
+        function getColumnNames($Table){
+            return $this->Controller->Manager->getColumnNames($Table, array("id", "order_id", "user_id", "client_id", "document_id"));
+        }
+
+        function saveEducation($document_id = NULL, $cid = NULL) {
             // echo $_POST['college_school_name'][0]
             //education
             $controller = $this->_registry->getController();
@@ -1052,22 +849,20 @@ class DocumentComponent extends Component{
             
             
             if (!isset($_GET['document']) || isset($_GET['order_id'])) {
-                if(!isset($_GET['order_id']))
-                $arr['order_id'] = $document_id;
-                else
-                $arr['order_id'] = $_GET['order_id'];
+                if(!isset($_GET['order_id'])) {
+                    $arr['order_id'] = $document_id;
+                }else {
+                    $arr['order_id'] = $_GET['order_id'];
+                }
                 $arr['document_id'] = 0;
-                
-                
-                if (isset($_POST['uploaded_for']))
+
+                if (isset($_POST['uploaded_for'])) {
                     $uploaded_for = $_POST['uploaded_for'];
-                else
+                }else {
                     $uploaded_for = '';
-                
+                }
                 $for_doc = array('document_type'=>'Education Verification','sub_doc_id'=>10,'order_id'=>$arr['order_id'],'user_id'=>$arr['user_id'],'uploaded_for'=>$uploaded_for);                
                 $this->saveDocForOrder($for_doc);
-                
-                
                 
             } else {
                 $arr['document_id'] = $document_id;
@@ -1092,20 +887,20 @@ class DocumentComponent extends Component{
                 if(isset($_GET['order_id']))
                 $document_id = $_GET['order_id'];
                 $del->delete()->where(['order_id' => $document_id])->execute();
-                }
-            else
+            } else {
                 $del->delete()->where(['document_id' => $document_id])->execute();
-                
+            }
                 
             if (isset($_POST['attach_doc'])) {
                 $count = 0;
                 foreach ($_POST['attach_doc'] as $v) {
                     $count++;
                     if (!isset($_GET['document']) || isset($_GET['order_id'])) {
-                        if(!isset($_GET['order_id']))
-                        $att['order_id'] = $document_id;
-                        else
-                        $att['order_id'] = $_GET['order_id'];
+                        if(!isset($_GET['order_id'])) {
+                            $att['order_id'] = $document_id;
+                        }else {
+                            $att['order_id'] = $_GET['order_id'];
+                        }
                         $att['document_id'] = 0;
                     } else {
                         $att['document_id'] = $document_id;
@@ -1119,10 +914,11 @@ class DocumentComponent extends Component{
             $_POST['count_more_edu']++;
             for ($i = 0; $i < $_POST['count_more_edu']; $i++) {
                 if (!isset($_GET['document']) || isset($_GET['order_id'])) {
-                    if(!isset($_GET['order_id']))
-                    $arr2['order_id'] = $document_id;
-                    else
-                    $arr2['order_id'] = $_GET['order_id'];
+                    if(!isset($_GET['order_id'])) {
+                        $arr2['order_id'] = $document_id;
+                    }else {
+                        $arr2['order_id'] = $_GET['order_id'];
+                    }
                     $arr2['document_id'] = 0;
                 } else {
                     $arr2['document_id'] = $document_id;
@@ -1131,70 +927,11 @@ class DocumentComponent extends Component{
                 $arr2['client_id'] = $cid;
                 $arr2['user_id'] = $controller->request->session()->read('Profile.id');
 
-                if (isset($_POST['college_school_name'][$i])) {
-                    $arr2['college_school_name'] = urldecode($_POST['college_school_name'][$i]);
-                }
-
-                if (isset($_POST['address'][$i])) {
-                    $arr2['address'] = urldecode($_POST['address'][$i]);
-                }
-
-                if (isset($_POST['supervisior_name'][$i])) {
-                    $arr2['supervisior_name'] = urldecode($_POST['supervisior_name'][$i]);
-                }
-
-                if (isset($_POST['supervisior_phone'][$i])) {
-                    $arr2['supervisior_phone'] = urldecode($_POST['supervisior_phone'][$i]);
-                }
-
-                if (isset($_POST['supervisior_email'][$i])) {
-                    $arr2['supervisior_email'] = urldecode($_POST['supervisior_email'][$i]);
-                }
-
-                if (isset($_POST['supervisior_secondary_email'][$i])) {
-                    $arr2['supervisior_secondary_email'] = urldecode($_POST['supervisior_secondary_email'][$i]);
-                }
-
-                if (isset($_POST['education_start_date'][$i])) {
-                    $arr2['education_start_date'] = urldecode($_POST['education_start_date'][$i]);
-                }
-
-                if (isset($_POST['education_end_date'][$i])) {
-                    $arr2['education_end_date'] = urldecode($_POST['education_end_date'][$i]);
-                }
-
-                if (isset($_POST['claim_tutor'][$i])) {
-                    $arr2['claim_tutor'] = urldecode($_POST['claim_tutor'][$i]);
-                }
-
-                if (isset($_POST['date_claims_occur'][$i])) {
-                    $arr2['date_claims_occur'] = urldecode($_POST['date_claims_occur'][$i]);
-                }
-
-                if (isset($_POST['education_history_confirmed_by'][$i])) {
-                    $arr2['education_history_confirmed_by'] = urldecode($_POST['education_history_confirmed_by'][$i]);
-                }
-                if (isset($_POST['highest_grade_completed'][$i])) {
-                    $arr2['highest_grade_completed'] = urldecode($_POST['highest_grade_completed'][$i]);
-                }
-                if (isset($_POST['high_school'][$i])) {
-                    $arr2['high_school'] = urldecode($_POST['high_school'][$i]);
-                }
-                if (isset($_POST['college'][$i])) {
-                    $arr2['college'] = urldecode($_POST['college'][$i]);
-                }
-                if (isset($_POST['last_school_attended'][$i])) {
-                    $arr2['last_school_attended'] = urldecode($_POST['last_school_attended'][$i]);
-                }
-                if (isset($_POST['signature'][$i])) {
-                    $arr2['signature'] = urldecode($_POST['signature'][$i]);
-                }
-
-                if (isset($_POST['date_time'][$i])) {
-                    $arr2['date_time'] = urldecode($_POST['date_time'][$i]);
-                }
-                if (isset($_POST['performance_issue'][$i])) {
-                    $arr2['performance_issue'] = urldecode($_POST['performance_issue'][$i]);
+                $Check = $this->getColumnNames("education_verification");
+                foreach($Check as $Key){
+                    if (isset($_POST[$Key][$i])) {
+                        $arr2[$Key] = urldecode($_POST[$Key][$i]);
+                    }
                 }
 
                 $save2 = $education->newEntity($arr2);
@@ -1203,6 +940,7 @@ class DocumentComponent extends Component{
 
             die;
         }
+
         public function mee_attach($cid = 0, $document_id = 0){
             // echo "<pre>";print_r($_POST);die;
             $controller = $this->_registry->getController();
@@ -1394,172 +1132,77 @@ class DocumentComponent extends Component{
 
         
         
-        public function saveAttachmentsPrescreen($data = NULL, $count = 0)
-        {//count is to delete all while first insertion and no delete for following insertion
-
-            $prescreen = TableRegistry::get('doc_attachments');
-            $del = $prescreen->query();
-            if ($count == 1) {
-                if (!isset($_GET['document']) || isset($_GET['order_id'])){
-                    if(!isset($_GET['order_id'])) {
-                        $del->delete()->where(['order_id' => $data['order_id'], 'sub_id' => 1])->execute();
-                    } else {
-                        $del->delete()->where(['order_id' => $_GET['order_id'], 'sub_id' => 1])->execute();
-                    }
-                }  else {
-                    $del->delete()->where(['document_id' => $data['document_id']])->execute();
-                }
-            }
-            $data['sub_id'] = 1;
-            $save = $prescreen->newEntity($data);
-            $prescreen->save($save);
+        public function saveAttachmentsPrescreen($data = NULL, $count = 0) {
+            //count is to delete all while first insertion and no delete for following insertion
+            $this->saveAttachmentsAny(1, $data, $count);
         }
 
         public function saveAttachmentsDriverApp($data = NULL, $count = 0){
-            $driverApp = TableRegistry::get('doc_attachments');
-            $del = $driverApp->query();
+            $this->saveAttachmentsAny(2, $data, $count);
+        }
+
+        public function saveAttachmentsRoadTest($data = NULL, $count = 0){
+            $this->saveAttachmentsAny(3, $data, $count);
+        }
+
+        public function saveAttachmentsConsentForm($data = NULL, $count = 0) {
+            $this->saveAttachmentsAny(4, $data, $count);
+        }
+
+        public function saveAttachmentsEmployment($data = NULL, $count = 0) {
+            $this->saveAttachmentsAny(41, $data, $count);
+        }
+
+        public function saveAttachmentsEducation($data = NULL, $count = 0) {
+            $this->saveAttachmentsAny(42, $data, $count);
+        }
+
+        public function saveAttachmentsAny($SubDocID, $data = NULL, $count = 0) {
+            $education = TableRegistry::get('doc_attachments');
             if ($count == 1) {
+                $del = $education->query();
                 if (!isset($_GET['document']) || isset($_GET['order_id'])){
                     if(!isset($_GET['order_id'])) {
-                        $del->delete()->where(['order_id' => $data['order_id'], 'sub_id' => 2])->execute();
-                    } else {
-                        $del->delete()->where(['order_id' => $_GET['order_id'], 'sub_id' => 2])->execute();
+                        $del->delete()->where(['order_id' => $data['order_id'], 'sub_id' => $SubDocID])->execute();
+                    }else {
+                        $del->delete()->where(['order_id' => $_GET['order_id'], 'sub_id' => $SubDocID])->execute();
                     }
                 } else {
                     $del->delete()->where(['document_id' => $data['document_id']])->execute();
                 }
             }
-            $data['sub_id'] = 2;
-            $save = $driverApp->newEntity($data);
-            $driverApp->save($save);
-        }
-
-        public function saveAttachmentsRoadTest($data = NULL, $count = 0){
-            $roadTest = TableRegistry::get('doc_attachments');
-            $del = $roadTest->query();
-            if ($count == 1) {
-                if (!isset($_GET['document']) || isset($_GET['order_id'])){
-                    if(!isset($_GET['order_id'])) {
-                        $del->delete()->where(['order_id' => $data['order_id'], 'sub_id' => 3])->execute();
-                    } else {
-                        $del->delete()->where(['order_id' => $_GET['order_id'], 'sub_id' => 3])->execute();
-                    }
-                } else{
-                    $del->delete()->where(['document_id' => $data['document_id']])->execute();
-                }
-            }
-            $data['sub_id'] = 3;
-            $save = $roadTest->newEntity($data);
-            $roadTest->save($save);
-        }
-
-        public function saveAttachmentsConsentForm($data = NULL, $count = 0)
-        {
-            $consentForm = TableRegistry::get('doc_attachments');
-            if ($count == 1) {
-                $del = $consentForm->query();
-                if (!isset($_GET['document']) || isset($_GET['order_id'])){
-                    if(!isset($_GET['order_id']))
-                    $del->delete()->where(['order_id' => $data['order_id'],'sub_id'=>4])->execute();
-                    else
-                    $del->delete()->where(['order_id' => $_GET['order_id'],'sub_id'=>4])->execute();
-                    }
-                else
-                    $del->delete()->where(['document_id' => $data['document_id']])->execute();
-            }
-            $data['sub_id'] = 4;
-            $save = $consentForm->newEntity($data);
-            $consentForm->save($save);
-        }
-
-        public function saveAttachmentsEmployment($data = NULL, $count = 0)
-        {
-
-            $employment = TableRegistry::get('doc_attachments');
-            if ($count == 1) {
-                $del = $employment->query();
-                if (!isset($_GET['document']) || isset($_GET['order_id'])){
-                    if(!isset($_GET['order_id']))
-                    $del->delete()->where(['order_id' => $data['order_id'],'sub_id'=>41])->execute();
-                    else
-                    $del->delete()->where(['order_id' => $_GET['order_id'],'sub_id'=>41])->execute();
-                    }
-                else
-                    $del->delete()->where(['document_id' => $data['document_id']])->execute();
-            }
-            $data['sub_id'] = 41;
-            $save = $employment->newEntity($data);
-            $employment->save($save);
-        }
-
-        public function saveAttachmentsEducation($data = NULL, $count = 0)
-        {
-            $education = TableRegistry::get('doc_attachments');
-            if ($count == 1) {
-                $del = $education->query();
-                 if (!isset($_GET['document']) || isset($_GET['order_id'])){
-                    if(!isset($_GET['order_id']))
-                    $del->delete()->where(['order_id' => $data['order_id'],'sub_id'=>42])->execute();
-                    else
-                    $del->delete()->where(['order_id' => $_GET['order_id'],'sub_id'=>42])->execute();
-                    }
-                else
-                    $del->delete()->where(['document_id' => $data['document_id']])->execute();
-            }
-            $data['sub_id'] = 42;
+            $data['sub_id'] = $SubDocID;
             $save = $education->newEntity($data);
             $education->save($save);
         }
 
-        public function getAttachedDoc($cid = 0, $order_id = 0)
-        {
+        function echoAttachmentsAny($order_id, $subdocid ){
+              $Table = TableRegistry::get('doc_attachments');
+              $Attach = $Table->find()->where(['order_id' => $order_id,'sub_id'=>$subdocid]);
+              echo json_encode($Attach);
+        }
+
+
+        public function getAttachedDoc($cid = 0, $order_id = 0) {
             // $id = $_GET['id'];
             if ($_GET['form_type'] == "company_pre_screen_question.php") {
-                $prescreen = TableRegistry::get('doc_attachments');
-                $prescreenAttach = $prescreen
-                    ->find()
-                    ->where(['order_id' => $order_id,'sub_id'=>1]);
-                echo json_encode($prescreenAttach);
-
+                $this->echoAttachmentsAny($order_id,1);
             } else if ($_GET['form_type'] == "driver_application.php") {
-                $driverApp = TableRegistry::get('doc_attachments');
-                $driverAppAttach = $driverApp
-                    ->find()
-                    ->where(['order_id' => $order_id,'sub_id'=>2]);
-                echo json_encode($driverAppAttach);
-
+                $this->echoAttachmentsAny($order_id,2);
             } else if ($_GET['form_type'] == "driver_evaluation_form.php") {
-                $roadTest = TableRegistry::get('doc_attachments');
-                $roadTestAttach = $roadTest
-                    ->find()
-                    ->where(['order_id' => $order_id,'sub_id'=>3]);
-                echo json_encode($roadTestAttach);
-
+                $this->echoAttachmentsAny($order_id,3);
             } else if ($_GET['form_type'] == "document_tab_3.php") {
                 if ($_GET['sub_type'] == "Consent Form") {
-                    $consentForm = TableRegistry::get('doc_attachments');
-                    $consentFormAttach = $consentForm
-                        ->find()
-                        ->where(['order_id' => $order_id,'sub_id'=>4]);
-                    echo json_encode($consentFormAttach);
+                    $this->echoAttachmentsAny($order_id,4);
                 } else if ($_GET['sub_type'] == "Employment") {
-                    $employment = TableRegistry::get('doc_attachments');
-                    $employmentAttach = $employment
-                        ->find()
-                        ->where(['order_id' => $order_id,'sub_id'=>41]);
-                    echo json_encode($employmentAttach);
+                    $this->echoAttachmentsAny($order_id,41);
                 } else if ($_GET['sub_type'] == "Education") {
-                    $education = TableRegistry::get('doc_attachments');
-
-                    $educationAttach = $education
-                        ->find()
-                        ->where(['order_id' => $order_id,'sub_id'=>42]);
-                    echo json_encode($educationAttach);
+                    $this->echoAttachmentsAny($order_id,42);
                 }
             }
         }
-        function getClientById($cid)
-        {
+
+        function getClientById($cid) {
             $model = TableRegistry::get('Clients');
             $q = $model->find()->where(['id' => $cid])->first();
             //$this->response->body($q);
@@ -1567,25 +1210,22 @@ class DocumentComponent extends Component{
             die();
         }
         
-        function getDriverClient($driver,$client)
-        {
+        function getDriverClient($driver,$client) {
             $controller = $this->_registry->getController();
             $logged_id = $controller->request->session()->read('Profile.id');
             //echo "<br/>";
             if(!$client){
-            $cmodel = TableRegistry::get('Clients');
-            if(!$controller->request->session()->read('Profile.super'))
-            $clients = $cmodel->find()->where(['(profile_id LIKE "'.$logged_id.',%" OR profile_id LIKE "%,'.$logged_id.',%" OR profile_id LIKE "%,'.$logged_id.'")']);
-            else{
-                if(!$driver)
-            $clients = $cmodel->find();
-            else
-            $clients = $cmodel->find()->where(['(profile_id LIKE "'.$driver.',%" OR profile_id LIKE "%,'.$driver.',%" OR profile_id LIKE "%,'.$driver.'")']);
-            }
-            
-            }
-            else
-            {
+                $cmodel = TableRegistry::get('Clients');
+                if(!$controller->request->session()->read('Profile.super')) {
+                    $clients = $cmodel->find()->where(['(profile_id LIKE "' . $logged_id . ',%" OR profile_id LIKE "%,' . $logged_id . ',%" OR profile_id LIKE "%,' . $logged_id . '")']);
+                }else{
+                    if(!$driver) {
+                        $clients = $cmodel->find();
+                    }else {
+                        $clients = $cmodel->find()->where(['(profile_id LIKE "' . $driver . ',%" OR profile_id LIKE "%,' . $driver . ',%" OR profile_id LIKE "%,' . $driver . '")']);
+                    }
+                }
+            } else {
                $cmodel = TableRegistry::get('Clients');
                $clients = $cmodel->find()->where(['id'=>$client]); 
                
@@ -1610,9 +1250,7 @@ class DocumentComponent extends Component{
                 
             }
             $profile_ids = '';
-            foreach($clients as $c)
-            {
-
+            foreach($clients as $c) {
                 if($profile_ids) {
                     $profile_ids = $profile_ids.','.$c->profile_id;
                 } else {
@@ -1629,8 +1267,7 @@ class DocumentComponent extends Component{
                 $profile_ids = str_replace(',,',',',$profile_ids);
             //echo $profile_ids;die();
             //echo $profile_ids.'_';die();
-            if($driver==0 && $client==0)
-            {
+            if($driver==0 && $client==0) {
                 $model = TableRegistry::get('Profiles');
                 $conditions = array($this->makeprofiletypequery());
                 if(!$controller->request->session()->read('Profile.super')) {
@@ -1638,11 +1275,11 @@ class DocumentComponent extends Component{
                 }
                 $q = $model->find()->where([$conditions])->order('fname');
 
-            }
-            else
-            if($driver!=0) {
-               $model = TableRegistry::get('Profiles');
-               $q = $model->find()->where(['id' => $driver])->order('fname'); 
+            } else {
+                if ($driver != 0) {
+                    $model = TableRegistry::get('Profiles');
+                    $q = $model->find()->where(['id' => $driver])->order('fname');
+                }
             }
             
             $dr_cl['driver'] = $q;
@@ -1813,10 +1450,9 @@ class DocumentComponent extends Component{
             $query = TableRegistry::get('Profiles');
             $pro = $query->find()->where(['id'=>$id])->first();
 			if($pro){
-            return $pro->email;
-			}else{
-				return "";
+                return $pro->email;
 			}
+            return "";
         }
         
         function getUrl(){

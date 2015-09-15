@@ -191,6 +191,7 @@ class ManagerComponent extends Component {
         }
         return implode(" ", $words);
     }
+
     function key_implode(&$array, $glueLine, $glueKVP, $FormatKeys = false, $RemoveIfContains = "",$ch=false) {
         $result = array();
         foreach ($array as $key => $value) {
@@ -203,20 +204,16 @@ class ManagerComponent extends Component {
         }
         return implode($glueLine, $result);
     }
+
     function order_to_email($OrderID,$order_info = false,$product= false){
         /*Rob's Code*/
-
-        if($order_info)
-        {
+        if($order_info) {
             $selected = $order_info->forms;
             $link = LOGIN.'profiles/view/'.$order_info->uploaded_for.'?getprofilescore=1';
             $arr1 = explode(',',$selected);
         }
-
-        if($product)
-        {
-            foreach($product as $pro)
-            {
+        if($product) {
+            foreach($product as $pro) {
                 $arr2[$pro->number] = $pro->title;
             }
         }
@@ -247,7 +244,6 @@ class ManagerComponent extends Component {
 
 
         /*
-        
         $arr_return_no['1'] = 'ins_1';
         $arr_return_no['14'] = 'ins_14';
         $arr_return_no['32'] = 'ins_32';
@@ -258,27 +254,16 @@ class ManagerComponent extends Component {
         $arr_return_no['1627'] = 'ebs_1627';
         $arr_return_no['1650'] = 'ebs_1650';
         */
-        if(isset($arr1) && $arr1 && isset($arr2) && $arr2)
-        {
-            foreach($arr1 as $a1)
-            {                    $pro_text = $pro_text . $arr2[$a1] . "<br/>";
-
-                /*
-                if($order_info->$arr_return_no[$a1]) {
-                    $pro_text = $pro_text . $arr2[$a1] . " (" . $a1 . ' - ' . $order_info->$arr_return_no[$a1] . ")<br/>";
-                }
-                else {
-                    $pro_text = $pro_text . $arr2[$a1] . "<br/>";
-                }
-                */
+        if(isset($arr1) && $arr1 && isset($arr2) && $arr2) {
+            foreach($arr1 as $a1) {
+                $pro_text = $pro_text . $arr2[$a1] . "<br/>";
             }
             $HTML = $HTML.'<p>&nbsp;</p><strong>PRODUCTS SELECTED</strong><br/><br/>'.$pro_text;
         }
 
 
 
-        if(isset($link))
-        {
+        if(isset($link)) {
             $HTML = $HTML.'<p>&nbsp;</p>CLICK <a href='.$link.'>HERE</a> TO VIEW THE SCORECARD';;
         }
         //$JSON = $this->json_to_html(json_encode($Order, JSON_PRETTY_PRINT));
