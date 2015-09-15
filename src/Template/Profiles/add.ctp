@@ -270,7 +270,7 @@
                                         <div class="col-md-3">
                                             <label class="radio-inline">
                                                 <div class="radio"><input type="radio" value="1"
-                                                                          name="claims_with_employer_35881[]"></div>
+                                                                          name="claims_with_employer_35881[]"/></div>
                                                 <span>Yes</span></label>
                                             <label class="radio-inline">
                                                 <div class="radio"><input type="radio" value="0"

@@ -80,7 +80,7 @@ var Layout = function () {
         // handle hover dropdown menu for desktop devices only
         if (Metronic.getViewPort().width >= 992) {
             $('[data-hover="megamenu-dropdown"]').not('.hover-initialized').each(function() {   
-                $(this).dropdownHover(); 
+                //$(this).dropdownHover(); 
                 $(this).addClass('hover-initialized'); 
             });
         }
@@ -160,7 +160,7 @@ var Layout = function () {
         if (width >= 992 && menu.data('breakpoint') !== 'desktop') { 
             menu.data('breakpoint', 'desktop');
             $('.hor-menu [data-hover="megamenu-dropdown"]').not('.hover-initialized').each(function() {   
-                $(this).dropdownHover(); 
+                //$(this).dropdownHover(); 
                 $(this).addClass('hover-initialized'); 
             });
             $('.hor-menu .navbar-nav li.open').removeClass('open');
