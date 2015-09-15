@@ -56,7 +56,7 @@
     <div class="col-md-12">
 
 
-        <div class="portlet light">
+        <div class="portlet box">
             
 
 

@@ -87,11 +87,11 @@
 
 <!-- END PAGE HEADER-->
 <!-- BEGIN PAGE CONTENT-->
-<div class="row margin-top-20"
+<div class="row margin-top-20">
     <div class="col-md-12" >
 
         <div class="profile-content">
-            <div class="row">
+            <div class="">
                 <div class="col-md-3"  style="background: white;">
                     <!-- PORTLET MAIN -->
                     <div class="portlet light profile-sidebar-portlet">
@@ -206,7 +206,7 @@
                 </div>
 
 
-                <div class="col-md-9">
+                <div class="col-md-9 padding-right">
                     <div class="portlet paddingless">
                         <div class="portlet-title line" style="display:none;">
                             <div class="caption caption-md">

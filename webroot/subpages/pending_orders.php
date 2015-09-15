@@ -1,3 +1,5 @@
+<div class="form-body">
+<div class="table-scrollable ">
 <table class="table table-condensed table-striped table-bordered table-hover dataTable no-footer">
     <thead>
         <tr class="sorting">
@@ -84,3 +86,6 @@
         return false;
     }
 </SCRIPT>
+
+</div>
+</div>
