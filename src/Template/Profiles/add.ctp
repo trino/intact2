@@ -146,8 +146,7 @@
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                                     <label
-                                                        class="control-label col-md-5 col-sm-5 col-xs-12 required padding-right">Driver
-                                                        License class:</label>
+                                                        class="control-label col-md-5 col-sm-5 col-xs-12 required padding-right">Current License Class:</label>
 
                                                     <div class="col-md-7 col-sm-7 col-xs-12">
                                                         <input class="form-control" value="" required="" placeholder=""
@@ -183,7 +182,7 @@
                         <div id="tab_1_2" class="tab-pane">
                             <div>
                                 <div class="form-group row">
-                                    <h3 class="col-md-12">Reference 1</h3>
+                                    <h3 class="col-md-12">Current Employer / Previous Employer 1</h3>
                                 </div>
                                 <div class="gndn">
                                     <div class="form-group row">
@@ -240,12 +239,6 @@
                                             <input type="text" name="supervisor_email[]" role="email"
                                                    class="form-control email1">
                                         </div>
-                                        <label class="control-label col-md-3">Secondary Email:</label>
-
-                                        <div class="col-md-3">
-                                            <input type="text" name="supervisor_secondary_email[]" role="email"
-                                                   class="form-control email1">
-                                        </div>
                                     </div>
 
                                     <div class="form-group row">
@@ -262,41 +255,14 @@
                                                    class="form-control date-picker datepicker">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="control-label col-md-3">Claims with this Employer:</label>
-
-                                        <div class="col-md-3">
-                                            <label class="radio-inline">
-                                                <div class="radio"><input type="radio" value="1"
-                                                                          name="claims_with_employer_35881[]"/></div>
-                                                <span>Yes</span></label>
-                                            <label class="radio-inline">
-                                                <div class="radio"><input type="radio" value="0"
-                                                                          name="claims_with_employer_35881[]"></div>
-                                                <span>No</span></div>
-                                        </label>
-                                        <label class="control-label col-md-3">Date Claims Occurred:</label>
-
-                                        <div class="col-md-3">
-                                            <input type="text" name="claims_recovery_date[]"
-                                                   class="form-control date-picker datepicker">
-                                        </div>
-                                    </div>
 
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">Employment history confirmed by (Verifier
-                                            Use Only):</label>
+                                        <label class="control-label col-md-3">Comments:</label>
 
-                                        <div class="col-md-3">
-                                            <input type="text" name="emploment_history_confirm_verify_use[]"
-                                                   class="form-control">
+                                        <div class="col-md-9">
+                                            <TEXTAREA name="emploment_history_confirm_verify_use[]" class="form-control"></TEXTAREA>
                                         </div>
 
-                                        <label class="control-label col-md-3">US DOT MC/MX#:</label>
-
-                                        <div class="col-md-3">
-                                            <input type="text" class="form-control" name="us_dot[]">
-                                        </div>
 
                                         <label style="display: none;" class="control-label col-md-3"></label>
 
@@ -306,14 +272,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group row">
-                                        <label class="control-label col-md-3">Date:</label>
-
-                                        <div class="col-md-3">
-                                            <input type="text" name="signature_datetime[]"
-                                                   class="form-control date-picker datepicker">
-                                        </div>
-                                    </div>
                                     <div class="form-group row">
                                         <label class="control-label col-md-3">Equipment Operated: </label>
 
@@ -364,34 +322,34 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">Cargo Hauled: </label>
+                                        <label class="control-label col-md-3">Special Training: </label>
 
                                         <div class="col-md-9">
                                             <label class="checkbox-inline">
                                                 <div class="checkbox">
                                                     <div class="checked" style="margin-left:3px;"><span><input type="checkbox" value="1"
-                                                                                                               name="equipment_vans[]"></span>
+                                                                                                               name="cargo_tanker[]"></span>
                                                     </div><span>Tanker</span>
                                                 </div>
                                             </label>
                                             <label class="checkbox-inline">
                                                 <div class="checkbox">
                                                     <div class="checked" style="margin-left:3px;"><span><input type="checkbox" value="1"
-                                                                                                               name="equipment_reefer[]"></span>
+                                                                                                               name="cargo_dangerous[]"></span>
                                                     </div>   <span>Dangerous</span>
                                                 </div>
                                             </label>
                                             <label class="checkbox-inline">
                                                 <div class="checkbox">
                                                     <div class="checked" style="margin-left:3px;"><span><input type="checkbox" value="1"
-                                                                                                               name="equipment_decks[]"></span>
+                                                                                                               name="cargo_livestock[]"></span>
                                                     </div><span>Livestock</span>
                                                 </div>
                                             </label>
                                             <label class="checkbox-inline">
                                                 <div class="checkbox">
                                                     <div class="checked" style="margin-left:3px;"><span><input type="checkbox" value="1"
-                                                                                                               name="equipment_super[]"></span>
+                                                                                                               name="cargo_liquid[]"></span>
                                                     </div><span>Liquid</span>
                                                 </div>
                                             </label>
@@ -445,7 +403,7 @@
                             <div id="more_div">
                                 <hr/>
                                 <div class="form-group row">
-                                    <h3 class="col-md-12">Reference 2</h3>
+                                    <h3 class="col-md-12">Previous Employer 2</h3>
                                 </div>
                                 <div class="gndn">
                                     <div class="form-group row">
@@ -502,12 +460,6 @@
                                             <input type="text" name="supervisor_email[]" role="email"
                                                    class="form-control email1">
                                         </div>
-                                        <label class="control-label col-md-3">Secondary Email:</label>
-
-                                        <div class="col-md-3">
-                                            <input type="text" name="supervisor_secondary_email[]" role="email"
-                                                   class="form-control email1">
-                                        </div>
                                     </div>
 
                                     <div class="form-group row">
@@ -524,40 +476,12 @@
                                                    class="form-control date-picker datepicker">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="control-label col-md-3">Claims with this Employer:</label>
-
-                                        <div class="col-md-3">
-                                            <label class="radio-inline">
-                                                <div class="radio"><input type="radio" value="1"
-                                                                          name="claims_with_employer_35881[]"></div>
-                                                <span>Yes</span></label>
-                                            <label class="radio-inline">
-                                                <div class="radio"><input type="radio" value="0"
-                                                                          name="claims_with_employer_35881[]"></div>
-                                                <span>No</span></div>
-                                        </label>
-                                        <label class="control-label col-md-3">Date Claims Occurred:</label>
-
-                                        <div class="col-md-3">
-                                            <input type="text" name="claims_recovery_date[]"
-                                                   class="form-control date-picker datepicker">
-                                        </div>
-                                    </div>
 
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">Employment history confirmed by (Verifier
-                                            Use Only):</label>
+                                        <label class="control-label col-md-3">Comments:</label>
 
-                                        <div class="col-md-3">
-                                            <input type="text" name="emploment_history_confirm_verify_use[]"
-                                                   class="form-control">
-                                        </div>
-
-                                        <label class="control-label col-md-3">US DOT MC/MX#:</label>
-
-                                        <div class="col-md-3">
-                                            <input type="text" class="form-control" name="us_dot[]">
+                                        <div class="col-md-9">
+                                            <TEXTAREA name="emploment_history_confirm_verify_use[]" class="form-control"></TEXTAREA>
                                         </div>
 
                                         <label style="display: none;" class="control-label col-md-3"></label>
@@ -565,15 +489,6 @@
                                         <div class="col-md-3">
                                             <input type="text" name="signature[]" style="display: none;"
                                                    class="form-control">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label class="control-label col-md-3">Date:</label>
-
-                                        <div class="col-md-3">
-                                            <input type="text" name="signature_datetime[]"
-                                                   class="form-control date-picker datepicker">
                                         </div>
                                     </div>
 
@@ -629,34 +544,34 @@
 
 
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">Cargo Hauled: </label>
+                                        <label class="control-label col-md-3">Special Training: </label>
 
                                         <div class="col-md-9">
                                             <label class="checkbox-inline">
                                                 <div class="checkbox">
                                                     <div class="checked" style="margin-left:3px;"><span><input type="checkbox" value="1"
-                                                                                                               name="equipment_vans[]"></span>
+                                                                                                               name="cargo_tanker[]"></span>
                                                     </div><span>Tanker</span>
                                                 </div>
                                             </label>
                                             <label class="checkbox-inline">
                                                 <div class="checkbox">
                                                     <div class="checked" style="margin-left:3px;"><span><input type="checkbox" value="1"
-                                                                                                               name="equipment_reefer[]"></span>
+                                                                                                               name="cargo_dangerous[]"></span>
                                                     </div>   <span>Dangerous</span>
                                                 </div>
                                             </label>
                                             <label class="checkbox-inline">
                                                 <div class="checkbox">
                                                     <div class="checked" style="margin-left:3px;"><span><input type="checkbox" value="1"
-                                                                                                               name="equipment_decks[]"></span>
+                                                                                                               name="cargo_livestock[]"></span>
                                                     </div><span>Livestock</span>
                                                 </div>
                                             </label>
                                             <label class="checkbox-inline">
                                                 <div class="checkbox">
                                                     <div class="checked" style="margin-left:3px;"><span><input type="checkbox" value="1"
-                                                                                                               name="equipment_super[]"></span>
+                                                                                                               name="cargo_liquid[]"></span>
                                                     </div><span>Liquid</span>
                                                 </div>
                                             </label>

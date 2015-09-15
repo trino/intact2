@@ -3,7 +3,7 @@
     <hr />
 
                          <div class="form-group row">
-                            <h3 class="col-md-12">Reference <?php echo $_GET['references'];?></h3>
+                            <h3 class="col-md-12">Previous Employer <?php echo $_GET['references'];?></h3>
                         </div>
                         <div class="gndn">
                             <div class="form-group row">
@@ -46,14 +46,10 @@
                                </div>
 
                                <div class="form-group row">
-                               <label class="control-label col-md-3">Supervisor's Email:</label>
-                               <div class="col-md-3">
-                               <input type="text" name="supervisor_email[]" role="email" class="form-control email1">
-                               </div>
-                               <label class="control-label col-md-3">Secondary Email:</label>
-                               <div class="col-md-3">
-                               <input type="text" name="supervisor_secondary_email[]" role="email" class="form-control email1">
-                               </div>
+                                   <label class="control-label col-md-3">Supervisor's Email:</label>
+                                   <div class="col-md-3">
+                                        <input type="text" name="supervisor_email[]" role="email" class="form-control email1">
+                                   </div>
                                </div>
 
                                <div class="form-group row">
@@ -66,60 +62,45 @@
                                 <input type="text" name="employment_end_date[]" class="form-control date-picker datepicker">
                                 </div>
                                 </div>
-                                <div class="form-group row">
-                                <label class="control-label col-md-3">Claims with this Employer:</label>
-                               <div class="col-md-3">
-                               <input type="radio" value="1" name="claims_with_employer_35881[]">Yes
-                                <input type="radio" value="0" name="claims_with_employer_35881[]">No </div>
-                                 <label class="control-label col-md-3">Date Claims Occurred:</label>
-                                 <div class="col-md-3">
-                                 <input type="text" name="claims_recovery_date[]" class="form-control date-picker datepicker">
-                                 </div>
-                                 </div>
+
 
                                  <div class="form-group row">
-                                    <label class="control-label col-md-3">Employment history confirmed by (Verifier Use Only):</label>
-                                    <div class="col-md-3">
-                                        <input type="text" name="emploment_history_confirm_verify_use[]" class="form-control">
+                                    <label class="control-label col-md-3">Comments:</label>
+
+                                    <div class="col-md-9">
+                                        <TEXTAREA name="emploment_history_confirm_verify_use[]" class="form-control"></TEXTAREA>
                                     </div>
-
-                                <label class="control-label col-md-3">US DOT MC/MX#:</label>
-                                <div class="col-md-3">
-                                <input type="text" class="form-control" name="us_dot[]">
-                                </div>
-
-                                <label style="display: none;" class="control-label col-md-3"></label>
-                                <div class="col-md-3">
-                                <input type="text" name="signature[]" style="display: none;" class="form-control">
-                                </div>
                                 </div>
 
                                 <div class="form-group row">
-                                <label class="control-label col-md-3">Date:</label>
-                                <div class="col-md-3">
-                                <input type="text" name="signature_datetime[]" class="form-control date-picker datepicker">
-                                </div>
-                                </div>
-                                <div class="form-group row">
-                                            <label class="control-label col-md-3">Equipment Operated: </label>
-                                            <div class="col-md-9">
-                                               <input type="checkbox" value="1" name="equipment_vans[]"> Vans
-                                               <input type="checkbox" value="1" name="equipment_reefer[]"> Reefers
-                                               <input type="checkbox" value="1" name="equipment_decks[]"> Decks
-                                               <input type="checkbox" value="1" name="equipment_super[]"> Super B's
-                                               <input type="checkbox" value="1" name="equipment_straight_truck[]"> Straight Truck
-                                               <input type="checkbox" value="1" name="equipment_others[]"> Others:
-                                </div>
-                                </div>
-                                <div class="form-group row">
-                                <label class="control-label col-md-3">Driving Experience: </label>
-                                <div class="col-md-9">
-                                   <input type="checkbox" value="1" name="driving_experince_local[]"> Local
-                                   <input type="checkbox" value="1" name="driving_experince_canada[]"> Canada
-                                   <input type="checkbox" value="1" name="driving_experince_canada_rocky_mountains[]"> Canada: Rocky Mountains
-                                   <input type="checkbox" value="1" name="driving_experince_usa[]"> USA
+                                    <label class="control-label col-md-3">Equipment Operated: </label>
+                                    <div class="col-md-9">
+                                        <label><input type="checkbox" value="1" name="equipment_vans[]"> Vans</label>
+                                        <label><input type="checkbox" value="1" name="equipment_reefer[]"> Reefers</label>
+                                        <label><input type="checkbox" value="1" name="equipment_decks[]"> Decks</label>
+                                        <label><input type="checkbox" value="1" name="equipment_super[]"> Super B's</label>
+                                        <label><input type="checkbox" value="1" name="equipment_straight_truck[]"> Straight Truck</label>                                                                                                  <label><input type="checkbox" value="1" name="equipment_others[]"> Others:</label>
+                                    </div>
                                 </div>
 
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Special Training: </label>
+                                    <div class="col-md-9">
+                                        <label><input type="checkbox" value="1" name="cargo_tanker[]"> Tanker</label>
+                                        <label><input type="checkbox" value="1" name="cargo_dangerous[]"> Dangerous</label>
+                                        <label><input type="checkbox" value="1" name="cargo_livestock[]"> Livestock</label>
+                                        <label><input type="checkbox" value="1" name="cargo_liquid[]"> Liquid</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Driving Experience: </label>
+                                    <div class="col-md-9">
+                                        <label><input type="checkbox" value="1" name="driving_experince_local[]"> Local</label>
+                                        <label><input type="checkbox" value="1" name="driving_experince_canada[]"> Canada</label>
+                                        <label><input type="checkbox" value="1" name="driving_experince_canada_rocky_mountains[]"> Canada: Rocky Mountains</label>
+                                        <label><input type="checkbox" value="1" name="driving_experince_usa[]"> USA</label>
+                                    </div>
                                 </div>
                 </div>
 
