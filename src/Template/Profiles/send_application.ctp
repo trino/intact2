@@ -5,7 +5,7 @@
 			<div class="page-title">
 				<h1>Send <small>Application</small></h1>
 			</div>
-			
+			 
 		</div>
 	</div>
 	<!-- END PAGE HEAD -->
