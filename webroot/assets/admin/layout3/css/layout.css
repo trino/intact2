@@ -679,7 +679,7 @@ Page Header
   border: 0;
   padding: 0;
   box-shadow: none;
-  height: 116px;
+  height: auto;
   background-image: none;
   /* Header container */
   /* Fixed header */
@@ -705,7 +705,8 @@ Page Header
   z-index: 9995;
 }
 .page-header .page-header-top {
-  height: 65px;
+  height: auto;
+  padding: 10px 0;
   /* Header logo */
   /* Top menu */
   /* Menu Toggler */
