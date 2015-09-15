@@ -639,6 +639,21 @@ label {
   margin: 5px 0 15px;
 }
 
+.tabbable-custom > .nav-tabs > li.active, .nav-tabs li.active {
+  border-top: 3px solid #444d58 !important;
+}
+
+.nav-tabs li > a {
+  border-radius: 0 !important;
+}
+
+.nav.nav-tabs {
+    padding: 10px 20px 0;
+}
+
+.portlet > .portlet-title > .nav-tabs > li > a {
+  margin: 0 !important;
+}
 
 /*** ORDER TYPE CSS ***/
 .pricing-margin {
