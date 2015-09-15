@@ -83,9 +83,10 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo $this->request->webroot;?>assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
 <script src="<?php echo $this->request->webroot;?>assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
 <script src="<?php echo $this->request->webroot;?>js/ajaxupload.js" type="text/javascript"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
 <script src="<?php echo $this->request->webroot;?>assets/global/plugins/gmaps/gmaps.min.js" type="text/javascript"></script>
 <script src="<?php echo $this->request->webroot;?>assets/admin/pages/scripts/contact-us.js" type="text/javascript"></script>
-<script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="<?php echo $this->request->webroot;?>assets/global/scripts/metronic.js" type="text/javascript"></script>
