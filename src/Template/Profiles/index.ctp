@@ -213,7 +213,8 @@ $super = $this->request->session()->read('Profile.super');
                                                         echo $this->Html->link(__($strings["dashboard_edit"]), ['action' => 'edit', $profile->id], ['class' => btnclass("EDIT")]);
                                                 }
 
-
+                                                ?>
+                                                <!--
                                                 if ($sidebar->document_list == 1/* && $doc != 0 && $cn != 0*/) {
                                                     echo '<a href="';
                                                     if($profile->profile_type == '5' || $profile->profile_type == '7' || $profile->profile_type == '8' || $profile->profile_type == '11') {
@@ -227,7 +228,10 @@ $super = $this->request->session()->read('Profile.super');
                                                 if ($sidebar->orders_list == '1' && $profile->profile_type > 0) {
                                                     echo '<a href="' . $this->request->webroot  . 'orders/orderslist/?uploaded_for=' . $profile->id . '"';
                                                     echo ' class="' . btnclass("btn-info", "blue-soft") . '">' . $strings["profiles_vieworders"] . '</a>';
-                                                }
+                                                }-->
+                                                
+                                                <a href="<?php echo $this->request->webroot;?>profiles/broker_view" class="btn default btn-xs yellow-stripe">View Scorecard</a>
+                                                <?php
 
                                             if ($sidebar->profile_delete == '1') {
                                                 $CanDelete=false;

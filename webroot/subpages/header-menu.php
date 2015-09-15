@@ -55,7 +55,7 @@
                         <ul class="dropdown-menu pull-left">
                             <li class="">
 
-                                <a href="<?php echo $this->request->webroot; ?>profiles/listall"><i
+                                <a href="<?php echo $this->request->webroot; ?>profiles"><i
                                         class="icon-list"></i> List Drivers</a>
 
                             </li>
