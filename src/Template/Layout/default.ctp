@@ -167,23 +167,19 @@ jQuery(document).ready(function() {
 <div class="page-prefooter">
 	<div class="container">
 		<div class="row">
-<<<<<<< HEAD
-			<div class="col-md-5 col-sm-5 col-xs-12 footer-block">
-=======
-			<div class="col-md-4 col-sm-3 col-xs-12 footer-block">
->>>>>>> origin/master
+
+
+			<div class="col-md-3 col-sm-3 col-xs-12 footer-block">
+
 				<h2>About</h2>
 				<p>
 					 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam dolore.Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l depois divoltis pra.
 				</p>
 			</div>
-<<<<<<< HEAD
-			<div class="col-md-4 col-sm-4 col-xs12 footer-block">
-				<h2>Problem with this page?</h2>
-=======
+
 			<div class="col-md-3 col-sm-3 col-xs12 footer-block">
 				<h2>Send us a note</h2>
->>>>>>> origin/master
+
 				<div class="subscribe-form">
 					<form action="javascript:;">
 						<div class="input-group">
@@ -195,13 +191,10 @@ jQuery(document).ready(function() {
 					</form>
 				</div>
 			</div>
-<<<<<<< HEAD
-			<div class="col-md-3 col-sm-6 col-xs-12 footer-block">
-				<!--h2>Follow Us On</h2>
-=======
-			<div class="col-md-2 col-sm-3 col-xs-12 footer-block">
+
+
+			<div class="col-md-3 col-sm-3 col-xs-12 footer-block">
 				<h2>Follow Us On</h2>
->>>>>>> origin/master
 				<ul class="social-icons">
 					<li>
 						<a href="javascript:;" data-original-title="rss" class="rss"></a>
@@ -224,9 +217,9 @@ jQuery(document).ready(function() {
 					<li>
 						<a href="javascript:;" data-original-title="vimeo" class="vimeo"></a>
 					</li>
-				</ul-->
+				</ul>
 			</div>
-			<div class="col-md-2 col-sm-2 col-xs-12 footer-block">
+			<div class="col-md-3 col-sm-3 col-xs-12 footer-block">
 				<h2>Contacts</h2>
 				<address class="margin-bottom-40">
 
