@@ -36,9 +36,9 @@
 									<div class="well">
 										<h4>Address</h4>
 										<address>
-										<strong>Loop, Inc.</strong><br>
-										 795 Park Ave, Suite 120<br>
-										 San Francisco, CA 94107<br>
+										<strong>Intact Insurance</strong><br>
+										 6925 Century Avenue #900<br>
+										 Mississauga, ON L5N 0E3<br>
 										<abbr title="Phone">P:</abbr> (234) 145-1810 </address>
 										<address>
 										<strong>Email</strong><br>

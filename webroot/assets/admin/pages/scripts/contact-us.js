@@ -7,15 +7,15 @@ var ContactUs = function () {
 			$(document).ready(function(){
 			  map = new GMaps({
 				div: '#map',
-				lat: -13.004333,
-				lng: -38.494333
+				lat: 43.6028500,
+				lng: -79.7505200
 			  });
 			   var marker = map.addMarker({
-		            lat: -13.004333,
-					lng: -38.494333,
-		            title: 'Loop, Inc.',
+		            lat: 43.6028500,
+					lng: -79.7505200,
+		            title: 'Intact Insurance.',
 		            infoWindow: {
-		                content: "<b>Loop, Inc.</b> 795 Park Ave, Suite 120<br>San Francisco, CA 94107"
+		                content: "<b>Intact Insurance</b><br> 6925 Century Avenue #900<br>Mississauga, ON L5N 0E3"
 		            }
 		        });
 
