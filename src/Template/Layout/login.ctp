@@ -37,7 +37,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <link href="<?php echo $this->request->webroot;?>assets/admin/pages/css/login-soft.css" rel="stylesheet" type="text/css"/>
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME STYLES -->
-<link href="<?php echo $this->request->webroot;?>assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $this->request->webroot;?>assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $this->request->webroot;?>assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $this->request->webroot;?>assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
 <link id="style_color" href="<?php echo $this->request->webroot;?>assets/admin/layout/css/themes/default.css" rel="stylesheet" type="text/css"/>

@@ -488,7 +488,7 @@
                             <div class="row">
                                 <div class="col-md-8 col-sm-8 col-xs-12">FUEL TAX CALCULATOR 	</div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 upload_btns">
-                                    <DIV ID="excel_fuelchart" style="width: 100%; height: 400px; border: 1px solid black; overflow: auto; resize: both;">
+                                    <DIV ID="excel_fuelchart" style="width: 100%; height: 400px; overflow: auto; resize: both;">
                                         <HEADER>
                                             FUEL TAX CALCULATOR
                                         </HEADER>
@@ -734,7 +734,7 @@
                                 <div class="col-md-8 col-sm-8 col-xs-12">Cargo Detail Chart 	</div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 upload_btns">
 
-                                    <DIV ID="excel_test" style="width: 100%; height: 400px; border: 1px solid black; overflow: auto; resize: both;">
+                                    <DIV ID="excel_test" style="width: 100%; height: 400px; overflow: auto; resize: both;">
                                         <HEADER>
                                             Cargo Details chart
                                         </HEADER>

@@ -223,10 +223,10 @@
                         </div>
 
                         <div id="tab_1_2" class="tab-pane">
-                            <DIV ID="excel_accidents" style="width: 100%; height: 400px; border: 1px solid black; overflow: auto; resize: both;">
+                            <DIV ID="excel_accidents" style="width: 100%; height: 400px;  overflow: auto; resize: both;">
                                 <HEADER>
-                                    Previous Accidents and Insurance Claims<BR>
-                                    Regardless of Fault for past 6 years
+                                    <h3>Previous Accidents and Insurance Claims</h3>
+                                    <h5>Regardless of Fault for past 6 years</h5>
                                 </HEADER>
                                 <?php
                                     $EmbeddedMode=true;
@@ -696,7 +696,8 @@
 
                         <div id="tab_1_3" class="tab-pane">
                             <div class="certify_note margin-bottom-10 margin-top-10 clearfix">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="">
+                                    <h3>Consent</h3>
                                     I certify that I have completed this application and that all the information is
                                     true and accurate. I authorize Intact Insurance, ISB Canada and/or my Insurance
                                     Broker to do a background check(if deemed necessary) in accordance with Provincial

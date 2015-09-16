@@ -16,7 +16,7 @@
 <div class="portlet light clearfix">
 <div class="row">
 
-    <div class="col-xs-6"><div class="pricing hover-effect pricing-orders"><div class="pricing-head pricing-head-active"><h3>Order Products A La Carte<span> Lorem Ipsum A</span></h3></div><input type="hidden" value="add_driver" name="document_type"><div class="form-group clientsel"><div style="margin-top: 15px;" class="row"><div align="right" style="margin-top: 6px;" class="col-xs-3 control-label">Client</div><div class="col-xs-6">
+    <div class="col-xs-6"><div class="pricing "><div class="pricing-head pricing-head-active"><h3>Order Products A La Carte<span> Lorem Ipsum A</span></h3></div><input type="hidden" value="add_driver" name="document_type"><div class="form-group clientsel"><div style="margin-top: 15px;" class="row"><div align="right" style="margin-top: 6px;" class="col-xs-3 control-label">Client</div><div class="col-xs-6">
         <script type="text/javascript">
             function reload(value) {
                 var container = document.getElementById("selecting_driver");
