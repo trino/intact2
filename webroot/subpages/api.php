@@ -426,7 +426,7 @@ function provinces($name){
     echo '</SELECT>';
 }
 
-function getprovinces($Language = "English", $IncludeUSA = False){
+function getprovinces($Language = "English", $IncludeUSA = False, $IncludeCanada = true){
     $Trans="";
     if($Language == ""){$Language = $GLOBALS["language"];}
     if($Language == "Debug"){
@@ -451,7 +451,13 @@ function getprovinces($Language = "English", $IncludeUSA = False){
             echo "Please add support for '" . $Language . "' in subpages/api.php (getprovinces)";
             die();
     }
-    if($IncludeUSA) {$provinces = array_merge($provinces, $states);}
+    if($IncludeUSA) {
+        if($IncludeCanada){
+            $provinces = array_merge($provinces, $states);
+        } else {
+            $provinces = $states;
+        }
+    }
     $provinces = addTrans($provinces, $Trans);//debug mode
     return $provinces;
 }

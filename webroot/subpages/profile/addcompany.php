@@ -1,8 +1,10 @@
 <?php
     include(APP."../application/signature.php");
 
-    $EmbeddedMode=true;
-    include(APP."../src/Template/Excel/index.ctp");
+    //$EmbeddedMode=true;
+    //include(APP."../src/Template/Excel/index.ctp");
+
+    include("subpages/profile/incidents.php");
 ?>
 <form id="transportappform" class="transport-app-form" method="post" action="">
     <div class="row">
@@ -486,14 +488,39 @@
                     <div class="row margin-bottom-10">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="row">
-                                <div class="col-md-8 col-sm-8 col-xs-12">FUEL TAX CALCULATOR 	</div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 upload_btns">
                                     <DIV ID="excel_fuelchart" style="width: 100%; height: 400px; overflow: auto; resize: both;">
                                         <HEADER>
                                             FUEL TAX CALCULATOR
                                         </HEADER>
                                         <?php
-                                            printtable($this, $Manager, "fuelchart", "id", false, false, true, true);
+                                            //printtable($this, $Manager, "fuelchart", "id", false, false, true, true);
+                                            $Columns = array();
+                                            $Columns["Province/State"] = array("TYPE" => "READONLY");
+                                            $Columns["1st QTR"] = array("TYPE" => "NUMBER");
+                                            $Columns["2nd QTR"] = array("TYPE" => "NUMBER");
+                                            $Columns["3rd QTR"] = array("TYPE" => "NUMBER");
+                                            $Columns["4th QTR"] = array("TYPE" => "NUMBER");
+                                            $Columns["Total"] = array("TYPE" => "READONLY");
+                                            $Columns["Percent"] = array("TYPE" => "READONLY");
+
+                                            $Provinces = getprovinces("English", false, true);
+                                            $States =  getprovinces("English", true, false);
+                                            unset($Provinces["Select Province"]);
+                                            unset($States["Select Province"]);
+
+                                            $Data="Canada";
+                                            foreach($Provinces as $Province){
+                                                $Data .= "\r\n" . $Province;
+                                            }
+                                            $Data .= "\r\nUSA";
+                                            foreach($States as $State){
+                                                $Data .= "\r\n" . $State;
+                                            }
+
+                                        $UpdateCode = "var val = Number(getcell_fuelchart(Row, 1)) + Number(getcell_fuelchart(Row, 2)) + Number(getcell_fuelchart(Row, 3)) + Number(getcell_fuelchart(Row, 4)); setcell_fuelchart(Row, 5, val);";
+
+                                            makechart("fuelchart", $Columns, $Data, false, $UpdateCode);
                                         ?>
                                         <FOOTER>
                                             Completion of this form does not bind coverage.<BR>
@@ -739,7 +766,7 @@
                                             Cargo Details chart
                                         </HEADER>
                                         <?php
-                                        printtable($this, $Manager, "test", "id", false, false, true, true);
+                                            //printtable($this, $Manager, "test", "id", false, false, true, true);
                                         ?>
                                         <FOOTER>
                                             Completion of this form does not bind coverage.<BR>

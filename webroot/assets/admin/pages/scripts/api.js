@@ -20,8 +20,28 @@ function deleteattribute(ID, Class){
     selectelement(ID).removeAttribute(Class);
 }
 
+function inputtype(element){
+    element = document.getElementById(element);
+    if (element.hasAttribute("type")) {
+        return element.getAttribute("type").toLowerCase().trim();
+    } else {
+        return elementtype(element);
+    }
+}
+
 function setvalue(ID, Value){
-    selectelement(ID).value = Value;
+    var type = inputtype(ID);
+    switch(type) {
+        case "div":
+            setinnerhtml(ID, Value);
+            break;
+        default:
+            selectelement(ID).value = Value;
+    }
+}
+
+function isarray(someVar){
+    return Object.prototype.toString.call( someVar ) === '[object Array]' ;
 }
 
 function clearselect(ID){
@@ -117,5 +137,7 @@ function appendhtml(ID, HTML){
 }
 
 function replaceAll(find, replace, str) {
-    return str.replace(new RegExp(find, 'g'), replace);
+    if (typeof str === 'string' || str instanceof String) {
+        return str.replace(new RegExp(find, 'g'), replace);
+    }
 }

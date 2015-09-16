@@ -237,6 +237,16 @@
                                         printtable($this, $Manager, "accidents", "ID", false, false, true, true, false, false, false, true);
                                     */
                                     include("subpages/profile/incidents.php");
+
+                                    $chart = array();
+                                    $chart["Reference"] = array("TYPE" => "NUMBER");
+                                    $chart["Date"] =  array("TYPE" => "DATE");
+                                    $chart["Type of Loss"] =  array("TYPE" => "SELECT", "CLASS" => "BI|PD|AB|DC-PD|UA|COL/AP|COMP/SP");
+                                    $chart["Amount Paid ($)"] = array("TYPE" => "NUMBER");
+                                    $chart["Location"] = array("TYPE" => "TEXT");
+                                    $chart["Details"] = array("TYPE" => "TEXT");
+
+                                    makechart("incidents", $chart);
                                 ?>
                             </div>
 

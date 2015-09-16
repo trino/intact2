@@ -116,6 +116,7 @@ function radiovalue(Name){
 function isVisible (element) {
     return element.clientWidth !== 0 && element.clientHeight !== 0 && element.style.opacity !== 0 && element.style.visibility !== 'hidden';
 }
+
 function elementtype(element){
     return element.tagName.toLowerCase();
 }
@@ -132,6 +133,9 @@ function getinputvalue(element){
         tagtype = elementtype(element);
     }
     switch (tagtype){
+        case "div":
+            value = element.innerHTML;
+            break;
         case "td":
             value = element.getAttribute("value");
             break;
