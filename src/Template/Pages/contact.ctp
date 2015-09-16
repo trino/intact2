@@ -11,9 +11,8 @@
 	<!-- END PAGE HEAD -->
 	<!-- BEGIN PAGE CONTENT -->
 	<div class="page-content">
-    
-    
-            <div class="container">
+        
+    <div class="container">
 
 <!-- BEGIN PAGE CONTENT INNER -->
 			<div class="portlet light">
@@ -123,4 +122,4 @@
 			<!-- END PAGE CONTENT INNER -->
             
             </div>
-            </div>
+            </div></p>

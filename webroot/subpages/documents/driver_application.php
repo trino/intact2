@@ -1,12 +1,11 @@
+
+<form id="form_tab2">
 <?php
  if($this->request->session()->read('debug'))
         echo "<span style ='color:red;'>subpages/documents/driver_application.php #INC140</span>";
  ?>
-<form id="form_tab2">
 <input type="hidden" class="document_type" name="document_type" value="<?php echo $dx->title;?>" id="af" />
 <input type="hidden" name="sub_doc_id" value="2" class="sub_docs_id" id="af" />
-<div class="clearfix"></div>
-<hr />
 
 <?php
     $controller = $this->request->params['controller'];

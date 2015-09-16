@@ -73,7 +73,9 @@ include_once 'subpages/filelist.php';
         <div class="clearfix"></div>
 
         <div class="form-group row">
+        <div class="col-md-12">
             <h4 class="center">Intro</h4>
+        </div>
         </div>
 
         <div class="clearfix"></div>
@@ -106,7 +108,9 @@ include_once 'subpages/filelist.php';
         </div>
 
         <div class="form-group row">
+        <div class="col-md-12">
             <h4 class="center">Basic Requirements</h4>
+        </div>
         </div>
 
         <div class="form-group row">
@@ -424,7 +428,9 @@ include_once 'subpages/filelist.php';
         </div>
 
         <div class="form-group row">
+        <div class="col-md-12">
             <h4 class="center">Discovery</h4>
+        </div>
         </div>
 
         <div class="form-group row">
@@ -639,7 +645,9 @@ include_once 'subpages/filelist.php';
         </div>
 
         <div class="form-group row">
+        <div class="col-md-12">
             <h4 class="center">Expectations</h4>
+            </div>
         </div>
 
         <div class="form-group row">
@@ -716,7 +724,9 @@ include_once 'subpages/filelist.php';
 
 
         <div class="form-group row">
+        <div class="col-md-12">
             <h4 class="center" colspan="2">Closing</h4>
+            </div>
         </div>
 
         <div class="form-group row">
@@ -739,7 +749,9 @@ include_once 'subpages/filelist.php';
 
 
         <div class="form-group row">
+        <div class="col-md-12">
             <h4 class="center">Explain the next steps:</h4>
+        </div>
         </div>
         <div class="form-group row">
             <div class="col-md-6">
@@ -778,7 +790,9 @@ include_once 'subpages/filelist.php';
         </div>
 
         <div class="form-group row">
+        <div class="col-md-12">
             <h4 class="center">Questions for Trainees</h4>
+        </div>
         </div>
 
         <div class="form-group row">
@@ -836,7 +850,9 @@ include_once 'subpages/filelist.php';
         </div>
 
         <div class="form-group row">
+        <div class="col-md-12">
             <h4 class="center">Have you driven since getting your AZ?  If so, please provide details:</h4>
+        </div>
         </div>
 
     <div class="form-group row">

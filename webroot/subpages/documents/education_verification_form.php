@@ -10,7 +10,7 @@
 
     <div class="tab-content">
         <div class="tab-pane active" id="subtab_2_3">
-            <form id="form_education">
+            <form id="form_education"  style="padding-bottom: 10px;">
                 <?php
                     include_once 'subpages/filelist.php';
                     if (isset($sub4['att'])) {listfiles($sub4['att'], "attachments/", "", false, 3);}

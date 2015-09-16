@@ -18,10 +18,12 @@ function makerow($profile, $Fields){
             <?php foreach($Fields as $Label => $Field){
                 ?>
     <div class="col-md-6">
+    <div class="row">
                     <label class="control-label col-md-6"><?= $Label; ?>:  </label>
                     <div class="col-md-6">
                         <input class="form-control" name="<?= $Field; ?>" value="<?= $profile->$Field ;?>" />
                     </div>
+                </div>
                 </div>
             <?php
                 $theindex = $theindex+1;
@@ -48,6 +50,7 @@ function makerow($profile, $Fields){
         <div class="clearfix"></div>
         <hr/>
         <div class="col-md-12">
+        <div class="row">
             <div class="col-md-6"><img src="<?php
                 if ($ClientID == 26) {
                     echo $this->request->webroot . "img/gfs.png";
@@ -57,6 +60,7 @@ function makerow($profile, $Fields){
                 ?>" style="width: 120px;" /></div>
             <div class="clearfix"></div>
         </div>
+        </div>
         <div class="clearfix"></div>
         <p>&nbsp;</p>
 
@@ -64,6 +68,7 @@ function makerow($profile, $Fields){
 
         <div>
             <div class="col-md-6">
+            <div class="row">
                     <label class="control-label col-md-3">Name: </label>
                     <div class="col-md-3">              
                         <input class="form-control" name="lname" placeholder="Last" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->lname;?>" />
@@ -75,7 +80,9 @@ function makerow($profile, $Fields){
                         <input class="form-control" name="fname" placeholder="First" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->fname;?>" />
                     </div>
             </div>
+            </div>
             <div class="col-md-6">
+            <div class="row">
                     <label class="control-label col-md-4">Telephone: </label>  
                     <div class="col-md-3">              
                         <input class="form-control" name="code" placeholder="Area Code" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->code;?>" />
@@ -83,19 +90,23 @@ function makerow($profile, $Fields){
                     <div class="col-md-5">              
                         <input class="form-control" role="phone" name="phone" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->phone;?>" />
                     </div>
+                    </div>
             </div> 
         </div>
         
         <p>&nbsp;</p>
             <div class="col-md-12">
+            <div class="row">
                     <label class="control-label col-md-4">Current Address: </label>  
                     <div class="col-md-8">              
                         <input class="form-control" name="address" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->address;?>" />
                     </div>  
             </div>
+            </div>
             
         <p>&nbsp;</p>
             <div class="col-md-12">
+            <div class="row">
                     <label class="control-label col-md-4">Have you ever applied for work with us before? </label>  
                     <div class="col-md-2 radio-list yesNoCheck">
                         <label class="radio-inline">
@@ -139,22 +150,28 @@ function makerow($profile, $Fields){
                         </div>
                     </div> 
             </div>
+            </div>
             <p>&nbsp;</p>
             <div class="col-md-12 nothuron">
+            <div class="row">
                     <label class="control-label col-md-4">List anyone you know who woks for us: </label>
                     <div class="col-md-8">
                         <input class="form-control" name="for_us"value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->for_us;?>" /> 
                     </div>
             </div>
+            </div>
             <p>&nbsp;</p>
             <div class="col-md-12 nothuron">
+            <div class="row">
                     <label class="control-label col-md-4">Did anyone refer you? </label>
                     <div class="col-md-8">
                         <input class="form-control" name="refer"value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->refer;?>" /> 
                     </div>
             </div>
+            </div>
             <p>&nbsp;</p>
             <div class="col-md-6">
+            <div class="row">
                     <label class="control-label col-md-8">Are you 18 years of age or older? </label>  
                     <div class="col-md-4 radio-list">
                         <label class="radio-inline">
@@ -191,7 +208,9 @@ function makerow($profile, $Fields){
                         </label>
                     </div>
             </div>
+            </div>
             <div class="col-md-6">
+            <div class="row">
                     <label class="control-label col-md-8">Are you legally eligible to work in Canada? </label>  
                     <div class="col-md-4 radio-list">
                         <label class="radio-inline">
@@ -228,15 +247,18 @@ function makerow($profile, $Fields){
                         </label>
                     </div>
             </div>
+            </div>
         <div class="clearfix"></div>
         
         <p>&nbsp;</p>
 
     <div class="col-md-12">
+    <div class="row">
         <h3 class="col-md-12">Driver's License</h3>
+        </div>
     </div>
     <div class="col-md-12">
-
+        <div class="">
         <div class="col-md-4">
             <div class="form-group">
                 <label class="control-label required">Driver's License #:</label>
@@ -258,20 +280,24 @@ function makerow($profile, $Fields){
             </div>
         </div>
     </div>
+    </div>
     <p>&nbsp;</p>
 
 
     <div class="col-md-12 nothuron">
+    <div class="row">
         <h3 class="col-md-12">SIN Card</h3>
+        </div>
     </div>
     <div class="col-md-12">
-
+<div class="row">
         <div class="col-md-4 nothuron">
             <div class="form-group">
                 <label class="control-label required">SIN:</label>
                 <input name="sin" type="text" required class="form-control <?php if($ClientID==26) { echo "required"; } ?> req_driver" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->sin;?>" >
             </div>
         </div>
+    </div>
     </div>
     <p>&nbsp;</p>
 
@@ -328,13 +354,16 @@ function makerow($profile, $Fields){
         
             <p>&nbsp;</p-->
             <div class="col-md-12">
+            <div class="row">
                     <label class="control-label col-md-10">Do you have any skills, qualifications or experiences which you feel would specially fit you for working with us? </label>  
                     <div class="col-md-2">
                         <textarea class="form-control" name="skills"><?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->skills;?></textarea> 
                     </div>
             </div>
+            </div>
             <p>&nbsp;</p>
             <div class="col-md-12 nothuron">
+            <div class="row">
                     <div class="col-md-12">
                         <label class="control-label col-md-2">Job(s) Applied for: </label> 
                     </div> 
@@ -368,8 +397,10 @@ function makerow($profile, $Fields){
                         </div>
                     </div>
             </div>
+            </div>
             <p>&nbsp;</p>
             <div class="col-md-12">
+            <div class="row">
                     <label class="control-label col-md-5">Do you want to work: </label>  
                     <div class="col-md-7 radio-list">
                         <label class="radio-inline">
@@ -406,17 +437,21 @@ function makerow($profile, $Fields){
                         </label>
                     </div>
             </div>
+            </div>
             <div id="partTimeDiv" style="display: none;">
             <p>&nbsp;</p>
             <div class="col-md-12">
+            <div class="row">
                 <label class="control-label col-md-5">If applying only for part-time, which days and hours?</label> 
                 <div class="col-md-7">              
                     <textarea class="form-control" name="part"><?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->part;?></textarea>
                 </div>
             </div>
             </div>
+            </div>
             <p>&nbsp;</p>
             <div class="col-md-12">
+            <div class="row">
                     <label class="control-label col-md-5">Are you able to do the job(s) for which you are applying? </label>  
                     <div class="col-md-7 radio-list">
                         <label class="radio-inline">
@@ -453,13 +488,16 @@ function makerow($profile, $Fields){
                         </label>
                     </div> 
             </div>
+            </div>
             <div id="notAbleDiv" style="display: none;">
             <p>&nbsp;</p>
             <div class="col-md-12">
+            <div class="row">
                 <label class="control-label col-md-5">If no, please explain: </label> 
                 <div class="col-md-7">              
                     <textarea class="form-control" name="no_explain"><?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->no_explain;?></textarea>
                 </div>
+            </div>
             </div>
              </div> 
              
@@ -580,32 +618,42 @@ function makerow($profile, $Fields){
                 
         
         <div class="col-md-12">
+        <div class="row">
             <label class="col-md-6">Show special courses or training that will help you as as driver</label>
             <div class="col-md-6"><textarea class="form-control" name="special_course"><?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->special_course;?></textarea></div>
             <p>&nbsp;</p>
         </div>
+        </div>
         <div class="col-md-12">
+        <div class="row">
             <label class="col-md-6">Which safe driving awaards do you hold and from whom?</label>
             <div class="col-md-6"><textarea class="form-control" name="which_safe_driving"><?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->which_safe_driving;?></textarea></div>
             <p>&nbsp;</p>
         </div>
+        </div>
         <div class="col-md-12">
+        <div class="row">
             <label class="col-md-6">Show any trucking, transportation or other experiences that may help in your work for this company:</label>
             <div class="col-md-6"><textarea class="form-control" name="show_any_trucking"><?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->show_any_trucking;?></textarea></div>
             <p>&nbsp;</p>
         </div>
+        </div>
         <div class="col-md-12">
+        <div class="row">
             <label class="col-md-6">List courses and training other than shown elsewhere in this application</label>
             <div class="col-md-6"><textarea class="form-control" name="list_courses_training"><?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->list_courses_training;?></textarea></div>
             <p>&nbsp;</p>
         </div>
+        </div>
         <div class="col-md-12">
+        <div class="row">
             <label class="col-md-6">List special equipment or technical materials you can work with (other than those already shown)</label>
             <div class="col-md-6"><textarea class="form-control" name="list_special_equipment"><?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->list_special_equipment;?></textarea></div>
             <p>&nbsp;</p>
         </div>
+        </div>
         
-        <hr>
+        <hr/>
         <div class="col-md-12">
              <h3>EMPLOYMENT HISTORY</h3>
              <!--p>Please list your most recent employment first. Add another sheet if necessary. History must be the last three year’s. Commercial drivers shall provide
@@ -724,6 +772,7 @@ function makerow($profile, $Fields){
             </table-->
         </div>
         <div class="col-md-12">
+        <div class="row">
             <label class="col-md-6">Would you be willing to take a physical exam?</label>
             <div class="col-md-6 radio-list">
             <label class="radio-inline">
@@ -764,16 +813,22 @@ function makerow($profile, $Fields){
               </label>
               </div>
         </div>
+        </div>
         
         <div class="col-md-12">
+        <div class="row">
             <label class="col-md-6">What are your aspirations, now and in the future?</label>
             <div class="col-md-12"><textarea class="form-control" name="aspirations"><?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->aspirations;?></textarea></div>
         </div>
+        </div>
         <div class="col-md-12">
+        <div class="row">
             <label class="col-md-6">Why do you think you are the best qualified candidate?</label>
             <div class="col-md-12"><textarea class="form-control" name="best_qualified"><?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->best_qualified;?></textarea></div>
         </div>
+        </div>
         <div class="col-md-12">
+        <div class="row">
             <label class="col-md-6">Would you be willing to relocate?</label>
             <div class="col-md-6 radio-list">
                 <label class="radio-inline">
@@ -811,9 +866,12 @@ function makerow($profile, $Fields){
                  </label>
              </div>
         </div>
+        </div>
         <div class="col-md-12">
+        <div class="row">
             <label class="col-md-6">Which of your former positions did you like best and why?</label>
             <div class="col-md-12"><textarea class="form-control" name="best_former_positions"><?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->best_former_posotions;?></textarea></div>
+        </div>
         </div>
         <p>&nbsp;</p>
         <div class="col-md-12">
@@ -915,57 +973,82 @@ through 7 inclusive, and acknowledge that with my signature below.
         <p>&nbsp;</p>
         
         <div class="col-md-6">
+        <div class="row">
             <label class="col-md-6">Dated</label>
-            <input type="text" name="dated" class="form-control date-picker datepicker" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->dated;?>" />
+            <div class="col-md-6"><input type="text" name="dated" class="form-control date-picker datepicker" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->dated;?>" />
+        </div>
+        </div>
         </div>
         <div class="col-md-6">
-            <label class="col-md-12">Signature</label>
-            <?php include('canvas/gfs_signature.php');?>
+        <div class="row">
+            <label class="col-md-6">Signature</label>
+            <div class="col-md-6"><?php include('canvas/gfs_signature.php');?></div>
             
+        </div>
         </div>
         
         <p>&nbsp;</p>
         
-        <div class="col-md-12" style="">
+        <div class="col-md-12" style="margin-bottom: 20px;">
             <h3 style="color: #FFF;background: #5B5A5A;padding:5px;">Process Record - For Use by <?= $Client->company_name; ?> Representatives ONLY!</h3>
         </div>
         <div class="col-md-12">
+        <div class="row">
             <div class="col-md-4">
+            <div class="row">
                 <label class="col-md-6">Applicant Hired</label>
                 <div class="col-md-6"><input type="text" name="applicant_hired" class="form-control" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->applicant_hired;?>" /></div>            
             </div>
+            </div>
             <div class="col-md-4">
+            <div class="row">
                 <label class="col-md-6">Date Employed</label>
                 <div class="col-md-6"><input type="text" name="date_employed" class="form-control date-picker datepicker" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->date_employed;?>" /></div>
             </div>
+            </div>
             <div class="col-md-4">
+            <div class="row">
                 <label class="col-md-6">Starting Salary/Wage</label>
                 <div class="col-md-6"><input type="text" name="starting_salary" class="form-control" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->starting_salary;?>" /></div>            
             </div>
+            </div>
+        </div>
         </div>
         <p>&nbsp;</p>
         <div class="col-md-12">
+        <div class="row">
             <div class="col-md-8">
+            <div class="row">
                 <label class="col-md-3">Position</label>
                 <div class="col-md-9"><input type="text" name="position_company" class="form-control" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->position_company;?>" /></div>            
             </div>
+            </div>
             <div class="col-md-4">
+            <div class="row">
                 <label class="col-md-6">Branch</label>
                 <div class="col-md-6"><input type="text" name="branch_company" class="form-control" value="<?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->branch_company;?>" /></div>            
             </div>
+            </div>
             
+        </div>
         </div>
         <p>&nbsp;</p>
         <div class="col-md-12">
+        <div class="row">
             <div class="col-md-12">
+            <div class="row">
                 <label class="col-md-12">Comments</label>
                 <div class="col-md-12"><textarea name="comments_company" class="form-control"><?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->comments_company;?></textarea></div>            
             </div>
+            </div>
             <p>&nbsp;</p>
              <div class="col-md-12">
+             <div class="row">
                 <label class="col-md-12">If rejected, give reasons:</label>
                 <div class="col-md-12"><textarea name="if_rejected" class="form-control"><?php if(isset($application_for_employment_gfs))echo $application_for_employment_gfs->if_rejected;?></textarea></div>            
-            </div>       
+            </div> 
+            </div>      
+        </div>
         </div>
         <?php if($this->request->params['controller']!='Documents'){?>
         <div class="addattachment<?php echo $dx->id;?> form-group col-md-12"></div> 

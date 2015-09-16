@@ -10,25 +10,31 @@
         
         <div>
             <div class="col-md-4">
+            <div class="row">
                     <label class="control-label col-md-4">Driver: </label>  
                     <div class="col-md-8">              
                         <input class="form-control" name="driver" value="<?php if(isset($pre_employment_road_test))echo $pre_employment_road_test->driver;?>"/>
                     </div>
             </div>
+            </div>
 
             <div class="col-md-4">
+            <div class="row">
                     <label class="control-label col-md-4">Evaluator: </label>  
                     <div class="col-md-8">              
                         <input class="form-control" name="evaluator" value="<?php if(isset($pre_employment_road_test))echo $pre_employment_road_test->evaluator;?>"/>
                     </div>
             </div> 
+            </div>
             <div class="col-md-4">
+            <div class="row">
                     <label class="control-label col-md-4">Date: </label>  
                     <div class="col-md-8">              
                         <input class="form-control" name="date" value="<?php if(isset($pre_employment_road_test))echo $pre_employment_road_test->date;?>"/>
                     </div>
             </div> 
         </div> 
+        </div>
         <div class="clearfix"></div>
         <p>&nbsp;</p>
         <div class="table-scrollable">
@@ -117,6 +123,7 @@
         </div>
         <p>&nbsp;</p>
         <div class="col-md-12">
+        <div class="row">
             <div class="col-md-12">
                 <table class="table table-bordered">
                         <tr>
@@ -281,6 +288,7 @@
                 </table>
                 </div>
             </div>
+            </div>
         </div>
         <p>&nbsp;</p>
         <div class="col-md-12">
@@ -392,6 +400,7 @@
         </div>
         <p>&nbsp;</p>
         <div class="col-md-12">
+        <div class="row">
             <div class="col-md-12">
                 <table class="table table-bordered">
                 <tr>
@@ -576,6 +585,7 @@
                 </table>              
             </div>
         </div>
+        </div>
         <p>&nbsp;</p>
         </td>
         
@@ -722,6 +732,7 @@
         
         <p>&nbsp;</p>
         <div class="col-md-12">
+        <div class="row">
             <div class="col-md-12">
             <table class="table table-bordered">
             <tr>
@@ -843,13 +854,16 @@
             </table>
             </div>
         </div>
+        </div>
         
         <p>&nbsp;</p>
         <div class="col-md-12">
+        <div class="row">
             <label class="col-md-12">Comments</label>
             <div class="col-md-12">
                 <textarea name="comment" style="height: 120px;" class="form-control"><?php if(isset($pre_employment_road_test))echo $pre_employment_road_test->comment;?></textarea>
             </div>
+        </div>
         </div>
         <p>&nbsp;</p>
         </td>

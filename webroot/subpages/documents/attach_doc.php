@@ -17,6 +17,7 @@
             <div class="form-group col-md-12">
 
                 <div class="docMore <?php echo $addmoreid;?>" data-count="1">
+                <div class="row">
                     <div class="col-md-12">
                         <div style="display:block; padding:15px 0;">
                             <a href="javascript:void(0)" id="<?php echo $addmoreid;?>" class="btn btn-primary">Browse</a>
@@ -27,13 +28,16 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
             <div class="form-group col-md-12">
+            <div class="row">
                 <div class="col-md-12">
                     <a href="javascript:void(0)" class="btn btn-info addMoredoc" onclick="addmoredoc('<?php echo $addmoreid;?>');">
                         Add More
                     </a>
                 </div>
+            </div>
             </div>
         <?php }
     echo '</div>';
