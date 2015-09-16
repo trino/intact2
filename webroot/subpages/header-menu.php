@@ -1,10 +1,3 @@
-<?php
-    $settings = $this->requestAction('settings/get_settings');
-    $debug = $this->request->session()->read('debug');
-    include_once('subpages/api.php');
-    $language = $this->request->session()->read('Profile.language');
-    $strings = CacheTranslations($language, array("langswitch", "orders_create"), $settings);//,$registry);
-?>
 
 <div class="page-header-menu">
     <div class="container">
@@ -124,19 +117,19 @@
                         <ul class="dropdown-menu pull-left">
                             <li class="">
 
-                                <a href="<?php echo $this->request->webroot; ?>tasks/calender"><i class="fa fa-edit"></i> <?= $strings["index_tasks"]; ?></a>
+                                <a href="<?= $this->request->webroot; ?>tasks/calender"><i class="fa fa-edit"></i> <?= $strings["index_tasks"]; ?></a>
 
                             </li>
                             <li class="">
-                                <a href="<?php echo $this->request->webroot;?>pages/view/help"><i class="fa fa-bell"></i> Help</a>
+                                <a href="<?= $this->request->webroot;?>pages/view/help"><i class="fa fa-bell"></i> Help</a>
 
                             </li>
                             <li class="">
-                                <a href="<?php echo $this->request->webroot; ?>pages/contact"><i class="fa fa-envelope"></i> Contact Us</a>
+                                <a href="<?= $this->request->webroot; ?>pages/contact"><i class="fa fa-envelope"></i> Contact Us</a>
                             </li>
 
                             <li class="">
-                                <a href="<?php echo $this->request->webroot; ?>profiles/langswitch/<?php echo $this->request->session()->read('Profile.id'); ?>">
+                                <a href="<?= $this->request->webroot; ?>profiles/langswitch/<?= $this->request->session()->read('Profile.id'); ?>">
                                     <i class="icon-user"></i> <?= $strings["langswitch"]; ?></a>
                             </li>
 

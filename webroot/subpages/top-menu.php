@@ -1,3 +1,11 @@
+<?php
+$settings = $this->requestAction('settings/get_settings');
+$debug = $this->request->session()->read('debug');
+include_once('subpages/api.php');
+$language = $this->request->session()->read('Profile.language');
+$strings = CacheTranslations($language, array("langswitch", "orders_create"), $settings);//,$registry);
+?>
+
 <div class="top-menu">
 
 	<!--<img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo-default" style="width: 120px;padding-right:20px;" />-->
@@ -21,8 +29,8 @@
 								<i class="icon-user"></i> My Profile </a>
 							</li>
 							<li>
-								<a href="#">
-								<i class="fa fa-comment"></i>   Passer au francais </a>
+								<a href="<?= $this->request->webroot; ?>profiles/langswitch/<?= $this->request->session()->read('Profile.id'); ?>">
+									<i class="icon-user"></i> <?= $strings["langswitch"]; ?></a>
 							</li>
 							
 							<li>

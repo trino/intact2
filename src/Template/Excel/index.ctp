@@ -387,6 +387,7 @@ function commonjavascriptfunctions(){
     setinnerhtml("prompt_title", Title);
     clearselect("prompt_select");
     $("#dialog-form").dialog("open");
+    setattribute("dialog-form", "style", "background-color: white;");
     }
 
     function listprompt(Title, Choices){
@@ -702,7 +703,7 @@ function printdialog(){
     if (isset($GLOBALS["dialogform"])) {return false;}
     $GLOBALS["dialogform"]=true;
     ?>
-    <div id="dialog-form" style="display: none">
+    <div id="dialog-form" style="display: none;">
         <form>
             <label for="prompt" id="prompt_title">Name</label>
             <SELECT name="prompt" id="prompt_select" class="text ui-widget-content ui-corner-all" />
