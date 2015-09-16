@@ -1,3 +1,6 @@
+<SCRIPT>
+    var references = 2;
+</SCRIPT>
 <style>
     .overlay-wrapper {
         background: rgba(255, 255, 255, 0.7) none repeat scroll 0 0;
@@ -228,11 +231,12 @@
                                     <h5>Regardless of Fault for past 6 years</h5>
                                 </HEADER>
                                 <?php
-                                    $EmbeddedMode=true;
-                                    //Columns = false, $Letters = false, $EmbeddedMode = false, $HTMLMode = false, $Data = false, $Count = false, $Conditions = false, $AllowNew
-                                    include(APP."../src/Template/Excel/index.ctp");
-
-                                    printtable($this, $Manager, "accidents", "ID", false, false, true, true, false, false, false, true);
+                                    /*
+                                        $EmbeddedMode=true;
+                                        include(APP."../src/Template/Excel/index.ctp");
+                                        printtable($this, $Manager, "accidents", "ID", false, false, true, true, false, false, false, true);
+                                    */
+                                    include("subpages/profile/incidents.php");
                                 ?>
                             </div>
 
@@ -787,14 +791,13 @@
 </div>
 
 <script>
-
     function add_more() {//$("#add_more").click(function () {
-        var references = Number($('#count_past_emp').val()) + Number(1);
+        //var references = Number($('#count_past_emp').val()) + Number(1);
         $.ajax({
-            url: "<?= $this->request->webroot;?>subpages/documents/addloe.php?references=" + references,
+            url: "<?= $this->request->webroot;?>subpages/documents/addloe.php?references=" + (references+1),
             success: function (res) {
                 $("#more_div").append(res);
-
+                references++;
                 $('#count_past_emp').attr('value', references);
             },
             error: function (res) {
