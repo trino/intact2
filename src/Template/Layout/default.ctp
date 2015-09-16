@@ -128,20 +128,21 @@ jQuery(document).ready(function() {
 		<div class="container">
         <div class="row">
 			<!-- BEGIN LOGO -->
-			<div class="page-logo col-md-3 col-sm-3 col-xs-12">
-            <?php $logo = $this->requestAction('Logos/getlogo/0', ['return']); ?>
-				<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" /></a>
-                
+			<div class="page-logo col-md-6 col-sm-3 col-xs-12">
+
+				<div class="logo-mid">
+					<?php $logo = $this->requestAction('Logos/getlogo/0', ['return']); ?>
+					<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" /></a>
+					<!--a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo" style="width: 80px;" /></a-->
+				</div>
+				<div class="mid-text" style="vertical-align: bottom;margin-bottom: 10px;">
+					<p style="">Commercial Auto Insurance</p>
+				</div>
 			</div>
 			<!-- END LOGO -->
             <!-- BEGIN LOGO_TEXT -->
-            <div class="logo-text col-md-5 col-sm-6 col-xs-12">
-				<div class="logo-mid">
-                <a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo" style="width: 80px;" /></a>
-                </div>
-                <div class="mid-text">
-                Commercial Auto Insurance
-                </div>
+            <div class="logo-text col-md-2 col-sm-6 col-xs-12">
+
 			</div>
             <!-- END LOGO -->
 			<!-- BEGIN RESPONSIVE MENU TOGGLER -->
