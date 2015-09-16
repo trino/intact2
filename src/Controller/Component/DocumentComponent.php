@@ -24,7 +24,7 @@ class DocumentComponent extends Component{
         }
     }
 	
-    public function savedoc($Mailer, $cid = 0, $did = 0, $emailenabled = True){
+    public function savedoc($Mailer, $cid = 0, $did = 0, $uid=0, $emailenabled = True){
              $controller = $this->_registry->getController();
               $settings = TableRegistry::get('settings');
               $setting = $settings->find()->first();
@@ -198,36 +198,42 @@ class DocumentComponent extends Component{
                 }
 
                 if ((!$did || $did == '0') && ($arr['sub_doc_id'] < 7 || $arr['sub_doc_id'] == 15 || $arr['sub_doc_id'] == 9 || $arr['sub_doc_id'] == 10)) {
-                    $arr['user_id'] = $controller->request->session()->read('Profile.id');
+                    if($uid == 0)
+                        $arr['user_id'] = $controller->request->session()->read('Profile.id');
+                    else
+                        $arr['user_id'] = $uid;
                     $doc = $docs->newEntity($arr);
 
                     if ($docs->save($doc)) {
                        
                         $path = $this->getUrl();
-                        $get_client = TableRegistry::get('Clients');
-                        $gc = $get_client->find()->where(['id' => $cid])->first();
-                        $client_name = $gc->company_name;
-                        $assignedProfile = $this->getAssignedProfile($cid);
-                       
-                        if($assignedProfile) {
-                            if(!isset($_GET['draft']) && !($_GET['draft'])) {
-                                $profile = $this->getProfilePermission($assignedProfile->profile_id, 'document');
-                                if($profile) {
-                                    foreach($profile as $p) {
-                                        $pro_query = TableRegistry::get('Profiles');
-                                        $email_query = $pro_query->find()->where(['super' => 1])->first();
-                                        $em = $email_query->email;
-                                        $user_id = $controller->request->session()->read('Profile.id');
-                                        $uq = $pro_query->find('all')->where(['id' => $user_id])->first();
-                                        if (isset($uq->profile_type)) {
-                                            $u = $uq->profile_type;
-                                            $type_query = TableRegistry::get('profile_types');
-                                            $type_q = $type_query->find()->where(['id'=>$u])->first();
-                                            $ut = $type_q->title;
-                                          }
-                                        if($emailenabled) {
-                                            $ret = array("site" => $setting->mee, "email" => $p, "company_name" => $client_name, "username" => $uq->username, "id" => $did, "path" => $path, "profile_type" => $ut, "place" => 3);
-                                            $Mailer->handleevent("documentcreated", $ret);
+                        if($cid != 0)
+                        {
+                            $get_client = TableRegistry::get('Clients');
+                            $gc = $get_client->find()->where(['id' => $cid])->first();
+                            $client_name = $gc->company_name;
+                            $assignedProfile = $this->getAssignedProfile($cid);
+                           
+                            if($assignedProfile) {
+                                if(!isset($_GET['draft']) && !($_GET['draft'])) {
+                                    $profile = $this->getProfilePermission($assignedProfile->profile_id, 'document');
+                                    if($profile) {
+                                        foreach($profile as $p) {
+                                            $pro_query = TableRegistry::get('Profiles');
+                                            $email_query = $pro_query->find()->where(['super' => 1])->first();
+                                            $em = $email_query->email;
+                                            $user_id = $controller->request->session()->read('Profile.id');
+                                            $uq = $pro_query->find('all')->where(['id' => $user_id])->first();
+                                            if (isset($uq->profile_type)) {
+                                                $u = $uq->profile_type;
+                                                $type_query = TableRegistry::get('profile_types');
+                                                $type_q = $type_query->find()->where(['id'=>$u])->first();
+                                                $ut = $type_q->title;
+                                              }
+                                            if($emailenabled) {
+                                                $ret = array("site" => $setting->mee, "email" => $p, "company_name" => $client_name, "username" => $uq->username, "id" => $did, "path" => $path, "profile_type" => $ut, "place" => 3);
+                                                $Mailer->handleevent("documentcreated", $ret);
+                                            }
                                         }
                                     }
                                 }
@@ -729,12 +735,15 @@ class DocumentComponent extends Component{
             die;
         }
 
-        function saveEmployment($document_id = 0, $cid = 0) {
+        function saveEmployment($document_id = 0, $cid = 0, $uid=0) {
             $controller = $this->_registry->getController();
             $employment = TableRegistry::get('employment_verification');
             
             $arr['client_id'] = $cid;
-            $arr['user_id'] = $controller->request->session()->read('Profile.id');
+            if($uid == 0)
+                $arr['user_id'] = $controller->request->session()->read('Profile.id');
+            else
+                $arr['user_id'] = $uid;
             
             
             if (!isset($_GET['document']) || isset($_GET['order_id'])) {
@@ -808,7 +817,11 @@ class DocumentComponent extends Component{
                     $arr2['order_id'] = 0;
                 }
                 $arr2['client_id'] = $cid;
-                $arr2['user_id'] = $controller->request->session()->read('Profile.id');
+                if($uid == 0)
+                    $arr2['user_id'] = $controller->request->session()->read('Profile.id');
+                else
+                    $arr2['user_id'] = $uid;
+                
 
 
                 $Check = $this->getColumnNames("employment_verification");

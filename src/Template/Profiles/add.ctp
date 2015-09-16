@@ -65,6 +65,7 @@
                         <div id="tab_1_1" class="tab-pane active">
                             <div class="row">
                                 <form id="approvedForm" class="step1-form" method="post" action="">
+                                    <input type="hidden" name="profile_type" value="5" />
                                     <div class="driver_info col-md-12 col-sm-12 col-xs-12">
                                         <h4>DRIVER INFORMATION</h4>
 
@@ -84,7 +85,7 @@
                                                         class="control-label col-md-4 col-sm-4 col-xs-12">Gender</label>
 
                                                     <div class="col-md-8 col-sm-8 col-xs-12">
-                                                        <select class="form-control required" name="title">
+                                                        <select class="form-control required" name="gender">
                                                             <option value="Male">Male</option>
                                                             <option value="Female">Female</option>
                                                         </select>
@@ -101,7 +102,7 @@
 
                                                     <div class="col-md-7 col-sm-7 col-xs-12">
                                                         <input class="form-control" value="" required="" placeholder=""
-                                                               name="license">
+                                                               name="driver_license_no">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -149,13 +150,13 @@
                                                         class="control-label col-md-5 col-sm-5 col-xs-12 required padding-right">Current License Class:</label>
 
                                                     <div class="col-md-7 col-sm-7 col-xs-12">
-                                                        <input class="form-control" value="" required="" placeholder="" name="dlc">
+                                                        <input class="form-control" value="" required="" placeholder="" name="license_class">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                                     <label class="control-label col-md-4 col-sm-4 col-xs-12 required">Date of receipt for this class:</label>
                                                     <div class="col-md-8 col-sm-8 col-xs-12">
-                                                        <input class="form-control datepicker" value="" required="" placeholder="" name="drc">
+                                                        <input class="form-control datepicker" value="" required="" placeholder="" name="date_class">
                                                     </div>
                                                 </div>
                                             </div>
@@ -192,11 +193,11 @@
                                                     <label class="control-label col-md-4 col-sm-4 col-xs-12 required">Check your current status below:</label>
 
                                                     <div class="col-md-8 col-sm-8 col-xs-12">
-                                                        <select class="form-control datepicker" name="checkstatus">
+                                                        <select class="form-control datepicker" name="status">
                                                             <?php
                                                                 $types = array("Owner operator", "Company Driver", "Contractor Operation");
                                                                 foreach($types as $Index => $Name){
-                                                                    echo '<OPTION VALUE="' . $Index . '">' . $Name . "</OPTION>";
+                                                                    echo '<OPTION VALUE="' . $Name . '">' . $Name . "</OPTION>";
                                                                 }
                                                             ?>
                                                         </select>
@@ -212,9 +213,7 @@
                             <!-- .driver_info -->
 
                             <div class="col-md-12 col-sm-12 col-xs-12 subz">
-                                <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right nextstep"
-                                   onclick="$('.overlay-wrapper').show();
-        window.setTimeout(function(){  $('#second a').click();$('.overlay-wrapper').hide();}, 1500);">
+                                <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right nextstep" id="add_driver">
                                     Next <i class="m-icon-swapright m-icon-white"></i>
                                 </a>
                             </div>
@@ -238,12 +237,17 @@
                             </div>
 
 
-
+                            <form action="" id="LOE_profile" >
                             <div>
+                             
+                             <input type="hidden" name="profile_id" value="" class="newid" />
+                             <input  type="hidden" name="sub_doc_id" value="9"/>
                                 <div class="form-group row">
                                     <h3 class="col-md-12">Current Employer / Previous Employer 1</h3>
+                                    
                                 </div>
                                 <div class="gndn">
+                               
                                     <div class="form-group row">
                                         <label class="control-label col-md-3">Company Name:</label>
 
@@ -675,17 +679,16 @@
                                 </div>
 
                             </div>
-
+                            
                             <div id="add_more_div">
                                 <p>&nbsp;</p>
                                 <input type="hidden" value="2" id="count_past_emp" name="count_past_emp"/>
                                 <a onclick="add_more();" class="btn green no-print" href="javascript:void(0);">Add
                                     More</a>
                             </div>
-
+                            </form>
                             <div class="col-md-12 col-sm-12 col-xs-12 subz">
-                                <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right" onclick="$('.overlay-wrapper').show();
-        window.setTimeout(function(){  $('#third a').click();$('.overlay-wrapper').hide();}, 1500);">
+                                <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right" id="loe_driver" >
                                     Next <i class="m-icon-swapright m-icon-white"></i>
                                 </a>
                             </div>
@@ -695,6 +698,9 @@
 
 
                         <div id="tab_1_3" class="tab-pane">
+                        <form action="">
+                        <input type="hidden" name="profile_id" value="" class="newid" />
+                        
                             <div class="certify_note margin-bottom-10 margin-top-10 clearfix">
                                 <div class="">
                                     <h3>Consent</h3>
@@ -749,6 +755,7 @@
                                     Submit
                                 </a>
                             </div>
+                            </form>
                             <div class="clearfix"></div>
                         </div>
                         <div class="overlay-wrapper">
@@ -795,7 +802,55 @@
             }
         });
     }
-
+    $('#add_driver').click(function(){
+        $('.overlay-wrapper').show();
+        var datas = $('#approvedForm input, #approvedForm select').serialize();
+        
+        $.ajax({
+            url:"<?php echo $this->request->webroot;?>profiles/ajax_add",
+            data: datas,
+            type: 'post',
+            success: function(msg)
+            {
+                $('.overlay-wrapper').hide();
+                if(msg != '1')
+                {
+                    $('.newid').val(msg);
+                    alert('Saved Successfully');
+                    $('#second a').click();
+                }
+                else if(msg=='0')
+                    alert('Couldnot Save. Please, Try Again!');
+                
+            }
+        });
+        //window.setTimeout(function(){  $('#second a').click();}, 1500);
+    });
+    $('#loe_driver').click(function(){
+        $('.overlay-wrapper').show();
+           var datas = $('#LOE_profile input, #LOE_profile textarea').serialize();
+            var userid = $('.newid').val();
+        $.ajax({
+            url:"<?php echo $this->request->webroot;?>documents/savedoc/0/0/"+userid+'?document=Letter%20of%20Experience&draft=0',
+            type: 'post',
+            data:datas,
+            success: function(did)
+            {
+                $.ajax({
+                    url:"<?php echo $this->request->webroot;?>documents/saveEmployment/"+did+"/0/"+userid+'?document=Letter%20of%20Experience&draft=0',
+                    data:datas,
+                    type:'post',
+                    success: function(){
+                        $('.overlay-wrapper').hide();
+                        $('#third a').click();
+                    }
+                });
+                
+            }
+        });
+        //window.setTimeout(function(){  $('#third a').click();$('.overlay-wrapper').hide();}, 1500);"
+    } )
+    
     $(".deleteloe").live("click", function () {
         $(this).parent().parent().remove();
         var c = $('#count_past_emp').val();

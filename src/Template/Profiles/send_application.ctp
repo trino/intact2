@@ -45,9 +45,9 @@
                                 <label class="control-label col-md-12 col-sm-12 col-xs-12">Application Type
                                 </label>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <select class="form-control required"  id="form_control_1" name="title" required>
-                                        <option value="abc">Driver Application</option>
-                                        <option value="xyz">Business Application</option>
+                                    <select class="form-control required"  id="form_control_1" name="type" required>
+                                        <option value="pre">Driver Application</option>
+                                        <option value="post">Business Application</option>
                                     </select>
                                 </div>
                             </div>
@@ -62,9 +62,9 @@
                 <label class="control-label col-md-12 col-sm-12 col-xs-12">Select Company
                 </label>
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                <select class="form-control required"  id="form_control_1" name="title" required>
-                     <option value="abc">ABC Trucking</option>
-                     <option value="xyz">XYZ Trucking</option>
+                <select class="form-control required"  id="form_control_1" name="company" required>
+                     <option value="ABC Trucking">ABC Trucking</option>
+                     <option value="XYZ Trucking">XYZ Trucking</option>
                  </select>
                 </div>
                 </div>
@@ -77,9 +77,9 @@
                 <label class="control-label col-md-12 col-sm-12 col-xs-12">Select Driver
                 </label>
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                <select class="form-control required" id="form_control_1" name="title" required>
-                     <option value="abc">Tom Smith</option>
-                     <option value="xyz">John Smith</option>
+                <select class="form-control required" id="form_control_1" name="driver" required>
+                     <option value="tom Smith">Tom Smith</option>
+                     <option value="John Smith">John Smith</option>
                  </select>
                 </div>
                 </div>
@@ -135,19 +135,19 @@
                 
                 
                 <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
-                <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class=" col-md-6 col-sm-6 col-xs-12"></div>
-                <div class="col-md-6 col-sm-6 col-xs-12 app_send_btn">
-                <!--a href="" class="btn btn-primary">Send Application</a><br /><br /-->
-                <a href="<?php echo $this->request->webroot;?>profiles/sendApplicationEmail" class="btn btn-primary">Send Pre Application Email</a><br /><br />
-                <a href="<?php echo $this->request->webroot;?>profiles/postOrder" class="btn btn-primary">Send Post Application Email</a>
-                </div>
-                </div>
-                </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class=" col-md-6 col-sm-6 col-xs-12"></div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 app_send_btn">
+                            <input type="submit" class="btn btn-primary" value="Send Application" name="submit" />
+                            <!--a href="<?php echo $this->request->webroot;?>profiles/sendApplicationEmail" class="btn btn-primary">Send Pre Application Email</a><br /><br />
+                            <a href="<?php echo $this->request->webroot;?>profiles/postOrder" class="btn btn-primary">Send Post Application Email</a-->
+                            </div>
+                        </div>
+                    </div>
                 
                 </div>
-                
+                </form>
                 
                 </div>
                 

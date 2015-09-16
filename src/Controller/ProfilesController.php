@@ -27,10 +27,7 @@ class ProfilesController extends AppController{
         $this->Settings->verifylogin($this, "profiles");
     }
     
-    public function send_application()
-    {
-        
-    }
+   
     public function broker_dashboard()
     {
         
@@ -900,6 +897,66 @@ class ProfilesController extends AppController{
        $this->render("edit");*/
     }
     
+    function ajax_add()
+    {
+        $profiles = TableRegistry::get('profiles');
+        if ($this->request->is('post')) {
+            if (isset($_POST['profile_type']) && $_POST['profile_type'] == 1) {
+                $_POST['admin'] = 1;
+            }
+            //$_POST['dob'] = $_POST['doby'] . "-" . $_POST['dobm'] . "-" . $_POST['dobd'];
+            //debug($_POST);die();
+            $profile = $profiles->newEntity($_POST);
+            if ($profiles->save($profile)) {
+                //$this->checkusername($profile->id, $_POST);
+                if (isset($_POST['client_ids']) && $_POST['client_ids'] != "") {
+                    $client_id = explode(",", $_POST['client_ids']);
+                    foreach ($client_id as $cid) {
+                        $query = TableRegistry::get('clients');
+                        $q = $query->find()->where(['id' => $cid])->first();
+                        $profile_id = $q->profile_id;
+                        $pros = explode(",", $profile_id);
+
+                        $p_ids = "";
+
+                        array_push($pros, $profile->id);
+                        $pro_id = array_unique($pros);
+
+                        foreach ($pro_id as $k => $p) {
+                            if (count($pro_id) == $k + 1) {
+                                $p_ids .= $p;
+                            }else {
+                                $p_ids .= $p . ",";
+                            }
+                        }
+
+                        $query->query()->update()->set(['profile_id' => $p_ids])
+                            ->where(['id' => $cid])
+                            ->execute();
+                    }
+                }
+                //die();
+                $blocks = TableRegistry::get('Blocks');
+                $query2 = $blocks->query();
+                $query2->insert(['user_id'])
+                    ->values(['user_id' => $profile->id])
+                    ->execute();
+                $side = TableRegistry::get('Sidebar');
+                $query2 = $side->query();
+                $create_que = $query2->insert(['user_id'])
+                    ->values(['user_id' => $profile->id])
+                    ->execute();
+
+                //$this->Flash->success($this->Trans->getString("flash_profilecreated"));
+                //return $this->redirect(['action' => 'edit', $profile->id]);
+                echo $profile->id;
+            } else {
+                echo '0';
+                //$this->Flash->error($this->Trans->getString("flash_profilenotcreated"));
+            }
+        }
+        die();
+    }
 
     function checkusername($profile, $post){//updates username of $profile->id
         $username = trim($post->username);
@@ -3216,29 +3273,42 @@ class ProfilesController extends AppController{
 
     }
     
-    function sendApplicationEmail() {
+    public function send_application()
+    {
+        if(isset($_POST['submit']))
+        {
+            $arr = $_POST;
+            if($arr['type']=='pre')
+                $this->sendApplicationEmail($arr);
+            elseif($arr['type']=='post')
+                 $this->postOrder($arr);
+        }   
+    }
+    
+    function sendApplicationEmail($ar) {
         $this->loadComponent('Mailer');
         $arr['brokerageemail'] = 'test@brokeremail.com';
         $arr['brokerage'] = 'Broker Name';
         $arr['link'] = LOGIN.'profiles/add';
-        $arr['company_name'] = 'Sample Company Name';
-        $arr['fullname'] = 'Sample Name';
+        $arr['company_name'] = $ar['company'];
+        $arr['fullname'] = $ar['driver'];
         $arr['date'] = date('Y-m-d H:i:s');
-        $arr['email'] = 'info@trinoweb.com'; 
+        $arr['email'] = $ar['to'];
+        //$arr['policy'] = $ar['policy'];
 
         $this->Mailer->handleevent('sendapplication', $arr);
         $this->Flash->success('Application sent successfully');
         $this->redirect('/profiles/send_application');
     }
     
-    function postOrder() {
+    function postOrder($ar) {
         $this->loadComponent('Mailer');
         $arr['brokerageemail'] = 'test@brokeremail.com';
         $arr['brokerage'] = 'Broker Name';
-        $arr['customer'] = 'Sample Customer Name';
-        $arr['fullname'] = 'Sample Name';
+        $arr['customer'] = $ar['company'];
+        $arr['fullname'] = $ar['driver'];
         $arr['date'] = date('Y-m-d H:i:s');
-        $arr['email'] = 'info@trinoweb.com'; 
+        $arr['email'] = $ar['to'];
 
         $this->Mailer->handleevent('postorder', $arr);
         $this->Flash->success('Application sent successfully');

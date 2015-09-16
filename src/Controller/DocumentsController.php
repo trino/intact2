@@ -387,10 +387,10 @@ class DocumentsController extends AppController{
         }
     }
 
-    public function savedoc($cid = 0, $did = 0) {
+    public function savedoc($cid = 0, $did = 0, $uid = 0) {
         $this->set('doc_comp',$this->Document);
         $this->loadComponent('Mailer');
-        $ret = $this->Document->savedoc($this->Mailer, $cid,$did);
+        $ret = $this->Document->savedoc($this->Mailer, $cid,$did, $uid);
         //$this->Mailer->handleevent("documentcreated", $ret);
         die();
     }
@@ -417,8 +417,8 @@ class DocumentsController extends AppController{
         die();
     }
 
-    function saveEmployment($document_id = 0, $cid = 0){
-        $this->Document->saveEmployment($document_id,$cid);
+    function saveEmployment($document_id = 0, $cid = 0, $uid=0){
+        $this->Document->saveEmployment($document_id,$cid, $uid);
         die();
     }
 
