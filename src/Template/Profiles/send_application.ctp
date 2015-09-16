@@ -24,13 +24,12 @@
                 <div class="">
                 <div class="form-body clearfix">
                 
-                <div class="send-application-form col-md-6 col-sm-12 col-xs-12 portlet-body form"  style=" box-shadow: 0 0 3px #dfdfdf; padding: 10px 20px !important;">
-                <h4 class="margin-bottom-20">Please input the following information to send application</h4>
+                <div class="send-application-form col-md-6 col-sm-12 col-xs-12 portlet-body form"  style=" box-shadow: 0 0 3px #dfdfdf; padding: 20px 20px !important;">
                 <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                 <div class="row">
                 <div class="form-group form-md-line-input col-md-12 col-sm-12 col-xs-12">
-                <label class="control-label col-md-4"><br>Insurer
+                <label class="control-label col-md-2"><br>Insurer
                 </label>
                 <div class="col-md-8">
                     <img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" class="img-responsive" style="width: 120px;padding-right:20px;" />
@@ -38,8 +37,26 @@
                 </div>
                 </div>
                 </div>
-                
-                <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
+
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
+                        <div class="row">
+                            <div class="form-group form-md-line-input col-md-12 col-sm-12 col-xs-12">
+                                <label class="control-label col-md-12 col-sm-12 col-xs-12">Application Type
+                                </label>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <select class="form-control required"  id="form_control_1" name="title" required>
+                                        <option value="abc">Driver Application</option>
+                                        <option value="xyz">Business Application</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                 <div class="row">
                 <div class="form-group form-md-line-input col-md-12 col-sm-12 col-xs-12">
                 <label class="control-label col-md-12 col-sm-12 col-xs-12">Select Company
@@ -61,8 +78,8 @@
                 </label>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                 <select class="form-control required" id="form_control_1" name="title" required>
-                     <option value="abc">Enoc</option>
-                     <option value="xyz">Rob</option>
+                     <option value="abc">Tom Smith</option>
+                     <option value="xyz">John Smith</option>
                  </select>
                 </div>
                 </div>
@@ -87,9 +104,9 @@
                 <div class="row">
                 <div class="form-group form-md-line-input col-md-12 col-sm-12 col-xs-12">
                
-                	<label for="form_control_1" class="col-md-12 col-sm-12 col-xs-12">To :</label>
+                	<label for="form_control_1" class="col-md-12 col-sm-12 col-xs-12">To</label>
 									 <div class="col-md-12 col-sm-12 col-xs-12">	
-                                     <input class="form-control"  id="form_control_1" value="" required="" placeholder="" name="to">
+                                     <input class="form-control"  id="form_control_1" value="" required="" placeholder="Email" name="to">
 									
 									</div>
                                     </div>
@@ -98,7 +115,7 @@
                 
                 </div>
                 
-                <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
+                <!--div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                 <div class="row">
                 
                 
@@ -114,7 +131,7 @@
                 
                 </div>
                 
-                </div>
+                </div-->
                 
                 
                 <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">

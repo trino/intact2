@@ -109,7 +109,7 @@
         <?php
             $tab = 'nodisplay';
         ?>
-        <div class="form  profile-content-bg">
+        <div class="form ">
             <div class="form-horizontal">
                 <div class="">
                     <?php

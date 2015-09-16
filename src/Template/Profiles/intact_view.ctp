@@ -1193,9 +1193,9 @@
                         <div class="clearfix"></div>
                         <div class="col-md-12 margin-top-10 row" style="padding-left: 0;padding-right: 0;">
                             <div class="col-md-4 row">
-                            <label class="control-label col-md-4 required" style="margin-top: 5px;"><strong>Rating</strong></label>
+                            <label class="control-label col-md-4" style="margin-top: 5px;"><strong>Rating</strong></label>
                             <div class="col-md-8">
-                            <select required="" name="title" class="form-control required">
+                            <select required="" name="title" class="form-control">
                                  <option>1</option>
                                 <option>2</option>
                                 <option>3</option>

@@ -20,7 +20,7 @@
     <div class="col-md-12"></div>
     <div class="page-content">
     <div class="container">
-    <div class="col-md-12  profile-content-bg">
+    <div class="col-md-12">
     <?php
         
         $settings = $this->requestAction("settings/all_settings/" . $this->request->session()->read('Profile.id') . "/sidebar");

@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8">
-<title>Metronic | Metronic | Admin Dashboard Template</title>
+<title></title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1" name="viewport">
 <meta content="" name="description">
@@ -40,7 +40,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <link href="<?php echo $this->request->webroot;?>css/new-custom.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN THEME STYLES -->
 <!-- DOC: To use 'rounded corners' style just load 'components-rounded.css' stylesheet instead of 'components.css' in the below style tag -->
-<link href="<?php echo $this->request->webroot;?>assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+<link href="<?php echo $this->request->webroot;?>assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css">
 <link href="<?php echo $this->request->webroot;?>assets/global/css/plugins.css" rel="stylesheet" type="text/css">
 <link href="<?php echo $this->request->webroot;?>assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
 <link href="<?php echo $this->request->webroot;?>assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
@@ -137,10 +137,10 @@ jQuery(document).ready(function() {
             <!-- BEGIN LOGO_TEXT -->
             <div class="logo-text col-md-5 col-sm-6 col-xs-12">
 				<div class="logo-mid">
-                <a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo" style="width: 100px;" /></a>
+                <a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo" style="width: 80px;" /></a>
                 </div>
                 <div class="mid-text">
-                Commercial Trucking Insurance
+                Commercial Auto Insurance
                 </div>
 			</div>
             <!-- END LOGO -->
@@ -212,18 +212,14 @@ jQuery(document).ready(function() {
 					<li>
 						<a href="javascript:;" data-original-title="twitter" class="twitter"></a>
 					</li>
-					<li>
-						<a href="javascript:;" data-original-title="googleplus" class="googleplus"></a>
-					</li>
+
 					<li>
 						<a href="javascript:;" data-original-title="linkedin" class="linkedin"></a>
 					</li>
 					<li>
 						<a href="javascript:;" data-original-title="youtube" class="youtube"></a>
 					</li>
-					<li>
-						<a href="javascript:;" data-original-title="vimeo" class="vimeo"></a>
-					</li>
+
 				</ul>
 			</div>
 			<div class="col-md-3 col-sm-3 col-xs-12 footer-block">

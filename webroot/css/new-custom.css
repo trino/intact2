@@ -426,8 +426,9 @@
 
 .visual-bg i {
   color: #fff;
-  font-size: 100px;
-  left: -20px;
+  font-size: 150px;
+  left: -30px;
+  bottom: -30px;
   line-height: 110px;
   opacity: 0.1;
   position: absolute;
@@ -576,7 +577,7 @@ label {
 }
 
 .form-actions .forget-password #forget-password {
-  color: #00fa72 !important;
+  color: #fff !important;
   font-weight: 600;
   text-transform: uppercase !important;
 }
@@ -674,7 +675,7 @@ label {
 }
 
 .tabbable-custom > .nav-tabs > li.active, .nav-tabs li.active {
-  border-top: 3px solid #444d58 !important;
+  border-top: 3px solid #428bca !important;
 }
 
 .nav-tabs li > a {

@@ -1187,17 +1187,17 @@
                     <div class="col-sm-12">
                         <table class="table-condensed table-striped table-bordered table-hover dataTable no-footer"><tbody><tr><th colspan="3">Order Information (ID: 823)</th></tr><tr><th width="25%">Created on</th><td colspan="2">2015-09-02 11:51:40</td></tr><tr><th>Completed Date</th><td colspan="2">2015-12-02 11:51:40</td></tr><tr><th>Submitted by</th><td colspan="2">Deleted or Missing Data</td></tr><tr><th>Submitted for</th><td width="1%" align="center">888</td><td><a href="<?php echo $this ->request->webroot; ?>profiles/view/888" class="nohide">Beverly Hills (Beverly)</a></td></tr><tr><th>Client</th><td align="center">41</td><td>Huron Services Group</td></tr></tbody></table>
                         <div style="margin-top: 10px;">
-                            <div class="col-md-3" style="background:#efefef;">
+                            <div class="col-md-3" style="">
                                 <label class="control-label col-md-8" style="margin-top: 10px;">
                                     <strong>Rating:</strong>
                                 </label>
                                 <div class="col-md-4" style="padding: 10px;">4</div>
                             </div>
-                            <div class="col-md-4"  style="background:#efefef;">
-                                 <label class="control-label col-md-8" style="margin-top: 10px;">
+                            <div class="col-md-4"  style="">
+                                 <label class="control-label col-md-9" style="margin-top: 10px;">
                                     <strong>Annual Premium:</strong>
                                 </label>
-                                <div class="col-md-4" style="padding: 10px">$250</div>
+                                <div class="col-md-3" style="padding: 10px">$250</div>
                             </div>
                             <div class="col-md-5">
                             <span style="float: right;">
