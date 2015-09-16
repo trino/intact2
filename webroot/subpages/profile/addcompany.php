@@ -509,16 +509,10 @@
                                             unset($Provinces["Select Province"]);
                                             unset($States["Select Province"]);
 
-                                            $Data="Canada";
-                                            foreach($Provinces as $Province){
-                                                $Data .= "\r\n" . $Province;
-                                            }
-                                            $Data .= "\r\nUSA";
-                                            foreach($States as $State){
-                                                $Data .= "\r\n" . $State;
-                                            }
+                                            $Data = makerows("Canada", $Provinces);
+                                            $Data = makerows("USA", $States, $Data);
 
-                                        $UpdateCode = "var val = Number(getcell_fuelchart(Row, 1)) + Number(getcell_fuelchart(Row, 2)) + Number(getcell_fuelchart(Row, 3)) + Number(getcell_fuelchart(Row, 4)); setcell_fuelchart(Row, 5, val);";
+                                            $UpdateCode = "var val = sum(getcells_fuelchart(Row,1, Row,4)); setcell_fuelchart(Row, 5, val);";
 
                                             makechart("fuelchart", $Columns, $Data, false, $UpdateCode);
                                         ?>
@@ -767,6 +761,24 @@
                                         </HEADER>
                                         <?php
                                             //printtable($this, $Manager, "test", "id", false, false, true, true);
+
+                                            $Columns = array();
+                                            $Columns["Commodity"] = array("TYPE" => "READONLY");
+                                            $Columns["Percent of Revenue"] = array("TYPE" => "number", "min" => 0, "max" => 1);
+                                            $Columns["Average Load Value"] = array("TYPE" => "number");
+                                            $Columns["Maximum Load Value"] = array("TYPE" => "number");
+                                            $Columns["Times per month value exceeds average"] = array("TYPE" => "number");
+                                            $Columns["Comment"] = array("TYPE" => "text");
+
+                                            $Data = array();
+                                            $Data["[FULLROW]Category 1"] = array("Beer", "Liquor or wine", "Metals - high value", "Electronics", "Pharmaceuticals", "Tobacco", "Tools (hand or power)", "Explosives, munitions", "Total:");
+                                            $Data["[FULLROW]Category 2"] = array("Clothing, textiles", "Food - Seafood or shellfish", "Food - Produce", "Food - Other temperature sensative", "Flowers, bulbs, nursery stock", "Liquids in Bulk - Hazardous/regulated", "Liquids in Bulk - Non-hazardous", "Tires", "Total:");
+
+                                            $Data = makerows($Data);
+
+                                            $UpdateCode ="setcell_cargochart(9, Col, sum(getcells_cargochart(1,Col, 8,Col)));";
+                                            $UpdateCode.="setcell_cargochart(18, Col, sum(getcells_cargochart(10,Col, 17,Col)));";
+                                            makechart("cargochart", $Columns, $Data, false, $UpdateCode);
                                         ?>
                                         <FOOTER>
                                             Completion of this form does not bind coverage.<BR>

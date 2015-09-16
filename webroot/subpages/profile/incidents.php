@@ -2,6 +2,21 @@
     include_once("subpages/api.php");
     JSinclude($this, "assets/admin/pages/scripts/api.js");
 
+    function makerows($Name, $RowNames="", $Data = ""){
+        if (is_array($Name)){
+            foreach($Name as $RowName => $RowData){
+                $Data = makerows($RowName, $RowData, $Data);
+            }
+        } else {
+            if($Data){$Data.="\r\n";}
+            $Data .= "[FULLROW]<B>" . $Name . "</B>";
+            foreach($RowNames as $Row){
+                $Data .= "\r\n" . $Row;
+            }
+        }
+        return $Data;
+    }
+
     function makechart($Name, $Columns, $Data = '', $Addable = true, $UpdateCode = ""){
         $Name = "_" . $Name;
         echo '<table class="table table-hover table-striped table-bordered table-hover dataTable"><THEAD><TR>';
@@ -28,6 +43,19 @@
     var RowID<?= $Name; ?> = 0;
     var ColID<?= $Name; ?> = 0;
 
+    function getcells<?= $Name; ?>(StartingRow, StartingCol, EndingRow, EndingCol){
+        var ret = new Array();
+        var Value;
+        for(var Row=StartingRow; Row<=EndingRow; Row++){
+            for (var Col=StartingCol; Col<=EndingCol; Col++){
+                Value = getcell<?= $Name; ?>(Row, Col);
+                //alert('<?= $Name; ?>: ' + Row + ", " + Col + " = " + Value);
+                ret.push(Value);
+            }
+        }
+        return ret;
+    }
+
     function getcell<?= $Name; ?>(Row, Col){
          var value = getinputvalue("cell<?= $Name; ?>" + Row + "." + Col);
          value = replaceAll(",", "&#44;", value);
@@ -36,6 +64,11 @@
     }
     function setcell<?= $Name; ?>(Row, Col, Value){
         setvalue("cell<?= $Name; ?>" + Row + "." + Col, Value);
+    }
+
+    function addfullrow<?= $Name; ?>(Data){
+        var HTML = '<TR><TD COLSPAN="<?= count($Columns) ?>">' + Data + '</TD></TR>';
+        appendhtml("tablebody<?= $Name; ?>", HTML);
     }
 
     function addrow<?= $Name; ?>(Data){
@@ -111,7 +144,11 @@
     if($Data){
         $Data = explode("\r\n", $Data);
         foreach($Data as $Line){
-            echo 'addrow' . $Name . '("' . $Line . '");';
+            if (strpos($Line, "[FULLROW]") === false){
+                echo 'addrow' . $Name . '("' . $Line . '");';
+            } else {
+                echo 'addfullrow' . $Name . '("' . str_replace( "[FULLROW]", "", $Line) . '");';
+            }
         }
     }
     echo '</SCRIPT>';

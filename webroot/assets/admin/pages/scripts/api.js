@@ -141,3 +141,20 @@ function replaceAll(find, replace, str) {
         return str.replace(new RegExp(find, 'g'), replace);
     }
 }
+
+function isnumeric(Data){
+    return !isNaN(Data);
+}
+
+function sum(Data){
+    if(isarray(Data)){
+        var Total = 0;
+        for(i=0; i<Data.length; i++){
+            if(isnumeric(Data[i])){
+                Total+=Number(Data[i]);
+            }
+        }
+        return Total;
+    }
+    return Data;
+}
