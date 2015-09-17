@@ -493,6 +493,42 @@
                                         <HEADER>
                                             FUEL TAX CALCULATOR
                                         </HEADER>
+                                        <SCRIPT>
+                                            function init_fuelchart(){
+                                                for (temp = 1; temp <= 4; temp++) {
+                                                    visible(cellement_fuelchart(15, temp), false);
+                                                    visible(cellement_fuelchart(67, temp), false);
+                                                    setattribute(cellement_fuelchart(69, temp), "readonly", true);
+                                                }
+                                            }
+
+                                            function update_fuelchart(Row, Col){
+                                                var val, cells, start, end, RowID;
+                                                val = sum(getcells_fuelchart(Row,1, Row,4));
+                                                setcell_fuelchart(Row, 5, val);
+
+                                                if (Row < 17) {
+                                                    start=2;
+                                                    end=14
+                                                } else {
+                                                    start=17;
+                                                    end=66;
+                                                }
+
+                                                cells = getcells_fuelchart(start, 5, end, 5);
+                                                val = sum(cells);
+                                                setcell_fuelchart(end+1, 5, val);
+                                                for (RowID = start; RowID <= end; RowID++) {
+                                                    setcell_fuelchart(RowID, 6, formatpercent(cells[RowID - start] / val));
+                                                }
+
+                                                for (temp = 1; temp <= 4; temp++) {
+                                                    val = sum(getcells_fuelchart(2, Col, 14, Col)) + sum(getcells_fuelchart(17, Col, 66, Col));
+                                                    setcell_fuelchart(69, Col, val);
+                                                }
+                                                if(Row != 69 && Col != 5){update_fuelchart(69,5);}
+                                            }
+                                        </SCRIPT>
                                         <?php
                                             //printtable($this, $Manager, "fuelchart", "id", false, false, true, true);
                                             $Columns = array();
@@ -507,16 +543,14 @@
                                             $Provinces = getprovinces("English", false, true);
                                             $States =  getprovinces("English", true, false);
                                             unset($Provinces["0"]);
+                                            $Provinces[] = "Total Canada";
+                                            $States[] = "Total USA";
                                             $Data = makerows("Canada", $Provinces);
                                             $Data = makerows("USA", $States, $Data);
+                                            $Data = makerows("Quarterly", array("Totals"), $Data);
+
                                             makechart("fuelchart", $Columns, $Data, false);
                                         ?>
-                                        <SCRIPT>
-                                            function update_fuelchart(Row, Col){
-                                                var val = sum(getcells_fuelchart(Row,1, Row,4));
-                                                setcell_fuelchart(Row, 5, val);
-                                            }
-                                        </SCRIPT>
                                         <FOOTER>
                                             Completion of this form does not bind coverage.<BR>
                                             Applicant's acceptance of the Insurer's quotation is required before insurance may be bound and policy issued.
@@ -757,38 +791,61 @@
                                 <div class="col-md-12 col-sm-12 col-xs-12 upload_btns">
 
                                     <DIV ID="excel_test" style="width: 100%; height: 400px; overflow: auto; resize: both;">
-                                        <HEADER>
-                                            Cargo Details chart
-                                        </HEADER>
+                                        <SCRIPT>
+                                            function init_cargochart(){
+                                                for (temp = 1; temp <= 4; temp++) {
+                                                    setattribute(cellement_cargochart(10, temp), "readonly", true);
+                                                    setattribute(cellement_cargochart(20, temp), "readonly", true);
+                                                    setattribute(cellement_cargochart(28, temp), "readonly", true);
+                                                    setattribute(cellement_cargochart(40, temp), "readonly", true);
+                                                    setattribute(cellement_cargochart(50, temp), "readonly", true);
+                                                }
+                                                visible(cellement_cargochart(10, 5), false);
+                                                visible(cellement_cargochart(20, 5), false);
+                                                visible(cellement_cargochart(28, 5), false);
+                                                visible(cellement_cargochart(40, 5), false);
+                                                visible(cellement_cargochart(50, 5), false);
+                                            }
+
+                                            function update_cargochart(Row, Col){
+                                                if(Col<5) {
+                                                    if (Row < 11) {//cat 1
+                                                        setcell_cargochart(10, Col, sum(getcells_cargochart(2, Col, 9, Col)));
+                                                    } else if (Row < 22) {//cat 2
+                                                        setcell_cargochart(20, Col, sum(getcells_cargochart(11, Col, 19, Col)));
+                                                    } else if (Row < 29) {//cat 3
+                                                        setcell_cargochart(28, Col, sum(getcells_cargochart(22, Col, 27, Col)));
+                                                    } else if (Row < 42) { //cat 4
+                                                        setcell_cargochart(40, Col, sum(getcells_cargochart(30, Col, 39, Col)));
+                                                    } else if (Row < 51) { //other
+                                                        setcell_cargochart(50, Col, sum(getcells_cargochart(42, Col, 49, Col)));
+                                                    }
+                                                }
+                                            }
+                                        </SCRIPT>
                                         <?php
                                             //printtable($this, $Manager, "test", "id", false, false, true, true);
 
                                             $Columns = array();
                                             $Columns["Commodity"] = array("TYPE" => "READONLY");
-                                            $Columns["Percent of Revenue"] = array("TYPE" => "number", "min" => 0, "max" => 1);
-                                            $Columns["Average Load Value"] = array("TYPE" => "number");
-                                            $Columns["Maximum Load Value"] = array("TYPE" => "number");
-                                            $Columns["Times per month value exceeds average"] = array("TYPE" => "number");
-                                            $Columns["Comment"] = array("TYPE" => "text");
+                                            $Columns["Percent of Revenue"] = array("TYPE" => "NUMBER", "MIN" => 0, "MAX" => 100, "DEFAULT" => 0);
+                                            $Columns["Average Load Value"] = array("TYPE" => "NUMBER", "DEFAULT" => 0, "MIN" => 0);
+                                            $Columns["Maximum Load Value"] = array("TYPE" => "NUMBER", "DEFAULT" => 0, "MIN" => 0);
+                                            $Columns["Times per month value exceeds average"] = array("TYPE" => "NUMBER", "DEFAULT" => 0, "MIN" => 0);
+                                            $Columns["Comment"] = array("TYPE" => "TEXT");
 
                                             $Data = array();
                                             $Data["[FULLROW]Category 1"] = array("Beer", "Liquor or wine", "Metals - high value", "Electronics", "Pharmaceuticals", "Tobacco", "Tools (hand or power)", "Explosives, munitions", "Total:");
                                             $Data["[FULLROW]Category 2"] = array("Clothing, textiles", "Food - Seafood or shellfish", "Food - Produce", "Food - Other temperature sensative", "Flowers, bulbs, nursery stock", "Liquids in Bulk - Hazardous/regulated", "Liquids in Bulk - Non-hazardous", "Tires", "Total:");
+                                            $Data["[FULLROW]Category 3"] = array("Machinery & Equipment", "Auto parts – heavy", "Specialized equipment", "Live animals, poultry", "Over-dimensional Loads", "Furniture", "Total:");
+                                            $Data["[FULLROW]Category 4"] = array("Sealed shipping containers", "Food – Dry, packaged, or canned", "Auto parts – light", "Logs, pulpwood, pulp, chips, shavings", "Sand, gravel, aggregate", "Dry bulk – Hazardous/regulated", "Dry bulk – Non-hazardous", "Lumber, building materials", "Steel, pipes, concrete", "Paper", "Total:");
+                                            $Data["[FULLROW]Other"] = array("Other: (describe)", "Other: (describe)", "Other: (describe)", "Other: (describe)", "Other: (describe)", "Other: (describe)", "Other: (describe)", "Other: (describe)", "Total:");
 
                                             $Data = makerows($Data);
 
 
                                             makechart("cargochart", $Columns, $Data, false);
                                         ?>
-                                        <SCRIPT>
-                                            function update_cargochart(Row, Col){
-                                                if(Row<10) {
-                                                    setcell_cargochart(10, Col, sum(getcells_cargochart(2, Col, 9, Col)));
-                                                } else {
-                                                    setcell_cargochart(20, Col, sum(getcells_cargochart(11, Col, 19, Col)));
-                                                }
-                                            }
-                                        </SCRIPT>
                                         <FOOTER>
                                             Completion of this form does not bind coverage.<BR>
                                             Applicant's acceptance of the Insurer's quotation is required before insurance may be bound and policy issued.

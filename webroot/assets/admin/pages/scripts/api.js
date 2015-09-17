@@ -147,14 +147,19 @@ function isnumeric(Data){
 }
 
 function sum(Data){
+    var Total = 0;
     if(isarray(Data)){
-        var Total = 0;
         for(i=0; i<Data.length; i++){
             if(isnumeric(Data[i])){
                 Total+=Number(Data[i]);
             }
         }
-        return Total;
     }
-    return Data;
+    return Total;
+}
+
+function formatpercent(Number){
+    if(!isnumeric(Number)){Number=0;}
+    Number = Number * 100;
+    return Number.toFixed(2) + "%"
 }

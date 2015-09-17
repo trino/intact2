@@ -98,9 +98,9 @@
         // to make it look crisp on mobile devices.
         // This also causes canvas to be cleared.
          function resizeCanvas() {
-            var ratio = 1;//window.devicePixelRatio || 1;
-            canvas.width = <?= $Width; ?>; //canvas.offsetWidth * ratio;
-            canvas.height = <?= $Height; ?>; //canvas.offsetHeight * ratio;
+            var ratio = window.devicePixelRatio || 1;
+            canvas.width = canvas.offsetWidth * ratio;
+            canvas.height = canvas.offsetHeight * ratio;
             canvas.getContext("2d").scale(ratio, ratio);
         }
 

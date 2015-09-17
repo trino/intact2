@@ -9,12 +9,42 @@
             }
         } else {
             if($Data){$Data.="\r\n";}
+            $Name = str_replace(",", "&#44;", $Name);
             $Data .= "[FULLROW]<B>" . $Name . "</B>";
             foreach($RowNames as $Row){
-                $Data .= "\r\n" . $Row;
+                $Data .= "\r\n" . str_replace(",", "&#44;", $Row);
             }
         }
         return $Data;
+    }
+
+
+    function getTag($Text, $GetTag){
+        $Start = strpos($Text, "[");
+        $End = strpos($Text, "]");
+        if($GetTag){
+            if($Start !== false && $End !== false){
+                if($Start<$End) {return substr($Text, $Start+1, $End-$Start-1);}
+            }
+        } else {
+            if($Start !== false && $End !== false) {
+                return substr($Text, 0, $Start) . substr($Text, $End + 1, strlen($Text) - $End - 1);
+            }
+            return $Text;
+        }
+    }
+    function assocsplit($Text, $PrimaryDelimeter, $SecondaryDelimeter){
+        $PrimaryArray = explode($PrimaryDelimeter, $Text);
+        $RET = array();
+        foreach ($PrimaryArray as $Value) {
+            if(strpos($Value, $SecondaryDelimeter) === false){
+                $RET[$Value] = "";
+            } else {
+                $SecondaryArray = explode($SecondaryDelimeter, $Value);
+                $RET[$SecondaryArray[0]] = $SecondaryArray[1];
+            }
+        }
+        return $RET;
     }
 
     function makechart($Name, $Columns, $Data = '', $Addable = true){
@@ -55,6 +85,10 @@
         return ret;
     }
 
+    function cellement<?= $Name; ?>(Row, Col){
+        return "cell<?= $Name; ?>" + Row + "." + Col;
+    }
+
     function getcell<?= $Name; ?>(Row, Col){
          var value = getinputvalue("cell<?= $Name; ?>" + Row + "." + Col);
          value = replaceAll(",", "&#44;", value);
@@ -81,9 +115,9 @@
         var HTML = '<TR>' + <?php
              foreach($Columns as $ColumnName => $ColData){
                 $Type = $ColData["TYPE"];
-                $Class = "";
-                if (isset($ColData["CLASS"])){$Class = $ColData["CLASS"];}
-                echo "newcol" . $Name . '("' . $Type . '", "' . $Class . '", Data) + ';
+                unset($ColData["TYPE"]);
+                $Class = json_encode($ColData);
+                echo "newcol" . $Name . '("' . $Type . '", ' . $Class . ', Data) + ';
              }
         ?>'</TR>';
         appendhtml("tablebody<?= $Name; ?>", HTML);
@@ -105,7 +139,7 @@
             for(var i2 = 0; i2 < ColID<?= $Name; ?>; i2++){
                 value = getcell<?= $Name; ?>(i,i2);
                 ret2.push(value);
-                if(value.indexOf("[FULLROW]") > -1){i2=ColID<?= $Name; ?>;}
+                if(value.indexOf("[FULLROW") > -1){i2=ColID<?= $Name; ?>;}
             }
             value = ret2.join(",");
             ret.push(value);
@@ -116,6 +150,7 @@
     function newcol<?= $Name; ?>(Type, Class, Data){
         var ret = '<TD>';
         var Value = '';
+        if("DEFAULT" in Class){Value = Class['DEFAULT'];}
         if(isarray(Data)){
             if (Data.length > ColID<?= $Name; ?>){
                 Value = Data[ColID<?= $Name; ?>];
@@ -123,11 +158,12 @@
                 Value = replaceAll("<BR>", "\r\n", Value);
             }
         }
+
         var ID = 'cell<?= $Name; ?>' + RowID<?= $Name; ?> + "." + ColID<?= $Name; ?>;
         switch(Type.toUpperCase()) {
             case "SELECT":
                 ret = ret + '<SELECT ID="' + ID + '" style="width: 100%;height: 26px;" onchange="savechange<?= $Name; ?>(' + RowID<?= $Name; ?> + ', ' + ColID<?= $Name; ?> + ');">';
-                Class = Class.split("|");
+                Class = Class["CHOICES"].split("|");
                 for(i=0;i<Class.length;i++) {
                     ret = ret + '<OPTION';
                     if(Value == Class[i]){ret = ret + ' SELECTED';}
@@ -139,7 +175,11 @@
                 ret = ret + '<DIV ID="' + ID + '">' + Value + '</DIV>';
                 break;
             default:
-                ret = ret + '<INPUT TYPE="' + Type + '" ID="' + ID + '" style="width: 100%; height: 26px;" class="' + Class + '"  onchange="savechange<?= $Name; ?>(' + RowID<?= $Name; ?> + ', ' + ColID<?= $Name; ?> + ');", value="' + Value + '">';
+                ret = ret + '<INPUT TYPE="' + Type + '" ID="' + ID + '" style="width: 100%; height: 26px;" onchange="savechange<?= $Name; ?>(' + RowID<?= $Name; ?> + ', ' + ColID<?= $Name; ?> + ');" value="' + Value + '"';
+                if("CLASS" in Class){ret = ret + ' CLASS="' + Class['CLASS'] + '"';}
+                if("MIN" in Class){ret = ret + ' MIN="' + Class['MIN'] + '"';}
+                if("MAX" in Class){ret = ret + ' MAX="' + Class['MAX'] + '"';}
+                ret = ret + '>';
         }
         ColID<?= $Name; ?>++;
         return ret + '</TD>';
@@ -148,13 +188,20 @@
     if($Data){
         $Data = explode("\r\n", $Data);
         foreach($Data as $Line){
-            if (strpos($Line, "[FULLROW]") === false){
+            if (strpos($Line, "[FULLROW") === false){
                 echo 'addrow' . $Name . '("' . $Line . '");';
             } else {
-                echo 'addfullrow' . $Name . '("' . str_replace( "[FULLROW]", "", $Line) . '");';
+                $Line = getTag($Line, false);
+                echo 'addfullrow' . $Name . '("' . $Line . '");';
             }
         }
     }
-    echo '</SCRIPT>';
+
+    ?>
+    if (typeof init<?= $Name; ?> == 'function') {
+        init<?= $Name; ?>();
+    }
+    </SCRIPT>
+    <?php
     return 'update' . $Name . '(Row, Col);';
 } ?>

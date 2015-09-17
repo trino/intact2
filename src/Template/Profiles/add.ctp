@@ -240,8 +240,8 @@
                                     $chart = array();
                                     $chart["Reference"] = array("TYPE" => "NUMBER");
                                     $chart["Date"] =  array("TYPE" => "DATE");
-                                    $chart["Type of Loss"] =  array("TYPE" => "SELECT", "CLASS" => "BI|PD|AB|DC-PD|UA|COL/AP|COMP/SP");
-                                    $chart["Amount Paid ($)"] = array("TYPE" => "NUMBER");
+                                    $chart["Type of Loss"] =  array("TYPE" => "SELECT", "CHOICES" => "BI|PD|AB|DC-PD|UA|COL/AP|COMP/SP");
+                                    $chart["Amount Paid ($)"] = array("TYPE" => "NUMBER", "MIN" => 0, "DEFAULT" => 0);
                                     $chart["Location"] = array("TYPE" => "TEXT");
                                     $chart["Details"] = array("TYPE" => "TEXT");
 
