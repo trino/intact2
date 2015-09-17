@@ -106,7 +106,8 @@ class ProfilesController extends AppController{
                     ->set($_POST)
                     ->where(['id' => 1])
                     ->execute();
-                unlink(WWW_ROOT . 'img/clients/' . $old_image);
+                    if(file_exists(APP . '../webroot/clients/' . $old_image))
+                unlink(APP . '../webroot/clients/' . $old_image);
                 echo $rand;
             } else {
                 echo "error";
