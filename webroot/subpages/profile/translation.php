@@ -7,7 +7,7 @@
     <TR>
         <TD VALIGN="TOP">
             <button class="btn btn-primary" onclick="newlanguage();" style="width: 150px;">New Language</button><BR>
-            <select id="languages" name="languages" size="<?= count($languages); ?>" style="width: 150px;">
+            <select id="languages" name="languages" size="<?= count($languages); ?>" style="width: 150px;" class="form-control">
                 <?php
                     foreach($languages as $language) {
                         echo '<option value="' . $language . '"';
@@ -18,16 +18,16 @@
             </select><P>
             <button class="btn btn-danger" onclick="deletelanguage();" style="width: 150px;">Delete Language</button><P>
             <DIV ID="newfields">
-                <INPUT ID="name" placeholder="Name"  style="width: 150px;"><br>
+                <INPUT ID="name" placeholder="Name"  style="width: 150px;" class="form-control"><br>
                 <?php foreach($languages as $language) {
-                    echo '<INPUT ID="newfield' . $language . '" placeholder="' . $language . '"  style="width: 150px;"><br id="br' . $language . '">';
+                    echo '<INPUT ID="newfield' . $language . '" placeholder="' . $language . '"  style="width: 150px;" class="form-control"><br id="br' . $language . '">';
                 } ?>
             </DIV>
             <button class="btn btn-danger" onclick="savestring();" style="width: 150px;">Save String</button><P><P>
             <button class="btn btn-warning" onclick="sendtoroy();" style="width: 150px; <?php if(!$hascache){ echo 'display: none;'; }?>" id="sendtoroy">Send To Roy</button>
         </TD>
         <TD VALIGN="TOP">
-            <INPUT TYPE="TEXT" ID="search" placeholder="Search" onkeyup="search();">
+            <INPUT TYPE="TEXT" ID="search" placeholder="Search" onkeyup="search();" class="form-control">
             <TABLE class="table table-light table-hover" ID="searchresults">
             </TABLE>
         </TD>
