@@ -2,9 +2,9 @@
 <div class="page-header-menu">
     <div class="container">
         <!-- BEGIN HEADER SEARCH BOX -->
-        <form class="search-form" action="extra_search.html" method="GET">
+        <form class="search-form" action="<?php echo $this->request->webroot;?>documents/index" method="GET">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search" name="query">
+                <input type="text" class="form-control" placeholder="Search" name="searchdoc">
 					<span class="input-group-btn">
 					<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
 					</span>

@@ -1,6 +1,6 @@
-<SCRIPT>
+<script>
     var references = 2;
-</SCRIPT>
+</script>
 <style>
     .overlay-wrapper {
         background: rgba(255, 255, 255, 0.7) none repeat scroll 0 0;
@@ -125,8 +125,7 @@
                                                 issued: </label>
 
                                             <div class="col-md-7 col-sm-7 col-xs-12 province-select">
-                                                <select class="form-control req_driver" name="driver_province"
-                                                        required="">
+                                                <select class="form-control req_driver" name="driver_province" required="">
                                                     <option value="">Select Province</option>
                                                     <option value="AB">Alberta</option>
                                                     <option value="BC">British Columbia</option>

@@ -2078,7 +2078,7 @@
         });
     });
     function initiate_ajax_upload1(button_id, doc) {
-        alert(button_id);
+        //alert(button_id);
         var button = $('#' + button_id), interval;
         if (doc == 'doc')
             var act = "<?php echo $this->request->webroot;?>documents/fileUpload/<?php if(isset($id))echo $id;?>";

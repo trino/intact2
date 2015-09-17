@@ -969,7 +969,7 @@
                                 $('#delete_' + button_id).attr('title', response);
                             }
                             else {
-                                $("#clientpic").attr("src", '<?php echo $this->request->webroot;?>img/clients/' + response);
+                                $("#clientpic").attr("src", '<?php echo $this->request->webroot;?>img/jobs/' + response);
                                 $('#client_img').val(response);
                             }
                         }
