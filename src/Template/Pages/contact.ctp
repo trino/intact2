@@ -1,4 +1,9 @@
-<!-- BEGIN PAGE HEAD -->
+	<script src="<?php echo $this->request->webroot;?>assets/global/plugins/gmaps/gmaps.min.js" type="text/javascript"></script>
+	<script src="<?php echo $this->request->webroot;?>assets/admin/pages/scripts/contact-us.js" type="text/javascript"></script>
+	<SCRIPT>
+		ContactUs.init();
+	</SCRIPT>
+	<!-- BEGIN PAGE HEAD -->
 	<div class="page-head">
 		<div class="container">
 			<!-- BEGIN PAGE TITLE -->

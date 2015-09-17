@@ -509,11 +509,14 @@
                                             unset($Provinces["0"]);
                                             $Data = makerows("Canada", $Provinces);
                                             $Data = makerows("USA", $States, $Data);
-
-                                            $UpdateCode = "var val = sum(getcells_fuelchart(Row,1, Row,4)); setcell_fuelchart(Row, 5, val);";
-
-                                            makechart("fuelchart", $Columns, $Data, false, $UpdateCode);
+                                            makechart("fuelchart", $Columns, $Data, false);
                                         ?>
+                                        <SCRIPT>
+                                            function update_fuelchart(Row, Col){
+                                                var val = sum(getcells_fuelchart(Row,1, Row,4));
+                                                setcell_fuelchart(Row, 5, val);
+                                            }
+                                        </SCRIPT>
                                         <FOOTER>
                                             Completion of this form does not bind coverage.<BR>
                                             Applicant's acceptance of the Insurer's quotation is required before insurance may be bound and policy issued.
@@ -774,10 +777,18 @@
 
                                             $Data = makerows($Data);
 
-                                            $UpdateCode ="setcell_cargochart(10, Col, sum(getcells_cargochart(2,Col, 9,Col)));";
-                                            $UpdateCode.="setcell_cargochart(20, Col, sum(getcells_cargochart(11,Col, 19,Col)));";
-                                            makechart("cargochart", $Columns, $Data, false, $UpdateCode);
+
+                                            makechart("cargochart", $Columns, $Data, false);
                                         ?>
+                                        <SCRIPT>
+                                            function update_cargochart(Row, Col){
+                                                if(Row<10) {
+                                                    setcell_cargochart(10, Col, sum(getcells_cargochart(2, Col, 9, Col)));
+                                                } else {
+                                                    setcell_cargochart(20, Col, sum(getcells_cargochart(11, Col, 19, Col)));
+                                                }
+                                            }
+                                        </SCRIPT>
                                         <FOOTER>
                                             Completion of this form does not bind coverage.<BR>
                                             Applicant's acceptance of the Insurer's quotation is required before insurance may be bound and policy issued.

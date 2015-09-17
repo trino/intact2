@@ -17,7 +17,7 @@
         return $Data;
     }
 
-    function makechart($Name, $Columns, $Data = '', $Addable = true, $UpdateCode = ""){
+    function makechart($Name, $Columns, $Data = '', $Addable = true){
         $Name = "_" . $Name;
         echo '<table class="table table-hover table-striped table-bordered table-hover dataTable"><THEAD><TR>';
         foreach($Columns as $ColumnName => $ColData){
@@ -90,7 +90,9 @@
     }
 
     function savechange<?= $Name; ?>(Row, Col){
-        <?= $UpdateCode; ?>
+        if (typeof update<?= $Name; ?> == 'function') {
+            ret = update<?= $Name; ?>(Row, Col);
+        }
         var value = save<?= $Name; ?>();
         setvalue("VALUE<?= $Name; ?>", value);
     }
@@ -154,4 +156,5 @@
         }
     }
     echo '</SCRIPT>';
+    return 'update' . $Name . '(Row, Col);';
 } ?>
