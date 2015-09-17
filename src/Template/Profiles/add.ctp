@@ -732,7 +732,7 @@
                                         <label class="control-label col-md-12 col-sm-12 col-xs-12">Driver's
                                             Signature</label>
 
-                                        <div>
+                                        <div style="padding: 0 5px;">
                                             <?php
                                                 include(APP . "../application/signature.php");
                                                 //include('/canvas/adddriver.php');
@@ -753,7 +753,7 @@
                                         <label class="control-label col-md-12 col-sm-12 col-xs-12">Broker's
                                             Signature</label>
 
-                                        <div>
+                                        <div style="padding: 0 5px;">
                                             <?php
                                                 //include(APP . "../application/signature.php");
                                                 //include('/canvas/adddriver.php');
