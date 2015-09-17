@@ -42,11 +42,11 @@ function makepage($webroot, $tabIndex, $name, $cms, $active){
             <label class="control-label col-md-2">Description</label>
             <div class="col-md-5">
                                                                     <textarea class="ckeditor form-control"
-                                                                              name="editor1" rows="6" id="desc' . $name . '">' . $cms->desc . '</textarea>
+                                                                              name="desc" rows="6" id="desc' . $name . '">' . $cms->desc . '</textarea>
             </div>
             <div class="col-md-5">
                                                                     <textarea class="ckeditor form-control"
-                                                                              name="editor2" rows="6" id="descFrench' . $name . '">' . $cms->descFrench . '</textarea>
+                                                                              name="descFrench" rows="6" id="descFrench' . $name . '">' . $cms->descFrench . '</textarea>
             </div>
         </div>
     </div>
