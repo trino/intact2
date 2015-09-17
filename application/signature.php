@@ -105,9 +105,9 @@
         }
 
        window.onresize = resizeCanvas;
-       if( canvas.offsetWidth!='0') {
+       //if( canvas.offsetWidth!='0') {
            resizeCanvas();
-       }
+       //}
        signaturePad<?= $name; ?> = new SignaturePad(canvas);
     });
 
