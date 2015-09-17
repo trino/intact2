@@ -2247,7 +2247,7 @@
 
 
                                                                                             <td class="actions">
-                                                                                                <a target="_blank" href="#" class="btn btn-primary dl">Download</a>
+                                                                                                <a target="_blank" href="<?php echo $this->request->webroot; ?>img/1.pdf" class="btn btn-primary dl">Download</a>
 
                                                                                             </td>
                                                                                             <td><span
@@ -2293,7 +2293,7 @@
 
 
                                                                                             <td class="actions">
-                                                                                                <a target="_blank" href="#" class="btn btn-primary dl">Download</a>
+                                                                                                <a target="_blank" href="<?php echo $this->request->webroot; ?>img/1.pdf" class="btn btn-primary dl">Download</a>
 
                                                                                             </td>
                                                                                             <td><span
@@ -2315,7 +2315,7 @@
 
 
                                                                                             <td class="actions">
-                                                                                                <a target="_blank" href="#" class="btn btn-primary dl">Download</a>
+                                                                                                <a target="_blank" href="<?php echo $this->request->webroot; ?>img/1.pdf" class="btn btn-primary dl">Download</a>
 
                                                                                             </td>
                                                                                             <td><span
