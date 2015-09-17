@@ -518,7 +518,7 @@
 .col-md-8 {
     width: 66.6667%;
 }
-
+.noprint{display:none;}
 }
 
 .page-container .page-content .dashboard-stat .visual-hover {

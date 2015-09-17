@@ -1,4 +1,4 @@
-<div class="allattach">
+<div class="allattach noprint">
 <?php
     echo '<div>';
     if ($this->request->session()->read('debug')){ echo "<span style ='color:red;'>subpages/documents/attach_doc.php #INC132</span>"; }
