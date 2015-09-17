@@ -1,5 +1,5 @@
 <?php
- if($this->request->session()->read('debug')){  echo "<span style ='color:red;'>subpages/documents/past_employer_survey.php #INC204</span>";}
+ if($this->request->session()->read('debug')){  echo "<span style ='color:red;'>subpages/documents/basic_mee_platform.php #INC219</span>";}
  ?>
 <form id="form_tab<?php echo $dx->id;?>" action="<?php echo $this->request->webroot;?>documents/basic_mee_platform/<?php echo $cid .'/' .$did;?>" method="post">
         <input type="hidden" class="document_type" name="document_type" value="<?php echo $dx->title;?>"/>
@@ -883,12 +883,12 @@
                     <div class="col-md-6"> 
                         
                         <label class="control-label col-md-12">Nature and degree?</label>  
-                        <div class="col-md-12">              
+                        <div class="">              
                             <textarea name="nature_of_degree" class="form-control"><?php if(isset($basic_mee_platform))echo $basic_mee_platform->nature_of_degree;?></textarea>
                         </div>
                         <p>&nbsp;</p>
                         <label class="control-label col-md-12">How much time was lost from illness in the past 3 years?</label>  
-                        <div class="col-md-12">              
+                        <div class="">              
                             <textarea name="how_much_time_lost" class="form-control"><?php if(isset($basic_mee_platform))echo $basic_mee_platform->how_much_time_lost;?></textarea>
                         </div>
                     </div>

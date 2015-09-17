@@ -3962,7 +3962,8 @@ Portlets
   margin-bottom: 0;
 }
 .portlet.light .portlet-body {
-  padding-top: 8px;
+  padding: 8px 10px 0 10px!important;
+  
 }
 .portlet.light.portlet-fullscreen > .portlet-body {
   padding: 8px 0;
