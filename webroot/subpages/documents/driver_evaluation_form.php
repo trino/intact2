@@ -42,7 +42,7 @@ $strings2 = CacheTranslations($language, array("drivereval_%", "tasks_date", "fi
 													* </span>
 													</label>
 													<div class="col-md-9">
-                                                        <div class="checkbox-list col-md-3 nopad">
+                                                        <div class="checkbox-list col-md-3 no-padding">
 															<label>
                                                             <?php 
                                                             if($this->request->params['action'] == 'vieworder'  || $this->request->params['action']== 'view') {
@@ -95,7 +95,7 @@ $strings2 = CacheTranslations($language, array("drivereval_%", "tasks_date", "fi
 													* </span>
 													</label>
 													<div class="col-md-9">
-														<div class="checkbox-list col-md-3 nopad">
+														<div class="checkbox-list col-md-3 no-padding">
 															<label>
                                                             <?php 
                                                             if($this->request->params['action'] == 'vieworder'  || $this->request->params['action']== 'view')
@@ -147,7 +147,7 @@ $strings2 = CacheTranslations($language, array("drivereval_%", "tasks_date", "fi
                                                          ?>
                                                                 <?= $strings2["drivereval_postaccide"]; ?> </label>
 														</div>
-														<div class="checkbox-list col-md-3 nopad">
+														<div class="checkbox-list col-md-3 no-padding">
 															<label>
                                                             <?php 
                                                             if($this->request->params['action'] == 'vieworder'  || $this->request->params['action']== 'view')
@@ -199,7 +199,7 @@ $strings2 = CacheTranslations($language, array("drivereval_%", "tasks_date", "fi
                                                          ?>
                                                                 <?= $strings2["drivereval_posttraini"]; ?> </label>
 														</div>
-                                                        <div class="checkbox-list col-md-3 nopad">
+                                                        <div class="checkbox-list col-md-3 no-padding">
 															<label>
                                                             <?php 
                                                             if($this->request->params['action'] == 'vieworder'  || $this->request->params['action']== 'view')
@@ -264,7 +264,7 @@ $strings2 = CacheTranslations($language, array("drivereval_%", "tasks_date", "fi
                                                             </div>
                                                             
                                                             <div class="portlet-body" id="firstcheck">
-                                                                <div class="col-md-6 checkbox-list">
+                                                                <div class="col-md-6 checkbox-list no-padding">
                                                                     <label>
                                                                     <?php 
                                                             if($this->request->params['action'] == 'vieworder'  || $this->request->params['action']== 'view')
