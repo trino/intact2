@@ -728,12 +728,12 @@
                             </div>
 
                             <div class="signature_date clearfix">
-                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div style="float:left;width:550px;height:250px;">
                                     <div class="row">
                                         <label class="control-label col-md-12 col-sm-12 col-xs-12">Driver's
                                             Signature</label>
 
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div>
                                             <?php
                                                 include(APP . "../application/signature.php");
                                                 //include('/canvas/adddriver.php');
@@ -747,6 +747,7 @@
                                     </div>
 
                                 </div>
+                                
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="row">
                                         <label class="control-label col-md-12 col-sm-12 col-xs-12">Date</label>

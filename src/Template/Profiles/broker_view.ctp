@@ -1257,7 +1257,7 @@
 
 					
 <td class="actions">
-<span class="label label-info">pending </span>
+<a target="_blank" href="#" class="btn btn-primary dl">Download</a>
 </td>
 <td><span class="label label-success">Pass</span></td>
 
@@ -1277,9 +1277,10 @@
 
 					
 <td class="actions">
-    <a target="_blank" href="#" class="btn btn-primary dl">Download</a>
+<a target="_blank" href="#" class="btn btn-primary dl">Download</a>
 </td>
-<td><span class="label label-danger">Fail</span></td>
+<td><span class="label label-success">Pass</span></td>
+
 
                   
                 </tr>
@@ -1296,9 +1297,10 @@
 
 					
 <td class="actions">
-<span class="label label-info">pending </span>
+<a target="_blank" href="#" class="btn btn-primary dl">Download</a>
 </td>
-<td><span class="label label-danger">Fail</span></td>
+<td><span class="label label-success">Pass</span></td>
+
 
                   
                 </tr>
