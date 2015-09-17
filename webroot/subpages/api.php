@@ -553,18 +553,20 @@ function getpost($Key, $Default = ""){
 }
 
 function formatname($profile){
-    $name = trim(ucfirst(strtolower($profile->fname)) . " " . ucfirst(strtolower($profile->lname)));
-    if ($profile->username){
-        if($name){
-            $name .= " (" . ucfirst(h($profile->username)) . ")";
-        } else {
-            $name =  ucfirst(h($profile->username));
+    if($profile){
+        $name = trim(ucfirst(strtolower($profile->fname)) . " " . ucfirst(strtolower($profile->lname)));
+        if ($profile->username){
+            if($name){
+                $name .= " (" . ucfirst(h($profile->username)) . ")";
+            } else {
+                $name =  ucfirst(h($profile->username));
+            }
         }
+        if(!trim($name)){
+            return "#" . $profile->id;
+        }
+        return h(trim($name));
     }
-    if(!trim($name)){
-        return "#" . $profile->id;
-    }
-    return h(trim($name));
 }
 
 function clientimage($webroot, $settings, $clients = ""){
