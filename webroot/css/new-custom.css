@@ -1,6 +1,6 @@
 .page-header .page-header-top .page-logo .logo-default {
   margin: 12px 0 0 0 !important;
-    width:280px;
+    width:180px;
 }
 
 .page-content-bg {
@@ -503,6 +503,21 @@
     width: 16.6667%;
 }
 
+.col-md-3 {
+    width: 25%;
+}
+
+.col-md-4 {
+    width: 33.3333%;
+}
+
+.col-md-9 {
+    width: 75%;
+}
+
+.col-md-8 {
+    width: 66.6667%;
+}
 
 }
 

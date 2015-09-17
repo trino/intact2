@@ -188,7 +188,7 @@ if(isset($disabled)) { $is_disabled = 'disabled="disabled"'; }
     <input type="text" class="form-control" name="no6" value="<?php if(isset($generic))echo $generic->no6;?>" />
     </div>
  </div>
- <h2>Discovery</h2>
+ <h2 class="col-md-12">Discovery</h2>
   <div class="form-group col-md-12">
     <label class="control-label col-md-6">When did you get your AZ License and have you been commercially driving consistently since you got your license?</label>
     <div class="col-md-6">
@@ -201,7 +201,7 @@ if(isset($disabled)) { $is_disabled = 'disabled="disabled"'; }
     <input type="text" class="form-control" name="no8" value="<?php if(isset($generic))echo $generic->no8;?>" />
     </div>
  </div>
- <h2>Tell me about the work you have been doing?</h2>
+ <h2 class="col-md-12">Tell me about the work you have been doing?</h2>
   <!--div class="form-group col-md-12">
     <label class="control-label col-md-6"></label>
     <div class="col-md-6">
@@ -310,7 +310,7 @@ if(isset($disabled)) { $is_disabled = 'disabled="disabled"'; }
     <input type="text" class="form-control" name="no18" value="<?php if(isset($generic))echo $generic->no18;?>" />
     </div>
  </div>
- <h2>Expectations</h2>
+ <h2 class="col-md-12">Expectations</h2>
   <div class="form-group col-md-12">
     <label class="control-label col-md-6">How many Miles are you hoping to run in a week?</label>
     <div class="col-md-6">
@@ -329,14 +329,14 @@ if(isset($disabled)) { $is_disabled = 'disabled="disabled"'; }
     <input type="text" class="form-control" name="no21" value="<?php if(isset($generic))echo $generic->no21;?>" />
     </div>
  </div>
- <h2>Closing</h2>
+ <h2 class="col-md-12">Closing</h2>
   <div class="form-group col-md-12">
     <label class="control-label col-md-6">How soon could you start working?</label>
     <div class="col-md-6">
     <input type="text" class="form-control" name="no22" value="<?php if(isset($generic))echo $generic->no22;?>" />
     </div>
  </div>
- <h2>Questions for Trainees</h2>
+ <h2 class="col-md-12">Questions for Trainees</h2>
   <div class="form-group col-md-12">
     <label class="control-label col-md-6">What school did you attend?</label>
     <div class="col-md-6">
@@ -361,7 +361,7 @@ if(isset($disabled)) { $is_disabled = 'disabled="disabled"'; }
     <input type="text" class="form-control" name="no26" value="<?php if(isset($generic))echo $generic->no26;?>" />
     </div>
  </div>
- <h2>Have you driven since getting your AZ? If so, please provide details</h2>
+ <h2 class="col-md-12">Have you driven since getting your AZ? If so, please provide details</h2>
   <div class="form-group col-md-12">
     <label class="control-label col-md-6">Miles</label>
     <div class="col-md-6">
