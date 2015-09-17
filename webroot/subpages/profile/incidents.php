@@ -49,7 +49,6 @@
         for(var Row=StartingRow; Row<=EndingRow; Row++){
             for (var Col=StartingCol; Col<=EndingCol; Col++){
                 Value = getcell<?= $Name; ?>(Row, Col);
-                //alert('<?= $Name; ?>: ' + Row + ", " + Col + " = " + Value);
                 ret.push(Value);
             }
         }
@@ -67,7 +66,9 @@
     }
 
     function addfullrow<?= $Name; ?>(Data){
-        var HTML = '<TR><TD COLSPAN="<?= count($Columns) ?>">' + Data + '</TD></TR>';
+        RowID<?= $Name; ?>++;
+        var ID = 'cell<?= $Name; ?>' + RowID<?= $Name; ?> + ".0";
+        var HTML = '<TR><TD COLSPAN="<?= count($Columns) ?>"><INPUT TYPE="HIDDEN" ID="' + ID + '" VALUE="[FULLROW]' + Data + '">' + Data + '</TD></TR>';
         appendhtml("tablebody<?= $Name; ?>", HTML);
     }
 
@@ -102,6 +103,7 @@
             for(var i2 = 0; i2 < ColID<?= $Name; ?>; i2++){
                 value = getcell<?= $Name; ?>(i,i2);
                 ret2.push(value);
+                if(value.indexOf("[FULLROW]") > -1){i2=ColID<?= $Name; ?>;}
             }
             value = ret2.join(",");
             ret.push(value);

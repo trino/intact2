@@ -506,9 +506,7 @@
 
                                             $Provinces = getprovinces("English", false, true);
                                             $States =  getprovinces("English", true, false);
-                                            unset($Provinces["Select Province"]);
-                                            unset($States["Select Province"]);
-
+                                            unset($Provinces["0"]);
                                             $Data = makerows("Canada", $Provinces);
                                             $Data = makerows("USA", $States, $Data);
 
