@@ -506,9 +506,7 @@
 
                                             $Provinces = getprovinces("English", false, true);
                                             $States =  getprovinces("English", true, false);
-                                            unset($Provinces["Select Province"]);
-                                            unset($States["Select Province"]);
-
+                                            unset($Provinces["0"]);
                                             $Data = makerows("Canada", $Provinces);
                                             $Data = makerows("USA", $States, $Data);
 
@@ -776,8 +774,8 @@
 
                                             $Data = makerows($Data);
 
-                                            $UpdateCode ="setcell_cargochart(9, Col, sum(getcells_cargochart(1,Col, 8,Col)));";
-                                            $UpdateCode.="setcell_cargochart(18, Col, sum(getcells_cargochart(10,Col, 17,Col)));";
+                                            $UpdateCode ="setcell_cargochart(10, Col, sum(getcells_cargochart(2,Col, 9,Col)));";
+                                            $UpdateCode.="setcell_cargochart(20, Col, sum(getcells_cargochart(11,Col, 19,Col)));";
                                             makechart("cargochart", $Columns, $Data, false, $UpdateCode);
                                         ?>
                                         <FOOTER>

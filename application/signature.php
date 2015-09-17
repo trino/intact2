@@ -58,10 +58,9 @@
         return substr($text, -$length);
     }
 
-    function includeCanvas($name, $savebutton = true){
+    function includeCanvas($name, $savebutton = true, $Width = 493, $Height = 200){
         if (!isset($GLOBALS["canvasCSS"])) {
             //echo '<script src="assets/jquery-2.0.3.min.js"></script>';
-            
             echo '<link rel="stylesheet" href="'.LOGIN.'application/assets/bootstrap.min.css">';
             echo '<link rel="stylesheet" href="'.LOGIN.'application/assets/bootstrap-theme.min.css">';
             //echo '<script src="'.LOGIN.'application/assets/bootstrap.min.js"></script>';
@@ -99,17 +98,17 @@
         // to make it look crisp on mobile devices.
         // This also causes canvas to be cleared.
          function resizeCanvas() {
-            var ratio = window.devicePixelRatio || 1;
-            canvas.width = canvas.offsetWidth * ratio;
-            canvas.height = canvas.offsetHeight * ratio;
+            var ratio = 1;//window.devicePixelRatio || 1;
+            canvas.width = <?= $Width; ?>; //canvas.offsetWidth * ratio;
+            canvas.height = <?= $Height; ?>; //canvas.offsetHeight * ratio;
             canvas.getContext("2d").scale(ratio, ratio);
         }
 
-        window.onresize = resizeCanvas;
-       if( canvas.offsetWidth!='0')
-        resizeCanvas();
-
-        signaturePad<?= $name; ?> = new SignaturePad(canvas);
+       window.onresize = resizeCanvas;
+       if( canvas.offsetWidth!='0') {
+           resizeCanvas();
+       }
+       signaturePad<?= $name; ?> = new SignaturePad(canvas);
     });
 
     var uri = 'signature.php';
@@ -143,11 +142,13 @@
             }
         });
     }
+
+    resizeCanvas();
 </script>
 <div class="panel panel-default">
     <div class="panel-body" id="signature-pad<?= $name; ?>">
         <div>
-            <canvas style="width: 100%; height: 200px;"></canvas>
+            <canvas style="width: <?= $Width; ?>px; height: <?=$Height;?>px;"></canvas>
         </div>
         <div>
             <INPUT TYPE="HIDDEN" ID="<?= $name; ?>" NAME="<?= $name; ?>">

@@ -729,20 +729,15 @@
                             <div class="signature_date clearfix col-md-12">
                                 <div  class="col-md-6 col-sm-6 col-xs-12" >
                                     <div class="row">
-                                        <label class="control-label col-md-12 col-sm-12 col-xs-12">Driver's
-                                            Signature</label>
+                                        <label class="control-label col-md-12 col-sm-12 col-xs-12">Driver's Signature</label>
 
                                         <div style="padding: 0 5px;">
                                             <?php
                                                 include(APP . "../application/signature.php");
                                                 //include('/canvas/adddriver.php');
                                                 includeCanvas("adddriver");
-
                                             ?>
-
                                         </div>
-
-
                                     </div>
 
                                 </div>
@@ -750,15 +745,13 @@
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                  
                                     <div class="row">
-                                        <label class="control-label col-md-12 col-sm-12 col-xs-12">Broker's
-                                            Signature</label>
+                                        <label class="control-label col-md-12 col-sm-12 col-xs-12">Broker's Signature</label>
 
                                         <div style="padding: 0 5px;">
                                             <?php
                                                 //include(APP . "../application/signature.php");
                                                 //include('/canvas/adddriver.php');
                                                 includeCanvas("brokersignature");
-
                                             ?>
 
                                         </div>
