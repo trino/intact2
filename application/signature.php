@@ -86,10 +86,11 @@
             SaveImage<?= $name; ?>(signaturePad<?= $name; ?>.toDataURL());
         }
     }
-
+    
+   
     $(function () {
         // Handler for .ready() called.
-
+       
         var wrapper = document.getElementById("signature-pad<?= $name; ?>"),
             canvas = wrapper.querySelector("canvas");
          
@@ -97,7 +98,7 @@
         // Adjust canvas coordinate space taking into account pixel ratio,
         // to make it look crisp on mobile devices.
         // This also causes canvas to be cleared.
-        function resizeCanvas() {
+         function resizeCanvas() {
             var ratio = window.devicePixelRatio || 1;
             canvas.width = canvas.offsetWidth * ratio;
             canvas.height = canvas.offsetHeight * ratio;

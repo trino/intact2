@@ -726,8 +726,8 @@
                                 </div>
                             </div>
 
-                            <div class="signature_date clearfix">
-                                <div style="float:left;width:550px;height:250px;">
+                            <div class="signature_date clearfix col-md-12">
+                                <div  class="col-md-6 col-sm-6 col-xs-12" >
                                     <div class="row">
                                         <label class="control-label col-md-12 col-sm-12 col-xs-12">Driver's
                                             Signature</label>
@@ -748,7 +748,32 @@
                                 </div>
                                 
                                 <div class="col-md-6 col-sm-6 col-xs-12">
+                                 
                                     <div class="row">
+                                        <label class="control-label col-md-12 col-sm-12 col-xs-12">Broker's
+                                            Signature</label>
+
+                                        <div>
+                                            <?php
+                                                //include(APP . "../application/signature.php");
+                                                //include('/canvas/adddriver.php');
+                                                includeCanvas("brokersignature");
+
+                                            ?>
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            <div class="clearfix"></div>
+                            
+                             <div class="col-md-12">
+                                <div class="col-md-6">
                                         <label class="control-label col-md-12 col-sm-12 col-xs-12">Date</label>
 
                                         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -758,11 +783,8 @@
 
 
                                     </div>
-
-                                </div>
-
-                            </div>
-
+                             </div> 
+                            <div class="clearfix"></div>
 
                             <div class="col-md-12 col-sm-12 col-xs-12 subz">
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right">
