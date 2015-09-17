@@ -69,7 +69,7 @@
                                                      src="<?php if (isset($clients->image) && $clients->image) {
                                                              echo $this->request->webroot; ?>img/jobs/<?php echo $clients->image . '"';
                                                          } else {
-                                                            echo $this->request->webroot;?>img/clients/<?php echo $settings->client_img;?>"
+                                                            echo $this->request->webroot;?>img/jobs/<?php echo $settings->client_img;?>"
                                                     <?php
                                             }
                                             echo '/>';

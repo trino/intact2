@@ -64,31 +64,22 @@
 
 
                         <td valign="middle">
+
+
+
+
                             <?
+                                if(true){
                                 $radnom = rand(0, 7);
-                                if ($radnom > 3) {
+                                if ($radnom > 2) {
                                     ?>
 
                                     <span style="float:right;padding:4px;" class="label label-sm label-success"
                                           ID="status<?= $order->id; ?>"><?php
                                             if (!$order->approved) {
-                                                echo "Approved";
+                                                echo "Pass";
                                             } else {
-                                                echo "Pending";
-                                            }
-                                        ?></span>
-
-
-                                <?
-                                } elseif($radnom > 1) {
-                                    ?>
-
-                                    <span style="float:right;padding:4px;" class="label label-sm label-warning"
-                                          ID="status<?= $order->id; ?>"><?php
-                                            if ($order->approved) {
-                                                echo "Approved";
-                                            } else {
-                                                echo "Pending";
+                                                echo "Pass";
                                             }
                                         ?></span>
                                 <?
@@ -104,7 +95,7 @@
                                         }
                                     ?></span>
                                 <?
-                            } ?>
+                            } }?>
                         </td>
 
                     </tr>

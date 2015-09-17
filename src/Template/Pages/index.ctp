@@ -135,7 +135,368 @@
         							</div>-->
         						</div>
         						<div class="portlet-body">
-        							<?php include('subpages/pending_orders.php')?>
+        							<?php //include('subpages/pending_orders.php')?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									<div class="portlet-body">
+										<div class="form-body">
+											<div class="table-scrollable ">
+												<table class="table table-condensed table-striped table-bordered table-hover dataTable no-footer">
+													<thead>
+													<tr class="sorting">
+														<th><a href="/intact2//orders/orderslist?sort=id&amp;direction=asc" class="desc">Order</a>
+														</th>
+														<th>
+															<a href="/intact2//orders/orderslist?sort=orders.order_type&amp;direction=asc">Company
+																Name</a></th>
+														<th><a href="/intact2//orders/orderslist?sort=user_id&amp;direction=asc">Driver
+																Name</a></th>
+														<th>
+															<a href="/intact2//orders/orderslist?sort=complete&amp;direction=asc">Broker</a>
+														</th>
+														<th>
+															<a href="/intact2//orders/orderslist?sort=client_id&amp;direction=asc">Ordered</a>
+														</th>
+														<th>Completed</th>
+														<th>
+															<a href="/intact2//orders/orderslist?sort=created&amp;direction=asc">Created</a>
+														</th>
+														<th class="actions">Actions</th>
+														<!--th><a href="/intact2//orders/orderslist?sort=bright_planet_html_binary&amp;direction=asc">Status</a></th-->
+														<th><a href="/intact2//orders/orderslist?sort=uploaded_for&amp;direction=asc">Results </a>
+														</th>
+													</tr>
+													</thead>
+													<tbody>
+													<script src="/intact2/assets/admin/pages/scripts/api.js?1442257188" type="text/javascript"></script>                    <tr role="row" class="even">
+														<td>48</td>
+														<td style="min-width: 145px;">Challenger Motor Freight </td>
+														<td>Michael Smith (Driver_95)</td>
+														<td><a target="_blank" href="/intact2/profiles/view/888">John Smith</a></td>
+														<td>2015-01-28 12:15:02</td>
+														<td>09/09/2015</td>
+
+														<td><font color="green">09/09/2015</font></td>
+														<td class="actions  util-btn-margin-bottom-5">
+															<a class="btn default btn-xs blue-soft-stripe" href="/intact2/profiles/intact_view">Score Card</a>
+															<a class="btn default btn-xs yellow-stripe" href="/intact2/documents/add">Add Products</a>
+															<a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
+														</td>
+
+
+														<td valign="middle">
+
+
+
+
+
+															<span style="float:right;padding:4px;" class="label label-sm label-success" id="status48">Pending</span>
+														</td>
+
+													</tr>
+													<tr role="row" class="odd">
+														<td>49</td>
+														<td style="min-width: 145px;">Challenger Motor Freight </td>
+														<td>Kendal Smith (Driver_97)</td>
+														<td><a target="_blank" href="/intact2/profiles/view/888">John Smith</a></td>
+														<td>2015-01-27 14:24:58</td>
+														<td>09/09/2015</td>
+
+														<td><font color="green">09/09/2015</font></td>
+														<td class="actions  util-btn-margin-bottom-5">
+															<a class="btn default btn-xs blue-soft-stripe" href="/intact2/profiles/intact_view">Score Card</a>
+															<a class="btn default btn-xs yellow-stripe" href="/intact2/documents/add">Add Products</a>
+															<a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
+														</td>
+
+
+														<td valign="middle">
+
+
+
+
+
+															<span style="float:right;padding:4px;" class="label label-sm label-success" id="status49">Pending</span>
+														</td>
+
+													</tr>
+													<tr role="row" class="even">
+														<td>51</td>
+														<td style="min-width: 145px;">Challenger Motor Freight </td>
+														<td>Wayne Smith (WayneWhitney)</td>
+														<td><a target="_blank" href="/intact2/profiles/view/888">John Smith</a></td>
+														<td>2015-01-27 09:02:27</td>
+														<td>09/09/2015</td>
+
+														<td><font color="green">09/09/2015</font></td>
+														<td class="actions  util-btn-margin-bottom-5">
+															<a class="btn default btn-xs blue-soft-stripe" href="/intact2/profiles/intact_view">Score Card</a>
+															<a class="btn default btn-xs yellow-stripe" href="/intact2/documents/add">Add Products</a>
+															<a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
+															<a class="btn default btn-xs green-soft-stripe" onclick="return approve(51);" id="approve51">Approve</a>                        </td>
+
+
+														<td valign="middle">
+
+
+
+
+
+															<span style="float:right;padding:4px;" class="label label-sm label-success" id="status51">Pending</span>
+														</td>
+
+													</tr>
+													<tr role="row" class="odd">
+														<td>52</td>
+														<td style="min-width: 145px;">Challenger Motor Freight </td>
+														<td>Muhammad Smith (MuhammadQasim)</td>
+														<td><a target="_blank" href="/intact2/profiles/view/888">John Smith</a></td>
+														<td>2015-01-28 12:15:00</td>
+														<td>09/09/2015</td>
+
+														<td><font color="green">09/09/2015</font></td>
+														<td class="actions  util-btn-margin-bottom-5">
+															<a class="btn default btn-xs blue-soft-stripe" href="/intact2/profiles/intact_view">Score Card</a>
+															<a class="btn default btn-xs yellow-stripe" href="/intact2/documents/add">Add Products</a>
+															<a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
+															<a class="btn default btn-xs green-soft-stripe" onclick="return approve(52);" id="approve52">Approve</a>                        </td>
+
+
+														<td valign="middle">
+
+
+
+
+
+															<span style="float:right;padding:4px;" class="label label-sm label-success" id="status52">Pending</span>
+														</td>
+
+													</tr>
+													<tr role="row" class="even">
+														<td>53</td>
+														<td style="min-width: 145px;">Challenger Motor Freight </td>
+														<td>Kendal Smith (Driver_97)</td>
+														<td><a target="_blank" href="/intact2/profiles/view/888">John Smith</a></td>
+														<td>2015-01-28 12:14:57</td>
+														<td>09/09/2015</td>
+
+														<td><font color="green">09/09/2015</font></td>
+														<td class="actions  util-btn-margin-bottom-5">
+															<a class="btn default btn-xs blue-soft-stripe" href="/intact2/profiles/intact_view">Score Card</a>
+															<a class="btn default btn-xs yellow-stripe" href="/intact2/documents/add">Add Products</a>
+															<a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
+															<a class="btn default btn-xs green-soft-stripe" onclick="return approve(53);" id="approve53">Approve</a>                        </td>
+
+
+														<td valign="middle">
+
+
+
+
+
+															<span style="float:right;padding:4px;" class="label label-sm label-success" id="status53">Pending</span>
+														</td>
+
+													</tr>
+													<tr role="row" class="odd">
+														<td>54</td>
+														<td style="min-width: 145px;">Challenger Motor Freight </td>
+														<td>Wayne Smith (WayneWhitney)</td>
+														<td><a target="_blank" href="/intact2/profiles/view/888">John Smith</a></td>
+														<td>2015-01-27 14:56:54</td>
+														<td>09/09/2015</td>
+
+														<td><font color="green">09/09/2015</font></td>
+														<td class="actions  util-btn-margin-bottom-5">
+															<a class="btn default btn-xs blue-soft-stripe" href="/intact2/profiles/intact_view">Score Card</a>
+															<a class="btn default btn-xs yellow-stripe" href="/intact2/documents/add">Add Products</a>
+															<a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
+															<a class="btn default btn-xs green-soft-stripe" onclick="return approve(54);" id="approve54">Approve</a>                        </td>
+
+
+														<td valign="middle">
+
+
+
+
+
+															<span style="float:right;padding:4px;" class="label label-sm label-success" id="status54">Pending</span>
+														</td>
+
+													</tr>
+													<tr role="row" class="even">
+														<td>55</td>
+														<td style="min-width: 145px;">Challenger Motor Freight </td>
+														<td>Gary Smith (GaryBelbin)</td>
+														<td><a target="_blank" href="/intact2/profiles/view/888">John Smith</a></td>
+														<td>2015-01-28 12:14:55</td>
+														<td>09/09/2015</td>
+
+														<td><font color="green">09/09/2015</font></td>
+														<td class="actions  util-btn-margin-bottom-5">
+															<a class="btn default btn-xs blue-soft-stripe" href="/intact2/profiles/intact_view">Score Card</a>
+															<a class="btn default btn-xs yellow-stripe" href="/intact2/documents/add">Add Products</a>
+															<a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
+															<a class="btn default btn-xs green-soft-stripe" onclick="return approve(55);" id="approve55">Approve</a>                        </td>
+
+
+														<td valign="middle">
+
+
+
+
+
+															<span style="float:right;padding:4px;" class="label label-sm label-success" id="status55">Pending</span>
+														</td>
+
+													</tr>
+													<tr role="row" class="odd">
+														<td>71</td>
+														<td style="min-width: 145px;">Challenger Motor Freight </td>
+														<td>Robert Smith (Robert Price)</td>
+														<td><a target="_blank" href="/intact2/profiles/view/888">John Smith</a></td>
+														<td>2015-01-30 12:09:44</td>
+														<td>09/09/2015</td>
+
+														<td><font color="green">09/09/2015</font></td>
+														<td class="actions  util-btn-margin-bottom-5">
+															<a class="btn default btn-xs blue-soft-stripe" href="/intact2/profiles/intact_view">Score Card</a>
+															<a class="btn default btn-xs yellow-stripe" href="/intact2/documents/add">Add Products</a>
+															<a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
+															<a class="btn default btn-xs green-soft-stripe" onclick="return approve(71);" id="approve71">Approve</a>                        </td>
+
+
+														<td valign="middle">
+
+
+
+
+
+															<span style="float:right;padding:4px;" class="label label-sm label-success" id="status71">Pending</span>
+														</td>
+
+													</tr>
+													<tr role="row" class="even">
+														<td>72</td>
+														<td style="min-width: 145px;">Challenger Motor Freight </td>
+														<td>Adam Smith (Driver_107)</td>
+														<td><a target="_blank" href="/intact2/profiles/view/888">John Smith</a></td>
+														<td>2015-02-02 14:04:47</td>
+														<td>09/09/2015</td>
+
+														<td><font color="green">09/09/2015</font></td>
+														<td class="actions  util-btn-margin-bottom-5">
+															<a class="btn default btn-xs blue-soft-stripe" href="/intact2/profiles/intact_view">Score Card</a>
+															<a class="btn default btn-xs yellow-stripe" href="/intact2/documents/add">Add Products</a>
+															<a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
+															<a class="btn default btn-xs green-soft-stripe" onclick="return approve(72);" id="approve72">Approve</a>                        </td>
+
+
+														<td valign="middle">
+
+
+
+
+
+															<span style="float:right;padding:4px;" class="label label-sm label-success" id="status72">Pending</span>
+														</td>
+
+													</tr>
+													<tr role="row" class="odd">
+														<td>73</td>
+														<td style="min-width: 145px;">Challenger Motor Freight </td>
+														<td>Adam Smith (Driver_107)</td>
+														<td><a target="_blank" href="/intact2/profiles/view/888">John Smith</a></td>
+														<td>2015-02-02 14:06:46</td>
+														<td>09/09/2015</td>
+
+														<td><font color="green">09/09/2015</font></td>
+														<td class="actions  util-btn-margin-bottom-5">
+															<a class="btn default btn-xs blue-soft-stripe" href="/intact2/profiles/intact_view">Score Card</a>
+															<a class="btn default btn-xs yellow-stripe" href="/intact2/documents/add">Add Products</a>
+															<a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
+															<a class="btn default btn-xs green-soft-stripe" onclick="return approve(73);" id="approve73">Approve</a>                        </td>
+
+
+														<td valign="middle">
+
+
+
+
+
+															<span style="float:right;padding:4px;" class="label label-sm label-success" id="status73">Pending</span>
+														</td>
+
+													</tr>
+													</tbody>
+												</table>
+												<script>
+													function approve(ID) {
+														$.ajax({
+															url: "/intact2/orders/ajaxhandler/approveorder",
+															type: "post",
+															dataType: "HTML",
+															data: "id=" + ID,
+															success: function (res) {
+																removeelement("approve" + ID);
+																setinnerhtml("status" + ID, "Approved");
+															}
+														});
+														return false;
+													}
+												</script>
+
+											</div>
+										</div>        						</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         						</div>
         					</div>
         					<!-- END PORTLET-->
