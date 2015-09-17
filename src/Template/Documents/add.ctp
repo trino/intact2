@@ -111,7 +111,7 @@
         ?>
         <div class="form ">
             <div class="form-horizontal">
-                <div class="">
+                <div class="portlet light clearfix">
                     <?php
 
                         if ($param != 'view') {
@@ -497,12 +497,11 @@
                                     }}
                             }
                             ?>
-
-                        </div>
-                    </div>
-                    <div class="form-actions">
+                            
+                            
+                            <div class="form-actions" style="margin: 0 auto;">
                         <div class="row">
-                            <div class="col-md-offset-3 col-md-9 btndocs" <?php if(!isset($_GET['type'])){?>style="display: none;"<?php }?>>
+                            <div class="col-md-12 btndocs" <?php if(!isset($_GET['type'])){?>style="display: none;text-align: center;margin: 0 auto;"<?php }?>>
 
 
                                 <a href="javascript:void(0)" class="btn green cont"><?= $strings["forms_save"]; ?></a>
@@ -527,7 +526,17 @@
                             </div>
 
                         </div>
+                        
                     </div>
+
+                        </div>
+                        
+                        
+                    
+                    </div>
+                    
+                    
+                    
                 </div>
             </div>
 
