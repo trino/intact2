@@ -253,7 +253,7 @@
                             <form action="" id="LOE_profile" >
                             <div>
                              
-                             <input type="hidden" name="profile_id" value="" class="newid" />
+                             <input type="hidden" name="profile_id" value="15" class="newid" />
                              <input  type="hidden" name="sub_doc_id" value="9"/>
                                 <div class="form-group row">
                                     <h3 class="col-md-12">Current Employer / Previous Employer 1</h3>
@@ -711,86 +711,91 @@
 
 
                         <div id="tab_1_3" class="tab-pane">
-                        <form action="">
-                        <input type="hidden" name="profile_id" value="" class="newid" />
-                        
-                            <div class="certify_note margin-bottom-10 margin-top-10 clearfix">
-                                <div class="">
-                                    <h3>Consent</h3>
-                                    I certify that I have completed this application and that all the information is
-                                    true and accurate. I authorize Intact Insurance, ISB Canada and/or my Insurance
-                                    Broker to do a background check(if deemed necessary) in accordance with Provincial
-                                    and Federal Laws. I authorize my previous employers listed on this form to release
-                                    any information requested by Intact Insurance, ISB Canada or my Insurance Broker and
-                                    hold them harmless of all liability from the release of said information.
-                                </div>
-                            </div>
-
-                            <div class="signature_date clearfix">
-                                <div style="float:left;width:550px;height:250px;">
-                                    <div class="row">
-                                        <label class="control-label col-md-12 col-sm-12 col-xs-12">Driver's Signature</label>
-
-                                        <div style="padding: 0 5px;">
-                                            <?php
-                                                include(APP . "../application/signature.php");
-                                                //include('/canvas/adddriver.php');
-                                                includeCanvas("adddriver");
-                                            ?>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                 
-                                    <div class="row">
-                                        <label class="control-label col-md-12 col-sm-12 col-xs-12">Broker's Signature</label>
-
-                                        <div style="padding: 0 5px;">
-                                            <?php
-                                                //include(APP . "../application/signature.php");
-                                                //include('/canvas/adddriver.php');
-                                                includeCanvas("brokersignature", true, APP . "../");
-                                            ?>
-
-                                        </div>
-
-
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-                            <div class="clearfix"></div>
+                        <div class="consent">
+                            <form action="" id="consent_driver">
+                            <input type="hidden" name="sub_doc_id" value="999" />
+                            <input type="hidden" name="profile_id" value="15" class="newid" />
                             
-                             <div class="col-md-12">
-                                <div class="col-md-6">
-                                        <label class="control-label col-md-12 col-sm-12 col-xs-12">Date</label>
-
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input class="form-control datepicker" value="" required="" placeholder=""
-                                                   name="driversigndate"/>
-                                        </div>
-
-
+                                <div class="certify_note margin-bottom-10 margin-top-10 clearfix">
+                                    <div class="">
+                                        <h3>Consent</h3>
+                                        I certify that I have completed this application and that all the information is
+                                        true and accurate. I authorize Intact Insurance, ISB Canada and/or my Insurance
+                                        Broker to do a background check(if deemed necessary) in accordance with Provincial
+                                        and Federal Laws. I authorize my previous employers listed on this form to release
+                                        any information requested by Intact Insurance, ISB Canada or my Insurance Broker and
+                                        hold them harmless of all liability from the release of said information.
                                     </div>
-                             </div> 
-                            <div class="clearfix"></div>
-
-                            <div class="col-md-12 col-sm-12 col-xs-12 subz">
-                                <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right">
-                                    Submit
-                                </a>
+                                </div>
+        
+                                <div class="col-md-12 clearfix">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="row">
+                                            <label class="control-label col-md-12 col-sm-12 col-xs-12">Driver's Signature</label>
+        
+                                            <div style="padding: 0 5px;">
+                                                <?php
+                                                    include(APP . "../application/signature.php");
+                                                    //include('/canvas/adddriver.php');
+                                                    includeCanvas("adddriver");
+                                                ?>
+                                            </div>
+                                        </div>
+        
+                                    </div>
+                                    
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                     
+                                        <div class="row">
+                                            <label class="control-label col-md-12 col-sm-12 col-xs-12">Broker's Signature</label>
+        
+                                            <div style="padding: 0 5px;">
+                                                <?php
+                                                    //include(APP . "../application/signature.php");
+                                                    //include('/canvas/adddriver.php');
+                                                    includeCanvas("brokersignature");
+                                                ?>
+        
+                                            </div>
+        
+        
+                                        </div>
+        
+        
+                                    </div>
+        
+                                </div>
+                                <div class="clearfix"></div>
+                                
+                                 <div class="col-md-12">
+                                    <div class="col-md-6">
+                                            <label class="control-label col-md-12 col-sm-12 col-xs-12">Date</label>
+        
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <input class="form-control datepicker" value="" required="" placeholder=""
+                                                       name="driversigndate"/>
+                                            </div>
+        
+        
+                                        </div>
+                                 </div> 
+                                <div class="clearfix"></div>
+        
+                                <div class="col-md-12 col-sm-12 col-xs-12 subz">
+                                    <a href="javascript:void(0);" class="btn btn-success btn-lg pull-right" id="driver_consent" >
+                                        Submit
+                                    </a>
+                                </div>
+                                </form>
                             </div>
-                            </form>
+                            <div class="message col-md-12" style="display: none;">
+                                <strong>Thank You!</strong>
+                            </div>
                             <div class="clearfix"></div>
                         </div>
                         <div class="overlay-wrapper">
                             <div class="overlay">
-                                <img
-                                    src="<?php echo $this->request->webroot; ?>/assets/admin/layout/img/ajax-loading.gif"/>
+                                <img src="<?php echo $this->request->webroot; ?>/assets/admin/layout/img/ajax-loading.gif"/>
                             </div>
                         </div>
                     </div>
@@ -815,7 +820,9 @@
     <?php //include('subpages/profile/adddriver.php');?>
 </div>
 
+
 <script>
+
     function add_more() {//$("#add_more").click(function () {
         //var references = Number($('#count_past_emp').val()) + Number(1);
         $.ajax({
@@ -877,7 +884,34 @@
             }
         });
         //window.setTimeout(function(){  $('#third a').click();$('.overlay-wrapper').hide();}, 1500);"
-    } )
+    });
+    
+     $('#driver_consent').click(function(){
+        $('.overlay-wrapper').show();
+           var datas = $('#consent_driver input').serialize();
+            var userid = $('.newid').val();
+        $.ajax({
+            url:"<?php echo $this->request->webroot;?>documents/savedoc/0/0/"+userid+'?document=Driver%20Consent&draft=0',
+            type: 'post',
+            data:datas,
+            success: function(did)
+            {
+                $.ajax({
+                    url:"<?php echo $this->request->webroot;?>documents/saveConsent/"+did+"/"+userid+'?document=Driver%20Consent&draft=0',
+                    data:datas,
+                    type:'post',
+                    success: function(){
+                        $('.overlay-wrapper').hide();
+                        $('.consent').hide();
+                        $('.message').show();
+                        //$('#third a').click();
+                    }
+                });
+                
+            }
+        });
+        //window.setTimeout(function(){  $('#third a').click();$('.overlay-wrapper').hide();}, 1500);"
+    });
     
     $(".deleteloe").live("click", function () {
         $(this).parent().parent().remove();
@@ -886,7 +920,6 @@
         $('#count_past_emp').attr('value', counter);
         references = references - 1;
     });
-
 
 </script>
 

@@ -87,31 +87,41 @@
     }
     
    
+ 
     $(function () {
         // Handler for .ready() called.
        
         var wrapper = document.getElementById("signature-pad<?= $name; ?>"),
             canvas = wrapper.querySelector("canvas");
-         
+             canvas.height = <?= $Height; ?>;
+            canvas.width= <?= $Width; ?>;
        
         // Adjust canvas coordinate space taking into account pixel ratio,
         // to make it look crisp on mobile devices.
         // This also causes canvas to be cleared.
-         function resizeCanvas() {
-            var ratio = window.devicePixelRatio || 1;
-            canvas.width = canvas.offsetWidth * ratio;
-            canvas.height = canvas.offsetHeight * ratio;
+         /*function resizeCanvas<?= $name; ?>() {
+            var ratio = 1;//window.devicePixelRatio || 1;
+            canvas.width = <?= $Width; ?>; //canvas.offsetWidth * ratio;
+            canvas.height = <?= $Height; ?>; //canvas.offsetHeight * ratio;
             canvas.getContext("2d").scale(ratio, ratio);
-        }
-
-       window.onresize = resizeCanvas;
-       //if( canvas.offsetWidth!='0') {
-           resizeCanvas();
-       //}
-       signaturePad<?= $name; ?> = new SignaturePad(canvas);
+        }*/
+         function resizeCanvas()
+            {
+              canh = $('.canvasdiv').height();
+              canw = $('.canvasdiv').width();
+              canvas.width =canw;
+              canvas.height = canh
+            //canvas.getContext("2d").scale(ratio, ratio);
+            }
+            $(window).resize(function(){
+                resizeCanvas();
+            })
+       //window.onresize = resizeCanvas;
+        signaturePad<?= $name; ?> = new SignaturePad(canvas);
     });
 
-    var uri = 'signature.php';
+    //var uri = 'signature.php';
+    var uri = "<?php echo WEB_ROOT;?>profiles/ajax_savesign";
     var saved<?= $name; ?> = "";
 
     function QuickSave<?= $name; ?>(){
@@ -131,6 +141,7 @@
             dataType: "HTML",
             data: "image=" + data,
             success: function (msg) {
+                //alert(msg);
                 saved<?= $name; ?>=msg;
                 $('#error<?= $name; ?>').html("Success!");
                 $('#<?= $name; ?>').val(msg);
@@ -143,13 +154,15 @@
         });
     }
 
-    resizeCanvas();
 </script>
 <div class="panel panel-default">
     <div class="panel-body" id="signature-pad<?= $name; ?>">
-        <div>
-            <canvas style="width: <?= $Width; ?>px; height: <?=$Height;?>px;"></canvas>
+    <div class="canvasdiv" >
+        <div style="width: <?= $Width; ?>px; height: <?=$Height;?>px;" >
+            <canvas ></canvas>
         </div>
+    </div>
+        
         <div>
             <INPUT TYPE="HIDDEN" ID="<?= $name; ?>" NAME="<?= $name; ?>">
             <div class="alert alert-info" id="error<?= $name; ?>">Sign above</div>

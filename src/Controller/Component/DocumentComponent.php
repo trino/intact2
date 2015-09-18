@@ -197,7 +197,7 @@ class DocumentComponent extends Component{
                     $arr['created'] = date('Y-m-d H:i:s');
                 }
 
-                if ((!$did || $did == '0') && ($arr['sub_doc_id'] < 7 || $arr['sub_doc_id'] == 15 || $arr['sub_doc_id'] == 9 || $arr['sub_doc_id'] == 10)) {
+                if ((!$did || $did == '0') && ($arr['sub_doc_id'] < 7 || $arr['sub_doc_id'] == 15 || $arr['sub_doc_id'] == 9 || $arr['sub_doc_id'] == 10 || $arr['sub_doc_id']=='999')) {
                     if($uid == 0)
                         $arr['user_id'] = $controller->request->session()->read('Profile.id');
                     else

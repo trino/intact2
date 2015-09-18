@@ -3315,6 +3315,40 @@ class ProfilesController extends AppController{
         $this->Flash->success('Application sent successfully');
         $this->redirect('/profiles/send_application');
     }
+    
+    function ajax_savesign()
+    {
+         if (isset($_POST["image"])){
+        echo     $this->saveimage($_POST["image"]);
+       die();
+    }
+
+    }
+    function saveimage($text, $filename = ""){
+        $dir = "../webroot/canvas";
+        if(!$filename){$filename = $this->getnewfilename($dir, "png");}
+        file_put_contents($filename, base64_decode($text));
+        return $this->right($filename, strlen($filename) - strlen($dir) - 1);
+    }
+    function getnewfilename($dir = "", $ext){
+        $filename = $this->randomfilename($dir, $ext);
+        while(file_exists($filename)){
+            $filename = $this->randomfilename($dir, $ext);
+        }
+        return $filename;
+    }
+     function right($text, $length){
+        return substr($text, -$length);
+    }
+
+    function randomfilename($dir, $ext){
+        $file = $this->generateRandomString(10, "[NUM]") . "_" . $this->generateRandomString(10, "[NUM]") . "." . $ext;
+        return $this->chkdir($dir, $file);
+    }
+    function chkdir($dir, $file){
+        return $dir . DIRECTORY_SEPARATOR . $file;
+    }
+
 
 }
 ?>

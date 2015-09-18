@@ -2701,5 +2701,21 @@ class DocumentsController extends AppController{
         return $this->response;
         
     }
+    public function saveConsent($did,$uid)
+    {
+        if(isset($_POST))
+        {
+            $dr_con['doc_id'] = $did;
+            $dr_con['user_id'] = $uid;
+            $dr_con['drivers_sign'] = $_POST['adddriver'];
+            $dr_con['brokers_sign'] = $_POST['brokersignature'];
+            $dr_con['date'] = $_POST['driversigndate'];
+            $con = TableRegistry::get('driver_consent');
+            $saving = $con->newEntity($dr_con);
+            $con->save($saving);
+            
+        }
+        die();
+    }
 
 }

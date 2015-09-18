@@ -242,7 +242,7 @@
                                     echo '<TR><TD COLSPAN="9" ALIGN="CENTER">' . $strings["documents_noresults"] . '</TD></TR>';
                                 }
 
-                                foreach ($documents as $docs):
+                                foreach ($documents as $docs){
 
                                 if ($docs->document_type == 'feedbacks' && !$this->request->session()->read('Profile.super')) {
                                     continue;
@@ -422,7 +422,7 @@
 
                     <!--TR><TD colspan="8"><!php print_r($docs); !></TD></TR-->
 
-                    <?php endforeach; ?>
+                    <?php } ?>
                     </tbody>
                     </table>
 

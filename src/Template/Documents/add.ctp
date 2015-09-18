@@ -558,7 +558,7 @@
         {
             <?php if(isset($_GET['type'])){ ?>
 
-            showforms('<?php $subdet = $this->requestAction('/orders/getSubDetail/'.$_GET['type']); echo $subdet->form."?doc_id=".$subdet->id;?>');
+            showforms('<?php $subdet = $this->requestAction('/orders/getSubDetail/'.$_GET['type']); if($subdet) echo $subdet->form."?doc_id=".$subdet->id;?>');
             <?php }?>
         }
         if (!doc_id || doc_id=='0') {
