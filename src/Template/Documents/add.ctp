@@ -68,13 +68,14 @@
             if (strlen($Title)>0){
                 echo '<div class="row">
                             <div class="col-md-12">
-                            <div class="portlet box ' . $color .'">
+                            <!--div class="portlet box ' . $color .'"-->
+                            <div>
 
-                                    <div class="portlet-title">
+                                    <!--div class="portlet-title">
                                         <div class="caption">
                                             ' . $Title . '
                                         </div>
-                                    </div>
+                                    </div-->
                                     <div class="portlet-body form">
                                     <div class="form-body" id="parentdiv" style="padding-bottom: 0px;">
                                                     <div class="tab-content" ID="tab0">';
