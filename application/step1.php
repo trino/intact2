@@ -74,10 +74,10 @@
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12 logo">
                 <div class="main-logo">
-                <img src="<?php echo WEB_ROOT;?>img/intact_logo.png" />
+                <img src="<?php echo WEB_ROOT;?>img/logo.png" />
                 </div>
                 <div class="clearfix"></div>
-                <span>Intact Insurance Company</span>
+                <span><?= "sitename goes here"; ?></span>
                 </div>
                 </div><!-- .header_approved  -->
                 

@@ -88,6 +88,11 @@
 	<?php
 		include_once('subpages/api.php');
 		JSinclude($this, "assets/admin/pages/scripts/form-validate-roy.js");
+		if(!isset($strings)) {
+			$settings = $this->requestAction('settings/get_settings');
+			$language = $this->request->session()->read('Profile.language');
+			$strings = CacheTranslations($language, $this->request->params['controller'] . "_%", $settings);
+		}
 	?>
 
 
@@ -120,10 +125,10 @@ jQuery(document).ready(function() {
 				<div class="logo-mid">
 					<?php $logo = $this->requestAction('Logos/getlogo/0', ['return']); ?>
 					<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" /></a>
-					<!--a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo" style="width: 80px;" /></a-->
+					<!--a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logo.png" alt="logo" class="logo" style="width: 80px;" /></a-->
 				</div>
 				<div class="mid-text" style="vertical-align: bottom;margin-bottom: 10px;">
-					<p style="">Commercial Auto Insurance</p>
+					<p style=""><?= $strings["dashboard_insurance"]; ?></p>
 				</div>
 			</div>
 			<!-- END LOGO -->
@@ -216,7 +221,7 @@ jQuery(document).ready(function() {
 
 				 <div><strong>Phone :</strong> 800 123 3456</div>
 				 <div><strong>Other :</strong> 800 123 3456</div>
-				 <div><strong>Email :</strong> <a href="mailto:info@metronic.com">info@isbmeereports.com</a></div>
+				 <div><strong>Email :</strong> <a href="mailto:<?= $strings["dashboard_email"]; ?>"><?= $strings["dashboard_email"]; ?></a></div>
 
 				</address>
 			</div>

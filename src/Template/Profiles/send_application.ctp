@@ -32,7 +32,7 @@
                 <label class="control-label col-md-2"><br>Insurer
                 </label>
                 <div class="col-md-8">
-                    <img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" class="img-responsive" style="width: 120px;padding-right:20px;" />
+                    <img src="<?php echo $this->request->webroot;?>img/logo.png" class="img-responsive" style="width: 120px;padding-right:20px;" />
                 </div>
                 </div>
                 </div>

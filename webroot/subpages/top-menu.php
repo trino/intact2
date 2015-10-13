@@ -1,14 +1,14 @@
 <?php
-$settings = $this->requestAction('settings/get_settings');
-$debug = $this->request->session()->read('debug');
-include_once('subpages/api.php');
-$language = $this->request->session()->read('Profile.language');
-$strings = CacheTranslations($language, array("langswitch", "orders_create"), $settings);//,$registry);
+	$settings = $this->requestAction('settings/get_settings');
+	$debug = $this->request->session()->read('debug');
+	include_once('subpages/api.php');
+	$language = $this->request->session()->read('Profile.language');
+	$strings = CacheTranslations($language, array("langswitch", "orders_create"), $settings);//,$registry);
 ?>
 
 <div class="top-menu">
 
-	<!--<img src="<?php echo $this->request->webroot;?>img/intactinsurance.jpg" alt="logo" class="logo-default" style="width: 120px;padding-right:20px;" />-->
+	<!--<img src="<?php echo $this->request->webroot;?>img/logo.png" alt="logo" class="logo-default" style="width: 120px;padding-right:20px;" />-->
 <img src="<?php echo $this->request->webroot;?>img/broker.png" alt="logo" class="logo-default" style="width: 170px;padding:6px 10px 0 0;" />
 
 

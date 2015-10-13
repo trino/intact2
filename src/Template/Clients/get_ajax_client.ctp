@@ -9,7 +9,7 @@ if ($clients){
             <td width="5" align="center">
                 <img height="32" src="<?php
                     echo $this->request->webroot;
-                    $filename = 'img/logos/MEELogo.png';
+                    $filename = 'img/logos/logo.png';
                     if (strlen($o->image)>0) {
                         $testfile = 'img/jobs/' . $o->image;
                         if (file_exists($testfile)){

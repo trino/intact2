@@ -1,4 +1,11 @@
-                                <link type="text/css" rel="stylesheet" href="<?php echo $this ->request->webroot; ?>assets/admin/pages/css/profile.css"> <!--REQUIRED-->
+<?php
+    if($this->request->session()->read('debug')){ echo "<span style ='color:red;'>" . __FILE__ . "</span>"; }
+    $settings = $this->requestAction('settings/get_settings');
+    include_once('subpages/api.php');
+    $language = $this->request->session()->read('Profile.language');
+    $strings = CacheTranslations($language, $this->request->params['controller'] . "_%",$settings);
+?>
+<link type="text/css" rel="stylesheet" href="<?php echo $this ->request->webroot; ?>assets/admin/pages/css/profile.css"> <!--REQUIRED-->
 <style>
     @media print {
         .page-header {
@@ -38,7 +45,7 @@
 		<div class="container">
 			<!-- BEGIN PAGE TITLE -->
 			<div class="page-title">
-				<h1>Profiles Scorecard<small>Intact View</small></h1>
+				<h1>Profiles Scorecard<small><?= $strings["dashboard_sitename"]; ?> View</small></h1>
 			</div>
 			
 		</div>
@@ -77,8 +84,8 @@
                             <label style="margin-bottom:10px;" class="uniform-inline">
                                                 <div class="checker disabled" id="uniform-888">
                                                     <span class="checked"><input type="checkbox" checked="" disabled="disabled" class="checkhiredriver" id="888" value="1" name="stat"></span>
-                                                </div> 
-                                                Intact Policy or Quote# <span class="hired_msg"></span>
+                                                </div>
+                                <?= $strings["dashboard_sitename"]; ?> Policy or Quote# <span class="hired_msg"></span>
                                                 </label>
                                                 <br>
                                                 <a style="margin-top:2px;width:80%;" class="btn floatleft grey-cascade addpro" href="javascript:void(0)">Order Products A La Carte <i class="m-icon-swapright m-icon-white"></i></a>

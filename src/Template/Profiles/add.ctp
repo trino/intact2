@@ -1,3 +1,10 @@
+<?php
+    if($this->request->session()->read('debug')){ echo "<span style ='color:red;'>" . __FILE__ . "</span>"; }
+    $settings = $this->requestAction('settings/get_settings');
+    include_once('subpages/api.php');
+    $language = $this->request->session()->read('Profile.language');
+    $strings = CacheTranslations($language, $this->request->params['controller'] . "_%",$settings);
+?>
 <script>
     var references = 2;
 </script>
@@ -44,10 +51,10 @@
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12 logo">
                             <div class="main-logo">
-                                <img src="<?= WEB_ROOT; ?>img/intact_logo.png"/>
+                                <img src="<?= WEB_ROOT; ?>img/logo.png"/>
                             </div>
                             <div class="clearfix"></div>
-                            <span>Intact Insurance Company</span>
+                            <span><?= $strings["dashboard_sitename"]; ?></span>
                         </div>
                     </div>
                     <!-- .header_approved  -->
@@ -720,10 +727,10 @@
                                     <div class="">
                                         <h3>Consent</h3>
                                         I certify that I have completed this application and that all the information is
-                                        true and accurate. I authorize Intact Insurance, ISB Canada and/or my Insurance
+                                        true and accurate. I authorize <?= $strings["dashboard_sitename"]; ?> and/or my Insurance
                                         Broker to do a background check(if deemed necessary) in accordance with Provincial
                                         and Federal Laws. I authorize my previous employers listed on this form to release
-                                        any information requested by Intact Insurance, ISB Canada or my Insurance Broker and
+                                        any information requested by <?= $strings["dashboard_sitename"]; ?> or my Insurance Broker and
                                         hold them harmless of all liability from the release of said information.
                                     </div>
                                 </div>

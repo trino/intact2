@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2015 at 08:22 PM
+-- Generation Time: Oct 13, 2015 at 08:17 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -29,17 +29,17 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `strings` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) NOT NULL COMMENT 'Do not use a number',
-  `English` varchar(4096) NOT NULL,
+  `English` longtext NOT NULL,
   `French` varchar(4096) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=751 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=763 ;
 
 --
 -- Dumping data for table `strings`
 --
 
 INSERT INTO `strings` (`ID`, `Name`, `English`, `French`) VALUES
-(1, 'Date', '1441228261', '<-- This is used by the system to auto-update'),
+(1, 'Date', '1442257188', '<-- This is used by the system to auto-update'),
 (2, 'dashboard_affirmative', 'Yes', 'Oui'),
 (3, 'dashboard_negative', 'No', 'Non'),
 (4, 'dashboard_selectall', 'Select All', 'Tout sélectionner'),
@@ -694,7 +694,7 @@ INSERT INTO `strings` (`ID`, `Name`, `English`, `French`) VALUES
 (666, 'documents_na', 'N/A', 'S/O'),
 (667, 'documents_at', 'at', 'à'),
 (668, 'forms_dateformat', 'YYYY-MM-DD', 'AAAA-MM-JJ'),
-(669, 'dashboard_dashboard2', 'Intact Dashboard', 'Tableau de bord Intact'),
+(669, 'dashboard_dashboard2', 'Dashboard', 'Tableau de bord'),
 (670, 'forms_selectdriver', 'Select Driver', 'Sélectionnez Pilote'),
 (671, 'infoorder_selectclient', 'Select a %client%', 'Sélectionner un %client%'),
 (672, 'documents_selectdocument', 'Select %Document%', 'Sélectionnez %document%'),
@@ -766,7 +766,19 @@ INSERT INTO `strings` (`ID`, `Name`, `English`, `French`) VALUES
 (747, 'verifs_tanker', 'Tanker', 'camion-citerne'),
 (748, 'verifs_dangerous', 'Dangerous', 'dangereux'),
 (749, 'verifs_livestock', 'Livestock', 'élevage'),
-(750, 'verifs_liquid', 'Liquid', '\r\nliquide');
+(750, 'verifs_liquid', 'Liquid', '\r\nliquide'),
+(751, 'email_sendapplication_variables', 'brokerageemail, brokerage, link, company_name, fullname, date, email', ''),
+(752, 'email_postorder_variables', 'brokerageemail, brokerage, customer, fullname, date, email', ''),
+(753, 'email_sendapplication_subject', 'Application for New Driver', ''),
+(754, 'email_sendapplication_message', 'Date: %date%<br /><br />\nDear %fullname%,<br /><br />\nThank you for your request to add a new driver to the policy of %company_name%.  To complete the application for \ninsurance please click on the link below…<br /><br />\n<a href="%link%">Apply</a><br /><br />\nThe application process can be completed in 3 easy steps…<br />\n\n\n<ol>\n<li>Provide basic Driver information</li>\n<li>Step 2 – Provide Driver employment history for the last 3-6 years</li>\n<li>Step 3 – Have the Driver sign the Authorization Form</li>\n<li>Step 4 - Submit</li>\n</ol>\n<br />\nOnce you have the submitted the request, we will process the application and notify you of the driver''s eligibility.<br /><br />\nThank you for choosing %brokerage%, we appreciate your business.  <br /><br />\nRespectfully, \n%brokerage%<br />\n%brokerageemail%', ''),
+(755, 'email_sendapplication_variables', 'brokerageemail, brokerage, link, company_name, fullname, date, email', ''),
+(756, 'email_postorder_subject', 'Application for New Driver', ''),
+(757, 'email_postorder_message', 'Date: %date%<br /><br />\r\nDear %customer%,<br /><br />\r\nThank you for choosing %brokerage%, we appreciate your business.<br />\r\nYour MEE request for %fullname% has been successfully submitted.<br />\r\nYour confirmation number for this MEE request is %orderid%<br />\r\nWe are processing your request and will notify you of the driver’s eligibility shortly.<br /><br />\r\n\r\nRespectfully, <br />\r\n%brokerage%<br />\r\n%brokerageemail%<br />', ''),
+(758, 'email_postorder_variables', 'brokerageemail, brokerage, customer, fullname, date', ''),
+(759, 'dashboard_create', 'Create', 'Créer'),
+(760, 'dashboard_sitename', 'Old Republic Test', ''),
+(761, 'dashboard_email', 'info@trinoweb.com', 'info@trinoweb.com'),
+(762, 'dashboard_insurance', 'Commercial Auto Insurance', 'Assurance Auto Commercial');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

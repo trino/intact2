@@ -11,6 +11,8 @@ class ManagerComponent extends Component {
         $Controller->set("Manager", $this);
         $Controller->set("Me", $Controller->request->session()->read('Profile.id'));
         $this->Controller = $Controller;
+
+        $this->SiteName = "Old Republic";
     }
 
     //////////////////////////profile API//////////////////////////////////////////

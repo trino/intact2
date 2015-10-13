@@ -1,3 +1,11 @@
+<?php
+	if($this->request->session()->read('debug')){ echo "<span style ='color:red;'>" . __FILE__ . "</span>"; }
+	$settings = $this->requestAction('settings/get_settings');
+	include_once('subpages/api.php');
+	$language = $this->request->session()->read('Profile.language');
+	$strings = CacheTranslations($language, $this->request->params['controller'] . "_%",$settings);
+?>
+
 	<script src="<?php echo $this->request->webroot;?>assets/global/plugins/gmaps/gmaps.min.js" type="text/javascript"></script>
 	<script src="<?php echo $this->request->webroot;?>assets/admin/pages/scripts/contact-us.js" type="text/javascript"></script>
 	<SCRIPT>
@@ -40,7 +48,7 @@
 									<div class="well">
 										<h4>Address</h4>
 										<address>
-										<strong>Intact Insurance</strong><br>
+										<strong><?= $strings["dashboard_sitename"]; ?></strong><br>
 										 6925 Century Avenue #900<br>
 										 Mississauga, ON L5N 0E3<br>
 										<abbr title="Phone">P:</abbr> (234) 145-1810 </address>
