@@ -5,6 +5,12 @@
     //include(APP."../src/Template/Excel/index.ctp");
 
     include("subpages/profile/incidents.php");
+
+    if($this->request->session()->read('debug')){ echo "<span style ='color:red;'>" . __FILE__ . "</span>"; }
+    $settings = $this->requestAction('settings/get_settings');
+    include_once('subpages/api.php');
+    $language = $this->request->session()->read('Profile.language');
+    $strings = CacheTranslations($language, $this->request->params['controller'] . "_%",$settings);
 ?>
 <form id="transportappform" class="transport-app-form" method="post" action="">
     <div class="row">
@@ -903,7 +909,7 @@
                     <h4>COMMENTS / CLARIFICATION OF DETAILS</h4>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 detail-textarea">
-                            <div class="row"><label class="control-label col-md-12 col-sm-12 col-xs-12">Referred by Intact Website "find a broker"</label></div>
+                            <div class="row"><label class="control-label col-md-12 col-sm-12 col-xs-12">Referred by <?= $strings["dashboard_sitename"]; ?> Website "find a broker"</label></div>
                             <textarea name="detials" class="form-control required" placeholder=""></textarea>
                         </div>
                     </div>
