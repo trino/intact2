@@ -49,13 +49,6 @@
                         <div class="col-md-8 col-sm-8 col-xs-12">
                             <h2>Approved Driver History Form</h2>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12 logo">
-                            <div class="main-logo">
-                                <img src="<?= WEB_ROOT; ?>img/logo.png"/>
-                            </div>
-                            <div class="clearfix"></div>
-                            <span><?= $strings["dashboard_sitename"]; ?></span>
-                        </div>
                     </div>
                     <!-- .header_approved  -->
                     <ul class="nav nav-tabs">
@@ -82,17 +75,14 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <label class="control-label col-md-5 col-sm-5 col-xs-12">Full
-                                                        Name:</label>
+                                                    <label class="control-label col-md-5 col-sm-5 col-xs-12 no-padding">Full Name:</label>
 
                                                     <div class="col-md-7 col-sm-7 col-xs-12">
-                                                        <input class="form-control" value="" required="" placeholder=""
-                                                               name="fname">
+                                                        <input class="form-control" value="" required="" placeholder="" name="fname">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <label
-                                                        class="control-label col-md-4 col-sm-4 col-xs-12">Gender</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12 no-padding">Gender</label>
 
                                                     <div class="col-md-8 col-sm-8 col-xs-12">
                                                         <select class="form-control required" name="gender">
@@ -107,29 +97,24 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <label class="control-label col-md-5 col-sm-5 col-xs-12">License
-                                                        #:</label>
+                                                    <label class="control-label col-md-5 col-sm-5 col-xs-12 no-padding">License #:</label>
 
                                                     <div class="col-md-7 col-sm-7 col-xs-12">
-                                                        <input class="form-control" value="" required="" placeholder=""
-                                                               name="driver_license_no">
+                                                        <input class="form-control" value="" required="" placeholder="" name="driver_license_no">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Date of
-                                                        Birth:</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12 no-padding">Date of Birth:</label>
 
                                                     <div class="col-md-8 col-sm-8 col-xs-12">
-                                                        <input class="form-control" value="" required="" placeholder=""
-                                                               name="dob">
+                                                        <input class="form-control" value="" required="" placeholder="" name="dob">
                                                     </div>
                                                 </div>
                                             </div>
 
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12 no-padding margin-bottom-10">
-                                            <label class="control-label col-md-5 col-sm-5 col-xs-12">Province
-                                                issued: </label>
+                                            <label class="control-label col-md-5 col-sm-5 col-xs-12 no-padding">Province issued: </label>
 
                                             <div class="col-md-7 col-sm-7 col-xs-12 province-select">
                                                 <select class="form-control req_driver" name="driver_province" required="">
@@ -155,17 +140,16 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <label
-                                                        class="control-label col-md-5 col-sm-5 col-xs-12 required padding-right">Current License Class:</label>
+                                                    <label class="control-label col-md-5 col-sm-5 col-xs-12 required padding-right no-padding">Current License Class:</label>
 
                                                     <div class="col-md-7 col-sm-7 col-xs-12">
                                                         <input class="form-control" value="" required="" placeholder="" name="license_class">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12 required">Date of receipt for this class:</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12 required no-padding">Date of receipt for this class:</label>
                                                     <div class="col-md-8 col-sm-8 col-xs-12">
-                                                        <input class="form-control datepicker" value="" required="" placeholder="" name="date_class">
+                                                        <input type="text" class="form-control datepicker" value="" required="" placeholder="" name="date_class">
                                                     </div>
                                                 </div>
                                             </div>
@@ -176,30 +160,30 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12 no-padding margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <label class="control-label col-md-5 col-sm-5 col-xs-12 required padding-right">Date First License in Canada or USA (Class G or equivalent):</label>
+                                                    <label class="control-label col-md-5 col-sm-5 col-xs-12 required padding-right no-padding">Date First License in Canada or USA (Class G or equivalent):</label>
 
                                                     <div class="col-md-7 col-sm-7 col-xs-12">
-                                                        <input class="form-control" value="" required="" placeholder="" name="datefirstlicense">
+                                                        <input type="text" class="form-control datepicker" value="" required="" placeholder="" name="datefirstlicense">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12 required">Years of experience with current class of license:</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12 required no-padding">Years of experience with current class of license:</label>
 
                                                     <div class="col-md-8 col-sm-8 col-xs-12">
-                                                        <input class="form-control datepicker" value="" required="" placeholder="" name="yearsofexp">
+                                                        <input type="number" class="form-control" value="" required="" placeholder="" name="yearsofexp">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <label class="control-label col-md-5 col-sm-5 col-xs-12 required padding-right">Years of experience driving in the USA:</label>
+                                                    <label class="control-label col-md-5 col-sm-5 col-xs-12 required padding-right no-padding">Years of experience driving in the USA:</label>
 
                                                     <div class="col-md-7 col-sm-7 col-xs-12">
-                                                        <input class="form-control datepicker" value="" required="" placeholder="" name="yearsofusa">
+                                                        <input type="number" class="form-control" value="" required="" placeholder="" name="yearsofusa">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12 required">Check your current status below:</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12 required no-padding">Check your current status below:</label>
 
                                                     <div class="col-md-8 col-sm-8 col-xs-12">
                                                         <select class="form-control datepicker" name="status">
@@ -735,8 +719,8 @@
                                     </div>
                                 </div>
         
-                                <div class="col-md-12 clearfix">
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="col-md-12 clearfix no-padding">
+                                    <div class="col-md-6 col-sm-6 col-xs-12" style="padding-left: 10px;">
                                         <div class="row">
                                             <label class="control-label col-md-12 col-sm-12 col-xs-12">Driver's Signature</label>
         
@@ -774,13 +758,12 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 
-                                 <div class="col-md-12">
-                                    <div class="col-md-6">
-                                            <label class="control-label col-md-12 col-sm-12 col-xs-12">Date</label>
+                                 <div class="col-md-12 no-padding">
+                                    <div class="col-md-6 no-padding" style="padding-right: 5px !important;">
+                                            <label class="control-label col-md-12 col-sm-12 col-xs-12 no-padding">Date:</label>
         
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <input class="form-control datepicker" value="" required="" placeholder=""
-                                                       name="driversigndate"/>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                                <input class="form-control datepicker" value="<?= date('Y-m-d'); ?>" readonly name="driversigndate"/>
                                             </div>
         
         

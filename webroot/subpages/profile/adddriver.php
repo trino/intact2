@@ -15,15 +15,6 @@
                 <div class="col-md-8 col-sm-8 col-xs-12">
                 <h2>Approved Driver History Form</h2>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 logo">
-                <div class="main-logo">
-                <img src="<?php echo WEB_ROOT;?>img/logo.png" />
-                </div>
-                <div class="clearfix"></div>
-                <span><?= $strings["dashboard_sitename"]; ?></span>
-                </div>
-                </div><!-- .header_approved  -->
-                
                 <hr />
                 
                 <form id="approvedForm" class="approved-form" method="post" action="">
