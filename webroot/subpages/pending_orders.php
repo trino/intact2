@@ -51,7 +51,7 @@
                         <td><font color="green">09/09/2015</font></td>
                         <td class="actions  util-btn-margin-bottom-5">
                             <a class="btn default btn-xs blue-soft-stripe"
-                               href="<?php echo $this->request->webroot; ?>profiles/view">Score Card</a>
+                               href="<?php echo $this->request->webroot; ?>profiles/scorecard">Score Card</a>
                             <a class="btn default btn-xs yellow-stripe"
                                href="<?php echo $this->request->webroot; ?>documents/add">Add Products</a>
                             <a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>

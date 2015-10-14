@@ -40,9 +40,9 @@ class ProfilesController extends AppController{
     {
         
     }
-    public function view()
+    public function scorecard()
     {
-        
+
     }
 
     public function driver_view()
