@@ -40,7 +40,7 @@ class ProfilesController extends AppController{
     {
         
     }
-    public function intact_view()
+    public function view()
     {
         
     }

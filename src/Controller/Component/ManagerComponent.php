@@ -348,6 +348,10 @@ class ManagerComponent extends Component {
         return $Order;
     }
 
+    function NeedsDivs(){
+        return true;
+    }
+
     function webroot($removeslashes = false){
         $webroot = $this->Controller->request->webroot;
         if($removeslashes){$webroot = str_replace('/', '', $webroot);}
@@ -829,7 +833,7 @@ class ManagerComponent extends Component {
         return  $_SERVER["SERVER_NAME"];
     }
     function ScriptName(){
-        return "Intact 2";
+        return "OldRepublic";
     }
 
     function isJson($string) {

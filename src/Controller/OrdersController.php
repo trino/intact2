@@ -24,9 +24,6 @@
             die();
         }
 
-        public function intact(){
-
-        }
         public function buy_products() {
             
         }

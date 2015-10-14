@@ -172,26 +172,26 @@
 												<table class="table table-condensed table-striped table-bordered table-hover dataTable no-footer">
 													<thead>
 													<tr class="sorting">
-														<th><a href="/intact/orders/orderslist?sort=id&amp;direction=asc" class="desc">Order</a>
+														<th><a href="<?php echo $this->request->webroot; ?>orders/orderslist?sort=id&amp;direction=asc" class="desc">Order</a>
 														</th>
 														<th>
-															<a href="/intact/orders/orderslist?sort=orders.order_type&amp;direction=asc">Company
+															<a href="<?php echo $this->request->webroot; ?>orders/orderslist?sort=orders.order_type&amp;direction=asc">Company
 																Name</a></th>
-														<th><a href="/intact/orders/orderslist?sort=user_id&amp;direction=asc">Driver
+														<th><a href="<?php echo $this->request->webroot; ?>orders/orderslist?sort=user_id&amp;direction=asc">Driver
 																Name</a></th>
 														<th>
-															<a href="/intact/orders/orderslist?sort=complete&amp;direction=asc">Broker</a>
+															<a href="<?php echo $this->request->webroot; ?>orders/orderslist?sort=complete&amp;direction=asc">Broker</a>
 														</th>
 														<th>
-															<a href="/intact/orders/orderslist?sort=client_id&amp;direction=asc">Ordered</a>
+															<a href="<?php echo $this->request->webroot; ?>orders/orderslist?sort=client_id&amp;direction=asc">Ordered</a>
 														</th>
 														<th>Completed</th>
 														<th>
-															<a href="/intact/orders/orderslist?sort=created&amp;direction=asc">Created</a>
+															<a href="<?php echo $this->request->webroot; ?>orders/orderslist?sort=created&amp;direction=asc">Created</a>
 														</th>
 														<th class="actions">Actions</th>
-														<!--th><a href="/intact/orders/orderslist?sort=bright_planet_html_binary&amp;direction=asc">Status</a></th-->
-														<th><a href="/intact2/orders/orderslist?sort=uploaded_for&amp;direction=asc">Results </a>
+														<!--th><a href="<?php echo $this->request->webroot; ?>orders/orderslist?sort=bright_planet_html_binary&amp;direction=asc">Status</a></th-->
+														<th><a href="<?php echo $this->request->webroot; ?>orders/orderslist?sort=uploaded_for&amp;direction=asc">Results </a>
 														</th>
 													</tr>
 													</thead>
@@ -219,14 +219,14 @@
 																<td><?= $order->id; ?></td>
 																<td style="min-width: 145px;"><?= $companyname; ?></td>
 																<td><?= formatname($uploaded_for); ?></td>
-																<td><a target="_blank" href="/intact/profiles/view/888">John Smith</a></td>
+																<td><a target="_blank" href="<?php echo $this->request->webroot; ?>profiles/view/888">John Smith</a></td>
 																<td><?= $order->created; ?></td>
 																<td>09/09/2015</td>
 
 																<td><font color="green">09/09/2015</font></td>
 																<td class="actions  util-btn-margin-bottom-5">
-																	<a class="btn default btn-xs blue-soft-stripe" href="/intact/profiles/intact_view">Score Card</a>
-																	<a class="btn default btn-xs yellow-stripe" href="/intact/documents/add">Add Products</a>
+																	<a class="btn default btn-xs blue-soft-stripe" href="<?php echo $this->request->webroot; ?>profiles/view">Score Card</a>
+																	<a class="btn default btn-xs yellow-stripe" href="<?php echo $this->request->webroot; ?>documents/add">Add Products</a>
 																	<a href="#" class="btn default btn-xs green-soft-stripe">Save Documents</a>
 																	<?php
 																	if (!$order->approved) {
@@ -258,7 +258,7 @@
 												<script>
 													function approve(ID) {
 														$.ajax({
-															url: "/intact/orders/ajaxhandler/approveorder",
+															url: "<?php echo $this->request->webroot; ?>orders/ajaxhandler/approveorder",
 															type: "post",
 															dataType: "HTML",
 															data: "id=" + ID,

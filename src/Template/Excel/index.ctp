@@ -2,7 +2,6 @@
 $Inline= false;//$Manager->ScriptName() == "Veritas 3-0";
 $GLOBALS["inline"] = $Inline;
 if($Inline) {
-    //won't work in intact
     //https://vitalets.github.io/x-editable/docs.html
     ?>
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
@@ -819,7 +818,7 @@ $Table="";
 $PrimaryKey="";
 $Tables="";
 
-if (!$EmbeddedMode && $Manager->webroot(true) == "intact2"){
+if (!$EmbeddedMode && $Manager->NeedsDivs()){
     echo '<div class="page-content"><div class="container"><div class="row"><div class="col-md-12"><div class="portlet light">';
 }
 
@@ -1732,7 +1731,7 @@ class ParensParser {//https://gist.github.com/Xeoncross/4710324
 
 if($EmbeddedMode){
     return;
-} else if ($Manager->webroot(true) == "intact2"){
+} else if ($Manager->NeedsDivs()){
     echo '</DIV></DIV></DIV></DIV></DIV>';
 }
 ?>
