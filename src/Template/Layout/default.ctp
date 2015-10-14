@@ -127,7 +127,7 @@ jQuery(document).ready(function() {
 					<a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logos/<?php echo $logo;?>" alt="logo" class="logo-default" /></a>
 					<!--a href="<?php echo $this->request->webroot;?>"><img src="<?php echo $this->request->webroot;?>img/logo.png" alt="logo" class="logo" style="width: 80px;" /></a-->
 				</div>
-				<div class="mid-text" style="vertical-align: bottom;margin-bottom: 10px;">
+				<div class="mid-text" style="vertical-align: bottom;margin-bottom: 2px;">
 					<p style=""><?= $strings["dashboard_insurance"]; ?></p>
 				</div>
 			</div>
